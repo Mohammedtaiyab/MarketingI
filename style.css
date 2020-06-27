@@ -1332,15 +1332,15 @@ input:-webkit-autofill:focus {
 }
 .hero-area.creative .single-layer.one {
 	background-image:url('images/slider/layer1.png');
-	background-position: top 0 left 0;
+	background-position: top 0 left 100px;
 }
 .hero-area.creative .single-layer.two {
 	background-image: url('images/slider/layer2.png');
-	background-position: top -40% right 0%;
+	background-position: top -40% right 6%;
 }
 .hero-area.creative .single-layer.three {
 	background-image: url('images/slider/layer3.png');
-	background-position: right 0 bottom 10%;
+	background-position: right 40px bottom 10%;
 }
 .hero-area.creative .single-layer.four {
 	background-image: url('images/slider/layer4.png');
