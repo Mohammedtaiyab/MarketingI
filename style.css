@@ -4750,3 +4750,20 @@ input:-webkit-autofill:focus {
 /*=======================
   End Footer CSS
 =========================*/ 
+
+		}*/
+	@media (max-width: 767px){
+		.header.style2 .logo {
+    		padding-top: 12px;
+    		width: 35%;
+		}
+		.logol{
+			
+			width: 50%;
+			}
+	}
+	@media (max-width: 767px){
+		.logo {
+    		padding-top: 12px;
+    		width: 45%;
+		}
