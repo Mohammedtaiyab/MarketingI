@@ -41,37 +41,39 @@
     width:100px;
     display:table-cell;
     vertical-align:middle;
-        border:5px solid #9c9bbf;
-
+        border:5px solid #5d62a2;
+transition: border 1s;
 }
 .tag{
 	    height: 70px;
     border-radius: 70px;
-       border:5px solid #9c9bbf;
+       
        margin-top: 14px;
            width: 120px;
-               background: #9c9bbf;
+               background: #fff;
                 transition: width 1s;
-      /*       transition-timing-function:cubic-bezier(1,-0.62, 0.4, 0.37);*/
+                	 border:5px solid #5d62a2;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s width 1s ease-in-out;
+        /*   transition-timing-function:cubic-bezier(1,-0.62, 0.4, 0.37);
+*/}
+/*.circle:hover .tag{
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border: #fff
 }
-.circle:hover{
+.tag:hover .circle{
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 
 }
-.tag:hover {
-  width: 290px;
- 
-
-}
-.tag h3:hover{
-	margin-left: 85px;
-    opacity: 1;
+*/.tag h3:hover{
+	
 }
 .tag h3{
-	padding: 10px;
-	margin-left: 0px;
-	color: #fff;
+	padding: 2%;
+	margin-left: 20px;
 	opacity: 0;
-	    transition: margin-left 1s;
+	transition-delay: .5s
+	  
 }
 .circle .icon i {
     font-size: 32px;
@@ -91,6 +93,23 @@
     margin-left: 20px;
     width: 50px;
 }
+.mystyle:hover .tag{
+box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+width: 290px;
+
+}
+.mystyle:hover  .circle{
+	/*-webkit-transform: rotateZ(-30deg);
+        -ms-transform: rotateZ(-30deg);
+        transform: rotateZ(-30deg);*/
+ box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+}
+.mystyle:hover .tag h3{
+	margin-left: 90px;
+	opacity: 1;
+}
+
 		</style>
     </head>
     <body id="bg" style="">
@@ -208,7 +227,7 @@
 						</div>
 					</div>
 					<div class="row" style=""><!-- margin-right: -61px;margin-left: 129px; -->
-						<div class="col-md-3 col-sm-4 col-xs-8">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 										<a href="#faq"><h3>IDEATION & CONSULTATION</h3></a>
@@ -220,7 +239,7 @@
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-							<div class="col-md-3 col-sm-4 col-xs-8">
+							<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle2">	<h3>NEGOTIATION</h3></a>
@@ -232,7 +251,7 @@
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-							<div class="col-md-3 col-sm-4 col-xs-8">
+							<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle3">	<h3>HUMAN RESOURCES</h3></a>
@@ -244,7 +263,7 @@
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-					<div class="col-md-3 col-sm-4 col-xs-8">
+					<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle4">	<h3>INTERIOR DESIGNING</h3></a>
@@ -255,7 +274,7 @@
 							</div>
 						</div>
 						<!--/ End Single Service -->
-						<div class="col-md-3 col-sm-4 col-xs-8">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle5">	<h3>PHOTOGHRAPY</h3></a>
@@ -267,7 +286,7 @@
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-							<div class="col-md-3 col-sm-4 col-xs-8">
+							<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle6">	<h3>VIDEOGRAPHY</h3></a>
@@ -279,7 +298,7 @@
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-							<div class="col-md-3 col-sm-4 col-xs-8">
+							<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle7">	<h3>BRANDING</h3></a>
@@ -291,7 +310,7 @@
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-					<div class="col-md-3 col-sm-4 col-xs-8">
+					<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle8">	<h3>LOCATION SEARCH</h3></a>
@@ -303,7 +322,7 @@
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-						<div class="col-md-3 col-sm-4 col-xs-8">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle9">	<h3>WEBSITE DEVELOPMENT</h3></a>
@@ -315,7 +334,7 @@
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-							<div class="col-md-3 col-sm-4 col-xs-8">
+							<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 										<a href="#FaqTitle10"><h3>APP DEVELOPMENT</h3></a>
@@ -327,7 +346,7 @@
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-							<div class="col-md-3 col-sm-4 col-xs-8">
+							<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle11">	<h3>AD MANAGEMENT</h3></a>
@@ -339,7 +358,7 @@
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-					<div class="col-md-3 col-sm-4 col-xs-8">
+					<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle12">	<h3>SOCIAL MEDIA MARKETING </h3></a>
@@ -350,7 +369,7 @@
 							</div>
 						</div>
 						<!--/ End Single Service -->
-						<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle13">	<h3>BUSINESS ANALYSIS</h3></a>
@@ -362,7 +381,7 @@
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-						<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 									<a href="#FaqTitle14">	<h3>FEASIBILITY STUDY</h3></a>
@@ -388,7 +407,7 @@
 						<!-- Single Service -->
 					</div>
 						<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-12">
+					<div class="col-md-4 col-sm-3 col-xs-12">
 							<div class="mystyle">
 									<div class="tag">
 										<a href="#FaqTitle16"><h3>BLOGGER CONNECTIONS</h3></a>
