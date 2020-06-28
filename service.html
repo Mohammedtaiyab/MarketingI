@@ -30,29 +30,29 @@
 		<link rel="stylesheet" href="css/skin/skin1.css">
 		<link rel="stylesheet" href="#" id="tromas">	
 		<style type="text/css">
-			.mystyle{
-
+			.mystyle{	
+					margin: 1px;
 				display: grid;grid-template-columns: 0px auto;
 			}
 			#outer-circle {
 				    background: #fff;
     border-radius: 50%;
-    height:100px;
-    width:100px;
+    height:80px;
+    width:80px;
     display:table-cell;
     vertical-align:middle;
-        border:5px solid #5d62a2;
+        border:5px solid #FB6F09;
 transition: border 1s;
 }
 .tag{
 	    height: 70px;
     border-radius: 70px;
        
-       margin-top: 14px;
+       margin-top: 4px;
            width: 290px;
                background: #fff;
                 transition: width 1s;
-                	 border:5px solid #5d62a2;
+                	 border:5px solid #FB6F09;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
   transition: box-shadow 0.3s width 1s ease-in-out;
         /*   transition-timing-function:cubic-bezier(1,-0.62, 0.4, 0.37);
@@ -90,9 +90,9 @@ transition: border 1s;
     transition: all 0.4s ease;
 }
 .circle img{
-	margin-top: 20px;
-    margin-left: 20px;
-    width: 50px;
+	    margin-top: 10px;
+    margin-left: 10px;
+    
 }
 .mystyle:hover .tag{
 box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -105,6 +105,13 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.3);
  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 
 }
+.mystyle:hover  .circle img{
+	-webkit-transform: rotateZ(-30deg);
+        -ms-transform: rotateZ(-30deg);
+        transform: rotateZ(30deg);
+
+}
+
 .mystyle:hover .tag h3{
 	margin-left: 90px;
 	opacity: 1;
