@@ -13,7 +13,7 @@
         <title>Marketing OJO</title>
 		
 		<!-- Favicon -->
-		<link rel="icon" type="image/png" href="">	
+		<link rel="icon" type="image/png" href="images/favicon.png">	
 		
         <!-- Web Font -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
@@ -30,6 +30,18 @@
 		<link rel="stylesheet" href="css/skin/skin1.css">
 		<link rel="stylesheet" href="#" id="tromas">
 		<style type="text/css">
+			.contact-us .form-group select {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ddd;
+    padding-left: 10px;
+    border-radius: 5px;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    font-weight: 400;
+    border-radius: 0px;
+}
 			.fai {
     padding: 19px;
     font-size: 20px;
@@ -178,6 +190,37 @@
 											<input type="email" name="email" placeholder="Your Email" required="required">
 										</div>
 									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input type="text" name="contact" placeholder="Contact No:" required="required">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<!-- <input type="text" name="service" placeholder="service" required="required"> -->
+											<select name="service"  >
+														<option>Service</option> 
+														<option>Ideation & Consultation</option> 
+														<option>Feasibility study </option>
+														<option>Negotiation</option>
+														<option>Human Resources</option>
+														<option>Interior Designing</option>
+														<option>Photography</option>
+														<option>Videography</option>
+														<option>Branding</option>
+														<option>Location search</option>
+														<option>Website Design & Development </option>
+														<option>App Design & Development </option>
+														<option>Ad Management</option>
+														<option>Social Media Marketing and Management </option>
+														<option>Business Analysis</option>
+														<option>Accounting</option>
+														<option>Blogger Connections</option>
+														<option>Corporate Flight Management</option>
+
+											</select>
+										</div>
+									</div>
 									<div class="col-md-12">
 										<div class="form-group">
 											<input type="text" name="subject" placeholder="Subject" required="required">
@@ -185,7 +228,7 @@
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<textarea name="message" rows="7" placeholder="Type Your Message Here" ></textarea>
+											<textarea name="message" rows="5" placeholder="Type Your Message Here" ></textarea>
 										</div>
 									</div>
 									<div class="col-md-12">
@@ -233,29 +276,82 @@
 			<!--/ End Contact -->
 			
 			
-		
 			<!-- Start Footer -->
-			<footer id="footer" class="footer">
+			<footer id="footer" class="footer dark">
 				<div class="footer-top">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-3 col-sm-6 col-xs-12">
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								<!-- Address Widget -->
+								<div class="single-widget address">
+									<img src="images/logo.png" alt="logo" style="width: 50%">
+									<p>Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do eiusmod temporia.</p>
+									<ul class="list">
+										<li><i class="fa fa-phone"></i>Phone: +91 8000080000</li>
+										<li><i class="fa fa-envelope"></i>Email:<a href="">Info@marketingOJO.com</a></li>
+										<li><i class="fa fa-map-o"></i>Address: Pune,Maharastra</li>
+									</ul>		
+									<ul class="social">
+										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+										
+									</ul>
+								</div>
+								/ End Address Widget
+							</div>	
+							<div class="col-md-4 col-sm-6 col-xs-12">
+							
+								<div class="single-widget links">
+									<h2>Quick Links</h2>
+									<ul class="list">
+										<li><a href="about-us.html"><i class="fa fa-angle-right"></i>About Our Company</a></li>
+										<li><a href="service.html"><i class="fa fa-angle-right"></i>Our services</a></li>
+										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IdeaNation</a></li>
+										<li><a href="clients.html"><i class="fa fa-angle-right"></i>Our Clients</a></li>
+										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>Careers</a></li>
+										<li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact With Us</a></li>
+									</ul>
+								</div>
+				
+							</div>
+					
+							<div class="col-md-4 col-sm-6 col-xs-12">
 								
+								<div class="single-widget photo-gallery">
+									<h2>Photo Gallery</h2>
+									<ul class="list">
+										<li><a href="images/gallery-1.jpg" data-fancybox="photo"><img src="images/gallery-1.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-2.jpg" data-fancybox="photo"><img src="images/gallery-2.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-3.jpg" data-fancybox="photo"><img src="images/gallery-3.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-4.jpg" data-fancybox="photo"><img src="images/gallery-4.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-5.jpg" data-fancybox="photo"><img src="images/gallery-5.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-6.jpg" data-fancybox="photo"><img src="images/gallery-6.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-7.jpg" data-fancybox="photo"><img src="images/gallery-7.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-8.jpg" data-fancybox="photo"><img src="images/gallery-8.jpg" alt="#"></a></li>
+							
+									</ul>
+								</div>
+							
+							</div>
+						</div>
+					</div> 
 				</div> 
 				<div class="footer-bottom">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 col-sm-12 col-xs-12">
-								<!-- copyright -->
+								copyright
 								<div class="copyright">
 									<p>&copy; 2020 All Right Reserved.</p>
 								</div>
-								<!--/ End Copyright -->
+							
 							</div>
 						</div>
 					</div>
 				</div>
 			</footer>
+	
 			<!--/ End footer -->
 			
 			<!-- Jquery -->
