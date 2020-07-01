@@ -135,7 +135,73 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 
 }
 
+.first{
+	background-image: url("images/blog/blog1.jpg");
+	
+	    width: 400px;
+    height: 100px;
+      display: flex;
+      flex-direction: column;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.30);
+    transition: .3s
+}
+/*.first:hover{
+	background: #b9b657;
+	 height: 400px;
+}
+.first:hover .box{
+	 margin-left: 30px;
+	opacity: 1;
 
+
+}*/
+
+.second .box{
+	 margin-left: 30px;
+	opacity: 1;
+}
+.second{
+	    background:#0071bb;
+	    width: 400px;
+    height: 280px;
+    display: flex;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.30);
+}
+.box{
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: #0071bb;
+	    margin-top: -30px;
+    margin-left: 0px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.30);
+    opacity: 0;
+transition-property: all;
+transition: .3s;
+     transition-timing-function: cubic-bezier(0.14, 0.65, 0.32, 1.28);
+}
+.first .text{
+	 
+    color: wheat;
+    }
+
+.second .text{
+	padding: 0px;
+	margin-left: 0px;
+	color: black;
+}
+.first .para{
+	opacity: 0;
+
+}
+.second .para{
+	opacity: 1;
+	    text-align: inherit;
+    font-size: initial;
+}
+.second .para p{
+	color: wheat;
+}
 		</style>
     </head>
     <body id="bg" style="">
@@ -239,6 +305,9 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 			</section>
 			<!--/ End Breadcrumbs -->
 			<!-- Start Services -->
+
+
+
 				<section id="services" class="services section">
 				<div class="container">
 					<div class="row">
@@ -395,7 +464,7 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 									<a href="#FaqTitle11">	<h3>AD MANAGEMENT</h3></a>
 									</div>	
 									<div id="outer-circle" class="circle">
-										<img src="images/icon/idea.png">
+										<img src="images/icon/11.png">
 									</div>
 							</div>
 						</div>
@@ -407,7 +476,7 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 									<a href="#FaqTitle12">	<h3>SOCIAL MEDIA MARKETING </h3></a>
 									</div>	
 									<div id="outer-circle" class="circle">
-										<img src="images/icon/idea.png">
+										<img src="images/icon/14.png">
 									</div>
 							</div>
 						</div>
@@ -472,7 +541,36 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 					</div>
 				</div>
 			</section>
-			
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+								<div class="first">
+									
+									<div class="box"><img src="images/icon/1.png"></div>
+									<div class="text">
+										<h3>IDEATION & CONSULTATION</h3>
+									</div>
+									<div class="para">
+										<hr>
+										<p>We Provide Business Ideas To Young And Competent Entrepreneurs With Consultation Service To Groom Them To Become The Future Of The Nation. We Welcome Any Business Idea Which Has Got Any Potential For Success.</p>
+									</div>
+								</div>						
+					</div>
+						<div class="col-md-6">
+								<div class="first">
+										<div class="box"><img src="images/icon/2.png"></div>
+									<div class="text">
+										<h3>FEASIBILITY STUDY</h3>
+									</div>
+									<div class="para">
+										<hr>
+										<p>We Will thoroughly Study Your Business Idea, Product And Services Before Bring It To Reality.</p>
+									</div>
+								</div>						
+							</div>
+				</div>
+				
+			</div>
 			<!--/ End Services -->
 			<!-- Services are
 1-Ideation & Consultation 
@@ -814,6 +912,15 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 			<script src="js/gmap.min.js"  type="text/javascript" ></script>
 			<!-- Main JS -->
 			<script src="js/main.js" type="text/javascript"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('.first').click(function(){
+						$(this).toggleClass('second');
+
+					});
+					
+				});
+			</script>
 		</div>
     </body>
 </html>
