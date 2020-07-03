@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
         <!-- Meta tag -->
@@ -74,12 +74,13 @@ transition: border 1s;
     border-radius: 70px;
        
        margin-top: 15px;
-           width: 290px;
+        
+    width: 328px;
                background: #0071BB;
                 transition: width 1s;
                 	 
 	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-  transition: box-shadow 0.3s width 1s ease-in-out;
+  transition: all 800ms ease-in-out;
         /*   transition-timing-function:cubic-bezier(1,-0.62, 0.4, 0.37);
 */}
 /*.circle:hover .tag{
@@ -97,6 +98,10 @@ transition: border 1s;
 	color: #fff;
 
 	  
+}
+.tag .para{
+	opacity: 0;
+	 transition-duration: .9s;
 }
 .circle .icon i {
     font-size: 32px;
@@ -117,8 +122,11 @@ transition: border 1s;
     width: 83%;
     
 }
-.mystyle:hover .tag{
-box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+.my .tag {
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  height: 300px;
+    margin-left: 34px;
 
 }
 .mystyle:hover  .circle{
@@ -165,7 +173,7 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 	    width: 400px;
     height: 280px;
     display: flex;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.30);
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.30);
 }
 .box{
 	width: 90px;
@@ -174,7 +182,7 @@ box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 	background: #0071bb;
 	    margin-top: -30px;
     margin-left: 0px;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.30);
+    box-shadow: 0px 30px 80px rgba(0, 0, 0, 0.30);
     opacity: 0;
 transition-property: all;
 transition: .3s;
@@ -182,13 +190,15 @@ transition: .3s;
 }
 .first .text{
 	 
-    color: wheat;
+  margin: 0 auto;
+
     }
 
 .second .text{
 	padding: 0px;
 	margin-left: 0px;
 	color: black;
+	  margin: 0 auto;
 }
 .first .para{
 	opacity: 0;
@@ -198,16 +208,38 @@ transition: .3s;
 	opacity: 1;
 	    text-align: inherit;
     font-size: initial;
+        margin: 0px 10px;
+}
+.second .para p{
+	color: wheat;
+}
+.arrow-right {
+    width: 0;
+    height: 0;
+    border-left: 35px solid #569cbd;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+.my .tag .para {
+	opacity: 1;
+	    text-align: inherit;
+    font-size: initial;
+        margin: 0px 10px;
+
+}
+.my .tag  .para p{
+	color: wheat;
 }
 .second .para p{
 	color: wheat;
 }
 		</style>
     </head>
-    <body id="bg" style="">
+	<body id="bg" style="">
 		<div id="layout" class="">
-		
-		
+
+
 			<!-- Start Header -->
 			<header id="header" class="header">
 				<div class="container">
@@ -215,7 +247,7 @@ transition: .3s;
 						<div class="col-md-3 col-sm-3 col-xs-12">
 							<!-- Logo -->
 							<div class="logo">
-								<a href="index.html"><img src="images/logo2.png"  style="width: 60%"></a>
+								<a href="index.html"><img src="images/logo2.png" style="width: 60%"></a>
 							</div>
 							<!--/ End Logo -->
 							<div class="mobile-nav"></div>
@@ -257,20 +289,23 @@ transition: .3s;
 								<div class="nav-area">
 									<!-- Main Menu -->
 									<nav class="mainmenu">
-										<div class="collapse navbar-collapse">	
+										<div class="collapse navbar-collapse">
 											<ul class="nav navbar-nav">
-												<li ><a href="index.html">Home</a></li>
+												<li><a href="index.html">Home</a></li>
 												<li><a href="about-us.html">About Us</a></li>
-												<li class="active"><a href="service.html">Our Services</a>
-													
+												<li class="active">
+													<a href="service.html">Our Services</a>
+
 												</li>
-												<li><a href="clients.html">Our Clients</a>
-													
+												<li>
+													<a href="clients.html">Our Clients</a>
+
 												</li>
-												<li><a href="ideanation.html">IdeaNation</a>
-												</li>					
-												<li><a href="">Careers</a></li>		
-												<li><a href="contact.html">Contact Us</a></li>												
+												<li>
+													<a href="ideanation.html">IdeaNation</a>
+												</li>
+												<li><a href="">Careers</a></li>
+												<li><a href="contact.html">Contact Us</a></li>
 											</ul>
 										</div>
 									</nav>
@@ -298,7 +333,7 @@ transition: .3s;
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<h2>Our Services</h2>
-							
+
 						</div>
 					</div>
 				</div>
@@ -308,75 +343,80 @@ transition: .3s;
 
 
 
-				<section id="services" class="services section">
+			<section id="services" class="services section">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<div class="section-title" >
+							<div class="section-title">
 								<h1>Our services</h1>
 								<p>Contry to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece</p>
 							</div>
 						</div>
 					</div>
-					<div class="row" style=""><!-- margin-right: -61px;margin-left: 129px; -->
+					<div class="row" style="">
+						<!-- margin-right: -61px;margin-left: 129px; -->
 						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle ">
-									<div class="tag">
-										<a href="#faq"><h3>IDEATION & CONSULTATION</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/1.png">
+								<div class="tag">
+								<h3>IDEATION & CONSULTATION</h3>
+									<div class="para">
+										<hr>
+											<p>We Provide Business Ideas To Young And Competent Entrepreneurs With Consultation Service To Groom Them To Become The Future Of The Nation. We Welcome Any Business Idea Which Has Got Any Potential For Success.</p>
 									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/1.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
 						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle14">	<h3>FEASIBILITY STUDY</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/2.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/2.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-					
-							<div class="col-md-4 col-sm-6 col-xs-12">
+
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle2">	<h3>NEGOTIATION</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/3.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/3.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
-						</div><div class="row">
+					</div><div class="row">
 						<!-- Single Service -->
-							<div class="col-md-6 col-sm-6 col-xs-12 ">
+						<div class="col-md-6 col-sm-6 col-xs-12 ">
 							<div class="mystyle  a">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle3">	<h3>HUMAN RESOURCES</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/4.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/4.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle4">	<h3>INTERIOR DESIGNING</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/5.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/5.png">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -384,114 +424,113 @@ transition: .3s;
 						<!--/ End Single Service -->
 						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle5">	<h3>PHOTOGHRAPY</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/6.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/6.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-							<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle6">	<h3>VIDEOGRAPHY</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/7.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/7.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-							<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle7">	<h3>BRANDING</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/10.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/10.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-						</div><div class="row">
-					<div class="col-md-6 col-sm-6 col-xs-12">
+					</div><div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="mystyle a">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle8">	<h3>LOCATION SEARCH</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/8.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/8.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle9">	<h3>WEB DEVELOPMENT</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/9.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/9.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-						</div><div class="row">
+					</div><div class="row">
 						<!--/ End Single Service -->
 						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle9">	<h3>APP DEVELOPMENT</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/13.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/13.png">
+								</div>
 							</div>
 						</div>
 
 
 						<!-- Single Service -->
-							<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle11">	<h3>AD MANAGEMENT</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/11.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/11.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle12">	<h3>SOCIAL MEDIA MARKETING </h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/14.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/14.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
-						
 						<!--/ End Single Service -->
-						</div><div class="row">
-				<div class="col-md-6 col-sm-6 col-xs-12">
+					</div><div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="mystyle a">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle13">	<h3>BUSINESS ANALYSIS</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/12.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/12.png">
+								</div>
 							</div>
 						</div>
 
@@ -499,428 +538,427 @@ transition: .3s;
 						<!-- Single Service -->
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle15">	<h3>ACCOUNTING</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/15.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/15.png">
+								</div>
 							</div>
 						</div>
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-				
-					
 						<!--/ End Single Service -->
 						<!-- Single Service -->
-						</div><div class="row">
-							<div class="col-md-4 col-sm-3 col-xs-12">
+					</div><div class="row">
+						<div class="col-md-4 col-sm-3 col-xs-12">
 							<div class="mystyle">
-									<div class="tag">
-										<a href="#FaqTitle16"><h3>BLOGGER CONNECTIONS</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/16.png">
-									</div>
+								<div class="tag">
+									<a href="#FaqTitle16"><h3>BLOGGER CONNECTIONS</h3></a>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/16.png">
+								</div>
 							</div>
 						</div>
-					<div class="col-md-4 col-sm-12 col-xs-12">
+						<div class="col-md-4 col-sm-12 col-xs-12">
 							<div class="mystyle b">
-									<div class="tag">
+								<div class="tag">
 									<a href="#FaqTitle17"><h3>CORPORATE FLIGHT</h3></a>
-									</div>	
-									<div id="outer-circle" class="circle">
-										<img src="images/icon/17.png">
-									</div>
+								</div>
+								<div id="outer-circle" class="circle">
+									<img src="images/icon/17.png">
+								</div>
 							</div>
 						</div>
 
 						<!--/ End Single Service -->
-						
+
+					</div>
+				</div>
+		</section>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="first">
+
+						<div class="box"><img src="images/icon/1.png"></div>
+						<div class="text">
+							<h3>IDEATION & CONSULTATION</h3>
+						</div>
+						<div class="para">
+							<hr>
+							<p>We Provide Business Ideas To Young And Competent Entrepreneurs With Consultation Service To Groom Them To Become The Future Of The Nation. We Welcome Any Business Idea Which Has Got Any Potential For Success.</p>
 						</div>
 					</div>
 				</div>
-			</section>
+				<div class="col-md-6">
+					<div class="first">
+						<div class="box"><img src="images/icon/2.png"></div>
+						<div class="text">
+							<h3>FEASIBILITY STUDY</h3>
+						</div>
+						<div class="para">
+							<hr>
+							<p>We Will thoroughly Study Your Business Idea, Product And Services Before Bring It To Reality.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--/ End Services -->
+		<!-- Services are
+	1-Ideation & Consultation
+	2-feasibility study
+	3-Negotiation
+	4-HR
+	5-Interior Designing
+	6-photography
+	7-videography
+	8-branding
+	9-Location search
+	10-Website design & development
+	11-app design & development
+	12-Ad management
+	13-social media marketing and management
+	14-business analysis
+	15-accounting
+	16-blogger connections
+	17-corporate flight management -->
+		<!-- Start Faq -->
+		<section id="faq" class="faq section">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
-								<div class="first">
-									
-									<div class="box"><img src="images/icon/1.png"></div>
-									<div class="text">
-										<h3>IDEATION & CONSULTATION</h3>
-									</div>
-									<div class="para">
-										<hr>
-										<p>We Provide Business Ideas To Young And Competent Entrepreneurs With Consultation Service To Groom Them To Become The Future Of The Nation. We Welcome Any Business Idea Which Has Got Any Potential For Success.</p>
-									</div>
-								</div>						
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-title">
+							<h1>Work Flow</h1>
+							<p>Contry to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece</p>
+						</div>
 					</div>
-						<div class="col-md-6">
-								<div class="first">
-										<div class="box"><img src="images/icon/2.png"></div>
-									<div class="text">
-										<h3>FEASIBILITY STUDY</h3>
-									</div>
-									<div class="para">
-										<hr>
-										<p>We Will thoroughly Study Your Business Idea, Product And Services Before Bring It To Reality.</p>
-									</div>
-								</div>						
-							</div>
 				</div>
-				
-			</div>
-			<!--/ End Services -->
-			<!-- Services are
-1-Ideation & Consultation 
-2-feasibility study 
-3-Negotiation
-4-HR
-5-Interior Designing
-6-photography
-7-videography
-8-branding
-9-Location search
-10-Website design & development 
-11-app design & development 
-12-Ad management
-13-social media marketing and management 
-14-business analysis
-15-accounting
-16-blogger connections
-17-corporate flight management -->
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="first">
 
-			<!-- Start Faq -->
-			<section id="faq" class="faq section">
+						<div class="box"><img src="images/icon/1.png"></div>
+						<div class="text">
+							<h3>IDEATION & CONSULTATION</h3>
+						</div>
+						<div class="para">
+							<hr>
+							<p>We Provide Business Ideas To Young And Competent Entrepreneurs With Consultation Service To Groom Them To Become The Future Of The Nation. We Welcome Any Business Idea Which Has Got Any Potential For Success.</p>
+						</div>
+					</div>
+					<div class="arrow-right"></div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle2">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq2">NEGOTIATION</a>
+									</h4>
+								</div>
+								<div id="faq2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle2">
+									<div class="faq-body">We Will Negotiate On Your Behalf To Fulfill Your Need For Successful Accomplishment Of Your Plans.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle3">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq3">HUMAN RESOURCES</a>
+									</h4>
+								</div>
+								<div id="faq3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle3">
+									<div class="faq-body">We Will Recruit And Provide You With Qualified And Competent Staff For Your Business..</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle4">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq4">INTERIOR DESIGNING</a>
+									</h4>
+								</div>
+								<div id="faq4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle4">
+									<div class="faq-body">We Have Extraordinary Interior Designers Who Will Convert Your Workplace Into The Office You Have Dreamt Of.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle5">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq5">PHOTOGRAPHY</a>
+									</h4>
+								</div>
+								<div id="faq5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle5">
+									<div class="faq-body">Our Teams Camera Lenses Will Focus On And Capture The Right Photo For Your Digital Marketing That Will Leave Your Customers Stunned.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle6">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq6">VIDEOGRAPHY</a>
+									</h4>
+								</div>
+								<div id="faq6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle6">
+									<div class="faq-body">We Also Make Commercial Videos To Enhance Your Marketing Campaign.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle7">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq7">BRANDING</a>
+									</h4>
+								</div>
+								<div id="faq7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle7">
+									<div class="faq-body">We Design Unmatchable Logo, Website, And Brand Identity Which Will Leave An Everlasting Impression On Your Customers.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle8">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq5">LOCATION SEARCH</a>
+									</h4>
+								</div>
+								<div id="faq8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle8">
+									<div class="faq-body">We Will Help In Finding Your Business The Best Suited Location For Its Prosperity.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle9">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq9">WEBSITE DESIGN & DEVELOPMENT</a>
+									</h4>
+								</div>
+								<div id="faq9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle9">
+									<div class="faq-body">We Will Design Website The Best Your Business Can Have For Attracting Its Customers And For Improved Content Marketing.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitl10">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq10">APP DESIGN & DEVELOPMENT</a>
+									</h4>
+								</div>
+								<div id="faq10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle10">
+									<div class="faq-body">We Can Bring Your Business to The Customer’s Mobile through Our Undefinable Application Development and Management Team.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle11">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq11">AD MANAGEMENT</a>
+									</h4>
+								</div>
+								<div id="faq11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle11">
+									<div class="faq-body">We Will Provide An Additional Marketing Approach Through Ad Management On Our Website.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle12">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq12">SOCIAL MEDIA MARKETING AND MANAGEMENT</a>
+									</h4>
+								</div>
+								<div id="faq12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle12">
+									<div class="faq-body">We Will Enlight Your Business By Introducing It On Social Media Platform Such As Instagram, Facebook, Etc. For Better Connection with Your Customers.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle13">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq13">BUSINESS ANALYSIS</a>
+									</h4>
+								</div>
+								<div id="faq13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle13">
+									<div class="faq-body">We Will Conduct An Overall Analysis Of Your Business Activities And Provide You With The Analysis Report For Your Better Functioning.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle14">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq14">FEASIBILITY STUDY</a>
+									</h4>
+								</div>
+								<div id="faq14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle14">
+									<div class="faq-body">We Will thoroughly Study Your Business Idea, Product And Services Before Bring It To Reality.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle15">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq15">ACCOUNTING</a>
+									</h4>
+								</div>
+								<div id="faq15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle15">
+									<div class="faq-body">We Will Provide Accounting Services For Your Business For Better Financial Decision.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle16">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq16">BLOGGER CONNECTIONS</a>
+									</h4>
+								</div>
+								<div id="faq16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle16">
+									<div class="faq-body">We Will Enhance Your Social Media Marketing By Making Connections With Appropriate Bloggers.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+							<div class="panel panel-default">
+								<!-- Single Faq -->
+								<div class="faq-heading" id="FaqTitle17">
+									<h4 class="faq-title">
+										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq17">CORPORATE FLIGHT MANAGEMENT</a>
+									</h4>
+								</div>
+								<div id="faq17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle17">
+									<div class="faq-body">We Specially Design Products For Your Corporate And Personal Gifting. We Even Accept Bulk Orders For Your Large Event.</div>
+								</div>
+								<!--/ End Single Faq -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/ End Faq -->
+		<!-- Start Footer -->
+		<footer id="footer" class="footer dark">
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<!-- Address Widget -->
+							<div class="single-widget address">
+								<img src="images/logo.png" alt="logo" style="width: 50%">
+								<p>Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do eiusmod temporia.</p>
+								<ul class="list">
+									<li><i class="fa fa-phone"></i>Phone: +91 8000080000</li>
+									<li><i class="fa fa-envelope"></i>Email:<a href="">Info@marketingOJO.com</a></li>
+									<li><i class="fa fa-map-o"></i>Address: Pune,Maharastra</li>
+								</ul>
+								<ul class="social">
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+
+								</ul>
+							</div>
+							/ End Address Widget
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+
+							<div class="single-widget links">
+								<h2>Quick Links</h2>
+								<ul class="list">
+									<li><a href="about-us.html"><i class="fa fa-angle-right"></i>About Our Company</a></li>
+									<li><a href="service.html"><i class="fa fa-angle-right"></i>Our services</a></li>
+									<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IdeaNation</a></li>
+									<li><a href="clients.html"><i class="fa fa-angle-right"></i>Our Clients</a></li>
+									<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>Careers</a></li>
+									<li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact With Us</a></li>
+								</ul>
+							</div>
+
+						</div>
+
+						<div class="col-md-4 col-sm-6 col-xs-12">
+
+							<div class="single-widget photo-gallery">
+								<h2>Photo Gallery</h2>
+								<ul class="list">
+									<li><a href="images/gallery-1.jpg" data-fancybox="photo"><img src="images/gallery-1.jpg" alt="#"></a></li>
+									<li><a href="images/gallery-2.jpg" data-fancybox="photo"><img src="images/gallery-2.jpg" alt="#"></a></li>
+									<li><a href="images/gallery-3.jpg" data-fancybox="photo"><img src="images/gallery-3.jpg" alt="#"></a></li>
+									<li><a href="images/gallery-4.jpg" data-fancybox="photo"><img src="images/gallery-4.jpg" alt="#"></a></li>
+									<li><a href="images/gallery-5.jpg" data-fancybox="photo"><img src="images/gallery-5.jpg" alt="#"></a></li>
+									<li><a href="images/gallery-6.jpg" data-fancybox="photo"><img src="images/gallery-6.jpg" alt="#"></a></li>
+									<li><a href="images/gallery-7.jpg" data-fancybox="photo"><img src="images/gallery-7.jpg" alt="#"></a></li>
+									<li><a href="images/gallery-8.jpg" data-fancybox="photo"><img src="images/gallery-8.jpg" alt="#"></a></li>
+
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<div class="section-title">
-								<h1>Work Flow</h1>
-								<p>Contry to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece</p>
+							copyright
+							<div class="copyright">
+								<p>&copy; 2020 All Right Reserved.</p>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-								<div class="panel panel-default active">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle1">
-									  <h4 class="faq-title">
-										<a data-toggle="collapse" data-parent="#accordion" href="#faq1">IDEATION & CONSULTATION</a>
-									  </h4>
-									</div>
-									<div id="faq1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="FaqTitle1">
-									  <div class="faq-body">We Provide Business Ideas To Young And Competent Entrepreneurs With Consultation Service To Groom Them To Become The Future Of The Nation. We Welcome Any Business Idea Which Has Got Any Potential For Success.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle2">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq2">NEGOTIATION</a>
-									  </h4>
-									</div>
-									<div id="faq2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle2">
-									  <div class="faq-body">We Will Negotiate On Your Behalf To Fulfill Your Need For Successful Accomplishment Of Your Plans.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle3">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq3">HUMAN RESOURCES</a>
-									  </h4>
-									</div>
-									<div id="faq3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle3">
-									  <div class="faq-body">We Will Recruit And Provide You With Qualified And Competent Staff For Your Business..</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle4">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq4">INTERIOR DESIGNING</a>
-									  </h4>
-									</div>
-									<div id="faq4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle4">
-									 <div class="faq-body">We Have Extraordinary Interior Designers Who Will Convert Your Workplace Into The Office You Have Dreamt Of.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle5">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq5">PHOTOGRAPHY</a>
-									  </h4>
-									</div>
-									<div id="faq5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle5">
-									 <div class="faq-body">Our Teams Camera Lenses Will Focus On And Capture The Right Photo For Your Digital Marketing That Will Leave Your Customers Stunned.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle6">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq6">VIDEOGRAPHY</a>
-									  </h4>
-									</div>
-									<div id="faq6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle6">
-									 <div class="faq-body">We Also Make Commercial Videos To Enhance Your Marketing Campaign.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle7">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq7">BRANDING</a>
-									  </h4>
-									</div>
-									<div id="faq7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle7">
-									 <div class="faq-body">We Design Unmatchable Logo, Website, And Brand Identity Which Will Leave An Everlasting Impression On Your Customers.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle8">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq5">LOCATION SEARCH</a>
-									  </h4>
-									</div>
-									<div id="faq8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle8">
-									 <div class="faq-body">We Will Help In Finding Your Business The Best Suited Location For Its Prosperity.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle9">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq9">WEBSITE DESIGN & DEVELOPMENT</a>
-									  </h4>
-									</div>
-									<div id="faq9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle9">
-									 <div class="faq-body">We Will Design Website The Best Your Business Can Have For Attracting Its Customers And For Improved Content Marketing.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitl10">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq10">APP DESIGN & DEVELOPMENT</a>
-									  </h4>
-									</div>
-									<div id="faq10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle10">
-									 <div class="faq-body">We Can Bring Your Business to The Customer’s Mobile through Our Undefinable Application Development and Management Team.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle11">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq11">AD MANAGEMENT</a>
-									  </h4>
-									</div>
-									<div id="faq11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle11">
-									 <div class="faq-body">We Will Provide An Additional Marketing Approach Through Ad Management On Our Website.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle12">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq12">SOCIAL MEDIA MARKETING AND MANAGEMENT</a>
-									  </h4>
-									</div>
-									<div id="faq12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle12">
-									 <div class="faq-body">We Will Enlight Your Business By Introducing It On Social Media Platform Such As Instagram, Facebook, Etc. For Better Connection with Your Customers.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle13">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq13">BUSINESS ANALYSIS</a>
-									  </h4>
-									</div>
-									<div id="faq13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle13">
-									 <div class="faq-body">We Will Conduct An Overall Analysis Of Your Business Activities And Provide You With The Analysis Report For Your Better Functioning.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle14">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq14">FEASIBILITY STUDY</a>
-									  </h4>
-									</div>
-									<div id="faq14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle14">
-									 <div class="faq-body">We Will thoroughly Study Your Business Idea, Product And Services Before Bring It To Reality.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle15">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq15">ACCOUNTING</a>
-									  </h4>
-									</div>
-									<div id="faq15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle15">
-									 <div class="faq-body">We Will Provide Accounting Services For Your Business For Better Financial Decision.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle16">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq16">BLOGGER CONNECTIONS</a>
-									  </h4>
-									</div>
-									<div id="faq16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle16">
-									 <div class="faq-body">We Will Enhance Your Social Media Marketing By Making Connections With Appropriate Bloggers.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-								<div class="panel panel-default">
-									<!-- Single Faq -->
-									<div class="faq-heading"  id="FaqTitle17">
-									  <h4 class="faq-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#faq17">CORPORATE FLIGHT MANAGEMENT</a>
-									  </h4>
-									</div>
-									<div id="faq17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FaqTitle17">
-									 <div class="faq-body">We Specially Design Products For Your Corporate And Personal Gifting. We Even Accept Bulk Orders For Your Large Event.</div>
-									</div>
-									<!--/ End Single Faq -->
-								</div>
-							</div>
+
 						</div>
 					</div>
 				</div>
-			</section>
-			<!--/ End Faq -->
-		
-  </div>
-
-	
-					<!-- Start Footer -->
-			<footer id="footer" class="footer dark">
-				<div class="footer-top">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-4 col-sm-6 col-xs-12">
-								<!-- Address Widget -->
-								<div class="single-widget address">
-									<img src="images/logo.png" alt="logo" style="width: 50%">
-									<p>Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do eiusmod temporia.</p>
-									<ul class="list">
-										<li><i class="fa fa-phone"></i>Phone: +91 8000080000</li>
-										<li><i class="fa fa-envelope"></i>Email:<a href="">Info@marketingOJO.com</a></li>
-										<li><i class="fa fa-map-o"></i>Address: Pune,Maharastra</li>
-									</ul>		
-									<ul class="social">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-										
-									</ul>
-								</div>
-								/ End Address Widget
-							</div>	
-							<div class="col-md-4 col-sm-6 col-xs-12">
-							
-								<div class="single-widget links">
-									<h2>Quick Links</h2>
-									<ul class="list">
-										<li><a href="about-us.html"><i class="fa fa-angle-right"></i>About Our Company</a></li>
-										<li><a href="service.html"><i class="fa fa-angle-right"></i>Our services</a></li>
-										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IdeaNation</a></li>
-										<li><a href="clients.html"><i class="fa fa-angle-right"></i>Our Clients</a></li>
-										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>Careers</a></li>
-										<li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact With Us</a></li>
-									</ul>
-								</div>
-				
-							</div>
-					
-							<div class="col-md-4 col-sm-6 col-xs-12">
-								
-								<div class="single-widget photo-gallery">
-									<h2>Photo Gallery</h2>
-									<ul class="list">
-										<li><a href="images/gallery-1.jpg" data-fancybox="photo"><img src="images/gallery-1.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-2.jpg" data-fancybox="photo"><img src="images/gallery-2.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-3.jpg" data-fancybox="photo"><img src="images/gallery-3.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-4.jpg" data-fancybox="photo"><img src="images/gallery-4.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-5.jpg" data-fancybox="photo"><img src="images/gallery-5.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-6.jpg" data-fancybox="photo"><img src="images/gallery-6.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-7.jpg" data-fancybox="photo"><img src="images/gallery-7.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-8.jpg" data-fancybox="photo"><img src="images/gallery-8.jpg" alt="#"></a></li>
-								
-									</ul>
-								</div>
-							
-							</div>
-						</div>
-					</div> 
-				</div> 
-				<div class="footer-bottom">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12 col-sm-12 col-xs-12">
-								copyright
-								<div class="copyright">
-									<p>&copy; 2020 All Right Reserved.</p>
-								</div>
-							
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
-	
-			<!--/ End footer -->
-			
-			<!-- Jquery -->
-			<script src="js/jquery.min.js" type="text/javascript"></script>
-			<!-- Bootstrap JS -->
-			<script src="js/bootstrap.min.js" type="text/javascript"></script>
-			<!-- Modernizer JS -->
-			<script src="js/modernizr.min.js" type="text/javascript"></script>
-			<!-- Tromas JS -->
-			<script src="js/tromas.js" type="text/javascript"></script>
-			<!-- Tromas Plugins -->
-			<script src="js/theme-plugins.js" type="text/javascript"></script>
-			<!-- Google Map JS -->
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnhgNBg6jrSuqhTeKKEFDWI0_5fZLx0vM" type="text/javascript"></script>	
-			<script src="js/gmap.min.js"  type="text/javascript" ></script>
-			<!-- Main JS -->
-			<script src="js/main.js" type="text/javascript"></script>
-			<script type="text/javascript">
-				$(document).ready(function(){
-					$('.first').click(function(){
-						$(this).toggleClass('second');
-
-					});
-					
-				});
-			</script>
+			</div>
+		</footer>
 		</div>
-    </body>
+		<!--/ End footer -->
+		<!-- Jquery -->
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<!-- Modernizer JS -->
+		<script src="js/modernizr.min.js" type="text/javascript"></script>
+		<!-- Tromas JS -->
+		<script src="js/tromas.js" type="text/javascript"></script>
+		<!-- Tromas Plugins -->
+		<script src="js/theme-plugins.js" type="text/javascript"></script>
+		<!-- Google Map JS -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnhgNBg6jrSuqhTeKKEFDWI0_5fZLx0vM" type="text/javascript"></script>
+		<script src="js/gmap.min.js" type="text/javascript"></script>
+		<!-- Main JS -->
+		<script src="js/main.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('.first').click(function () {
+					$(this).toggleClass('second');
+
+				});
+
+			});
+				$(document).ready(function () {
+				$('.mystyle').click(function () {
+					$(this).toggleClass('my');
+
+				});
+
+			});
+		</script>
+
+	</body>
 </html>
