@@ -70,6 +70,39 @@
   background: #125688;
   color: white;
 }
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
 
 		</style>	
     </head>
@@ -196,30 +229,56 @@
 										</div>
 									</div>
 									<div class="col-md-6">
-										<div class="form-group">
-											<!-- <input type="text" name="service" placeholder="service" required="required"> -->
-											<select name="service"  >
-														<option>Service</option> 
-														<option>Ideation & Consultation</option> 
-														<option>Feasibility study </option>
-														<option>Negotiation</option>
-														<option>Human Resources</option>
-														<option>Interior Designing</option>
-														<option>Photography</option>
-														<option>Videography</option>
-														<option>Branding</option>
-														<option>Location search</option>
-														<option>Website Design & Development </option>
-														<option>App Design & Development </option>
-														<option>Ad Management</option>
-														<option>Social Media Marketing and Management </option>
-														<option>Business Analysis</option>
-														<option>Accounting</option>
-														<option>Blogger Connections</option>
-														<option>Corporate Flight Management</option>
+												
+    <div class="selectBox form-group" onclick="showCheckboxes()">
+      <select>
+        <option>Select Services</option>
+      </select>
+      <div class="overSelect"></div>
+    </div>
+    <div id="checkboxes">
+      <label for="one">
+        <input type="checkbox" id="one" />Ideation & Consultation</label>
+      <label for="two">
+        <input type="checkbox"id="two" />Feasibility study</label>
+      <label for="three">
+        <input type="checkbox" id="three" />Negotiation</label>
+    <label for="four">
+        <input type="checkbox" id="four" />Human Resources</label>
+      <label for="two1">
+        <input type="checkbox" id="two1" />Interior Designing</label>
+      <label for="three2">
+        <input type="checkbox" id="three2" />Photography</label>
 
-											</select>
-										</div>
+    <label for="one3">
+        <input type="checkbox" id="one3" />Videography</label>
+      <label for="two2">
+        <input type="checkbox"  id="two2"/>Branding</label>
+      <label for="three3">
+        <input type="checkbox" id="three3" />Location search</label>
+
+    <label for="one4">
+        <input type="checkbox" id="one4" />Website Design</label>
+      <label for="two5">
+        <input type="checkbox" id="two5" />App Development</label>
+      <label for="three0">
+        <input type="checkbox" id="three0" />Ad Management</label>
+
+    <label for="one6">
+        <input type="checkbox" id="one6" />Social Media Marketing </label>
+      <label for="two7">
+        <input type="checkbox" id="two7" />Business Analysis</label>
+      <label for="three8">
+        <input type="checkbox" id="three8" />Accounting</label>
+ 
+    <label for="one9">
+        <input type="checkbox"id="one9"/>Blogger Connections</label>
+      <label for="two9">
+        <input type="checkbox" id="two9"/>Corporate Flight Management</label>
+     
+    </div>
+
+										
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
@@ -369,6 +428,20 @@
 			<script src="js/gmap.min.js"  type="text/javascript" ></script>
 			<!-- Main JS -->
 			<script src="js/main.js" type="text/javascript"></script>
+			<script type="text/javascript">
+				var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+			</script>
 		</div>
     </body>
 </html>
