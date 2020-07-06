@@ -29,7 +29,7 @@
 		<link rel="stylesheet" href="css/skin/skin1.css">
 		<link rel="stylesheet" href="#" id="tromas">
 		<style>
-.row {
+.flexbox .row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
@@ -68,6 +68,163 @@
     max-width: 100%;
   }
 }
+
+.flexbox1 {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding: calc(6% + 1.9vmin);
+}
+
+
+.card {
+  background-size: cover;
+  /* Change this based on the image main subject */
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 1.61803%;
+  margin: 0.5em;
+  /*     transition: all 1s ease-in; */
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@supports (display: grid) {
+  @media screen and (min-width: 400px) {
+    .grid-wrapper {
+      display: grid;
+      justify-content: center;
+      align-content: end;
+      grid-auto-rows: auto;
+      grid-gap: 7px;
+    }
+
+    .card {
+      margin: 0px;
+    }
+
+    .grid-wrapper {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "header header"
+        "subhead-1 subhead-1"
+        "subhead-2 subhead-2"
+        "item-1 item-2"
+        "item-3 item-4"
+        "item-5 item-6"
+        "item-7 item-8"
+        "footer footer";
+    }  
+  }
+
+   @supports (display: grid) {
+    @media screen and (min-width: 600px) {
+      .grid-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+          "header header header header"
+          "subhead-1 subhead-1 subhead-2 subhead-2"
+          "item-1 item-1 item-2 item-2"
+          "item-3 item-3 item-4 item-4"
+          "item-5 item-6 item-7 item-8"
+          "footer footer footer footer";
+      }  
+    } 
+    
+    @supports (display: grid) {
+      @media screen and (min-width: 800px) {
+        .grid-wrapper {
+          grid-template-columns: repeat(8, 1fr);
+          grid-template-areas:
+            "header header header header header header header header" 
+            "subhead-1 subhead-1 subhead-1 subhead-1 subhead-2 subhead-2 subhead-2 subhead-2"
+            "item-1 item-1 item-2 item-2 item-3 item-3 item-4 item-4"
+            "item-5 item-5 item-6 item-6 item-7 item-7 item-8 item-8"
+            "footer footer footer footer footer footer footer footer";
+        }  
+      }
+      
+    @supports (display: grid) {
+      @media screen and (min-width: 1150px) {
+        .grid-wrapper {
+          grid-template-columns: repeat(10, 1fr);
+          grid-template-areas:
+            "header header header header header header header header header header" 
+            "subhead-1 subhead-1 subhead-1 subhead-1 subhead-1 subhead-1 subhead-2 subhead-2 subhead-2 subhead-2"
+            "item-1 item-1 item-1 item-2 item-2 item-3 item-3 item-4 item-4 item-4"
+            "item-5 item-5 item-6  item-6 item-6 item-7 item-7 item-7 item-8 item-8"
+            "footer footer footer footer footer footer footer footer footer footer";
+        }  
+      }
+
+
+    .subheader {
+      height: calc(10em + 4vmin);
+    }
+
+    .subhead-1 {
+      grid-area: subhead-1;
+      background-image: url('images/client7.png');
+    }
+
+    .subhead-2 {
+      grid-area: subhead-2;
+      background-image: url('images/client4.png');
+    } 
+
+    .medSpan {
+      height: calc(8em + 2vmin);
+    }
+
+    .smSpan {
+      height: calc(6em + 2vmin);
+    }
+
+    .item-1 {
+      grid-area: item-1;
+      background-image: url('images/client1.png');
+    }
+
+    .item-2 {
+      grid-area: item-2;
+      background-image: url('images/client2.png');
+    }
+
+    .item-3 {
+      grid-area: item-3;
+      background-image: url('images/client3.png');
+    }
+
+    .item-4 {
+      grid-area: item-4;
+      background-image: url('images/client4.png');
+    }
+
+    .item-5 {
+      grid-area: item-5;
+      background-image: url('images/client5.png');
+    }
+
+    .item-6 {
+      grid-area: item-6;
+      background-image: url('images/client6.png');
+    }
+
+    .item-7 {
+      grid-area: item-7;
+      background-image: url('images/client1.png');
+    }
+
+    .item-8 {
+      grid-area: item-8;
+      background-image: url('images/client2.png');
+    }
+
+
 </style>
     </head>
     <body id="bg" style="">
@@ -170,35 +327,24 @@
 				</div>
 			</section>
 
-
-
-<div class="container">
- <!-- Photo Grid -->
-<div class="row"> 
-  <div class="column">
-    <img src="images/gallery-1.jpg" style="width:100%">
-    <img src="images/gallery-2.jpg" style="width:100%">
-   
-  </div>
-  <div class="column">
-    <img src="images/gallery-3.jpg" style="width:100%">
-    <img src="images/gallery-4.jpg" style="width:100%">
-   
-  </div>  
-  <div class="column">
-    <img src="images/gallery-5.jpg" style="width:100%">
-    <img src="images/gallery-6.jpg" style="width:100%">
-    
-  </div>
-  <div class="column">
-    <img src="images/gallery-7.jpg" style="width:100%">
-    <img src="images/gallery-8.jpg" style="width:100%">
-   
-  </div>
-</div>
-
-</div><!-- containter -->
-
+ <div class="flexbox1">
+        <div class="">
+            <div id="grid" class="grid-wrapper">
+                <div id="header-image" class="card header"></div>
+                <div class="card subheader subhead-1"></div>
+                <div class="card subheader subhead-2"></div>
+                <div class="card item-1 medSpan"></div>
+                <div class="card item-2 medSpan"></div>
+                <div class="card item-3 medSpan"></div>
+                <div class="card item-4 medSpan"></div>
+                <div class="card item-5 smSpan"></div>
+                <div class="card item-6 smSpan"></div>
+                <div class="card item-7 smSpan"></div>
+                <div class="card item-8 smSpan"></div>
+                <div class= "card footer"></div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -206,6 +352,8 @@
 
 
 	<!-- Start Footer -->
+			
+			<!-- Start Footer -->
 			<footer id="footer" class="footer dark">
 				<div class="footer-top">
 					<div class="container">
@@ -214,7 +362,7 @@
 								<!-- Address Widget -->
 								<div class="single-widget address">
 									<img src="images/logo.png" alt="logo" style="width: 50%">
-									<p>Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do eiusmod temporia.</p>
+									<p>From Ideation & Consultation to Growing your Business,All the Services you can Ask For.</p>
 									<ul class="list">
 										<li><i class="fa fa-phone"></i>Phone: +91 8000080000</li>
 										<li><i class="fa fa-envelope"></i>Email:<a href="">Info@marketingOJO.com</a></li>
@@ -222,8 +370,7 @@
 									</ul>		
 									<ul class="social">
 										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+										<li><a href="#"><i class="fa fa-instagram"></i></a></li>
 										
 									</ul>
 								</div>
@@ -234,13 +381,13 @@
 								<div class="single-widget links">
 									<h2>Quick Links</h2>
 									<ul class="list">
-										<li><a href="about-us.html"><i class="fa fa-angle-right"></i>About Our Company</a></li>
-										<li><a href="service.html"><i class="fa fa-angle-right"></i>Our services</a></li>
-											<li><a href="customize.html"><i class="fa fa-angle-right"></i>Products</a></li>
-										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IdeaNation</a></li>
-										<li><a href="clients.html"><i class="fa fa-angle-right"></i>Our Clients</a></li>
-										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>Careers</a></li>
-										<li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact Us</a></li>
+										<li><a href="about-us.html"><i class="fa fa-angle-right"></i>ABOUT US</a></li>
+										<li><a href="service.html"><i class="fa fa-angle-right"></i>OUR SERVICES</a></li>
+										<li><a href="customize.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
+										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
+										<li><a href="clients.html"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
+										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>CAREERS</a></li>
+										<li><a href="contact.html"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
 									</ul>
 								</div>
 				
@@ -249,7 +396,7 @@
 							<div class="col-md-4 col-sm-6 col-xs-12">
 								
 								<div class="single-widget photo-gallery">
-									<h2>Photo Gallery</h2>
+									<h2>Customize Products</h2>
 									<ul class="list">
 										<li><a href="images/gallery-1.jpg" data-fancybox="photo"><img src="images/gallery-1.jpg" alt="#"></a></li>
 										<li><a href="images/gallery-2.jpg" data-fancybox="photo"><img src="images/gallery-2.jpg" alt="#"></a></li>
