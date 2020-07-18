@@ -29,26 +29,6 @@
 		<link rel="stylesheet" href="css/skin/skin1.css">
 		<link rel="stylesheet" href="#" id="tromas">
 		    <style type="text/css">
-          @media screen and (max-width: 600px) {
-            body{
-              background-color: black;
-            }
-      .logol img{
-         width: 65%;
-          margin-left: 20%;
-        }
-        .logo img{
-        width: 60%;
-
-      }
-        .address img{
-          width: 25%;
-        }
-        @keyframes example {
-  from {left:100px;}
-  to {left: :0px;}
-}
-      }
      .logo img{
 				 width: 10rem;
   					height: auto;
@@ -57,60 +37,118 @@
 					width: 15rem;
 					height: auto;
 				}
-.clients{
-  display: flex;
-  flex-direction: row;
-  position: relative;
+.client{
+	width: 100%;
+	height: 40rem;
+	z-index: -1;
 }
-.singleclient{
-  display:inline-block;
-      position: relative;
+.city{
+	position: inherit;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/1497.jpg');
+    background-size: cover;
+}
+.tower1{
+	width: 0;
+height: 0;
+border: 0 solid transparent;
+border-right-width: 50px;
+border-left-width: 50px;
+border-bottom: 260px solid #98abf7;
+    position: absolute;
+    bottom: 60px;
+        animation-name: tower1;
+    animation-duration: 2s;
+}
+.tower2{
+	width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 40px;
+    border-left-width: 35px;
+    border-bottom: 380px solid #98abf7;
+    position: absolute;
+    bottom: 60px;
+    margin-left: 120px;
+    animation-name: tower2;
+    animation-duration: 3s;
+}
+.tower3{
+	width: 0;
+height: 0;
+border: 0 solid transparent;
+border-right-width: 50px;
+border-left-width: 50px;
+border-bottom: 260px solid #98abf7;
+    position: absolute;
+    bottom: 60px;
+    margin-left:92%;
+    animation-name: tower3;
+    animation-duration: 2s;
+}
+.tower4{
+	width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 40px;
+    border-left-width: 35px;
+    border-bottom: 380px solid #98abf7;
+    position: absolute;
+    bottom: 60px;
+    margin-left: 83%;
+      animation-name: tower4;
+    animation-duration: 3s;
+}
+
+.circle {
+	position: inherit;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%; /* the magic */
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 auto 40px;
+  margin: 75px -50px 42px;
+
+    background-color: #c3d6fe;
+    box-shadow: 0px 0px 12px #c3d6fe;
 
 
 }
-.singleclient  .c1{
-   position: relative;
-  animation-name: example;
-  animation-duration: 3s;
-  animation-timing-function:cubic-bezier(0, 0.77, 1, 1);
-
+.tower2 .circle img{
+margin-top: 10px; 
 }
-.singleclient  .c2{
-   position: relative;
-
-  animation-name: example;
-  animation-duration: 3s;
-  animation-delay: 3s;
-    animation-timing-function:cubic-bezier(0, 0.77, 1, 1);
+@keyframes tower1 {
+ 
+    0% { margin-left: -10%; }
+  100% { margin-left: 0%; }
 }
-
-.singleclient  .c3{
-   position: relative;
-  animation-name: example;
-  animation-duration:3s;
-    animation-delay: 6s;
-   animation-timing-function:cubic-bezier(0, 0.77, 1, 1);
+@keyframes tower2 {
+ 
+    0% { margin-left: -10%; }
+  100% { margin-left: 120px; }
 }
-
-.singleclient  .c4{
-   position: relative;
-  animation-name: example;
-  animation-duration:3s;
-    animation-delay: 9s;
-   animation-timing-function:cubic-bezier(0, 0.77, 1, 1);
+@keyframes tower3 {
+ 
+   
+    0% {  opacity: 0}
+  100% {  opacity: 1}
 }
-.singleclient  .c5{
-   position: relative;
-  animation-name: example;
-  animation-duration:3s;
-    animation-delay: 12s;
-   animation-timing-function:cubic-bezier(0, 0.77, 1, 1);
+@keyframes tower4 {
+ 
+    0% { margin-left: 92%; }
+  100% { margin-left: 83%; }
 }
-@keyframes example {
-  from {top:180px;}
-  to {top:0px;}
+.footer{
+	z-index: 0;
 }
-
 </style>
     </head>
     <body id="bg" style="">
@@ -196,20 +234,35 @@
 			</header>
 			<!--/ End Header -->
 	
-			<!-- Start Breadcrumbs -->
-		<!-- 	<section class="breadcrumbs">
-				<div class="container">
-					
+
+<section class="client">
+	<div class="city">
+	<div class="tower1">
+		<div class="circle">
+			<img src="images/logo/c1.png">
+		</div>
+	</div>
+	<div class="tower2">
+		<div class="circle">
+			<img src="images/logo/c2.png">
+		</div>
+	</div>
+	<div class="tower3">
+		<div class="circle">
+			<img src="images/logo/c3.png">
+		</div>
+	</div>
+	<div class="tower4">
+		<div class="circle">
+		
+			<img src="images/logo/c4.png">
+	
+		</div>
+	</div>
+	</div>
+</section>
 
 
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>Clients</h2>
-						
-						</div>
-					</div>
-				</div>
-			</section> -->
 
 
 
@@ -217,54 +270,6 @@
 
 
 
-
-<!-- Start Clients -->
-      <section id="clients" class="clients section">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="section-title">
-                <h1>Happy Clients</h1>
-                <p>Contry to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece</p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="client">
-                <!-- Single Clients -->
-                <div class="singleclient">
-                  <a href="#" class="c1" target="_blank"><img src="images/client1.png" alt="#"></a>
-                </div>
-                <!--/ End Single Clients -->
-                <!-- Single Clients -->
-                <div class="singleclient">
-                  <a href="#" class="c2" target="_blank"><img src="images/client2.png" alt="#"></a>
-                </div>
-                <!--/ End Single Clients -->
-                <!-- Single Clients -->
-                <div class="singleclient">
-                  <a href="#" class="c3" target="_blank"><img src="images/client3.png" alt="#"></a>
-                </div>
-                <!--/ End Single Clients -->
-                <!-- Single Clients -->
-                <div class="singleclient">
-                  <a href="#"class="c4" target="_blank"><img src="images/client4.png" alt="#"></a>
-                </div>
-                <!--/ End Single Clients -->
-                <!-- Single Clients -->
-                <div class="singleclient">
-                  <a href="#"class="c5" target="_blank"><img src="images/client1.png" alt="#"></a>
-                </div>
-                <!--/ End Single Clients -->
-                <!-- Single Clients -->
-
-                <!--/ End Single Clients -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
 
