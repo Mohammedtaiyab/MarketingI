@@ -21,10 +21,12 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
 		
 		<!-- Tromas CSS -->
+        <link rel="stylesheet" href="css/idea.css"> 
 		<link rel="stylesheet" href="css/theme-plugins.css">
+      
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="css/responsive.css">	
-		
+	
 		<!-- Tromas Color -->
 		<link rel="stylesheet" href="css/skin/skin1.css">
 		<link rel="stylesheet" href="#" id="tromas">	
@@ -51,210 +53,470 @@
 					width: 15rem;
 					height: auto;
 				}
+				.login {
+  width: 220px;
+}
+
+@media screen and (max-width: 600px) {
+.widget img{
+	width: 58%;
+}
+.widget .login{
+	margin-left:0px;
+  width: 240px;
+}
+}
+/* Reset top and bottom margins from certain elements */
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* The triangle form is achieved by a CSS hack */
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: #28d;
+}
+
+.login-header {
+  background: #28d;
+ padding: 5px;
+    font-size: 1em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.login-container {
+  background: #ebebeb;
+  
+}
+
+/* Every row inside .login-container is defined with p tags */
+.login p {
+  padding: 5px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+/* Text fields' focus effect */
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login input[type="submit"] {
+  background: #28d;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+  background: #17c;
+}
+
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+  border-color: #05a;
+}
+.single-idea{
+	  background: #fff;
+    padding: 0px 10px 10px 10px;
+    position: relative;
+    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.30);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.30);
+    margin-top: 0;
+    text-align: left;
+    overflow: hidden;
+    width: 150%;
+}
+.call-to-action .btn {
+        background-color: transparent;color: white; margin-top: -1px;
+      }
+      .call-to-action .btn a:hover{
+        background-color: transparent;
+      }
+      .blog-head  img{
+              width: 350px;
+                        height: 250px;
+      }
     </style>
     <body id="bg" style="">
 		<div id="layout" class="">
 		
 		
 			<!-- Start Header -->
-			<header id="header" class="header">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-3 col-sm-3 col-xs-12">
-							<!-- Logo -->
-							<div class="logo">
-								<a href="index.html"><img src="images/logo2.png"></a>
-							</div>
-							<!--/ End Logo -->
-							<div class="mobile-nav"></div>
-						</div>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<!-- Header Widget -->
-							<div class="header-widget">
-								<!-- Single Widget -->
-								<div class="single-widget">
-									<i class="fa fa-clock-o"></i>
-									<h4>Timings</h4>
-									<p>24X7</p>
-								</div>
-								<!--/ End Single Widget -->
-								<!-- Single Widget -->
-								<div class="single-widget">
-									<i class="fa fa-envelope"></i>
-									<h4>Email address</h4>
-									<p><a href="mailto:info@marketingojo.com">info@MarketingOJO.com</a></p>
-								</div>
-								<!--/ End Single Widget -->
-								<!-- Single Widget -->
-								<div class="single-widget">
-									<i class="fa fa-phone"></i>
-									<h4>Phone</h4>
-									<p>+91 9136773853</p>
-								</div>
-								<!--/ End Single Widget -->
-							</div>
-							<!--/ End Header Widget -->
-						</div>
-					</div>
-				</div>
-				<!-- Header Inner -->
-				<div class="header-inner">
+					<header id="header" class="header style2">
+				<!-- Topbar -->
+				<div class="topbar">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="topbar-inner">
+									<div class="row">
+										<div class="col-md-8 col-sm-8 col-xs-12">
+											<!-- Contact -->
+											<ul class="contact">
+												<li><i class="fa fa-phone"></i>+91 9136773853</li>
+												<li><i class="fa fa-envelope"></i> <a href="mailto:info@marketingojo.com">info@MarketingOJO.com</a></li>
+											</ul>
+											<!--/ End Contact -->
+										</div>
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<!-- Social -->
+											<ul class="social">
+										<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
+										<li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
+											</ul>
+											<!--/ End Social -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/ End Topbar -->
+				<div class="header-inner">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-2 col-sm-12 col-xs-12">
+								<!-- Logo -->
+								<div class="logo">
+									<a href="index.html"><img src="images/logo2.png" alt="logo"></a>
+								</div>
+								<!--/ End Logo -->
+								<div class="mobile-nav"></div>
+							</div>
+							<div class="col-md-10 col-sm-12 col-xs-12">
 								<div class="nav-area">
 									<!-- Main Menu -->
-									<nav class="mainmenu">
+										<nav class="mainmenu">
 										<div class="collapse navbar-collapse">	
 											<ul class="nav navbar-nav">
-												<li ><a href="index.html">Home</a></li>
+												<li  ><a href="index.html">Home</a></li>
 												<li><a href="about-us.html">About Us</a></li>
 												<li><a href="service.html">Services</a></li>
 												<li><a href="customize.html">Products</a></li>
-												<li class="active" ><a href="ideanation.html">IdeaNation</a></li>					
+												<li class="active"><a href="ideanation.html">IdeaNation</a></li>
 												<li><a href="clients.html">Our Clients</a></li>		
-												<li><a href="career.html">Careers</a></li>			
+												<li><a href="career.html">Careers</a></li>	
 												<li><a href="contact.html">Contact Us</a></li>												
 											</ul>
 										</div>
 									</nav>
 									<!--/ End Main Menu -->
-									<!-- Social -->
-									<ul class="social">
-										<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
-										<li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
-									</ul>
-									<!--/ End Social -->
 								</div>
+							
+						
 							</div>
 						</div>
 					</div>
 				</div>
-				<!--/ End Header Inner -->
 			</header>
-			<!--/ End Header -->
-			<!-- Start Breadcrumbs -->
-		<!-- 	<section class="breadcrumbs">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<h2>IdeaNation</h2>
-							<ul class="bread-list">
-								<li><a href="index.html">Home<i class="fa fa-angle-right"></i></a></li>
-								<li class="active"><a href="ideanation.html">IdeaNation</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section> -->
-			<!--/ End Breadcrumbs -->
-			<!-- Start Services -->
-			<section id="coming-soon" class="coming-soon section">
-			<div class="table">
-				<div class="table-cell">
-					<div class="verticle-lines">
-						<div class="vlines one"></div>
-						<div class="vlines two"></div>
-						<div class="vlines three"></div>
-						<div class="vlines four"></div>
-					</div>
-					<div class="container">
-						<div class="row">
-							<div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2">	
-								<div class="coming-text">
-									<h2>IDEA BEYOND YOUR IMAGINATION</h2>
-									<p>We are coming soon</p>
-								</div>	
-								<div class="coming-time">
-									<div class="clearfix" data-countdown="2021/7/1"></div>
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--/ End Coming Soon -->
-			<!-- Start Footer -->
+	
 		
-			<!-- Start Footer -->
-			<footer id="footer" class="footer dark">
-				<div class="footer-top">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-4 col-sm-6 col-xs-12">
-								<!-- Address Widget -->
-								<div class="single-widget address">
-									<img src="images/logo.png" alt="logo">
-									<p>From Ideation & Consultation to Growing your Business, All the Services you can Ask For.</p>
-									<ul class="list">
-										<li><i class="fa fa-phone"></i>Phone: +91 9136773853</li>
-										<li><i class="fa fa-envelope"></i>Email:<a href="mailto:info@marketingojo.com">Info@marketingOJO.com</a></li>
-										<li><i class="fa fa-map-o"></i>Address: Pune,Maharastra</li>
-									</ul>		
-									<ul class="social">
-									<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
-										<li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
-										
-									</ul>
-								</div>
-								/ End Address Widget
-							</div>	
-							<div class="col-md-4 col-sm-6 col-xs-12">
-							
-								<div class="single-widget links">
-									<h2>Quick Links</h2>
-									<ul class="list">
-										<li><a href="about-us.html"><i class="fa fa-angle-right"></i>ABOUT US</a></li>
-										<li><a href="service.html"><i class="fa fa-angle-right"></i>OUR SERVICES</a></li>
-										<li><a href="customize.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
-										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
-										<li><a href="clients.html"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
-										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>CAREERS</a></li>
-										<li><a href="contact.html"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
-									</ul>
-								</div>
+<section class="idea">
+	<div class="container">
+		<!-- <div class="row">
+			<div class="col-md-4 ide">
+				<img src="images/ideaLogo.png " style="width: 50%">
+		<form class="search-container">
+    <input type="text" id="search-bar" placeholder="Search...">
+    <a href="#"><i class="fa fa-search"></i></a>
+  </form>
+<div class="login">
+  <h2 class="login-header">Log in</h2>
+
+  <form class="login-container">
+    <p><input type="email" placeholder="Email"></p>
+    <p><input type="password" placeholder="Password"></p>
+    <p style="display: flex;"><input type="submit" value="Log in"><input type="button" value="Sign Up"></p>
+       <p ><input type="button" value="Forgot Password"></p>
+  </form>
+</div>
+			</div>
+			
+
+
+
+
+
+			<div class="col-md-8">
+				<div>
+					<ul>
+						<li>
+								<div class="single-idea">
+								<div class="icon"><i class="fa fa-lightbulb-o"></i></div>
+								<h2><a href="service-single.html">Creative Idea</a></h2>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy. Lorem ipsum dolor sit amet</p>
+							</div>
+							</div>
+						</li>
+							<li>
+								<div class="single-idea">
+								<div class="icon"><i class="fa fa-lightbulb-o"></i></div>
+								<h2><a href="service-single.html">Creative Idea</a></h2>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy. Lorem ipsum dolor sit amet</p>
+							</div>
+							</div>
+						</li>
+						<li>
+								<div class="single-idea">
+								<div class="icon"><i class="fa fa-lightbulb-o"></i></div>
+								<h2><a href="service-single.html">Creative Idea</a></h2>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy. Lorem ipsum dolor sit amet</p>
+							</div>
+							</div>
+						</li>
+						<li>
+								<div class="single-idea">
+								<div class="icon"><i class="fa fa-lightbulb-o"></i></div>
+								<h2><a href="service-single.html">Creative Idea</a></h2>
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy. Lorem ipsum dolor sit amet</p>
+							</div>
+							</div>
+						</li>
+					</ul>
+
 				
-							</div>
-					
-							<div class="col-md-4 col-sm-6 col-xs-12">
-								
-								<div class="single-widget photo-gallery">
-									<h2>Customize Products</h2>
-									<ul class="list">
-										<li><a href="images/gallery-1.jpg" data-fancybox="photo"><img src="images/gallery-1.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-2.jpg" data-fancybox="photo"><img src="images/gallery-2.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-3.jpg" data-fancybox="photo"><img src="images/gallery-3.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-4.jpg" data-fancybox="photo"><img src="images/gallery-4.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-5.jpg" data-fancybox="photo"><img src="images/gallery-5.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-6.jpg" data-fancybox="photo"><img src="images/gallery-6.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-7.jpg" data-fancybox="photo"><img src="images/gallery-7.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-8.jpg" data-fancybox="photo"><img src="images/gallery-8.jpg" alt="#"></a></li>
-									
-									</ul>
-								</div>
-							
-							</div>
-						</div>
-					</div> 
-				</div> 
-				<div class="footer-bottom">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12 col-sm-12 col-xs-12">
-								copyright
-								<div class="copyright">
-									<p>&copy; 2020 All Right Reserved.</p>
-								</div>
-							
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+			</div>
+		</div> -->
+		    <div class="row">
+      <div class="col-md-3 col-sm-6"> 
+        <!-- Side Bar start -->
+        <div class="sidebar"> 
+          <!-- Jobs By Title -->
+          <div class="widget">
+           	<img src="images/ideaLogo.png">
+        </div>
+          
+          <!-- Jobs By City -->
+          <div class="widget">
+           <form class="search-container" style="margin-left: 35px;">
+    <input type="text" id="search-bar" placeholder="Search...">
+    <a href="#"><i class="fa fa-search"></i></a>
+  </form>
+   </div>
+          <!-- Jobs By City end--> 
+          
+          <!-- Jobs By Experience -->
+          <div class="widget">
+           <div class="login">
+  <h2 class="login-header">Log in</h2>
+
+  <form class="login-container">
+    <p><input type="email" placeholder="Email"></p>
+    <p><input type="password" placeholder="Password"></p>
+    <p style="display: flex;"><input type="submit" value="Log in"><input type="button" value="Sign Up"></p>
+       <p ><input type="button" value="Forgot Password"></p>
+  </form>
+</div>
+ </div>
+     <!-- button end--> 
+        </div>
+        <!-- Side Bar end --> 
+      </div>
+      <div class="col-md-6 col-sm-12"> 
+        <!-- Search List -->
+        <ul class="searchList">
+          <!-- job start -->
+          <li>
+              <div class="row">
+              <div class="col-md-8 col-sm-8">
+              <div class="jobimg"><img src="images/icon/1.png"></div>
+                <div class="jobinfo">
+                  <h3><a href="#.">TOPIC OF IDEA</a></h3>
+                  <div class="companyName"><a href="#.">BRIEF ABOUT THE IDEA</a></div>
+                  <div class="location"><label class="freelance"></div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <div class="listbtn"><a href="#.">Price</a></div>
+              </div>
+            </div>
+          
+          </li>
+          <!-- job end --> 
+          
+          <!-- job start -->
+           <li>
+              <div class="row">
+              <div class="col-md-8 col-sm-8">
+              <div class="jobimg"><img src="images/icon/1.png"></div>
+                <div class="jobinfo">
+                  <h3><a href="#.">TOPIC OF IDEA</a></h3>
+                  <div class="companyName"><a href="#.">BRIEF ABOUT THE IDEA</a></div>
+                  <div class="location"><label class="freelance"></div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <div class="listbtn"><a href="#.">Price</a></div>
+              </div>
+            </div>
+          
+          </li>
+            <li>
+              <div class="row">
+              <div class="col-md-8 col-sm-8">
+              <div class="jobimg"><img src="images/icon/1.png"></div>
+                <div class="jobinfo">
+                  <h3><a href="#.">TOPIC OF IDEA</a></h3>
+                  <div class="companyName"><a href="#.">BRIEF ABOUT THE IDEA</a></div>
+                  <div class="location"><label class="freelance"></div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <div class="listbtn"><a href="#.">Price</a></div>
+              </div>
+            </div>
+          
+          </li>
+          <!-- job end --> 
+          
+          <!-- job start -->
+          
+        </ul>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!-- Start Footer -->
+		  <!-- Start Footer -->
+      <footer id="footer" class="footer dark">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <!-- Address Widget -->
+                <div class="single-widget address logo">
+                  <img src="images/logo.png" alt="logo">
+                  <p>From Ideation & Consultation To Growing Your Business, All The Services You Can Ask For.</p>
+                  <ul class="list">
+                    <li><i class="fa fa-phone"></i>Phone:+91 9136773853</li>
+                    <li><i class="fa fa-envelope"></i>Email:<a href="">Info@marketingOJO.com</a></li>
+                    <li><i class="fa fa-map-o"></i>Address: Pune, Maharastra</li>
+                  </ul>   
+                  <ul class="social">
+                  <li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
+                  </ul>
+                </div>
+                / End Address Widget
+              </div>  
+              <div class="col-md-4 col-sm-6 col-xs-12">
+              
+                <div class="single-widget links">
+                  <h2>Quick Links</h2>
+                  <ul class="list">
+                    <li><a href="about-us.html"><i class="fa fa-angle-right"></i>ABOUT US</a></li>
+                    <li><a href="service.html"><i class="fa fa-angle-right"></i>OUR SERVICES</a></li>
+                    <li><a href="customize.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
+                    <li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
+                    <li><a href="clients.html"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
+                    <li><a href="career.html"><i class="fa fa-angle-right"></i>CAREERS</a></li>
+                    <li><a href="contact.html"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
+                  </ul>
+                </div>
+        
+              </div>
+          
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                
+                <div class="single-widget photo-gallery">
+                  <h2>CustomiSe Products</h2>
+                  <ul class="list">
+                    <li><a href="images/gallery-1.jpg" data-fancybox="photo"><img src="images/post 78.jpg" alt="#"></a></li>
+                    <li><a href="images/gallery-2.jpg" data-fancybox="photo"><img src="images/post 36.jpg" alt="#"></a></li>
+                    <li><a href="images/gallery-3.jpg" data-fancybox="photo"><img src="images/post 21.jpg" alt="#"></a></li>
+                    <li><a href="images/gallery-4.jpg" data-fancybox="photo"><img src="images/post 47.jpg" alt="#"></a></li>
+                    <li><a href="images/gallery-5.jpg" data-fancybox="photo"><img src="images/post 56.jpg" alt="#"></a></li>
+                    <li><a href="images/gallery-6.jpg" data-fancybox="photo"><img src="images/post 68.jpg" alt="#"></a></li>
+                    <li><a href="images/gallery-7.jpg" data-fancybox="photo"><img src="images/post 63.jpg" alt="#"></a></li>
+                    <li><a href="images/gallery-8.jpg" data-fancybox="photo"><img src="images/post 36.jpg" alt="#"></a></li>
+                
+                  </ul>
+                </div>
+              
+              </div>
+            </div>
+          </div> 
+        </div> 
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                copyright
+                <div class="copyright">
+                  <p>&copy; 2020 All Right Reserved.</p>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
 	
 			
 			<!-- Jquery -->

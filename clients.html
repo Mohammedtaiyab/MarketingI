@@ -128,12 +128,12 @@ margin-top: 10px;
 }
 @media screen and (max-width: 600px){
 .tower3{
-	margin-left:170%;
+	margin-left:157%;
 	 animation-name: tower31;
     animation-duration: 2s;
 }
 .tower4{
-margin-left: 130%;
+margin-left: 120%;
  animation-name: tower41;
     animation-duration: 2s;
 }
@@ -141,12 +141,12 @@ margin-left: 130%;
  
    
     0% { margin-left:200%}
-  100% {  margin-left:170%}
+  100% {  margin-left:157%}
 }
 @keyframes tower41 {
  
     0% { margin-left: 200%; }
-  100% { margin-left: 130%; }
+  100% { margin-left: 120%; }
 }
 }
 
@@ -186,6 +186,143 @@ margin-left: 130%;
 .col-xs-6 .r{
 	width: 50%;
 	height: 100%;
+}
+
+/* keyframes definition for WebKit browsers */
+
+@-webkit-keyframes travel {
+  from { left: 0;     }
+  to   { left: 80%; }
+}
+
+@-webkit-keyframes bounce {
+  from, to  {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-out;
+  }
+  50% {
+    bottom: 72%;
+    -webkit-animation-timing-function: ease-in;
+  }
+}
+@-webkit-keyframes bounce1 {
+  from, to  {
+    bottom:  72%;
+    -webkit-animation-timing-function: ease-out;
+  }
+  50% {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+}
+@-webkit-keyframes spin {
+  from {                                     }
+  to   { -webkit-transform: rotateZ(360deg); }
+}
+
+/* keyframes definition for other browsers */
+
+@keyframes travel {
+  from { left: 0;     }
+  to   { left: 93%; }
+}
+
+@keyframes bounce {
+  from, to  {
+    bottom: 0;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    bottom: 72%;
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes bounce2 {
+  from, to  {
+    bottom: 72%;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    bottom: 0px;
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes spin {
+  from {
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* styles for the stage and animated elements */
+
+#stage {
+  position: relative;
+width: 100%;
+    height: 100%;
+  background: #cff;
+}
+
+#traveler {
+  position: absolute;
+  width: 20px;
+   height: 100%;
+
+  -webkit-animation-name: travel;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-duration: 4.8s;
+
+  animation-name: travel;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 4.8s;
+}
+
+#bouncer{
+  position: absolute;
+ width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: red;
+  background: -webkit-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
+  background: -moz-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
+  background: -o-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
+  background: -ms-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
+  background: radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
+
+  -webkit-animation-name: bounce, spin;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 4.2s;
+
+  animation-name: bounce, spin;
+  animation-iteration-count: infinite;
+  animation-duration: 4.2s;
+}
+#bouncer2{
+  position: absolute;
+ width: 100px;
+  height: 100px;
+  border-radius: 50%;
+ 
+  -webkit-animation-name: bounce2, spin;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 4.2s;
+
+  animation-name: bounce2, spin;
+  animation-iteration-count: infinite;
+  animation-duration: 4.2s;
 }
 </style>
     </head>
@@ -277,8 +414,17 @@ margin-left: 130%;
 
 
 <section class="client">
-	<div class="city">
-		<div class="row c" style="width: 100%;height: 100%;">
+	
+
+
+<div id="stage">
+<div id="traveler">
+<div id="bouncer"><img src="images/logo/c1.png"></div>
+<div id="bouncer2">	<img src="images/logo/c2.png"></div>
+</div>
+</div>
+
+	<!-- 	<div class="row c" style="width: 100%;height: 100%;">
 			<div class="col-xs-6"style="width: 50%;height: 100%;" >
 				 <div class="tower1">
 		<div class="circle">
@@ -303,7 +449,7 @@ margin-left: 130%;
 		</div>
 	</div>
 			</div>
-		</div>
+		</div> -->
 	<!--
 	<div class="tower3">
 		<div class="circle">
@@ -311,7 +457,7 @@ margin-left: 130%;
 		</div>
 	</div>
 	 -->
-	</div>
+
 </section>
 
 
@@ -331,25 +477,25 @@ margin-left: 130%;
 	<!-- Start Footer -->
 			
 			<!-- Start Footer -->
+				<!-- Start Footer -->
 			<footer id="footer" class="footer dark">
 				<div class="footer-top">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-4 col-sm-6 col-xs-12">
 								<!-- Address Widget -->
-								<div class="single-widget address">
+								<div class="single-widget address logo">
 									<img src="images/logo.png" alt="logo">
-									<p>From Ideation & Consultation to Growing your Business, All the Services you can Ask For.</p>
+									<p>From Ideation & Consultation To Growing Your Business, All The Services You Can Ask For.</p>
 									<ul class="list">
-										<li><i class="fa fa-phone"></i>Phone: +91 9136773853</li>
-										<li><i class="fa fa-envelope"></i>Email:<a href="mailto:info@marketingojo.com">Info@marketingOJO.com</a></li>
-										<li><i class="fa fa-map-o"></i>Address: Pune,Maharastra</li>
+										<li><i class="fa fa-phone"></i>Phone:+91 9136773853</li>
+										<li><i class="fa fa-envelope"></i>Email:<a href="">Info@marketingOJO.com</a></li>
+										<li><i class="fa fa-map-o"></i>Address: Pune, Maharastra</li>
 									</ul>		
 									<ul class="social">
 									<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
 										<li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
 										<li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
-										
 									</ul>
 								</div>
 								/ End Address Widget
@@ -364,7 +510,7 @@ margin-left: 130%;
 										<li><a href="customize.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
 										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
 										<li><a href="clients.html"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
-										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>CAREERS</a></li>
+										<li><a href="career.html"><i class="fa fa-angle-right"></i>CAREERS</a></li>
 										<li><a href="contact.html"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
 									</ul>
 								</div>
@@ -374,17 +520,17 @@ margin-left: 130%;
 							<div class="col-md-4 col-sm-6 col-xs-12">
 								
 								<div class="single-widget photo-gallery">
-									<h2>Customize Products</h2>
+									<h2>CustomiSe Products</h2>
 									<ul class="list">
-										<li><a href="images/gallery-1.jpg" data-fancybox="photo"><img src="images/gallery-1.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-2.jpg" data-fancybox="photo"><img src="images/gallery-2.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-3.jpg" data-fancybox="photo"><img src="images/gallery-3.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-4.jpg" data-fancybox="photo"><img src="images/gallery-4.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-5.jpg" data-fancybox="photo"><img src="images/gallery-5.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-6.jpg" data-fancybox="photo"><img src="images/gallery-6.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-7.jpg" data-fancybox="photo"><img src="images/gallery-7.jpg" alt="#"></a></li>
-										<li><a href="images/gallery-8.jpg" data-fancybox="photo"><img src="images/gallery-8.jpg" alt="#"></a></li>
-						
+										<li><a href="images/gallery-1.jpg" data-fancybox="photo"><img src="images/post 78.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-2.jpg" data-fancybox="photo"><img src="images/post 36.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-3.jpg" data-fancybox="photo"><img src="images/post 21.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-4.jpg" data-fancybox="photo"><img src="images/post 47.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-5.jpg" data-fancybox="photo"><img src="images/post 56.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-6.jpg" data-fancybox="photo"><img src="images/post 68.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-7.jpg" data-fancybox="photo"><img src="images/post 63.jpg" alt="#"></a></li>
+										<li><a href="images/gallery-8.jpg" data-fancybox="photo"><img src="images/post 36.jpg" alt="#"></a></li>
+								
 									</ul>
 								</div>
 							
