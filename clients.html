@@ -16,7 +16,7 @@
 			<link rel="icon" type="image/png" href="images/favicon.png">	
         <!-- Web Font -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-		
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
 		
@@ -39,291 +39,64 @@
 				}
 .client{
 	width: 100%;
-	height: 40rem;
+	height: 65rem;
 	z-index: -1;
 }
 .city{
 	position: inherit;
     width: 100%;
     height: 100%;
-    background-image: url('images/1497.jpg');
-    background-size: cover;
+    background-image: url("images/poster.png");
+     background-size: cover;
 }
-.tower1{
-	width: 0;
-height: 0;
-border: 0 solid transparent;
-border-right-width: 50px;
-border-left-width: 50px;
-border-bottom: 260px solid #98abf7;
-    position: absolute;
-   top: 40%;
-        animation-name: tower1;
-    animation-duration: 2s;
+.clt,.clt2{
+	position: absolute;
+    bottom: 18%;
+    margin-left:47.5%;
 }
-.tower2{
-	width: 0;
-    height: 0;
-    border: 0 solid transparent;
-    border-right-width: 40px;
-    border-left-width: 35px;
-    border-bottom: 380px solid #98abf7;
- position: absolute;
-       top: -79%;
-    margin-left: 120px;
-    animation-name: tower2;
-    animation-duration: 3s;
+.clt img{
+	width: 20%;
+	 opacity: 1;
 }
-.tower3{
-	width: 0;
-height: 0;
-border: 0 solid transparent;
-border-right-width: 50px;
-border-left-width: 50px;
-border-bottom: 260px solid #98abf7;
-    position: absolute;
-    bottom: -99px;
-    margin-left:185%;
-    animation-name: tower3;
-    animation-duration: 2s;
+.clt2 img{
+	width: 20%;
+	 opacity: 0;
 }
-.tower4{
-	width: 0;
-    height: 0;
-    border: 0 solid transparent;
-    border-right-width: 40px;
-    border-left-width: 35px;
-    border-bottom: 380px solid #98abf7;
-    position: absolute;
-        bottom: -99px;
-    margin-left: 170%;
-      animation-name: tower4;
-    animation-duration: 3s;
-}
-
-.circle {
-	position: inherit;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-  border-radius: 50%; /* the magic */
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  text-align: center;
-  color: white;
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin: 0 auto 40px;
-  margin: 75px -50px 42px;
-
-    background-color: #c3d6fe;
-    box-shadow: 0px 0px 12px #c3d6fe;
+.clt_para2{
+		position: absolute;
+ 		bottom: 35%;
+ 		margin-left:19.5%;
+ 		font-size:18px;
+ 		font-family: 'Noto Sans JP', sans-serif;
+ 		animation: bounceIn 4s 6s infinite;
+    	opacity: 0;
+ 		}
+.clt_para{
+		position: absolute;
+    	bottom: 35%;
+    	margin-left:19.5%;
+    	font-size:18px;
+		font-family: 'Noto Sans JP', sans-serif;
+    	animation: bounceIn 4s 0.1s infinite;
+    
+    	opacity: 0;
+		}
 
 
-}
-
-.tower2 .circle img{
-margin-top: 10px; 
-}
-@media screen and (max-width: 600px){
-.tower3{
-	margin-left:157%;
-	 animation-name: tower31;
-    animation-duration: 2s;
-}
-.tower4{
-margin-left: 120%;
- animation-name: tower41;
-    animation-duration: 2s;
-}
-@keyframes tower31 {
- 
-   
-    0% { margin-left:200%}
-  100% {  margin-left:157%}
-}
-@keyframes tower41 {
- 
-    0% { margin-left: 200%; }
-  100% { margin-left: 120%; }
-}
-}
-
-
-@keyframes tower1 {
- 
-    0% { margin-left: -10%; }
-  100% { margin-left: 0%; }
-}
-@keyframes tower2 {
- 
-    0% { margin-left: -10%; }
-  100% { margin-left: 120px; }
-}
-@keyframes tower3 {
- 
-   
-    0% { margin-left:200%}
-  100% {  margin-left:185%}
-}
-@keyframes tower4 {
- 
-    0% { margin-left: 200%; }
-  100% { margin-left: 170%; }
-}
-.footer{
-	z-index: 0;
-}
-.c{
-	position:inherit;
-	display: grid;
-}
-.col-xs-6 .l{
-	width: 50%;
-	height: 100%;
-}
-.col-xs-6 .r{
-	width: 50%;
-	height: 100%;
-}
-
-/* keyframes definition for WebKit browsers */
-
-@-webkit-keyframes travel {
-  from { left: 0;     }
-  to   { left: 80%; }
-}
-
-@-webkit-keyframes bounce {
-  from, to  {
-    bottom: 0;
-    -webkit-animation-timing-function: ease-out;
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
   }
-  50% {
-    bottom: 72%;
-    -webkit-animation-timing-function: ease-in;
+  60% {
+    transform: scale(1.0);
+    opacity: 1;
   }
-}
-@-webkit-keyframes bounce1 {
-  from, to  {
-    bottom:  72%;
-    -webkit-animation-timing-function: ease-out;
-  }
-  50% {
-    bottom: 0;
-    -webkit-animation-timing-function: ease-in;
-  }
-}
-@-webkit-keyframes spin {
-  from {                                     }
-  to   { -webkit-transform: rotateZ(360deg); }
-}
-
-/* keyframes definition for other browsers */
-
-@keyframes travel {
-  from { left: 0;     }
-  to   { left: 93%; }
-}
-
-@keyframes bounce {
-  from, to  {
-    bottom: 0;
-    animation-timing-function: ease-out;
-  }
-  50% {
-    bottom: 72%;
-    animation-timing-function: ease-in;
-  }
-}
-@keyframes bounce2 {
-  from, to  {
-    bottom: 72%;
-    animation-timing-function: ease-out;
-  }
-  50% {
-    bottom: 0px;
-    animation-timing-function: ease-in;
+  100% {
+    transform: scale(1);
   }
 }
 
-@keyframes spin {
-  from {
-    -moz-transform: rotate(0);
-    -o-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
-  }
-  to {
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-/* styles for the stage and animated elements */
-
-#stage {
-  position: relative;
-width: 100%;
-    height: 100%;
-  background: #cff;
-}
-
-#traveler {
-  position: absolute;
-  width: 20px;
-   height: 100%;
-
-  -webkit-animation-name: travel;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  -webkit-animation-duration: 4.8s;
-
-  animation-name: travel;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-duration: 4.8s;
-}
-
-#bouncer{
-  position: absolute;
- width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: red;
-  background: -webkit-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
-  background: -moz-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
-  background: -o-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
-  background: -ms-radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
-  background: radial-gradient(60% 40%, circle, rgba(255,255,255,0.8), red 50%) red;
-
-  -webkit-animation-name: bounce, spin;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 4.2s;
-
-  animation-name: bounce, spin;
-  animation-iteration-count: infinite;
-  animation-duration: 4.2s;
-}
-#bouncer2{
-  position: absolute;
- width: 100px;
-  height: 100px;
-  border-radius: 50%;
- 
-  -webkit-animation-name: bounce2, spin;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 4.2s;
-
-  animation-name: bounce2, spin;
-  animation-iteration-count: infinite;
-  animation-duration: 4.2s;
-}
 </style>
     </head>
     <body id="bg" style="">
@@ -415,49 +188,20 @@ width: 100%;
 
 <section class="client">
 	
-
-
-<div id="stage">
-<div id="traveler">
-<div id="bouncer"><img src="images/logo/c1.png"></div>
-<div id="bouncer2">	<img src="images/logo/c2.png"></div>
+<div class="city">
+	<div class="clt_para">
+		<p>"First Work for Money when its time to sleep only then you <br> would be sleeping while your money is Working."</p>
+	</div>
+<div class="clt">
+<img src="images/Logo/c1.png">  
 </div>
+<!-- <div class="clt_para2">
+		<p>"The Man Who Asks a Question is a fool for a minute, <br> The Man Who Does Not is Fool for Life."</p>
+	</div>
+<div class="clt2">
+<img src="images/Logo/c2.png">  
+</div> -->
 </div>
-
-	<!-- 	<div class="row c" style="width: 100%;height: 100%;">
-			<div class="col-xs-6"style="width: 50%;height: 100%;" >
-				 <div class="tower1">
-		<div class="circle">
-			<img src="images/logo/c1.png">
-		</div>
-	</div>
-	<div class="tower2">
-		<div class="circle">
-			<img src="images/logo/c2.png">
-		</div>
-	</div>
-			</div><div class="col-xs-6" style="width: 50%;height: 100%;">
-				<div class="tower3">
-		<div class="circle">
-			<img src="images/logo/c3.png">
-		</div>
-	</div><div class="tower4">
-		<div class="circle">
-		
-			<img src="images/logo/c4.png">
-	
-		</div>
-	</div>
-			</div>
-		</div> -->
-	<!--
-	<div class="tower3">
-		<div class="circle">
-			<img src="images/logo/c3.png">
-		</div>
-	</div>
-	 -->
-
 </section>
 
 
