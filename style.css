@@ -2944,19 +2944,19 @@ input:-webkit-autofill:focus {
 	position: relative;
 	overflow: hidden;
 }
-.clients .single-clients img{
-	cursor: pointer;
-	width: 100%;
-	opacity:0.6;
-	height: 155px;
-}
 .clients .clients-slider{
 	margin-top:30px;
 }
 .clients .single-clients a{
 	display:inline-block;
 }
-
+.clients .single-clients img{
+	cursor: pointer;
+	width: 100%;
+	border: 0px solid #ddd;
+	opacity:0.6;
+	height: 155px;
+}
 .clients .single-clients:hover img{
 	opacity:1;
 }
