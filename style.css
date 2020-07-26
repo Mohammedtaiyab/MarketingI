@@ -2953,7 +2953,6 @@ input:-webkit-autofill:focus {
 .clients .single-clients img{
 	cursor: pointer;
 	width: 100%;
-	/*border: 1px solid #ddd;*/
 	opacity:0.6;
 	height: 155px;
 }
