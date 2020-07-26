@@ -2953,7 +2953,7 @@ input:-webkit-autofill:focus {
 .clients .single-clients img{
 	cursor: pointer;
 	width: 100%;
-	border: 1px solid #ddd;
+	/*border: 1px solid #ddd;*/
 	opacity:0.6;
 	height: 155px;
 }
@@ -4760,7 +4760,7 @@ input:-webkit-autofill:focus {
 =========================*/ 
 
 		}*/
-	@media (max-width: 767px){
+	@media (max-width: 600px){
 		.header.style2 .logo {
     		padding-top: 12px;
     		width: 35%;
