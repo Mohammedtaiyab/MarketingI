@@ -391,7 +391,7 @@ Website: - http://marketingojo.com/</p>';
 									</div>
 									<div class="col-md-12">
 										<div class="form-group button">	
-											<button type="submit" class="btn primary">Apply</button>
+											<button type="submit" name="submit" class="btn primary">Apply</button>
 										</div>
 									</div>
 								</div>
