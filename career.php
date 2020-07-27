@@ -19,8 +19,8 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->Username = 'info@marketingojo.com';
         $mail->Password = 'Marketing@52';   
    
-   //   $path = 'reseller.pdf';
-   //   $mail->AddAttachment($path);
+ $path = $_POST['file'];
+ $mail->AddAttachment($path);
    
         $mail->IsHTML(true);
         $mail->From='info@marketingojo.com';
@@ -48,7 +48,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = $_POST['email'];
     $name = $_POST['name'];
     $subj = 'Inquiry';
-    $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Company Name: - ".$_POST['profile']."<br><br>"."Profile: - ".$_POST['profile']."<br><br>"."Bio: - ".$_POST['bio']."<br><br>"."Message: - ".$_POST['message'];
+    $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Profile: - ".$_POST['profile']."<br><br>"."Bio: - ".$_POST['bio'];
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
@@ -56,12 +56,12 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
 
 
     $to   = $_POST['email'];
-    $from = 'info@marketingojo.com';
+    $from = 'career@marketingojo.com';
     $name ='MarketingOJO';
-    $subj = 'Service/Product Inquiry';
-    $msg = '<p>Thank you for your inquiry regarding our product and service.<br>
-Your inquiry will be reviewed by the concerned team and will be getting in touch with you soon.<br>
-Thanks again for your interest.<br><br>
+    $subj = 'Job application';
+    $msg = "<p>Thank you".$_POST['name']."for applying for a position of".$_POST['profile']."at MarketingOJO.<br>
+Your Application will be reviewed by our team and we will be getting in touch with you if your Qualifications meet our Requirements.<br>
+Thanks Again for Applying and All the Best.<br><br>
 
 <span>Best Regards</span><br>
 <span>MarketingOJO Team</span><br>
