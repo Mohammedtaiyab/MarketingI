@@ -73,5 +73,12 @@ Website: - http://marketingojo.com/</p>';
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
-   header("Location: /contact.php");
-?>
+?><html>
+    <head>
+        <title>MarketingOJO</title>
+    </head>
+    <body style="background: black;">
+     <meta http-equiv="refresh" content="0; url='contact.html'" />
+    </body>
+    
+</html>
