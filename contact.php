@@ -48,7 +48,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = $_POST['email'];
     $name = $_POST['name'];
     $subj = 'Inquiry';
-    $msg = "Name: ".$name."<br>"."Email: ".$_POST['email']."<br>"."Contact Number: ".$_POST['contact']."<br>"."Company Name: ".$_POST['company']."<br>"."Services Required:<br>".implode($_POST['service'],'<br>')."<br>"."Message:- ".$_POST['message'];
+    $msg = "Full Name: ".$name."<br>"."Email: ".$_POST['email']."<br>"."Contact Number: ".$_POST['contact']."<br>"."Company Name: ".$_POST['company']."<br>"."Services Required: ".implode($_POST['service'],'<br>')."<br>"."Message:- ".$_POST['message'];
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
@@ -285,7 +285,7 @@ input[type=checkbox]{
 												<li><a href="ideanation.html">IdeaNation</a></li>
 												<li><a href="clients.html">Our Clients</a></li>		
 												<li><a href="career.html">Careers</a></li>	
-												<li class="active"><a href="contact.html">Contact Us</a></li>												
+												<li class="active"><a href="contact.php">Contact Us</a></li>												
 											</ul>
 										</div>
 									</nav>
