@@ -1,27 +1,14 @@
+
 <?php
-if(isset($_POST["submit"])){
-	require "PHPMailer/PHPMailerAutoload.php";
-function smtpmailer($to, $from, $from_name, $subject, $body)
-    {
-    	$num=0;
-    	$name=$_POST['name'];
-		$email=$_POST['email'];
-		$phone=$_POST['contact'];
-		$profile=$_POST['profile'];
-		$bio=$_POST['bio'];
-        $mail = new PHPMailer();
-        $mail->IsSMTP();
-        $mail->SMTPAuth = true; 
- 
-        $mail->SMTPSecure = 'ssl'; 
-        $mail->Host = 'mail.marketingojo.com';
-        $mail->Port = 465;  
-        $mail->Username = 'info@marketingojo.com';
-        $mail->Password = 'Marketing@52';   
-   
-$path = 'upload/' . $_FILES["resume"]["name"];
- move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
- 		$email_message = '<h2>Contact Request Submitted</h2>
+$statusMsg='';
+if(isset($_FILES["resume"]["name"])){
+   $email = $_POST['email'];
+    $name = $_POST['name'];
+    $subject = $_POST['profile'];
+    $message = $_POST['bio'];
+$fromemail =  $email;
+$subject="Uploaded file attachment";
+$email_message = '<h2>Contact Request Submitted</h2>
                     <p><b>Name:</b> '.$name.'</p>
                     <p><b>Email:</b> '.$email.'</p>
                     <p><b>Subject:</b> '.$subject.'</p>
@@ -55,7 +42,8 @@ if($_FILES["resume"]["name"]!= ""){
     "Content-Transfer-Encoding: base64\n\n" .
     $strContent  .= "\n\n" .
     "--{$mime_boundary}--\n";
-}$toemail="info@marketingojo.com"; 
+}
+$toemail="info@marketingojo.com"; 
  
 if(mail($toemail, $subject, $email_message, $headers)){
    $statusMsg= "Email send successfully with attachment";
@@ -63,7 +51,32 @@ if(mail($toemail, $subject, $email_message, $headers)){
    $statusMsg= "Not sent";
 }
 }
+   ?>
+
+<?php
+if(isset($_POST["submit"])){
+	require "PHPMailer/PHPMailerAutoload.php";
+function smtpmailer($to, $from, $from_name, $subject, $body)
+    {
+    	$num=0;
+    	$name=$_POST['name'];
+		$email=$_POST['email'];
+		$phone=$_POST['contact'];
+		$profile=$_POST['profile'];
+		$bio=$_POST['bio'];
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true; 
+ 
+        $mail->SMTPSecure = 'ssl'; 
+        $mail->Host = 'mail.marketingojo.com';
+        $mail->Port = 465;  
+        $mail->Username = 'info@marketingojo.com';
+        $mail->Password = 'Marketing@52';   
    
+$path = 'upload/' . $_FILES["resume"]["name"];
+ move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
+ 		
  		
         $mail->IsHTML(true);
         $mail->From='info@marketingojo.com';
@@ -71,7 +84,7 @@ if(mail($toemail, $subject, $email_message, $headers)){
         $mail->Sender=$from;
         $mail->Subject = $subject;
         $mail->Body = $body;
-        $mail->AddAttachment($path);
+        $mail->AddAttachment($path);  
         $mail->AddAddress($to);
         if(!$mail->Send())
         {
