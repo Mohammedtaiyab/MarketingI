@@ -74,12 +74,13 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->AddAddress($to);
         if(!$mail->Send())
         {
-            header("Location: contact.html");
+            header("Location: contact.php");
             $error ="Please try Later, Error Occured while Processing...";
             return $error; 
         }
         else 
         {
+              header("Location: contact.php");
             $error = "Thanks You !! Your email is sent.";  
             return $error;
         }
@@ -90,7 +91,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = $_POST['email'];
     $name = $_POST['name'];
     $subj = 'Inquiry';
-    $msg = "Name :".$name."<br>"."Phone :".$_POST['contact']."<br>"."Company :".$_POST['company']."<br>"."Services Required".implode(',', $_POST['service'])."<br>"."Wrote the following :"."<br>".$_POST['message'];
+    $msg = "Name :".$name."<br>"."Phone :".$_POST['contact']."<br>"."Company :".$_POST['company']."<br>"."Services Required:<br>".implode(',', $_POST['service'])."<br>"."Wrote the following :"."<br>".$_POST['message'];
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
