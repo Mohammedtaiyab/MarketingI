@@ -61,11 +61,11 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
    
         $mail->IsHTML(true);
         $mail->From='info@marketingojo.com';
-        $mail->FromName=$_POST['name'];
-        $mail->Sender=$_POST['name'];
+     	 $mail->FromName=$from_name;
+        $mail->Sender=$from;
         $mail->AddReplyTo($from, $from_name);
-        $mail->Subject ='Enquiry';
-        $mail->Body =$_POST['message'];
+        $mail->Subject = $subject;
+        $mail->Body = $body;
         $mail->AddAddress($to);
         if(!$mail->Send())
         {
