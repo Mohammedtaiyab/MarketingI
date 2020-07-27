@@ -453,15 +453,13 @@ $msg=$_POST['message'];
 $message="Name :".$name."\n"."Phone :".$phone."\n"."Company :".$company."\n"."Wrote the following :"."\n\n".$msg;
 $emailaddress = "bforus.in@gmail.com";
 echo $message;
-$mail=mail($emailaddress, $subject, $message, "From:client@bforus.com");
+$mail=mail($emailaddress, $subject, $message, "From:client@ecotionery.com");
 if ($mail){
 echo alert("Message has been sent");
 }
 else{
 echo"Message not sent this time";
 }
-echo"Message not sent this time";
-
 }
 ?>
 			<!--/ End footer -->
