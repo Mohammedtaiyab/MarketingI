@@ -2,7 +2,7 @@
 
 <?php
 require "PHPMailer/PHPMailerAutoload.php";
-
+if(isset($_POST["submit"])){
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
     	$name=$_POST['name'];
@@ -73,6 +73,7 @@ Website: - http://marketingojo.com/</p>';
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
+}
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -322,7 +323,7 @@ input[type=checkbox]{
 						<!-- Contact Form -->
 						
 						<div class="col-md-8 col-sm-6 col-xs-12">
-							<form class="form" method="post" action="mailhandler.php">
+							<form class="form" method="post" action="contact.php">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
