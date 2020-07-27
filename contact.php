@@ -1,8 +1,9 @@
 
 
 <?php
-require "PHPMailer/PHPMailerAutoload.php";
+
 if(isset($_POST["submit"])){
+	require "PHPMailer/PHPMailerAutoload.php";
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
     	$name=$_POST['name'];
