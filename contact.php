@@ -4,7 +4,6 @@
 
 if(isset($_POST["submit"])){
 	require "PHPMailer/PHPMailerAutoload.php";
-	echo"In the Zone!";
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
     	$name=$_POST['name'];
@@ -51,7 +50,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = $_POST['email'];
     $name = $_POST['name'];
     $subj = 'Inquiry';
-    $msg = "Name: ".$name."<br>"."Email: ".$_POST['email']."<br>"."Contact Number: ".$_POST['contact']."<br>"."Company Name: ".$_POST['company']."<br>"."Services Required:<br>".implode('<br>', $_POST['service'])."<br>"."Wrote the following :"."<br>".$_POST['message'];
+    $msg = "Name: ".$name."<br>"."Email: ".$_POST['email']."<br>"."Contact Number: ".$_POST['contact']."<br>"."Company Name: ".$_POST['company']."<br>"."Services Required:<br>".implode($_POST['service'],'<br>')."<br>"."Message:- ".$_POST['message'];
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
@@ -323,7 +322,7 @@ input[type=checkbox]{
 				
 					<div class="row">
 						<!-- Contact Form -->
-						
+						 <center><h2 style="padding-top:70px;color: white;"><?php echo $error; ?></h2></center>
 						<div class="col-md-8 col-sm-6 col-xs-12">
 							<form class="form" method="post" action="contact.php">
 								<div class="row">
