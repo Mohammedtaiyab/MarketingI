@@ -22,13 +22,14 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
 $path = 'upload/' . $_FILES["resume"]["name"];
  move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
  		
- 		$mail->AddAttachment($path);  
+ 		
         $mail->IsHTML(true);
         $mail->From='info@marketingojo.com';
      	 $mail->FromName=$from_name;
         $mail->Sender=$from;
         $mail->Subject = $subject;
         $mail->Body = $body;
+        $mail->AddAttachment($path);
         $mail->AddAddress($to);
         if(!$mail->Send())
         {
@@ -381,7 +382,7 @@ Website: - http://marketingojo.com/</p>";
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Resume</label>
-											<input type="file" name="resume" placeholder="Resume" required="required">
+									<input type="file" name="resume" placeholder="Resume" accept=".doc,.docx, .pdf" required />
 										</div>
 									</div>
 									<div class="col-md-12">
