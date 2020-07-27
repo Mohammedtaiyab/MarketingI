@@ -68,7 +68,7 @@ Thanks Again for Applying and All the Best.<br><br>
 To know more about our services and products please visit: - <br>
 Instagram: - https://www.instagram.com/marketingojo/<br>
 Facebook: - https://www.facebook.com/marketingojo/<br>
-Website: - http://marketingojo.com/</p>';
+Website: - http://marketingojo.com/</p>";
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
