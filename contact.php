@@ -404,7 +404,7 @@ input[type=checkbox]{
 									</div>
 									<div class="col-md-12">
 										<div class="form-group button">	
-											<button type="submit" class="btn primary">Send</button>
+											<button type="submit" name="submit" class="btn primary">Send</button>
 										</div>
 									</div>
 								</div>
