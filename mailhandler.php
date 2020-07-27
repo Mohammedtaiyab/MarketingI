@@ -98,7 +98,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
 
     $to   = $_POST['email'];
     $from = 'info@marketingojo.com';
-    $name = $_POST['name'];
+    $name ='MarketingOJO';
     $subj = 'Service/Product inquiry';
     $msg = 'Thank you for your inquiry regarding our product and service.
 Your inquiry will be reviewed by the concerned team and will be getting in touch with you soon.
