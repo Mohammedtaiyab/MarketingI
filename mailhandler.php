@@ -89,7 +89,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = $_POST['email'];
     $name = $_POST['name'];
     $subj = 'Inquiry';
-    $msg = "Name :".$name."\n"."Phone :".$_POST['contact']."\n"."Company :".$_POST['company']."\n"."Wrote the following :"."\n\n".$_POST['message'];
+    $msg = "Name :".$name."\n"."Phone :".$_POST['contact']."<br>"."Company :".$_POST['company']."\n"."Wrote the following :"."\n\n".$_POST['message'];
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
@@ -100,9 +100,9 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = 'info@marketingojo.com';
     $name ='MarketingOJO';
     $subj = 'Service/Product inquiry';
-    $msg = 'Thank you for your inquiry regarding our product and service.
+    $msg = '<p>Thank you for your inquiry regarding our product and service.
 Your inquiry will be reviewed by the concerned team and will be getting in touch with you soon.
-Thanks again for your interest.
+Thanks again for your interest.</p>
 
 Best Regards
 MarketingOJO Team
