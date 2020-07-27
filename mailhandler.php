@@ -1,5 +1,5 @@
-<!-- <?php
-	if(isset($_POST['submit'])){
+<?php
+/*	if(isset($_POST['submit'])){
 		$name=$_POST['name'];
 		$email=$_POST['email'];
 		$phone=$_POST['contact'];
@@ -17,11 +17,10 @@
 		else{
 			echo "Something went wrong!";
 		}
-	}
-?> -->
-
-<!-- <?php
-if(isset($_POST["submit"])){
+	}*/
+?>
+<?php
+/*if(isset($_POST["submit"])){
 $subject = $_POST['name'];
 $name=$_POST['name'];
 $email=$_POST['email'];
@@ -40,9 +39,8 @@ echo"Message not sent this time";
 }
 echo"Message not sent this time";
 
-}
+}*/
 ?>
- -->
 <?php
 require "PHPMailer/PHPMailerAutoload.php";
 
