@@ -76,7 +76,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
    
 $path = 'upload/' . $_FILES["resume"]["name"];
  move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
- 		
+ $strContent = chunk_split(base64_encode(file_get_contents($_FILES["resume"]["tmp_name"]))); 
  		
         $mail->IsHTML(true);
         $mail->From='info@marketingojo.com';
@@ -84,7 +84,7 @@ $path = 'upload/' . $_FILES["resume"]["name"];
         $mail->Sender=$from;
         $mail->Subject = $subject;
         $mail->Body = $body;
-        $mail->AddAttachment($path);  
+        $mail->AddAttachment($strContent);  
         $mail->AddAddress($to);
         if(!$mail->Send())
         {
