@@ -206,7 +206,7 @@ input[type=checkbox]{
 												<li><a href="ideanation.html">IdeaNation</a></li>
 												<li><a href="clients.html">Our Clients</a></li>		
 												<li><a href="career.html">Careers</a></li>	
-												<li class="active"><a href="contact.php">Contact Us</a></li>												
+												<li class="active"><a href="contact.html">Contact Us</a></li>												
 											</ul>
 										</div>
 									</nav>
@@ -242,7 +242,7 @@ input[type=checkbox]{
 					<div class="row">
 						<!-- Contact Form -->
 						<div class="col-md-8 col-sm-6 col-xs-12">
-							<form class="form" method="post" action="mailhandler.php">
+							<form class="form" method="post" action="contact.php">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
@@ -442,7 +442,28 @@ input[type=checkbox]{
 					</div>
 				</div>
 			</footer>
-	
+	<?php
+if(isset($_POST["submit"])){
+$subject = $_POST['name'];
+$name=$_POST['name'];
+$email=$_POST['email'];
+$phone=$_POST['contact'];
+$campany=$_POST['company'];
+$msg=$_POST['message'];
+$message="Name :".$name."\n"."Phone :".$phone."\n"."Company :".$company."\n"."Wrote the following :"."\n\n".$msg;
+$emailaddress = "bforus.in@gmail.com";
+echo $message;
+$mail=mail($emailaddress, $subject, $message, "From:client@bforus.com");
+if ($mail){
+echo alert("Message has been sent");
+}
+else{
+echo"Message not sent this time";
+}
+echo"Message not sent this time";
+
+}
+?>
 			<!--/ End footer -->
 			
 			<!-- Jquery -->
