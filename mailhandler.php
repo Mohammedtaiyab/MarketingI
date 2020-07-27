@@ -20,7 +20,7 @@
 	}
 ?> -->
 
-<?php
+<!-- <?php
 if(isset($_POST["submit"])){
 $subject = $_POST['name'];
 $name=$_POST['name'];
@@ -42,3 +42,71 @@ echo"Message not sent this time";
 
 }
 ?>
+ -->
+<?php
+require "PHPMailer/PHPMailerAutoload.php";
+
+function smtpmailer($to, $from, $from_name, $subject, $body)
+    {
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true; 
+ 
+        $mail->SMTPSecure = 'ssl'; 
+        $mail->Host = 'mail.marketingojo.com';
+        $mail->Port = 465;  
+        $mail->Username = 'info@marketingojo.com';
+        $mail->Password = 'Marketing@52';   
+   
+   //   $path = 'reseller.pdf';
+   //   $mail->AddAttachment($path);
+   
+        $mail->IsHTML(true);
+        $mail->From=$_POST['email'];
+        $mail->FromName=$_POST['name'];
+        $mail->Sender$_POST['name'];;
+        $mail->AddReplyTo($from, $from_name);
+        $mail->Subject ='Enquiry';
+        $mail->Body =$_POST['message'];
+        $mail->AddAddress($to);
+        if(!$mail->Send())
+        {
+            $error ="Please try Later, Error Occured while Processing...";
+            return $error; 
+        }
+        else 
+        {
+            $error = "Thanks You !! Your email is sent.";  
+            return $error;
+        }
+    }
+    
+    $to   = $_POST['email'];
+    $from = 'info@marketingojo.com';
+    $name = $_POST['name'];
+    $subj = 'Service/Product inquiry';
+    $msg = 'Thank you for your inquiry regarding our product and service.
+Your inquiry will be reviewed by the concerned team and will be getting in touch with you soon.
+Thanks again for your interest.
+
+Best Regards
+MarketingOJO Team
+To know more about our services and products please visit: - 
+Instagram: - https://www.instagram.com/marketingojo/
+Facebook: - https://www.facebook.com/marketingojo/
+Website: - http://marketingojo.com/';
+  
+
+    $error=smtpmailer($to,$from, $name ,$subj, $msg);
+    
+?>
+
+<html>
+    <head>
+        <title>PHPMailer 5.2 testing from DomainRacer</title>
+    </head>
+    <body style="background: black;">
+        <center><h2 style="padding-top:70px;color: white;"><?php echo $error; ?></h2></center>
+    </body>
+    
+</html>
