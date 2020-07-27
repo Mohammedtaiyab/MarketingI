@@ -60,7 +60,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
    //   $mail->AddAttachment($path);
    
         $mail->IsHTML(true);
-        $mail->From=$_POST['email'];
+        $mail->From='info@marketingojo.com';
         $mail->FromName=$_POST['name'];
         $mail->Sender=$_POST['name'];
         $mail->AddReplyTo($from, $from_name);
