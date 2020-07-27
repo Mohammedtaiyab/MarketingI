@@ -1,28 +1,6 @@
 
 <?php
 if(isset($_POST["submit"])){
-$subject = $_POST['name'];
-$name=$_POST['name'];
-$email=$_POST['email'];
-$phone=$_POST['contact'];
-$campany=$_POST['company'];
-$msg=$_POST['message'];
-$message="Name :".$name."\n"."Phone :".$phone."\n"."Company :".$company."\n"."Wrote the following :"."\n\n".$msg;
-$emailaddress = "bforus.in@gmail.com";
-echo $message;
-$mail=mail($emailaddress, $subject, $message, "From:client@bforus.com");
-if ($mail){
-echo alert("Message has been sent");
-}
-else{
-echo"Message not sent this time";
-}
-echo"Message not sent this time";
-
-}*/
-?>
-<?php
-if(isset($_POST["submit"])){
 require "PHPMailer/PHPMailerAutoload.php";
 
 function smtpmailer($to, $from, $from_name, $subject, $body)
