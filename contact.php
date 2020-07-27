@@ -19,7 +19,7 @@ echo"Message not sent this time";
 }
 echo"Message not sent this time";
 
-}*/
+}
 ?>
 <?php
 if(isset($_POST["submit"])){
