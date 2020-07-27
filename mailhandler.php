@@ -32,13 +32,13 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->AddAddress($to);
         if(!$mail->Send())
         {
-            header("Location: /contact.php");
+       
             $error ="Please try Later, Error Occured while Processing...";
             return $error; 
         }
         else 
         {
-              header("Location: /contact.php");
+           
             $error = "Thanks You !! Your email is sent.";  
             return $error;
         }
@@ -66,12 +66,12 @@ Thanks again for your interest.<br>
 
 <span>Best Regards</span><br>
 <span>MarketingOJO Team</span><br>
-To know more about our services and products please visit: - 
-Instagram: - https://www.instagram.com/marketingojo/
-Facebook: - https://www.facebook.com/marketingojo/
+To know more about our services and products please visit: - <br>
+Instagram: - https://www.instagram.com/marketingojo/<br>
+Facebook: - https://www.facebook.com/marketingojo/<br>
 Website: - http://marketingojo.com/</p>';
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
-
+   header("Location: /contact.php");
 ?>
