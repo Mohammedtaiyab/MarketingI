@@ -32,14 +32,14 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         if(!$mail->Send())
         {
        
-            $error ="Please try Later, Error Occured while Processing...";
-            return $error; 
+           // $error ="Please try Later, Error Occured while Processing...";
+           // return $error; 
         }
         else 
         {
            
-            $error = "Thanks You !! Your email is sent.";  
-            return $error;
+          //  $error = "Thanks You !! Your email is sent.";  
+           // return $error;
         }
     }
     
