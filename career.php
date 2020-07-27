@@ -19,9 +19,10 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->Username = 'info@marketingojo.com';
         $mail->Password = 'Marketing@52';   
    
- $path = $_FILES['resume']['name'];
- $mail->AddAttachment($path);
-   
+$path = 'upload/' . $_FILES["resume"]["name"];
+ move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
+ 		
+ 		$mail->AddAttachment($path);  
         $mail->IsHTML(true);
         $mail->From='info@marketingojo.com';
      	 $mail->FromName=$from_name;
