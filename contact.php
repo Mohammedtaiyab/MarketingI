@@ -4,6 +4,7 @@
 
 if(isset($_POST["submit"])){
 	require "PHPMailer/PHPMailerAutoload.php";
+	echo"In the Zone!";
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
     	$name=$_POST['name'];
