@@ -77,7 +77,7 @@ Website: - http://marketingojo.com/</p>';
     <head>
         <title>MarketingOJO</title>
     </head>
-    <body style="background: black;">
+    <body>
      <meta http-equiv="refresh" content="0; url='contact.html'" />
     </body>
     

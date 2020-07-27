@@ -2954,11 +2954,11 @@ input:-webkit-autofill:focus {
 	cursor: pointer;
 	width: 100%;
 	border: 0px solid #ddd;
-	opacity:0.6;
+	opacity:1;
 	height: 155px;
 }
 .clients .single-clients:hover img{
-	opacity:1;
+	transform: scale(1.2);
 }
 .clients .single-clients img {
 	cursor: move;
@@ -3036,8 +3036,8 @@ input:-webkit-autofill:focus {
 	transition: all 0.4s ease;
 }
 .blog-main .single-blog:hover .blog-head:before{
-	opacity:0.9;
-	visibility:visible;
+	/*opacity:0.9;
+	visibility:visible;*/
 }
 .blog-main .single-blog .link {
 	position: absolute;

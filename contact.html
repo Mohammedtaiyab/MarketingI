@@ -141,6 +141,9 @@ input[type=checkbox]{
 	    display: grid;
     grid-template-columns: auto auto auto auto auto auto;
 }
+.form-group label{
+	font-size: 18px;
+}
 		</style>	
     </head>
     <body id="bg" style="">
@@ -206,7 +209,7 @@ input[type=checkbox]{
 												<li><a href="ideanation.html">IdeaNation</a></li>
 												<li><a href="clients.html">Our Clients</a></li>		
 												<li><a href="career.html">Careers</a></li>	
-												<li class="active"><a href="contact.php">Contact Us</a></li>												
+												<li class="active"><a href="contact.html">Contact Us</a></li>												
 											</ul>
 										</div>
 									</nav>
@@ -270,8 +273,8 @@ input[type=checkbox]{
 										</div>
 									</div>
 									<div class="col-md-12">
-										<div class="grid">
-												<label>Select Services</label>
+										<div class="grid ">
+												<label style="font-size: 18px;">Services</label>
 											<div class="form-check form-check-inline">
   												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox1" value="Ideation & Consultation">
   												<label class="form-check-label" for="inlineCheckbox1">Ideation & Consultation</label>
@@ -314,7 +317,7 @@ input[type=checkbox]{
 										</div>
 									</div>
 									<div class="col-md-12">
-										<div class="form-group">
+										<div class="form-group"style="margin-top: 20px;">
 												<label>Message</label>
 											<textarea name="message" rows="5" placeholder="Type Your Message Here" ></textarea>
 										</div>
