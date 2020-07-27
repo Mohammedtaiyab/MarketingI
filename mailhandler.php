@@ -89,7 +89,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = $_POST['email'];
     $name = $_POST['name'];
     $subj = 'Inquiry';
-    $msg = "Name :".$name."\n"."Phone :".$phone."\n"."Company :".$company."\n"."Wrote the following :"."\n\n".$msg;
+    $msg = "Name :".$name."\n"."Phone :".$_POST['contact']."\n"."Company :".$_POST['company']."\n"."Wrote the following :"."\n\n".$_POST['message'];
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
