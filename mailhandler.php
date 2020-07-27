@@ -37,5 +37,7 @@ echo alert("Message has been sent");
 else{
 echo"Message not sent this time";
 }
+echo"Message not sent this time";
+
 }
 ?>
