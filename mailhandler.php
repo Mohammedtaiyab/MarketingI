@@ -62,7 +62,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->IsHTML(true);
         $mail->From=$_POST['email'];
         $mail->FromName=$_POST['name'];
-        $mail->Sender$_POST['name'];;
+        $mail->Sender$_POST['name'];
         $mail->AddReplyTo($from, $from_name);
         $mail->Subject ='Enquiry';
         $mail->Body =$_POST['message'];
