@@ -48,7 +48,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = $_POST['email'];
     $name = $_POST['name'];
     $subj = 'Inquiry';
-    $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Company Name: - ".$_POST['company']."<br><br>"."Services: - ".implode('<br>&nbsp;&nbsp;',$_POST['service'])."<br><br>"."Message: - ".$_POST['message'];
+    $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Company Name: - ".$_POST['company']."<br><br>"."Services: - ".implode('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',$_POST['service'])."<br><br>"."Message: - ".$_POST['message'];
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
