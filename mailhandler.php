@@ -1,26 +1,6 @@
-<?php
-/*	if(isset($_POST['submit'])){
-		$name=$_POST['name'];
-		$email=$_POST['email'];
-		$phone=$_POST['contact'];
-		$campany=$_POST['company'];
-		$msg=$_POST['message'];
 
-		$to='bforus.in@gmail.com'; // Receiver Email ID, Replace with your email ID
-		$subject='Form Submission';
-		$message="Name :".$name."\n"."Phone :".$phone."\n"."Company :".$company."\n"."Wrote the following :"."\n\n".$msg;
-		$headers="From: ".$email;
-
-		if(mail($to, $subject, $message, "From:client@marketingojo.com")){
-			echo "<h1>Sent Successfully! Thank you"." ".$name.", We will contact you shortly!</h1>";
-		}
-		else{
-			echo "Something went wrong!";
-		}
-	}*/
-?>
 <?php
-/*if(isset($_POST["submit"])){
+if(isset($_POST["submit"])){
 $subject = $_POST['name'];
 $name=$_POST['name'];
 $email=$_POST['email'];
@@ -42,6 +22,7 @@ echo"Message not sent this time";
 }*/
 ?>
 <?php
+if(isset($_POST["submit"])){
 require "PHPMailer/PHPMailerAutoload.php";
 
 function smtpmailer($to, $from, $from_name, $subject, $body)
@@ -74,13 +55,13 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->AddAddress($to);
         if(!$mail->Send())
         {
-            header("Location: contact.php");
+            header("Location: /contact.php");
             $error ="Please try Later, Error Occured while Processing...";
             return $error; 
         }
         else 
         {
-              header("Location: contact.php");
+              header("Location: /contact.php");
             $error = "Thanks You !! Your email is sent.";  
             return $error;
         }
@@ -115,15 +96,5 @@ Website: - http://marketingojo.com/</p>';
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
-    
+}
 ?>
-
-<html>
-    <head>
-        <title>PHPMailer 5.2 testing from DomainRacer</title>
-    </head>
-    <body style="background: black;">
-        <center><h2 style="padding-top:70px;color: white;"><?php echo $error; ?></h2></center>
-    </body>
-    
-</html>

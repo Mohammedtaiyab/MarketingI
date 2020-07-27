@@ -1,103 +1,3 @@
-
-<?php
-if(isset($_POST["submit"])){
-$subject = $_POST['name'];
-$name=$_POST['name'];
-$email=$_POST['email'];
-$phone=$_POST['contact'];
-$campany=$_POST['company'];
-$msg=$_POST['message'];
-$message="Name :".$name."\n"."Phone :".$phone."\n"."Company :".$company."\n"."Wrote the following :"."\n\n".$msg;
-$emailaddress = "bforus.in@gmail.com";
-echo $message;
-$mail=mail($emailaddress, $subject, $message, "From:client@bforus.com");
-if ($mail){
-echo alert("Message has been sent");
-}
-else{
-echo"Message not sent this time";
-}
-echo"Message not sent this time";
-
-}
-?>
-<?php
-if(isset($_POST["submit"])){
-require "PHPMailer/PHPMailerAutoload.php";
-
-function smtpmailer($to, $from, $from_name, $subject, $body)
-    {
-    	$name=$_POST['name'];
-		$email=$_POST['email'];
-		$phone=$_POST['contact'];
-		$campany=$_POST['company'];
-		$msg=$_POST['message'];
-        $mail = new PHPMailer();
-        $mail->IsSMTP();
-        $mail->SMTPAuth = true; 
- 
-        $mail->SMTPSecure = 'ssl'; 
-        $mail->Host = 'mail.marketingojo.com';
-        $mail->Port = 465;  
-        $mail->Username = 'info@marketingojo.com';
-        $mail->Password = 'Marketing@52';   
-   
-   //   $path = 'reseller.pdf';
-   //   $mail->AddAttachment($path);
-   
-        $mail->IsHTML(true);
-        $mail->From='info@marketingojo.com';
-     	 $mail->FromName=$from_name;
-        $mail->Sender=$from;
-        $mail->AddReplyTo($from, $from_name);
-        $mail->Subject = $subject;
-        $mail->Body = $body;
-        $mail->AddAddress($to);
-        if(!$mail->Send())
-        {
-            header("Location: contact.php");
-            $error ="Please try Later, Error Occured while Processing...";
-            return $error; 
-        }
-        else 
-        {
-              header("Location: contact.php");
-            $error = "Thanks You !! Your email is sent.";  
-            return $error;
-        }
-    }
-    
-
- 	$to   = 'info@marketingojo.com';
-    $from = $_POST['email'];
-    $name = $_POST['name'];
-    $subj = 'Inquiry';
-    $msg = "Name :".$name."<br>"."Phone :".$_POST['contact']."<br>"."Company :".$_POST['company']."<br>"."Services Required:<br>".implode(',', $_POST['service'])."<br>"."Wrote the following :"."<br>".$_POST['message'];
-  
-
-    $error=smtpmailer($to,$from, $name ,$subj, $msg);
-
-
-
-    $to   = $_POST['email'];
-    $from = 'info@marketingojo.com';
-    $name ='MarketingOJO';
-    $subj = 'Service/Product inquiry';
-    $msg = '<p>Thank you for your inquiry regarding our product and service.
-Your inquiry will be reviewed by the concerned team and will be getting in touch with you soon.
-Thanks again for your interest.<br>
-
-<span>Best Regards</span><br>
-<span>MarketingOJO Team</span><br>
-To know more about our services and products please visit: - 
-Instagram: - https://www.instagram.com/marketingojo/
-Facebook: - https://www.facebook.com/marketingojo/
-Website: - http://marketingojo.com/</p>';
-  
-
-    $error=smtpmailer($to,$from, $name ,$subj, $msg);
-}
-?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -306,7 +206,7 @@ input[type=checkbox]{
 												<li><a href="ideanation.html">IdeaNation</a></li>
 												<li><a href="clients.html">Our Clients</a></li>		
 												<li><a href="career.html">Careers</a></li>	
-												<li class="active"><a href="contact.php">Contact Us</a></li>												
+												<li class="active"><a href="contact.html">Contact Us</a></li>												
 											</ul>
 										</div>
 									</nav>
@@ -341,9 +241,8 @@ input[type=checkbox]{
 				
 					<div class="row">
 						<!-- Contact Form -->
-						  <center><h2 style="padding-top:70px;color: white;"><?php echo $error; ?></h2></center>
 						<div class="col-md-8 col-sm-6 col-xs-12">
-							<form class="form" method="post" action="contact.php">
+							<form class="form" method="post" action="mailhandler.php">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
@@ -373,41 +272,41 @@ input[type=checkbox]{
 										<div class="grid">
 												<label>Select Services</label>
 											<div class="form-check form-check-inline">
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox1" value="Ideation & Consultation">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
   												<label class="form-check-label" for="inlineCheckbox1">Ideation & Consultation</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox2" value="Feasibility study">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1">
   												<label class="form-check-label" for="inlineCheckbox2">Feasibility study</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox3" value="Negotiation">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
   												<label class="form-check-label" for="inlineCheckbox3">Negotiation</label>
-  												<input class="form-check-input"name="service[]"  type="checkbox" id="inlineCheckbox4" value="Human Resources">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Human Resources">
   												<label class="form-check-label" for="inlineCheckbox4">Human Resources</label>
-  												<input class="form-check-input"name="service[]"  type="checkbox" id="inlineCheckbox5" value="Interior Designing">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Interior Designing">
   												<label class="form-check-label" for="inlineCheckbox5">Interior Designing</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox6" value="Photography">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="Photography">
   												<label class="form-check-label" for="inlineCheckbox6">Photography</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox7" value="Videography">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="Videography">
   												<label class="form-check-label" for="inlineCheckbox7">Videography</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox8" value="Branding">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="Branding">
   												<label class="form-check-label" for="inlineCheckbox8">Branding</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox9" value="Location search">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="Location search">
   												<label class="form-check-label" for="inlineCheckbox9">Location search</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox10" value="Website Design">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="Website Design">
   												<label class="form-check-label" for="inlineCheckbox10">Website Design</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox11" value="App Development">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="App Development">
   												<label class="form-check-label" for="inlineCheckbox11">App Development</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox12" value="Ad Management">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox12" value="Ad Management">
   												<label class="form-check-label" for="inlineCheckbox12">Ad Management</label>
-  												<input class="form-check-input"name="service[]"  type="checkbox" id="inlineCheckbox13" value="Social Media Marketing">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox13" value="Social Media Marketing">
   												<label class="form-check-label" for="inlineCheckbox13">Social Media Marketing</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox14" value="Business Analysis">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox14" value="Business Analysis">
   												<label class="form-check-label" for="inlineCheckbox14">Business Analysis</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox15" value="Accounting">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox15" value="Accounting">
   												<label class="form-check-label" for="inlineCheckbox15">Accounting</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox16" value="Blogger Connections">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox16" value="Blogger Connections">
   												<label class="form-check-label" for="inlineCheckbox16">Blogger Connections</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox17" value="Corporate Flight Management">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox17" value="Corporate Flight Management">
   												<label class="form-check-label" for="inlineCheckbox17">Corporate Flight Management</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox18" value="Corporate Flight Management">
+  												<input class="form-check-input" type="checkbox" id="inlineCheckbox18" value="Corporate Flight Management">
   												<label class="form-check-label" for="inlineCheckbox18">Customised Products</label>
 											</div>
 
@@ -543,7 +442,27 @@ input[type=checkbox]{
 					</div>
 				</div>
 			</footer>
-	
+	<?php
+if(isset($_POST["submit"])){
+$subject = $_POST['name'];
+$name=$_POST['name'];
+$email=$_POST['email'];
+$phone=$_POST['contact'];
+$campany=$_POST['company'];
+$msg=$_POST['message'];
+$message="Name :".$name."\n"."Phone :".$phone."\n"."Company :".$company."\n"."Wrote the following :"."\n\n".$msg;
+$emailaddress = "bforus.in@gmail.com";//bforus.in@gmail.com
+
+echo $message;
+$mail=mail($emailaddress, $subject, $message, "From:client@ecotionery.com");
+if ($mail){
+echo alert("Message has been sent");
+}
+else{
+echo"Message not sent this time";
+}
+}
+?>
 			<!--/ End footer -->
 			
 			<!-- Jquery -->
