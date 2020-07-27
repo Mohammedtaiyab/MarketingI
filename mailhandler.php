@@ -46,6 +46,11 @@ require "PHPMailer/PHPMailerAutoload.php";
 
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
+    	$name=$_POST['name'];
+		$email=$_POST['email'];
+		$phone=$_POST['contact'];
+		$campany=$_POST['company'];
+		$msg=$_POST['message'];
         $mail = new PHPMailer();
         $mail->IsSMTP();
         $mail->SMTPAuth = true; 
@@ -79,8 +84,20 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         }
     }
     
-    $to   = 'info@marketingojo.com';
+
+ 	$to   = 'info@marketingojo.com';
     $from = $_POST['email'];
+    $name = $_POST['name'];
+    $subj = 'Inquiry';
+    $msg = "Name :".$name."\n"."Phone :".$phone."\n"."Company :".$company."\n"."Wrote the following :"."\n\n".$msg;
+  
+
+    $error=smtpmailer($to,$from, $name ,$subj, $msg);
+
+
+
+    $to   = $_POST['email'];
+    $from = 'info@marketingojo.com';
     $name = $_POST['name'];
     $subj = 'Service/Product inquiry';
     $msg = 'Thank you for your inquiry regarding our product and service.
