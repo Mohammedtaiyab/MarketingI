@@ -26,7 +26,6 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->From='info@marketingojo.com';
      	 $mail->FromName=$from_name;
         $mail->Sender=$from;
-        $mail->AddReplyTo($from, $from_name);
         $mail->Subject = $subject;
         $mail->Body = $body;
         $mail->AddAddress($to);
@@ -49,7 +48,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = $_POST['email'];
     $name = $_POST['name'];
     $subj = 'Inquiry';
-    $msg = "Name :".$name."<br>"."Phone :".$_POST['contact']."<br>"."Company :".$_POST['company']."<br>"."Services Required:<br>".implode(',', $_POST['service'])."<br>"."Wrote the following :"."<br>".$_POST['message'];
+    $msg = "Name :".$name."<br>"."Phone :".$_POST['contact']."<br>"."Company :".$_POST['company']."<br>"."Services Required:<br>".implode('<br>', $_POST['service'])."<br>"."Wrote the following :"."<br>".$_POST['message'];
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
@@ -60,9 +59,9 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = 'info@marketingojo.com';
     $name ='MarketingOJO';
     $subj = 'Service/Product inquiry';
-    $msg = '<p>Thank you for your inquiry regarding our product and service.
-Your inquiry will be reviewed by the concerned team and will be getting in touch with you soon.
-Thanks again for your interest.<br>
+    $msg = '<p>Thank you for your inquiry regarding our product and service.<br>
+Your inquiry will be reviewed by the concerned team and will be getting in touch with you soon.<br>
+Thanks again for your interest.<br><br>
 
 <span>Best Regards</span><br>
 <span>MarketingOJO Team</span><br>
