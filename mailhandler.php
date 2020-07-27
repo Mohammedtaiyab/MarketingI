@@ -1,6 +1,5 @@
 
 <?php
-if(isset($_POST["submit"])){
 require "PHPMailer/PHPMailerAutoload.php";
 
 function smtpmailer($to, $from, $from_name, $subject, $body)
@@ -74,5 +73,5 @@ Website: - http://marketingojo.com/</p>';
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
-}
+
 ?>
