@@ -11,7 +11,7 @@
 		$message="Name :".$name."\n"."Phone :".$phone."\n"."Company :".$company."\n"."Wrote the following :"."\n\n".$msg;
 		$headers="From: ".$email;
 
-		if(mail($to, $subject, $message, $headers)){
+		if(mail($to, $subject, $message, "From:client@marketingojo.com")){
 			echo "<h1>Sent Successfully! Thank you"." ".$name.", We will contact you shortly!</h1>";
 		}
 		else{
