@@ -19,7 +19,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->Username = 'info@marketingojo.com';
         $mail->Password = 'Marketing@52';   
    
- $path = $_POST['file'];
+ $path = $_POST['resume'];
  $mail->AddAttachment($path);
    
         $mail->IsHTML(true);
@@ -59,7 +59,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $from = 'career@marketingojo.com';
     $name ='MarketingOJO';
     $subj = 'Job application';
-    $msg = "<p>Thank you".$_POST['name']."for applying for a position of".$_POST['profile']."at MarketingOJO.<br>
+    $msg = "<p>Thank you  ".$_POST['name']."  for applying for a position of  ".$_POST['profile']."  at MarketingOJO.<br>
 Your Application will be reviewed by our team and we will be getting in touch with you if your Qualifications meet our Requirements.<br>
 Thanks Again for Applying and All the Best.<br><br>
 
