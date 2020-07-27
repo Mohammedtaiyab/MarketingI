@@ -19,7 +19,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->Username = 'info@marketingojo.com';
         $mail->Password = 'Marketing@52';   
    
- $path = $_POST['resume'];
+ $path = $_FILES['resume']['name'];
  $mail->AddAttachment($path);
    
         $mail->IsHTML(true);
@@ -47,8 +47,8 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
  	$to   = 'info@marketingojo.com';
     $from = $_POST['email'];
     $name = $_POST['name'];
-    $subj = 'Inquiry';
-    $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Profile: - ".$_POST['profile']."<br><br>"."Bio: - ".$_POST['bio'];
+    $subj = 'Job application';
+    $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Profile: - ".$_POST['profile']."<br><br>"."BOD: - ".$_POST['bod']."<br><br>"."Bio: - ".$_POST['bio'];
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
@@ -374,7 +374,7 @@ Website: - http://marketingojo.com/</p>";
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Birth Date</label>
-											<input type="date" name="BOD"  required="required">
+											<input type="date" name="bod"  required="required">
 										</div>
 									</div>
 									<div class="col-md-6">
