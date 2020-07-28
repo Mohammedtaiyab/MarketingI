@@ -166,7 +166,7 @@ move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]
 
 
     $to   = $_POST['email'];
-    $from = 'career@marketingojo.com';
+    $from = 'info@marketingojo.com';
     $name ='MarketingOJO';
     $subj = 'Job application';
     $msg = "<p>Thank you  ".$_POST['name']."  for applying for a position of  ".$_POST['profile']."  at MarketingOJO.<br>
