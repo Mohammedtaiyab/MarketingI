@@ -130,7 +130,7 @@ $file =$_FILES["resume"]["tmp_name"];
 move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
  $path ="download/" . $_FILES["resume"]["name"];
         $mail->IsHTML(true);
-        $mail->From=$_POST['email'];
+        $mail->From='career@marketingojo.com';
      	 $mail->FromName=$from_name;
         $mail->Sender=$from;
         $mail->Subject = $subject;
