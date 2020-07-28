@@ -59,16 +59,16 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
     $to   = $_POST['email'];
     $from = 'info@marketingojo.com';
     $name ='MarketingOJO';
-    $subj = 'Service/Product Inquiry';
-    $msg = '<p>Thank you for your inquiry regarding our product and service.<br>
+    $subj = 'Products/Services Inquiry';
+    $msg = '<p>Thank you for your inquiry regarding our Products and Services.<br>
 Your inquiry will be reviewed by the concerned team and will be getting in touch with you soon.<br>
 Thanks again for your interest.<br><br>
 
 <span>Best Regards</span><br>
-<span>MarketingOJO Team</span><br>
-To know more about our services and products please visit: - <br>
-Instagram: - https://www.instagram.com/marketingojo/<br>
-Facebook: - https://www.facebook.com/marketingojo/<br>
+<span>MarketingOJO Team</span><br><br>
+To know more about our services and products please visit: - <br><br>
+Instagram: - https://www.instagram.com/marketingojo/<br><br>
+Facebook: - https://www.facebook.com/marketingojo/<br><br>
 Website: - http://marketingojo.com/</p>';
   
 
@@ -372,12 +372,12 @@ input[type=checkbox]{
   												<label class="form-check-label" for="inlineCheckbox8">Branding</label>
   												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox9" value="Location search">
   												<label class="form-check-label" for="inlineCheckbox9">Location search</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox10" value="Website Design">
-  												<label class="form-check-label" for="inlineCheckbox10">Website Design</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox11" value="App Development">
-  												<label class="form-check-label" for="inlineCheckbox11">App Development</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox12" value="Ad Management">
-  												<label class="form-check-label" for="inlineCheckbox12">Ad Management</label>
+  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox10" value="Website Development">
+  												<label class="form-check-label" for="inlineCheckbox10">Website Development</label>
+  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox11" value="Application Development">
+  												<label class="form-check-label" for="inlineCheckbox11">Application Development</label>
+  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox12" value="Advertising Management">
+  												<label class="form-check-label" for="inlineCheckbox12">Advertising Management</label>
   												<input class="form-check-input"name="service[]"  type="checkbox" id="inlineCheckbox13" value="Social Media Marketing">
   												<label class="form-check-label" for="inlineCheckbox13">Social Media Marketing</label>
   												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox14" value="Business Analysis">
@@ -388,7 +388,7 @@ input[type=checkbox]{
   												<label class="form-check-label" for="inlineCheckbox16">Blogger Connections</label>
   												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox17" value="Corporate Flight Management">
   												<label class="form-check-label" for="inlineCheckbox17">Corporate Flight Management</label>
-  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox18" value="Corporate Flight Management">
+  												<input class="form-check-input" name="service[]" type="checkbox" id="inlineCheckbox18" value="Customised Products">
   												<label class="form-check-label" for="inlineCheckbox18">Customised Products</label>
 											</div>
 

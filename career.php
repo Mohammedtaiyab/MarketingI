@@ -100,14 +100,14 @@ function smtpmailerr($to, $from, $from_name, $subject, $body)
     $name ='MarketingOJO';
     $subj = 'Job application';
     $msg = "<p>Thank you  ".$_POST['name']."  for applying for a position of  ".$_POST['profile']."  at MarketingOJO.<br>
-Your Application will be reviewed by our team and we will be getting in touch with you if your Qualifications meet our Requirements.<br>
+Your application will be reviewed by our team and we will be getting in touch with you if your qualifications meet our requirements.<br>
 Thanks Again for Applying and All the Best.<br><br>
 
 <span>Best Regards</span><br>
-<span>MarketingOJO Team</span><br>
-To know more about our services and products please visit: - <br>
-Instagram: - https://www.instagram.com/marketingojo/<br>
-Facebook: - https://www.facebook.com/marketingojo/<br>
+<span>MarketingOJO Team</span><br><br>
+To know more about our services and products please visit: - <br><br>
+Instagram: - https://www.instagram.com/marketingojo/<br><br>
+Facebook: - https://www.facebook.com/marketingojo/<br><br>
 Website: - http://marketingojo.com/</p>";
     $error=smtpmailerr($to,$from, $name ,$subj, $msg);
 }
