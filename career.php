@@ -423,7 +423,7 @@ Website: - http://marketingojo.com/</p>";
 										</div>
 									</div>
 									<div class="col-md-12">
-										<div class="form-group">
+										<div class="form-group" style="margin-top: -23px;">
 												<label>Bio</label>
 											<textarea name="bio" rows="2" placeholder="Write Something About you..." ></textarea>
 										</div>
@@ -484,9 +484,9 @@ Website: - http://marketingojo.com/</p>";
 									<img src="images/logo.png" alt="logo">
 									<p>From Ideation & Consultation To Growing Your Business, All The Services You Can Ask For.</p>
 									<ul class="list">
-										<li><i class="fa fa-phone"></i>Phone: +91 9136773853</li>
-										<li><i class="fa fa-envelope"></i>Email: <a href="">Info@MarketingOJO.com</a></li>
-										<li><i class="fa fa-map-o"></i>Address: Pune, Maharastra</li>
+										<li><i class="fa fa-phone"></i>Phone:- +91 9136773853</li>
+										<li><i class="fa fa-envelope"></i>Email:- <a href="">Info@MarketingOJO.com</a></li>
+										<li><i class="fa fa-map-o"></i>Address:- Pune, Maharastra</li>
 									</ul>		
 									<ul class="social">
 									<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
