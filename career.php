@@ -1,6 +1,6 @@
 
 <?php
-if(isset($_POST["submit"])){
+/*if(isset($_POST["submit"])){
 if(isset($_FILES['resume'])){
       $errors= array();
       $file_name = $_FILES['resume']['name'];
@@ -66,12 +66,38 @@ exit;
 }
 
 echo "<script>alert('Message has been sent')</script>";
-}
+}*/
 ?>
 
 <?php
-/*if(isset($_POST["submit"])){
+if(isset($_POST["submit"])){
 	require "PHPMailer/PHPMailerAutoload.php";
+	if(isset($_FILES['resume'])){
+      $errors= array();
+      $file_name = $_FILES['resume']['name'];
+      $file_size = $_FILES['resume']['size'];
+      $file_tmp = $_FILES['resume']['tmp_name'];
+      $file_type = $_FILES['resume']['type'];
+      $file_ext=strtolower(end(explode('.',$_FILES['resume']['name'])));
+      
+      $expensions= array("jpeg","jpg","png","pdf");
+      
+      if(in_array($file_ext,$expensions)=== false){
+         $errors[]="extension not allowed, please choose a PDF, JPEG or PNG file.";
+      }
+      
+      if($file_size > 2097152) {
+         $errors[]='File size must be excately 2 MB';
+      }
+      
+      if(empty($errors)==true) {
+         move_uploaded_file($file_tmp,"uploads/".$file_name); //The folder where you would like your file to be saved
+         echo "Success";
+      }else{
+         print_r($errors);
+      }
+   }
+
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
     	$num=0;
@@ -99,7 +125,7 @@ $file =$_FILES["resume"]["tmp_name"];
         $mail->Sender=$from;
         $mail->Subject = $subject;
         $mail->Body = $body;
-        $mail->AddAttachment($file,'Resume');  
+     $mail->addAttachment("uploads/".$file_name); 
         $mail->AddAddress($to);
         if(!$mail->Send())
         {
@@ -144,7 +170,7 @@ Website: - http://marketingojo.com/</p>";
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
-}*/
+}
 ?>
 
 
