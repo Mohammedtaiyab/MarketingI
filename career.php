@@ -77,8 +77,8 @@ echo "<script>alert('Message has been sent')</script>";
             }*/
 if(isset($_POST["submit"])){
 
-$target_dir = "download/";
-$target_file = $target_dir . basename($_FILES["resume"]["name"]);
+//$target_dir = "download/";
+//$target_file = $target_dir . basename($_FILES["resume"]["name"]);
 
 	require "PHPMailer/PHPMailerAutoload.php";
 	/*if(isset($_FILES['resume'])){
@@ -134,7 +134,7 @@ move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]
         $mail->Sender=$from;
         $mail->Subject = $subject;
         $mail->Body = $body;
-     $mail->addAttachment("uploads/".$file); 
+     $mail->addAttachment("download/".$file); 
         $mail->AddAddress($to);
         if(!$mail->Send())
         {
