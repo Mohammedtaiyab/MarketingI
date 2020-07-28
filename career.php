@@ -32,7 +32,7 @@ $email = $_REQUEST['email'] ;
 $name = $_REQUEST['name'] ;
 $phone = $_REQUEST['contact'] ;
 $message = $_REQUEST['bio'] ;
-require("phpmailer/PHPMailerAutoload.php");
+	require "PHPMailer/PHPMailerAutoload.php";
 
 $mail = new PHPMailer();
 
