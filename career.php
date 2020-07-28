@@ -70,18 +70,18 @@ echo "<script>alert('Message has been sent')</script>";
 ?>
 
 <?php
- if(!empty($_POST))
+ /*if(!empty($_POST))
             {
             	move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
 
-            }
+            }*/
 if(isset($_POST["submit"])){
 
 $target_dir = "download/";
 $target_file = $target_dir . basename($_FILES["resume"]["name"]);
-	
+
 	require "PHPMailer/PHPMailerAutoload.php";
-	if(isset($_FILES['resume'])){
+	/*if(isset($_FILES['resume'])){
       $errors= array();
       $file_name = $_FILES['resume']['name'];
       $file_size = $_FILES['resume']['size'];
@@ -105,8 +105,8 @@ $target_file = $target_dir . basename($_FILES["resume"]["name"]);
       }else{
          print_r($errors);
       }
-   }
-move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
+   }*/
+//move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
     	$num=0;
@@ -134,7 +134,7 @@ move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]
         $mail->Sender=$from;
         $mail->Subject = $subject;
         $mail->Body = $body;
-     $mail->addAttachment("uploads/".$file_name); 
+     $mail->addAttachment("uploads/".$file); 
         $mail->AddAddress($to);
         if(!$mail->Send())
         {
