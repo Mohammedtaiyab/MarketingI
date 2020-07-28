@@ -118,7 +118,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
    
 $file =$_FILES["resume"]["tmp_name"];
  //move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
-  		
+move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
         $mail->IsHTML(true);
         $mail->From='info@marketingojo.com';
      	 $mail->FromName=$from_name;
