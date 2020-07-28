@@ -1,5 +1,6 @@
 
 <?php
+if(isset($_POST["submit"])){
 if(isset($_FILES['resume'])){
       $errors= array();
       $file_name = $_FILES['resume']['name'];
@@ -65,6 +66,7 @@ exit;
 }
 
 echo "<script>alert('Message has been sent')</script>";
+}
 ?>
 
 <?php
