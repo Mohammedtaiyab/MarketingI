@@ -285,7 +285,7 @@ input[type=checkbox]{
 												<li><a href="customize.html">Products</a></li>
 												<li><a href="ideanation.html">IdeaNation</a></li>
 												<li><a href="clients.html">Our Clients</a></li>		
-												<li><a href="career.html">Careers</a></li>	
+												<li><a href="career.php">Careers</a></li>	
 												<li class="active"><a href="contact.php">Contact Us</a></li>												
 											</ul>
 										</div>

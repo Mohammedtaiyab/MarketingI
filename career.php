@@ -264,7 +264,7 @@ Website: - http://marketingojo.com/</p>";
 												<li><a href="customize.html">PRODUCTS</a></li>
 												<li><a href="ideanation.html">IDEANATION</a></li>
 												<li><a href="clients.html">OUR CLIENTS</a></li>		
-												<li class="active" ><a href="career.html">CAREERS</a></li>		
+												<li class="active" ><a href="career.php">CAREERS</a></li>		
 												<li><a href="contact.php">CONTACTS US</a></li>												
 											</ul>
 										</div>
@@ -399,7 +399,7 @@ Website: - http://marketingojo.com/</p>";
 									<div class="col-md-6">
 										<div class="form-group">
 												<label>Contact Number</label>
-											<input type="text" name="contact" placeholder="Contact Number" required="required">
+											<input type="text" name="contact" placeholder="Contact Number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required="required">
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -412,13 +412,14 @@ Website: - http://marketingojo.com/</p>";
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Birth Date</label>
-											<input type="date" name="bod"  required="required">
+											<input type="date" name="bod" value="1997-02-28" required="required">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Resume</label>
 									<input type="file" name="resume" accept=".doc,.docx, .pdf" required />
+									<small>Use Your Name as File Name.</small>
 										</div>
 									</div>
 									<div class="col-md-12">
