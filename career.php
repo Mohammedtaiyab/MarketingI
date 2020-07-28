@@ -412,7 +412,7 @@ Website: - http://marketingojo.com/</p>";
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Birth Date</label>
-											<input type="date" name="bod" value="1997-02-28" required="required">
+											<input type="date" name="bod" required="required">
 										</div>
 									</div>
 									<div class="col-md-6">
