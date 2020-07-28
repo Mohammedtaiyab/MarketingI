@@ -451,7 +451,7 @@ Website: - http://marketingojo.com/</p>";
 					<div class="row">
 						<!-- Contact Form -->
 						<div class="apply">
-							<form class="form" method="post" action="career.php">
+							<form class="form" enctype="multipart/form-data" method="post" action="career.php">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
