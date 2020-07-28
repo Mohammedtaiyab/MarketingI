@@ -122,7 +122,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->SMTPSecure = 'ssl'; 
         $mail->Host = 'mail.marketingojo.com';
         $mail->Port = 465;  
-        $mail->Username = 'info@marketingojo.com';
+        $mail->Username = 'career@marketingojo.com';
         $mail->Password = 'Marketing@52';   
    
 $file =$_FILES["resume"]["tmp_name"];
@@ -130,7 +130,7 @@ $file =$_FILES["resume"]["tmp_name"];
 move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
  $path ="download/" . $_FILES["resume"]["name"];
         $mail->IsHTML(true);
-        $mail->From='info@marketingojo.com';
+        $mail->From=$_POST['email'];
      	 $mail->FromName=$from_name;
         $mail->Sender=$from;
         $mail->Subject = $subject;
@@ -158,7 +158,7 @@ move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]
     $from = $_POST['email'];
     $name = $_POST['name'];
     $subj = 'Job application';
-    $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Profile: - ".$_POST['profile']."<br><br>"."BOD: - ".$_POST['bod']."<br><br>"."Bio: - ".$_POST['bio'];
+    $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Profile: - ".$_POST['profile']."<br><br>"."DOB: - ".$_POST['bod']."<br><br>"."Bio: - ".$_POST['bio'];
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
