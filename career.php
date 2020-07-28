@@ -61,7 +61,7 @@ move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
 
 
-function smtpmailer($to, $from, $from_name, $subject, $body)
+function smtpmailerr($to, $from, $from_name, $subject, $body)
     {
     	
     	$name=$_POST['name'];
@@ -109,7 +109,7 @@ To know more about our services and products please visit: - <br>
 Instagram: - https://www.instagram.com/marketingojo/<br>
 Facebook: - https://www.facebook.com/marketingojo/<br>
 Website: - http://marketingojo.com/</p>";
-    $error=smtpmailer($to,$from, $name ,$subj, $msg);
+    $error=smtpmailerr($to,$from, $name ,$subj, $msg);
 }
 ?>
 
