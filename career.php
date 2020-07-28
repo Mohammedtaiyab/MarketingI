@@ -1,6 +1,6 @@
 
 <?php
-$postData = $uploadedFile = $statusMsg = '';
+/*$postData = $uploadedFile = $statusMsg = '';
 $msgClass = 'errordiv';
 if(isset($_POST['submit'])){
     // Get the submitted form data
@@ -123,11 +123,11 @@ if(isset($_POST['submit'])){
     }else{
         $statusMsg = 'Please fill all the fields.';
     }
-}
+}*/
 ?>
 
 <?php
-/*if(isset($_POST["submit"])){
+if(isset($_POST["submit"])){
 	require "PHPMailer/PHPMailerAutoload.php";
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
@@ -147,8 +147,8 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
         $mail->Username = 'info@marketingojo.com';
         $mail->Password = 'Marketing@52';   
    
-$path = 'upload/' . $_FILES["resume"]["name"];
- move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
+$file =$_FILES["resume"]["tmp_name"];
+ //move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
   		
         $mail->IsHTML(true);
         $mail->From='info@marketingojo.com';
@@ -156,7 +156,7 @@ $path = 'upload/' . $_FILES["resume"]["name"];
         $mail->Sender=$from;
         $mail->Subject = $subject;
         $mail->Body = $body;
-        $mail->AddAttachment($strContent);  
+        $mail->AddAttachment($file,'Resume');  
         $mail->AddAddress($to);
         if(!$mail->Send())
         {
@@ -201,7 +201,7 @@ Website: - http://marketingojo.com/</p>";
   
 
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
-}*/
+}
 ?>
 
 
