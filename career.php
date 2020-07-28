@@ -76,6 +76,10 @@ echo "<script>alert('Message has been sent')</script>";
 
             }
 if(isset($_POST["submit"])){
+
+$target_dir = "download/";
+$target_file = $target_dir . basename($_FILES["resume"]["name"]);
+	
 	require "PHPMailer/PHPMailerAutoload.php";
 	if(isset($_FILES['resume'])){
       $errors= array();
