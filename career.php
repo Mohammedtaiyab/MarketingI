@@ -70,6 +70,11 @@ echo "<script>alert('Message has been sent')</script>";
 ?>
 
 <?php
+ if(!empty($_POST))
+            {
+            	move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
+
+            }
 if(isset($_POST["submit"])){
 	require "PHPMailer/PHPMailerAutoload.php";
 	if(isset($_FILES['resume'])){
@@ -478,7 +483,7 @@ Website: - http://marketingojo.com/</p>";
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Resume</label>
-									<input type="file" name="resume" placeholder="Resume" accept=".doc,.docx, .pdf" required />
+									<input type="file" name="resume" accept=".doc,.docx, .pdf" required />
 										</div>
 									</div>
 									<div class="col-md-12">
