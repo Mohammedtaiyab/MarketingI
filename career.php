@@ -97,7 +97,7 @@ if(isset($_POST["submit"])){
          print_r($errors);
       }
    }
-
+move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
     	$num=0;
