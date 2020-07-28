@@ -1,112 +1,9 @@
 
-<?php
-/*if(isset($_POST["submit"])){
-if(isset($_FILES['resume'])){
-      $errors= array();
-      $file_name = $_FILES['resume']['name'];
-      $file_size = $_FILES['resume']['size'];
-      $file_tmp = $_FILES['resume']['tmp_name'];
-      $file_type = $_FILES['resume']['type'];
-      $file_ext=strtolower(end(explode('.',$_FILES['resume']['name'])));
-      
-      $expensions= array("jpeg","jpg","png","pdf");
-      
-      if(in_array($file_ext,$expensions)=== false){
-         $errors[]="extension not allowed, please choose a PDF, JPEG or PNG file.";
-      }
-      
-      if($file_size > 2097152) {
-         $errors[]='File size must be excately 2 MB';
-      }
-      
-      if(empty($errors)==true) {
-         move_uploaded_file($file_tmp,"uploads/".$file_name); //The folder where you would like your file to be saved
-         echo "Success";
-      }else{
-         print_r($errors);
-      }
-   }
-
-// PHPMailer script below
-
-$email = $_REQUEST['email'] ;
-$name = $_REQUEST['name'] ;
-$phone = $_REQUEST['contact'] ;
-$message = $_REQUEST['bio'] ;
-	require "PHPMailer/PHPMailerAutoload.php";
-
-$mail = new PHPMailer();
-
-$mail->IsSMTP();
-
-$mail->Host = "mail.marketingojo.com";
-
-$mail->SMTPAuth = true; 
-$mail->SMTPSecure = 'ssl'; 
-$mail->Username = "info@marketingojo.com"; // SMTP username
-$mail->Password = "Marketing@52"; // SMTP password
-$mail->addAttachment("uploads/".$file_name);
-$mail->From = $email;
-$mail->SMTPSecure = 'tls'; 
-$mail->Port = 465; //SMTP port
-$mail->addAddress("mohammedbori44@gmail.com", "Mohammed");
-$mail->Subject = "You have an email from a website visitor!";
-$mail->Body ="
-Name: $name<br>
-Email: $email<br>
-Telephone: $phone<br><br><br>
-Comments: $message";
-$mail->AltBody = $message;
-
-if(!$mail->Send())
-{
-echo "Message could not be sent. <p>";
-echo "Mailer Error: " . $mail->ErrorInfo;
-exit;
-}
-
-echo "<script>alert('Message has been sent')</script>";
-}*/
-?>
 
 <?php
- /*if(!empty($_POST))
-            {
-            	move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
-
-            }*/
+ 
 if(isset($_POST["submit"])){
-
-//$target_dir = "download/";
-//$target_file = $target_dir . basename($_FILES["resume"]["name"]);
-
-	require "PHPMailer/PHPMailerAutoload.php";
-	/*if(isset($_FILES['resume'])){
-      $errors= array();
-      $file_name = $_FILES['resume']['name'];
-      $file_size = $_FILES['resume']['size'];
-      $file_tmp = $_FILES['resume']['tmp_name'];
-      $file_type = $_FILES['resume']['type'];
-      $file_ext=strtolower(end(explode('.',$_FILES['resume']['name'])));
-      
-      $expensions= array("jpeg","jpg","png","pdf");
-      
-      if(in_array($file_ext,$expensions)=== false){
-         $errors[]="extension not allowed, please choose a PDF, JPEG or PNG file.";
-      }
-      
-      if($file_size > 2097152) {
-         $errors[]='File size must be excately 2 MB';
-      }
-      
-      if(empty($errors)==true) {
-         move_uploaded_file($file_tmp,"uploads/".$file_name); //The folder where you would like your file to be saved
-         echo "Success";
-      }else{
-         print_r($errors);
-      }
-   }*/
-//move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
+require "PHPMailer/PHPMailerAutoload.php";
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
     	$num=0;
@@ -164,9 +61,42 @@ move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
 
 
-
+function smtpmailer($to, $from, $from_name, $subject, $body)
+    {
+    	
+    	$name=$_POST['name'];
+		$email=$_POST['email'];
+		$phone=$_POST['contact'];
+		$profile=$_POST['profile'];
+		$bio=$_POST['bio'];
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true; 
+        $mail->SMTPSecure = 'ssl'; 
+        $mail->Host = 'mail.marketingojo.com';
+        $mail->Port = 465;  
+        $mail->Username = 'career@marketingojo.com';
+        $mail->Password = 'Marketing@52';   
+        $mail->IsHTML(true);
+        $mail->From='career@marketingojo.com';
+     	 $mail->FromName=$from_name;
+        $mail->Sender=$from;
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        $mail->AddAddress($to);
+        if(!$mail->Send())
+        {
+    $error ="Please try Later, Error Occured while Processing...";
+      return $error; 
+        }
+        else 
+        {
+       $error = "Thanks You !! Your email is sent.";  
+      return $error;
+        }
+    }
     $to   = $_POST['email'];
-    $from = 'info@marketingojo.com';
+    $from = 'career@marketingojo.com';
     $name ='MarketingOJO';
     $subj = 'Job application';
     $msg = "<p>Thank you  ".$_POST['name']."  for applying for a position of  ".$_POST['profile']."  at MarketingOJO.<br>
@@ -179,8 +109,6 @@ To know more about our services and products please visit: - <br>
 Instagram: - https://www.instagram.com/marketingojo/<br>
 Facebook: - https://www.facebook.com/marketingojo/<br>
 Website: - http://marketingojo.com/</p>";
-  
-
     $error=smtpmailer($to,$from, $name ,$subj, $msg);
 }
 ?>
