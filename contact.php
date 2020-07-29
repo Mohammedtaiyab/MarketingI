@@ -82,8 +82,8 @@ Website: - http://marketingojo.com/</p>';
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="SITE KEYWORDS HERE" />
-		<meta name="description" content="">
+		<meta name="keywords" content="Marketing,Branding,Developing,Building,Business" />
+		<meta name="description" content="From Ideation & Consultation To Growing Your Business, All The Services You Can Ask For.">
 		<meta name='copyright' content='MarketingOJO'>	
 		
 		<!-- Title Tag -->
