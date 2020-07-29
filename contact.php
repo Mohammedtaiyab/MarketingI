@@ -84,7 +84,7 @@ Website: - http://marketingojo.com/</p>';
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="keywords" content="SITE KEYWORDS HERE" />
 		<meta name="description" content="">
-		<meta name='copyright' content='codeglim'>	
+		<meta name='copyright' content='MarketingOJO'>	
 		
 		<!-- Title Tag -->
         <title>Marketing OJO</title>
