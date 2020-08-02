@@ -2957,9 +2957,9 @@ input:-webkit-autofill:focus {
 	opacity:1;
 	height: 155px;
 }
-.clients .single-clients:hover img{
+/*.clients .single-clients:hover img{
 	transform: scale(1.2);
-}
+}*/
 .clients .single-clients img {
 	cursor: move;
 }
