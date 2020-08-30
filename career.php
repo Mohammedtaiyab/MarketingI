@@ -3,120 +3,158 @@
 <?php
  
 if(isset($_POST["submit"])){
-require "PHPMailer/PHPMailerAutoload.php";
-function smtpmailer($to, $from, $from_name, $subject, $body)
-    {
-    	$num=0;
-    	$name=$_POST['name'];
-		$email=$_POST['email'];
-		$phone=$_POST['contact'];
-		$profile=$_POST['profile'];
-		$bio=$_POST['bio'];
-        $mail = new PHPMailer();
-        $mail->IsSMTP();
-        $mail->SMTPAuth = true; 
+// require "PHPMailer/PHPMailerAutoload.php";
+// function smtpmailer($to, $from, $from_name, $subject, $body)
+//     {
+//     	$num=0;
+//     	$name=$_POST['name'];
+// 		$email=$_POST['email'];
+// 		$phone=$_POST['contact'];
+// 		$profile=$_POST['profile'];
+// 		$bio=$_POST['bio'];
+//         $mail = new PHPMailer();
+//         $mail->IsSMTP();
+//         $mail->SMTPAuth = true; 
  
-        $mail->SMTPSecure = 'ssl'; 
-        $mail->Host = 'mail.marketingojo.com';
-        $mail->Port = 465;  
-        $mail->Username = 'career@marketingojo.com';
-        $mail->Password = 'Marketing@52';   
+//         $mail->SMTPSecure = 'ssl'; 
+//         $mail->Host = 'mail.marketingojo.com';
+//         $mail->Port = 465;  
+//         $mail->Username = 'career@marketingojo.com';
+//         $mail->Password = 'Marketing@52';   
    
-$file =$_FILES["resume"]["tmp_name"];
- //move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
-move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
- $path ="download/" . $_FILES["resume"]["name"];
-        $mail->IsHTML(true);
-        $mail->From='career@marketingojo.com';
-     	 $mail->FromName=$from_name;
-        $mail->Sender=$from;
-        $mail->Subject = $subject;
-        $mail->Body = $body;
+// $file =$_FILES["resume"]["tmp_name"];
+//  //move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
+// move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
+//  $path ="download/" . $_FILES["resume"]["name"];
+//         $mail->IsHTML(true);
+//         $mail->From='career@marketingojo.com';
+//      	 $mail->FromName=$from_name;
+//         $mail->Sender=$from;
+//         $mail->Subject = $subject;
+//         $mail->Body = $body;
    
-   //  
-    $mail->AddAttachment($path);
-        $mail->AddAddress($to);
-        if(!$mail->Send())
-        {
+//    //  
+//     $mail->AddAttachment($path);
+//         $mail->AddAddress($to);
+//         if(!$mail->Send())
+//         {
        
-    $error ="Please try Later, Error Occured while Processing...";
-      return $error; 
-        }
-        else 
-        {
+//     $error ="Please try Later, Error Occured while Processing...";
+//       return $error; 
+//         }
+//         else 
+//         {
            
-       $error = "Thanks You !! Your email is sent.";  
-      return $error;
-        }
-    }
+//        $error = "Thanks You !! Your email is sent.";  
+//       return $error;
+//         }
+//     }
     
 
- 	$to   = 'career@marketingojo.com';
-    $from = $_POST['email'];
-    $name = $_POST['name'];
-    $subj = 'Job application';
-    $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Profile: - ".$_POST['profile']."<br><br>"."DOB: - ".$_POST['bod']."<br><br>"."Bio: - ".$_POST['bio'];
+//  	$to   = 'career@marketingojo.com';
+//     $from = $_POST['email'];
+//     $name = $_POST['name'];
+//     $subj = 'Job application';
+//     $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Profile: - ".$_POST['profile']."<br><br>"."DOB: - ".$_POST['bod']."<br><br>"."Bio: - ".$_POST['bio'];
   
 
-    $error=smtpmailer($to,$from, $name ,$subj, $msg);
+//     $error=smtpmailer($to,$from, $name ,$subj, $msg);
 
 
-function smtpmailerr($to, $from, $from_name, $subject, $body)
-    {
+// function smtpmailerr($to, $from, $from_name, $subject, $body)
+//     {
     	
-    	$name=$_POST['name'];
-		$email=$_POST['email'];
-		$phone=$_POST['contact'];
-		$profile=$_POST['profile'];
-		$bio=$_POST['bio'];
-        $mail = new PHPMailer();
-        $mail->IsSMTP();
-        $mail->SMTPAuth = true; 
-        $mail->SMTPSecure = 'ssl'; 
-        $mail->Host = 'mail.marketingojo.com';
-        $mail->Port = 465;  
-        $mail->Username = 'career@marketingojo.com';
-        $mail->Password = 'Marketing@52';   
-        $mail->IsHTML(true);
-        $mail->From='career@marketingojo.com';
-     	 $mail->FromName=$from_name;
-        $mail->Sender=$from;
-        $mail->Subject = $subject;
-        $mail->Body = $body;
-        $mail->AddAddress($to);
-        if(!$mail->Send())
-        {
-    $error ="Please try Later, Error Occured while Processing...";
-      return $error; 
-        }
-        else 
-        {
-       $error = "Thanks You !! Your email is sent.";  
-      return $error;
-        }
-    }
-    $to   = $_POST['email'];
-    $from = 'career@marketingojo.com';
-    $name ='MarketingOJO';
-    $subj = 'Job application';
-    $msg = "<p>Thank you  ".$_POST['name']."  for applying for a position of  ".$_POST['profile']."  at MarketingOJO.<br>
-Your application will be reviewed by our team and we will be getting in touch with you if your qualifications meet our requirements.<br>
-Thanks Again for Applying and All the Best.<br><br>
+//     	$name=$_POST['name'];
+// 		$email=$_POST['email'];
+// 		$phone=$_POST['contact'];
+// 		$profile=$_POST['profile'];
+// 		$bio=$_POST['bio'];
+//         $mail = new PHPMailer();
+//         $mail->IsSMTP();
+//         $mail->SMTPAuth = true; 
+//         $mail->SMTPSecure = 'ssl'; 
+//         $mail->Host = 'mail.marketingojo.com';
+//         $mail->Port = 465;  
+//         $mail->Username = 'career@marketingojo.com';
+//         $mail->Password = 'Marketing@52';   
+//         $mail->IsHTML(true);
+//         $mail->From='career@marketingojo.com';
+//      	 $mail->FromName=$from_name;
+//         $mail->Sender=$from;
+//         $mail->Subject = $subject;
+//         $mail->Body = $body;
+//         $mail->AddAddress($to);
+//         if(!$mail->Send())
+//         {
+//     $error ="Please try Later, Error Occured while Processing...";
+//       return $error; 
+//         }
+//         else 
+//         {
+//        $error = "Thanks You !! Your email is sent.";  
+//       return $error;
+//         }
+//     }
+//     $to   = $_POST['email'];
+//     $from = 'career@marketingojo.com';
+//     $name ='MarketingOJO';
+//     $subj = 'Job application';
+//     $msg = "<p>Thank you  ".$_POST['name']."  for applying for a position of  ".$_POST['profile']."  at MarketingOJO.<br>
+// Your application will be reviewed by our team and we will be getting in touch with you if your qualifications meet our requirements.<br>
+// Thanks Again for Applying and All the Best.<br><br>
 
-<span>Best Regards</span><br>
-<span>MarketingOJO Team</span><br><br>
-To know more about our services and products please visit: - <br><br>
-Instagram: - https://www.instagram.com/marketingojo/<br><br>
-Facebook: - https://www.facebook.com/marketingojo/<br><br>
-Website: - http://marketingojo.com/</p>";
-    $error=smtpmailerr($to,$from, $name ,$subj, $msg);
+// <span>Best Regards</span><br>
+// <span>MarketingOJO Team</span><br><br>
+// To know more about our services and products please visit: - <br><br>
+// Instagram: - https://www.instagram.com/marketingojo/<br><br>
+// Facebook: - https://www.facebook.com/marketingojo/<br><br>
+// Website: - http://marketingojo.com/</p>";
+//     $error=smtpmailerr($to,$from, $name ,$subj, $msg);
+
+
+
+ $con = mysqli_connect("localhost","root","","ojoadmin");
+                if (!$con)
+                    echo('Could not connect: ' . mysql_error());
+                else
+                {
+                    // if (file_exists("download/" . $_FILES["file"]["name"]))
+                    // {
+                    //     echo '<script language="javascript">alert(" Sorry!! Filename Already Exists...")</script>';
+                    // }
+                    // else
+                    // {
+                        // move_uploaded_file($_FILES["file"]["tmp_name"],
+                        // "download/" . $_FILES["file"]["name"]) ;
+                        //mysql_select_db("test2", $con);
+                	$file =$_FILES["resume"]["tmp_name"];
+move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
+ $path ="download/" . $_FILES["resume"]["name"];
+                        $sql = "INSERT INTO client(name,email,contact,profile,bod,bio,file) VALUES ('" . $_POST["name"] ."','" . $_POST["email"] . "','" . $_POST["contact"] ."','" . $_POST["profile"] ."','" . $_POST["bod"] ."','" . $_POST["bio"] ."','" . $path ."');";
+                         if(mysqli_query($con, $sql)){
+                                      // echo "Records added successfully.";
+                                             } else{
+                                             echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
+                                         }
+
+
+                    //}
+                }
+
+                mysqli_close($con);
+
 }
 ?>
 
 
 
 
-
+   <?php
+            if(!empty($_POST))
+            {
+               
+            }
+        ?>
 
 
 
@@ -558,7 +596,13 @@ Website: - http://marketingojo.com/</p>";
 				</div>
 			</footer>
 	
-			
+			 <script type='text/javascript' style='display:none;' async>
+__ez.queue.addFile('edmonton.html', '/detroitchicago/edmonton.webp?a=a&cb=0&shcb=32', true, [], true, false, false, false);
+__ez.queue.addFile('jellyfish.html', '/porpoiseant/jellyfish.webp?a=a&cb=0&shcb=32', false, [], true, false, false, false);
+</script>
+
+<script>var _audins_dom="azmind_com",_audins_did=104629;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "../../../../go.ezoic.net/detroitchicago/audins3317.js?cb=187-0");</script><noscript><div style="display:none;"><img src="../../../../pixel.quantserve.com/pixel/p-31iz6hfFutd166b69.gif?labels=Domain.azmind_com,DomainId.104629" border="0" height="1" width="1" alt="Quantcast"/></div></noscript><noscript><img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=20015427&amp;cv=2.0&amp;cj=1"/></noscript>
+
 			<!-- Jquery -->
 			<script src="js/jquery.min.js" type="text/javascript"></script>
 			<!-- Bootstrap JS -->
