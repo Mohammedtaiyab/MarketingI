@@ -1,6 +1,26 @@
-<?php include('server.php') ?>
+<!-- <?php include('server.php') ?> -->
 
-
+<?php
+require('admin/connection.inc.php');
+require('admin/functions.inc.php');
+$msg='';
+if(isset($_POST['submit'])){
+  $username=get_safe_value($con,$_POST['username']);
+  $password=get_safe_value($con,$_POST['password']);
+  $sql="select * from admin_users where username='$username' and password='$password'";
+  $res=mysqli_query($con,$sql);
+  $count=mysqli_num_rows($res);
+  if($count>0){
+    $_SESSION['ADMIN_LOGIN']='yes';
+    $_SESSION['ADMIN_USERNAME']=$username;
+    header('location:admin/categories.php');
+    die();
+  }else{
+    $msg="Please enter correct login details";  
+  }
+  
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -137,6 +157,7 @@ body {
       
     <!--   <p class="message">Not registered? <a href="#">Create an account</a></p> -->
     </form>
+      <div class="field_error"><?php echo $msg?></div>
   </div>
 </div>
 <script type="text/javascript">
