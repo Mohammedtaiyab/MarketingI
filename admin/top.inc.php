@@ -32,6 +32,12 @@ if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                <ul class="nav navbar-nav">
                   <li class="menu-title">Menu</li>
+                    <li class="menu-item-has-children dropdown">
+                     <a href="ideas.php" > Ideanation Master</a>
+                  </li>
+                    <li class="menu-item-has-children dropdown">
+                     <a href="career.php" > Career Master</a>
+                  </li>
                   <li class="menu-item-has-children dropdown">
                      <a href="categories.php" > Categories Master</a>
                   </li>
