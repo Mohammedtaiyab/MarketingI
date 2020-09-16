@@ -21,16 +21,16 @@ if(isset($_GET['id']) && $_GET['id']!=''){
 	$check=mysqli_num_rows($res);
 	if($check>0){
 		$row=mysqli_fetch_assoc($res);
-		$categories_id=$row['categories_id'];
-		$name=$row['name'];
+		$categories_id=$row['Categories_id'];
+		$name=$row['Name'];
 		$mrp=$row['mrp'];
-		$price=$row['price'];
+		$price=$row['Price'];
 		$qty=$row['qty'];
-		$short_desc=$row['short_desc'];
-		$description=$row['description'];
-		$meta_title=$row['meta_title'];
-		$meta_desc=$row['meta_desc'];
-		$meta_keyword=$row['meta_keyword'];
+		$short_desc=$row['Short_desc'];
+		$description=$row['Description'];
+		$meta_title=$row['Meta_title'];
+		$meta_desc=$row['Meta_desc'];
+		$meta_keyword=$row['Meta_keyword'];
 	}else{
 		header('location:product.php');
 		die();

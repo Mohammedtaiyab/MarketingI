@@ -1,3 +1,20 @@
+<?php
+require('admin/connection.inc.php');
+if(isset($_POST["submit"])){
+  $name=$_POST['name'];
+    $email=$_POST['email'];
+    $phone=$_POST['contact'];
+    $company=$_POST['company'];
+    $price=$_POST['price'];
+    $topic=$_POST['topic'];
+    $idea=$_POST['idea'];
+
+mysqli_query($con,"insert into ideas (Name, Email, Contact,Company, Topic, Description,Amount)values('$name','$email', '$phone','$company',' $topic','$idea', '$price')");
+}
+$sql="select * from ideas where Status='1'";
+$res=mysqli_query($con,$sql);
+$rowcount=mysqli_num_rows($res);
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -187,9 +204,7 @@
               width: 350px;
                         height: 250px;
       }
-      .idel{
-        display: flex;
-        }
+     
         .price{
           width: 90px;
         }
@@ -364,7 +379,7 @@
 												<li><a href="about-us.html">About Us</a></li>
 												<li><a href="service.html">Services</a></li>
 												<li><a href="shop/index.html">SHOP</a></li>
-												<li class="active"><a href="ideanation.html">IdeaNation</a></li>
+												<li class="active"><a href="ideanation.php">IdeaNation</a></li>
 												<li><a href="clients.html">Our Clients</a></li>		
 												<li><a href="career.php">Careers</a></li>	
 												<li><a href="contact.php">Contact Us</a></li>												
@@ -449,72 +464,45 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="section-title">
                 <h1>IDEANATION</h1>
-               <!--  <p>Idea Beyound Your Imagination</p> -->
+                <?php
+                  if($rowcount==0){
+                    ?>
+                      <p>No Ideas Available At the Moment</p>
+                          </div>
+                          </div>
+                           </div>
+                      <?php 
+                    }else{
+                    ?>
               </div>
             </div>
           </div>
-          <div class="row">
-              <!-- Single Service -->
-              <div class="col-md-2">
-              </div>
-            <div class="col-md-8 col-sm-6 col-xs-12">
-              <div class="single-services">
-                <div class="icon"><i class="fa fa-lightbulb-o"></i></div>
-                <div class="icon two"><i class="fa fa-lightbulb-o"></i></div>
-                <h2><a href="service-single.html">Creative Idea</a></h2>
-                <div class="idel">
-                  <div>
-
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy. Lorem ipsum dolor sit amet</p>
-                  </div><div class="price">
-                   <a href="" style="text-decoration: none;"><h6>Rs.100/-</h6> </a> </div>
-                 </div>
-              </div>
-            
-            </div>
-             <div class="col-md-2">
-              </div>
-            </div>
-            <div class="row">
+            <?php 
+              $i=1;
+              while($row=mysqli_fetch_assoc($res)){?>
+                <div class="row">
                <div class="col-md-2">
               </div>
             <div class="col-md-8 col-sm-6 col-xs-12">
               <div class="single-services">
                 <div class="icon"><i class="fa fa-lightbulb-o"></i></div>
                 <div class="icon two"><i class="fa fa-lightbulb-o"></i></div>
-                <h2><a href="service-single.html">Creative Idea</a></h2>
+                <h2><a href=""><?php echo $row['Topic']?></a></h2>
                 <div class="idel">
                   <div>
 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy. Lorem ipsum dolor sit amet</p>
-                  </div><div class="price">
-                   <a href="" style="text-decoration: none;"><h6>Rs.100/-</h6> </a> </div>
+                <p><?php echo $row['Description']?></p>
+                  </div>
+                  <div class="price">
+                   <a href="" style="text-decoration: none;"><h6>Rs.<?php echo $row['Amount']?>/-</h6> </a> </div>
                  </div>
               </div>
             </div>
              <div class="col-md-2">
               </div>
                 </div>
-            <div class="row">
-               <div class="col-md-2">
-              </div>
-            <div class="col-md-8 col-sm-6 col-xs-12">
-              <div class="single-services">
-                <div class="icon"><i class="fa fa-lightbulb-o"></i></div>
-                <div class="icon two"><i class="fa fa-lightbulb-o"></i></div>
-                <h2><a href="service-single.html">Creative Idea</a></h2>
-                <div class="idel">
-                  <div>
-
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy. Lorem ipsum dolor sit amet</p>
-                  </div><div class="price">
-                   <a href="" style="text-decoration: none;"><h6>Rs.100/-</h6> </a> </div>
-                 </div>
-              </div>
-            </div>
-             <div class="col-md-2">
-              </div>
-          </div>
+              <?php } }?>
+           
         </div>
       </section>
 
@@ -544,37 +532,37 @@
     <button id="btnCloseForm" class="close-button">X</button>
     <h1>IDEANATION</h1>
     <p>To Share Your Idea. Please complete this form.</p>
-    <form action="" class="formm">
+    <form action="ideanation.php" class="formm" method="POST">
       <div class="form-group">
         <label for="">Name</label>
-        <input type="text" class="form-control" />
+        <input type="text" name="name" class="form-control" required="required"/>
       </div>
       <div class="form-group">
         <label for="">Company Name</label>
-        <input class="form-control" type="text" />
+        <input class="form-control" name="company" type="text" required="required"/>
       </div>
       <div class="form-group">
         <label for="">E-Mail Address</label>
-        <input class="form-control" type="text" />
+        <input class="form-control" name="email" type="email" required="required"/>
       </div>
       <div class="form-group">
         <label for="">Phone Number</label>
-        <input class="form-control" type="text" />
+        <input class="form-control" name="contact" type="text" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required="required"/>
       </div>
        <div class="form-group">
         <label for="">Idea Topic</label>
-        <input class="form-control" type="text" />
+        <input class="form-control" name="topic" type="text"  required="required" />
       </div>
     
       <div class="form-group">
         <label for="">Price</label>
-        <input class="form-control" type="text" placeholder="₹"/>
+        <input class="form-control" name="price" type="text" placeholder="₹"  required="required"/>
       </div>
         <div class="form-group" style="width: 96%">
         <label for="">Brief Your Idea</label>
-        <textarea  class="form-control" name="message" rows="2" placeholder="Describe Your Idea in few words..." ></textarea>
+        <textarea  class="form-control" name="idea" rows="2" placeholder="Describe Your Idea in few words..."  required="required"></textarea>
       </div>
-      <button class="btn1">Submit</button>
+      <button type="submit" name="submit" class="btn1">Submit</button>
     </form>
   </div>
 </div>

@@ -1,7 +1,9 @@
 
 <?php
+require('admin/connection.inc.php');
+	// $email=$_POST['email'];
 if(isset($_POST["submit"])){
-	require "PHPMailer/PHPMailerAutoload.php";
+require "PHPMailer/PHPMailerAutoload.php";
 function smtpmailer($to, $from, $from_name, $subject, $body)
     {
     	$num=0;
@@ -48,17 +50,19 @@ function smtpmailer($to, $from, $from_name, $subject, $body)
  	$to   = 'info@marketingojo.com';
     $from = $_POST['email'];
     $name = $_POST['name'];
+    $campany=$_POST['company'];
+    $phone=$_POST['contact'];
     $subj = 'Inquiry';
     $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Company Name: - ".$_POST['company']."<br><br>"."Services: - ".implode('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',$_POST['service'])."<br><br>"."Message: - ".$_POST['message'];
   
 
-    $error=smtpmailer($to,$from, $name ,$subj, $msg);
+    // $error=smtpmailer($to,$from, $name ,$subj, $msg);
 
 
 
     $to   = $_POST['email'];
     $from = 'info@marketingojo.com';
-    $name ='MarketingOJO';
+    $namee ='MarketingOJO';
     $subj = 'Products/Services Inquiry';
     $msg = '<p>Thank you for your inquiry regarding our Products and Services.<br>
 Your inquiry will be reviewed by the concerned team and will be getting in touch with you soon.<br>
@@ -72,7 +76,10 @@ Facebook: - https://www.facebook.com/marketingojo/<br><br>
 Website: - http://marketingojo.com/</p>';
   
 
-    $error=smtpmailer($to,$from, $name ,$subj, $msg);
+    $error=smtpmailer($to,$from, $namee ,$subj, $msg);
+
+ $msg ="Services: - ".implode('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',$_POST['service'])."<br><br>"."Message: - ".$_POST['message'];
+mysqli_query($con,"insert into contact_us (Name, Email, Contact, Company, Comment)values('$name','$email', '$phone','$campany', '$msg')");
 }
 ?>
 <!DOCTYPE html>
@@ -292,7 +299,7 @@ input[type=checkbox]{
 												<li><a href="about-us.html">About Us</a></li>
 												<li><a href="service.html">Services</a></li>
 												<li><a href="shop/index.html">SHOP</a></li>
-												<li><a href="ideanation.html">IdeaNation</a></li>
+												<li><a href="ideanation.php">IdeaNation</a></li>
 												<li><a href="clients.html">Our Clients</a></li>		
 												<li><a href="career.php">Careers</a></li>	
 												<li class="active"><a href="contact.php">Contact Us</a></li>												
@@ -330,7 +337,7 @@ input[type=checkbox]{
 				
 					<div class="row">
 						<!-- Contact Form -->
-						 <center><h2 style="padding-top:70px;color: white;"><?php echo $error; ?></h2></center>
+						 <center><h2 style="color: white;"><?php echo $error; ?></h2></center>
 						<div class="col-md-8 col-sm-6 col-xs-12">
 							<form class="form" method="post" action="contact.php">
 								<div class="row">

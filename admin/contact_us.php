@@ -5,7 +5,7 @@ if(isset($_GET['type']) && $_GET['type']!=''){
 	$type=get_safe_value($con,$_GET['type']);
 	if($type=='delete'){
 		$id=get_safe_value($con,$_GET['id']);
-		$delete_sql="delete from contact_us where id='$id'";
+		$delete_sql="delete from contact_us where ID='$id'";
 		mysqli_query($con,$delete_sql);
 	}
 }
@@ -31,6 +31,7 @@ $res=mysqli_query($con,$sql);
 							   <th>Name</th>
 							   <th>Email</th>
 							   <th>Mobile</th>
+							    <th>Company</th>
 							   <th>Query</th>
 							   <th>Date</th>
 							   <th></th>
@@ -42,15 +43,16 @@ $res=mysqli_query($con,$sql);
 							while($row=mysqli_fetch_assoc($res)){?>
 							<tr>
 							   <td class="serial"><?php echo $i?></td>
-							   <td><?php echo $row['id']?></td>
-							   <td><?php echo $row['name']?></td>
-							   <td><?php echo $row['email']?></td>
-							   <td><?php echo $row['mobile']?></td>
-							   <td><?php echo $row['comment']?></td>
-							   <td><?php echo $row['added_on']?></td>
+							   <td><?php echo $row['ID']?></td>
+							   <td><?php echo $row['Name']?></td>
+							   <td><?php echo $row['Email']?></td>
+							   <td><?php echo $row['Contact']?></td>
+							    <td><?php echo $row['Company']?></td>
+							   <td><?php echo $row['Comment']?></td>
+							   <td><?php echo $row['Added_on']?></td>
 							   <td>
 								<?php
-								echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['id']."'>Delete</a></span>";
+								echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['ID']."'>Delete</a></span>";
 								?>
 							   </td>
 							</tr>

@@ -41,7 +41,13 @@ $res=mysqli_query($con,$sql);
 							<tr>
 							   <th class="serial">#</th>
 							   <th>ID</th>
-							   <th>Categories</th>
+							   <th>Topic</th>
+							   <th>Description</th>
+							   <th>Amount</th>
+							   <th>Name</th>
+							   <th>Email</th>
+							   <th>Contact</th>
+							   	<th>Company</th>
 							   <th></th>
 							</tr>
 						 </thead>
@@ -51,18 +57,24 @@ $res=mysqli_query($con,$sql);
 							while($row=mysqli_fetch_assoc($res)){?>
 							<tr>
 							   <td class="serial"><?php echo $i?></td>
-							   <td><?php echo $row['id']?></td>
-							   <td><?php echo $row['categories']?></td>
+							   <td><?php echo $row['ID']?></td>
+							   <td><?php echo $row['Topic']?></td>
+							     <td><?php echo $row['Description']?></td>
+							   <td><?php echo $row['Amount']?></td>
+							     <td><?php echo $row['Name']?></td>
+							   <td><?php echo $row['Email']?></td>
+							     <td><?php echo $row['Contact']?></td>
+							   <td><?php echo $row['Company']?></td>
 							   <td>
 								<?php
-								if($row['status']==1){
-									echo "<span class='badge badge-complete'><a href='?type=status&operation=deactive&id=".$row['id']."'>Active</a></span>&nbsp;";
+								if($row['Status']==1){
+									echo "<span class='badge badge-complete'><a href='?type=status&operation=deactive&id=".$row['ID']."'>Active</a></span>&nbsp;";
 								}else{
-									echo "<span class='badge badge-pending'><a href='?type=status&operation=active&id=".$row['id']."'>Deactive</a></span>&nbsp;";
+									echo "<span class='badge badge-pending'><a href='?type=status&operation=active&id=".$row['ID']."'>Deactive</a></span>&nbsp;";
 								}
-								echo "<span class='badge badge-edit'><a href='manage_categories.php?id=".$row['id']."'>Edit</a></span>&nbsp;";
+								echo "<span class='badge badge-edit'><a href='manage_categories.php?id=".$row['ID']."'>Edit</a></span>&nbsp;";
 								
-								echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['id']."'>Delete</a></span>";
+								echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['ID']."'>Delete</a></span>";
 								
 								?>
 							   </td>

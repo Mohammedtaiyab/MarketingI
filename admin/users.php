@@ -4,13 +4,13 @@ require('top.inc.php');
 if(isset($_GET['type']) && $_GET['type']!=''){
 	$type=get_safe_value($con,$_GET['type']);
 	if($type=='delete'){
-		$id=get_safe_value($con,$_GET['id']);
-		$delete_sql="delete from users where id='$id'";
+		$id=get_safe_value($con,$_GET['ID']);
+		$delete_sql="delete from user where ID='$id'";
 		mysqli_query($con,$delete_sql);
 	}
 }
 
-$sql="select * from users order by id desc";
+$sql="select * from user order by ID desc";
 $res=mysqli_query($con,$sql);
 ?>
 <div class="content pb-0">
@@ -41,14 +41,14 @@ $res=mysqli_query($con,$sql);
 							while($row=mysqli_fetch_assoc($res)){?>
 							<tr>
 							   <td class="serial"><?php echo $i?></td>
-							   <td><?php echo $row['id']?></td>
-							   <td><?php echo $row['name']?></td>
-							   <td><?php echo $row['email']?></td>
-							   <td><?php echo $row['mobile']?></td>
-							   <td><?php echo $row['added_on']?></td>
+							   <td><?php echo $row['ID']?></td>
+							   <td><?php echo $row['Name']?></td>
+							   <td><?php echo $row['Email']?></td>
+							   <td><?php echo $row['Mobile']?></td>
+							   <td><?php echo $row['Added_on']?></td>
 							   <td>
 								<?php
-								echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['id']."'>Delete</a></span>";
+								echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['ID']."'>Delete</a></span>";
 								?>
 							   </td>
 							</tr>

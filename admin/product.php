@@ -56,23 +56,23 @@ $res=mysqli_query($con,$sql);
 							while($row=mysqli_fetch_assoc($res)){?>
 							<tr>
 							   <td class="serial"><?php echo $i?></td>
-							   <td><?php echo $row['id']?></td>
-							   <td><?php echo $row['categories']?></td>
-							   <td><?php echo $row['name']?></td>
-							   <td><img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$row['image']?>"/></td>
+							   <td><?php echo $row['ID']?></td>
+							   <td><?php echo $row['Categories_id']?></td>
+							   <td><?php echo $row['Name']?></td>
+							   <td><img src="<?php echo "media/product/".$row['Image']?>"/></td>
 							   <td><?php echo $row['mrp']?></td>
-							   <td><?php echo $row['price']?></td>
+							   <td><?php echo $row['Price']?></td>
 							   <td><?php echo $row['qty']?></td>
 							   <td>
 								<?php
-								if($row['status']==1){
-									echo "<span class='badge badge-complete'><a href='?type=status&operation=deactive&id=".$row['id']."'>Active</a></span>&nbsp;";
+								if($row['Status']==1){
+									echo "<span class='badge badge-complete'><a href='?type=status&operation=deactive&id=".$row['ID']."'>Active</a></span>&nbsp;";
 								}else{
-									echo "<span class='badge badge-pending'><a href='?type=status&operation=active&id=".$row['id']."'>Deactive</a></span>&nbsp;";
+									echo "<span class='badge badge-pending'><a href='?type=status&operation=active&id=".$row['ID']."'>Deactive</a></span>&nbsp;";
 								}
-								echo "<span class='badge badge-edit'><a href='manage_product.php?id=".$row['id']."'>Edit</a></span>&nbsp;";
+								echo "<span class='badge badge-edit'><a href='manage_product.php?id=".$row['ID']."'>Edit</a></span>&nbsp;";
 								
-								echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['id']."'>Delete</a></span>";
+								echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['ID']."'>Delete</a></span>";
 								
 								?>
 							   </td>
