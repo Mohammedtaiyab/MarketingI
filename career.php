@@ -308,7 +308,7 @@ move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]
 												<li ><a href="index.html">HOME</a></li>
 												<li><a href="about-us.html">ABOUT US</a></li>
 												<li><a href="service.html">SERVICES</a></li>
-												<li><a href="customize.html">PRODUCTS</a></li>
+												<li><a href="shop/index.html">SHOP</a></li>
 												<li><a href="ideanation.html">IDEANATION</a></li>
 												<li><a href="clients.html">OUR CLIENTS</a></li>		
 												<li class="active" ><a href="career.php">CAREERS</a></li>		
