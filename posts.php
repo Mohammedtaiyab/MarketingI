@@ -1,32 +1,8 @@
 <?php
 require('admin/connection.inc.php');
-$topic='';
-$post='';
-$rowcount=0;
-$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
-$res=mysqli_query($con,"select * from posts where Id='$id'");
-// $row=mysqli_fetch_assoc($res);
+$sql="select * from posts where Status='1'";
+$res=mysqli_query($con,$sql);
 $rowcount=mysqli_num_rows($res);
- //        $post=$row['Post'];
- //        $rowcount=mysqli_num_rows($res);
-
-// if(isset($_GET['id']) && $_GET['id']!=''){
-//     $id=get_safe_value($con,$_GET['id']);
-//     $res=mysqli_query($con,"select * from posts where id='$id'");
-//     $check=mysqli_num_rows($res);
-//     if($check>0){
-//         $row=mysqli_fetch_assoc($res);
-//         $topic=$row['Topic'];
-//         $post=$row['Post'];
-//         $rowcount=mysqli_num_rows($res);
-//     }else{
-//         header('location:posts.php');
-//         die();
-//     }
-// }
-// $sql="select * from posts where Status='1'";
-// $res=mysqli_query($con,$sql);
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -316,7 +292,7 @@ body:hover .designer {
                     ?>
       <?php 
               $i=1;
-            $row=mysqli_fetch_assoc($res)?>
+              while($row=mysqli_fetch_assoc($res)){?>
                <section class="text-card">
         <div class="content">
             <div class="author-section">
@@ -330,10 +306,12 @@ body:hover .designer {
     </p>
 
 </div>
-         
+<button>
+ <?php echo "<a href='post.php?id=".$row['Id']."'>Share</a>"
+ ?></button>
         </div>
     </section>
-              <?php  }?>
+              <?php } }?>
 
 </main>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

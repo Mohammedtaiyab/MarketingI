@@ -78,6 +78,7 @@ main {
     color: #303336;
     background-color: #d1e8ee;
     box-shadow: 0 40px 40px -20px #8fc7d577;
+     transition: 300ms;
 }
 
 .text-card::after {
@@ -159,8 +160,9 @@ main {
     transition: 300ms;
 }
 
-.text-card button:hover {
-    border: 1px solid #ebebebbb;
+.text-card:hover {
+/*    border: 1px solid #ebebebbb;*/
+    transform: scale(1.1);
 }
 
 
@@ -254,6 +256,9 @@ body:hover .designer {
 									   color-stop(0.72, rgb(73,125,189)),
 									   color-stop(0.86, rgb(28,58,148)));
 }
+.text{
+    text-align: center;
+        }
 	</style>
 </head>
 <body>
@@ -266,7 +271,7 @@ body:hover .designer {
                 <a href="#" class="author-avator-link"><img class="author-avator" src="https://static01.nyt.com/vi-assets/images/share/1200x1200_t.png" alt="The New York Times Logo" width="40"></a>
                 <a href="#" class="author-name-link"><h6 class="author-name">THE NEW YORK TIMES</h6></a>
             </div>
-            <div class="scrollbar" id="style-7">
+            <div class="scrollbar text" id="style-7">
   
     <p style="">
       Scroll box automatic set in scroll in vertical scrollbar....<br /><br />
