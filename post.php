@@ -7,9 +7,26 @@ $rowcount=mysqli_num_rows($res);
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Posts</title>
+	
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="Marketing,Branding,Developing,Building,Business" />
+        <meta name="description" content="From Ideation & Consultation To Growing Your Business, All The Services You Can Ask For.">
+        <meta name='copyright' content='MarketingOJO'>  
+        <title>Posts</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <link rel="icon" type="image/png" href="images/favicon.png">    
+        
+        <!-- Web Font -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        
 	<style type="text/css">
+
 		/* ------------- */
 /* Basic Setting */
 /* ------------- */
