@@ -214,7 +214,7 @@ body:hover .designer {
 .scrollbar
 {
 	    height: 295px;
-    width: 310px;
+  width: 100%;
     background: transparent;
     overflow-y: scroll;
         margin-left: 0px;
