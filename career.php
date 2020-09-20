@@ -120,6 +120,11 @@ Website: - http://marketingojo.com/</p>";
 
 mysqli_query($con,"insert into careers(Name,Email,Contact,Profile,BirthDate,Resume,Bio)values('$name','$email', '$phone','$profile','$BOD','$resume','$bio')");
 }
+$sql="select * from company where Status='1'";
+$res=mysqli_query($con,$sql);
+$resi=mysqli_query($con,$sql);
+
+$rowcount=mysqli_num_rows($res);
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -207,6 +212,20 @@ mysqli_query($con,"insert into careers(Name,Email,Contact,Profile,BirthDate,Resu
 .form-group label{
 	font-size: 18px;
 }
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+ 
+}
+
 		</style>
     </head>
     <body id="bg" style="">
@@ -267,11 +286,11 @@ mysqli_query($con,"insert into careers(Name,Email,Contact,Profile,BirthDate,Resu
 												<li ><a href="index.html">HOME</a></li>
 												<li><a href="about-us.html">ABOUT US</a></li>
 												<li><a href="service.html">SERVICES</a></li>
-												<li><a href="shop/index.html">SHOP</a></li>
+												<li><a href="shop/index.html">PRODUCTS</a></li>
 												<li><a href="ideanation.php">IDEANATION</a></li>
-												<li><a href="clients.html">OUR CLIENTS</a></li>		
+												<li><a href="clients.php">OUR CLIENTS</a></li>		
 												<li class="active" ><a href="career.php">CAREERS</a></li>		
-												<li><a href="contact.php">CONTACTS US</a></li>												
+												<li><a href="contact.php">CONTACT US</a></li>												
 											</ul>
 										</div>
 									</nav>
@@ -297,45 +316,43 @@ mysqli_query($con,"insert into careers(Name,Email,Contact,Profile,BirthDate,Resu
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="section-title">
                 <h1>Requirements</h1>
-              <!--   <p>Contry to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece</p> -->
-              <p>Currently No Requirements</p>
+                   <?php
+                  if($rowcount==0){
+                    ?>
+                      <p>Currently No Requirements</p>
             	  <p>Share Your Details Below and We will let You know.</p>
               </div>
             </div>
           </div>
-          <div class="row">
-            <!-- Single Service -->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-            
-             <!-- <div class="single-services">
-                
-                <h2>Salesforce Developer</h2>
-                <h6>Infosys,Pune, Maharashtra</h6>
-                <p>Qualification Required</p>
+                      <?php 
+                    }else{
+                    ?>
               </div>
-            </div> -->
-            <!--/ End Single Service -->
-            <!-- Single Service -->
-           <!--  <div class="col-md-4 col-sm-6 col-xs-12">
-              <div class="single-services">
-                
-                <h2>Vacant Position</h2>
-                <h6>Company/ Location</h6>
-                <p>Qualification Required</p>
+            </div>
+          </div>   
+          <div class="row row-centered">
+          	<?php 
+              $i=1;
+              while($row=mysqli_fetch_assoc($res)){?>
+        <div class="col-xs-8 col-centered">
+			<div class="single-services">
+                <h2><?php echo $row['Vacancy']?></h2>
+                <h5><?php echo $row['Company_name']?></h5>
+                <p><?php echo $row['Location']?></p>
+                <div style="float: right;text-align: right;">
+                	<h2>Job Description</h2>
+                	 <p><?php echo $row['Job description']?></p>
+                	 <h2>Job Requirements</h2>
+                	 <p><?php echo $row['Requirements']?></p>
+                </div>
+                <div style="float: right;">
+                	<button class="btn"><a href="#contact-us">Apply</a></button>
+                </div>
               </div>
-            </div> -->
-            <!--/ End Single Service -->
-            <!-- Single Service -->
-           <!--  <div class="col-md-4 col-sm-6 col-xs-12">
-              <div class="single-services">
-                
-                <h2>Vacant Position</h2>
-                <h6>Company/ Location</h6>
-                <p>Qualification Required</p>
-              </div>
-            </div> -->
-        
-          </div>
+        </div>
+           <?php $i++; } }?>
+</div>
+ 
         </div>
       </section>
 	<!-- Start Services -->
@@ -388,7 +405,7 @@ mysqli_query($con,"insert into careers(Name,Email,Contact,Profile,BirthDate,Resu
 					<div class="row">
 						<!-- Contact Form -->
 						<div class="apply">
-							<form class="form" enctype="multipart/form-data" method="post" action="career.php">
+							<form autocomplete="off" class="form" enctype="multipart/form-data" method="post" action="career.php">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
@@ -411,7 +428,14 @@ mysqli_query($con,"insert into careers(Name,Email,Contact,Profile,BirthDate,Resu
 									<div class="col-md-6">
 										<div class="form-group">
 												<label>Profile</label>
-									 <input type="text" name="profile" placeholder="Profile" required="required">
+									 <input list="browsers" type="text" name="profile" placeholder="Profile" required="required">
+
+									 <datalist id="browsers">
+									 	<?php while($row=mysqli_fetch_assoc($resi)){ 
+ 										echo "<option value='".$row['Vacancy']."'>";
+  											}?>
+									</datalist>
+
 										
 										</div>
 									</div>
@@ -509,11 +533,11 @@ mysqli_query($con,"insert into careers(Name,Email,Contact,Profile,BirthDate,Resu
 									<ul class="list">
 										<li><a href="about-us.html"><i class="fa fa-angle-right"></i>ABOUT US</a></li>
 										<li><a href="service.html"><i class="fa fa-angle-right"></i>OUR SERVICES</a></li>
-										<li><a href="customize.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
-										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
-										<li><a href="clients.html"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
-										<li><a href="career.html"><i class="fa fa-angle-right"></i>CAREERS</a></li>
-										<li><a href="contact.html"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
+										<li><a href="shop/index.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
+										<li><a href="ideanation.php"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
+										<li><a href="clients.php"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
+										<li><a href="career.php"><i class="fa fa-angle-right"></i>CAREERS</a></li>
+										<li><a href="contact.php"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
 									</ul>
 								</div>
 				

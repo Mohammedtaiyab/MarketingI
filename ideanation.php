@@ -320,6 +320,83 @@ $rowcount=mysqli_num_rows($res);
     width: 47%;
     margin: 2px;
 }
+.card {
+    position: relative;
+    margin: 10vh auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 400px;
+    background: #000;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    backface-visibility: hidden;
+}
+.card:hover {
+    transform: scale(0.9);
+}
+.card:hover .ul {
+    transform: translate(0);
+    opacity: 1;
+}
+.card:hover .con-text p {
+    margin-bottom: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+.card img {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+.card .con-text {
+    position: absolute;
+    z-index: 30;
+    bottom: 0;
+    color: #fff;
+    padding: 20px;
+    padding-bottom: 30px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
+}
+.card .con-text p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.8rem;
+    opacity: 0;
+    color: white;
+    margin-bottom: -150px;
+    transition: all 0.5s ease;
+}
+.card .con-text p button {
+    padding: 7px 17px;
+    border-radius: 12px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-family: poppins;
+    font-size: 1.25rem;
+    outline: none;
+}
+.card .con-text p button:hover {
+    background: #fff;
+    color: #000;
+}
+.contactinfo{
+  opacity: 0;
+}
+.con-text:hover .contactinfo{
+  opacity: 1;
+}
     </style>
     <body id="bg" style="">
 		<div id="layout" class="">
@@ -378,9 +455,9 @@ $rowcount=mysqli_num_rows($res);
 												<li  ><a href="index.html">Home</a></li>
 												<li><a href="about-us.html">About Us</a></li>
 												<li><a href="service.html">Services</a></li>
-												<li><a href="shop/index.html">SHOP</a></li>
+												<li><a href="shop/index.html">PRODUCTS</a></li>
 												<li class="active"><a href="ideanation.php">IdeaNation</a></li>
-												<li><a href="clients.html">Our Clients</a></li>		
+												<li><a href="clients.php">Our Clients</a></li>		
 												<li><a href="career.php">Careers</a></li>	
 												<li><a href="contact.php">Contact Us</a></li>												
 											</ul>
@@ -477,31 +554,35 @@ $rowcount=mysqli_num_rows($res);
               </div>
             </div>
           </div>
-            <?php 
+
+                <div class="row">
+                    <?php 
               $i=1;
               while($row=mysqli_fetch_assoc($res)){?>
-                <div class="row">
-               <div class="col-md-2">
-              </div>
-            <div class="col-md-8 col-sm-6 col-xs-12">
-              <div class="single-services">
-                <div class="icon"><i class="fa fa-lightbulb-o"></i></div>
-                <div class="icon two"><i class="fa fa-lightbulb-o"></i></div>
-                <h2><a href=""><?php echo $row['Topic']?></a></h2>
-                <div class="idel">
-                  <div>
-
-                <p><?php echo $row['Description']?></p>
-                  </div>
-                  <div class="price">
-                   <a href="" style="text-decoration: none;"><h6>Rs.<?php echo $row['Amount']?>/-</h6> </a> </div>
-                 </div>
-              </div>
-            </div>
-             <div class="col-md-2">
-              </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="images/ideaLogo.png" style="opacity: .3">
+    <!--     <img src="https://picsum.photos/200/300" alt="Idea" style="opacity: .8"> -->
+        <div class="con-text">
+            <h2><?php echo $row['Topic']?></h2>
+            <p>
+                <?php echo $row['Description']?>
+                
+            <button id="info">Rs.<?php echo $row['Amount']?>/-</button>
+            </p>
+           <div class="contactinfo">
+              <p>Contact</p>
+           <h5><?php echo $row['Name']?></h5>
+            <p>
+                <?php echo $row['Email']?>
+                </p>
+        </div>
+        </div>
+    </div>
+                </div> 
+                    <?php $i++; } }?>
                 </div>
-              <?php } }?>
+          
            
         </div>
       </section>
@@ -597,11 +678,11 @@ $rowcount=mysqli_num_rows($res);
                   <ul class="list">
                     <li><a href="about-us.html"><i class="fa fa-angle-right"></i>ABOUT US</a></li>
                     <li><a href="service.html"><i class="fa fa-angle-right"></i>OUR SERVICES</a></li>
-                    <li><a href="customize.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
-                    <li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
-                    <li><a href="clients.html"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
-                    <li><a href="career.html"><i class="fa fa-angle-right"></i>CAREERS</a></li>
-                    <li><a href="contact.html"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
+                    <li><a href="shop/index.php.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
+                    <li><a href="ideanation.php"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
+                    <li><a href="clients.php"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
+                    <li><a href="career.php"><i class="fa fa-angle-right"></i>CAREERS</a></li>
+                    <li><a href="contact.php"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
                   </ul>
                 </div>
         

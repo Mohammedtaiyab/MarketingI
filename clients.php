@@ -1,3 +1,9 @@
+<?php
+require('admin/connection.inc.php');
+$sql="select * from client where Status='1'";
+$res=mysqli_query($con,$sql);
+$rowcount=mysqli_num_rows($res);
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -237,7 +243,7 @@ body { background: aliceblue; }
 												<li><a href="service.html">Services</a></li>
 												<li><a href="shop/index.html">PRODUCTS</a></li>
 												<li><a href="ideanation.php">IdeaNation</a></li>
-												<li class="active"><a href="clients.html">Our Clients</a>	
+												<li class="active"><a href="clients.php">Our Clients</a>	
 												<li><a href="career.php">Careers</a></li>		
 												<li><a href="contact.php">Contact Us</a></li>												
 											</ul>
@@ -269,46 +275,23 @@ body { background: aliceblue; }
     <h2>Happy Clients</h2>
     <div class="owl-carousel owl-carousel1 owl-theme">
       <div>
-        <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1572561300743-2dd367ed0c9a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=300" alt="">
+
+ <?php 
+              $i=1;
+              while($row=mysqli_fetch_assoc($res)){
+  echo "<div class='card text-center'><img class='card-img-top' src='admin/media/client/".$row['Logo']."' alt=''>";
+  ?>
           <div class="card-body">
-            <h5>Ronne Galle <br />
-              <span> Project Manager </span></h5>
-            <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-              impedit quo minus id quod maxime placeat ” </p>
+            <h5><?php echo $row['Company']; ?><br />
+              <span> <?php echo $row['ReviewBy']; ?> </span></h5>
+            <p class="card-text">“ <?php echo $row['Review']; ?> ” </p>
           </div>
         </div>
       </div>
       <div>
-        <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1588361035994-295e21daa761?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=301" alt="">
-          <div class="card-body">
-            <h5>Missy Limana<br />
-              <span> Engineer </span></h5>
-            <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-              impedit quo minus id quod maxime placeat ” </p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1575377222312-dd1a63a51638?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=302&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=302" alt="">
-          <div class="card-body">
-            <h5>Martha Brown<br />
-              <span> Project Manager </span></h5>
-            <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-              impedit quo minus id quod maxime placeat ” </p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1549836938-d278c5d46d20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=303&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=303" alt="">
-          <div class="card-body">
-            <h5>Hanna Lisem<br />
-              <span> Project Manager </span></h5>
-            <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-              impedit quo minus id quod maxime placeat ” </p>
-          </div>
-        </div>
-      </div>
-    </div>
+
+<?php } ?>
+
   </div>
                     </div>
                 </div>
@@ -350,11 +333,11 @@ body { background: aliceblue; }
 									<ul class="list">
 										<li><a href="about-us.html"><i class="fa fa-angle-right"></i>ABOUT US</a></li>
 										<li><a href="service.html"><i class="fa fa-angle-right"></i>OUR SERVICES</a></li>
-										<li><a href="customize.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
-										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
-										<li><a href="clients.html"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
-										<li><a href="career.html"><i class="fa fa-angle-right"></i>CAREERS</a></li>
-										<li><a href="contact.html"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
+										<li><a href="shop/index.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
+										<li><a href="ideanation.php"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
+										<li><a href="clients.php"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
+										<li><a href="career.php"><i class="fa fa-angle-right"></i>CAREERS</a></li>
+										<li><a href="contact.php"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
 									</ul>
 								</div>
 				

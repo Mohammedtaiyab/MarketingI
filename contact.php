@@ -298,9 +298,9 @@ input[type=checkbox]{
 												<li ><a href="index.html">Home</a></li>
 												<li><a href="about-us.html">About Us</a></li>
 												<li><a href="service.html">Services</a></li>
-												<li><a href="shop/index.html">SHOP</a></li>
+												<li><a href="shop/index.html">PRODUCTS</a></li>
 												<li><a href="ideanation.php">IdeaNation</a></li>
-												<li><a href="clients.html">Our Clients</a></li>		
+												<li><a href="clients.php">Our Clients</a></li>		
 												<li><a href="career.php">Careers</a></li>	
 												<li class="active"><a href="contact.php">Contact Us</a></li>												
 											</ul>
@@ -495,11 +495,11 @@ input[type=checkbox]{
 									<ul class="list">
 										<li><a href="about-us.html"><i class="fa fa-angle-right"></i>ABOUT US</a></li>
 										<li><a href="service.html"><i class="fa fa-angle-right"></i>OUR SERVICES</a></li>
-										<li><a href="customize.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
-										<li><a href="ideanation.html"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
-										<li><a href="clients.html"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
-										<li><a href="career.html"><i class="fa fa-angle-right"></i>CAREERS</a></li>
-										<li><a href="contact.html"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
+										<li><a href="shop/index.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
+										<li><a href="ideanation.php"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
+										<li><a href="clients.php"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
+										<li><a href="career.php"><i class="fa fa-angle-right"></i>CAREERS</a></li>
+										<li><a href="contact.php"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
 									</ul>
 								</div>
 				

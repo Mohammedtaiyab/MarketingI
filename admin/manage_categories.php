@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require('top.inc.php');
 $categories='';
 $msg='';
@@ -42,6 +43,7 @@ if(isset($_POST['submit'])){
 		die();
 	}
 }
+ob_end_flush();
 ?>
 <div class="content pb-0">
             <div class="animated fadeIn">
