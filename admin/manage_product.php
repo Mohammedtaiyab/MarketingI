@@ -12,6 +12,7 @@ $description	='';
 $meta_title	='';
 $meta_description	='';
 $meta_keyword='';
+$dealer='';
 
 $msg='';
 $image_required='required';
@@ -32,6 +33,7 @@ if(isset($_GET['id']) && $_GET['id']!=''){
 		$meta_title=$row['Meta_title'];
 		$meta_desc=$row['Meta_desc'];
 		$meta_keyword=$row['Meta_keyword'];
+		$dealer=$row['Dealer'];
 	}else{
 		header('location:product.php');
 		die();
@@ -49,13 +51,13 @@ if(isset($_POST['submit'])){
 	$meta_title=get_safe_value($con,$_POST['meta_title']);
 	$meta_desc=get_safe_value($con,$_POST['meta_desc']);
 	$meta_keyword=get_safe_value($con,$_POST['meta_keyword']);
-	
+	$dealer=get_safe_value($con,$_POST['Dealer']);
 	$res=mysqli_query($con,"select * from product where name='$name'");
 	$check=mysqli_num_rows($res);
 	if($check>0){
 		if(isset($_GET['id']) && $_GET['id']!=''){
 			$getData=mysqli_fetch_assoc($res);
-			if($id==$getData['id']){
+			if($id==$getData['ID']){
 			
 			}else{
 				$msg="Product already exist";
@@ -83,15 +85,15 @@ if(isset($_POST['submit'])){
 			if($_FILES['image']['name']!=''){
 				$image=rand(111111111,999999999).'_'.$_FILES['image']['name'];
 				move_uploaded_file($_FILES['image']['tmp_name'],"media/product/".$image);
-				$update_sql="update product set categories_id='$categories_id',name='$name',mrp='$mrp',price='$price',qty='$qty',short_desc='$short_desc',description='$description',meta_title='$meta_title',meta_desc='$meta_desc',meta_keyword='$meta_keyword',image='$image' where id='$id'";
+				$update_sql="update product set categories_id='$categories_id',name='$name',mrp='$mrp',price='$price',qty='$qty',short_desc='$short_desc',description='$description',meta_title='$meta_title',meta_desc='$meta_desc',meta_keyword='$meta_keyword',image='$image',Dealer='$dealer' where id='$id'";
 			}else{
-				$update_sql="update product set categories_id='$categories_id',name='$name',mrp='$mrp',price='$price',qty='$qty',short_desc='$short_desc',description='$description',meta_title='$meta_title',meta_desc='$meta_desc',meta_keyword='$meta_keyword' where id='$id'";
+				$update_sql="update product set categories_id='$categories_id',name='$name',mrp='$mrp',price='$price',qty='$qty',short_desc='$short_desc',description='$description',meta_title='$meta_title',meta_desc='$meta_desc',meta_keyword='$meta_keyword',Dealer='$dealer' where id='$id'";
 			}
 			mysqli_query($con,$update_sql);
 		}else{
 			$image=rand(111111111,999999999).'_'.$_FILES['image']['name'];
 			move_uploaded_file($_FILES['image']['tmp_name'],"media/product/".$image);
-			mysqli_query($con,"insert into product(categories_id,name,mrp,price,qty,short_desc,description,meta_title,meta_desc,meta_keyword,status,image) values('$categories_id','$name','$mrp','$price','$qty','$short_desc','$description','$meta_title','$meta_desc','$meta_keyword',1,'$image')");
+			mysqli_query($con,"insert into product(categories_id,name,mrp,price,qty,short_desc,description,meta_title,meta_desc,meta_keyword,status,image,Dealer) values('$categories_id','$name','$mrp','$price','$qty','$short_desc','$description','$meta_title','$meta_desc','$meta_keyword',1,'$image','$dealer')");
 		}
 		header('location:product.php');
 		die();
@@ -173,7 +175,10 @@ ob_end_flush();
 									<label for="categories" class=" form-control-label">Meta Keyword</label>
 									<textarea name="meta_keyword" placeholder="Enter product meta keyword" class="form-control"><?php echo $meta_keyword?></textarea>
 								</div>
-								
+									<div class="form-group">
+									<label for="categories" class=" form-control-label">Dealer</label>
+									<input type="text" name="Dealer" placeholder="Enter Dealer's Name" class="form-control" required value="<?php echo $dealer?>">
+								</div>
 								
 							   <button id="payment-button" name="submit" type="submit" class="btn btn-lg btn-info btn-block">
 							   <span id="payment-button-amount">Submit</span>

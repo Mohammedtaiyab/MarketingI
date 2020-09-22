@@ -1,6 +1,11 @@
+<?php
+require('../admin/connection.inc.php');
+$sql="select * from banner where Status='1'";
+$res=mysqli_query($con,$sql);
+$rowcount=mysqli_num_rows($res);
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -262,24 +267,38 @@
     <!-- main slider start -->
   <section class="main-slider-section position-relative">
         <div class="main-slider">
-            <div class="slider-item" style="background-image: url(assets/img/product/3.jpeg);">
-                <div class="container">
+
+<?php 
+         while($row=mysqli_fetch_assoc($res)){
+            $url="../admin/media/banner/".$row['Image'];
+ // echo "<div class='slider-item' style='background-image: url('"$url;"');''>";
+  ?>
+<div class="slider-item" style="background-image: url(../admin/media/banner/);"> 
+    <div class="container">
                     <div class="row align-items-center slider-height2">
                         <div class="col-12 col-xl-8 offset-xl-4">
                             <div class="slider-content">
-                                <h4 class="title animate__animated animate__bounce">Clear &amp; Beautiful</h4>
+                                <h4 class="title animate__animated animate__bounce"><?php echo $row['Topic']; ?></h4>
                                 <h2 class="sub-title animate__animated">
-                                    <span>Gardening Tips and Inspriration</span>
+                                    <span><?php echo $row['Header']; ?></span>
                                 </h2>
-                                <p class="animate__animated">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat</p>
-                                <a href="shop-grid-left-sidebar.html" class="btn btn-warning animate__animated">Shop now</a>
+
+                           <?php echo  $url; ?>
+                                <p class="animate__animated"><?php echo $url; ?></p>
+                                <a href="#" class="btn btn-warning animate__animated">Shop now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+<?php } ?>
+               
+
+
+
+
             <!-- slider-item end -->
-            <div class="slider-item bg-img bg4">
+          <!--   <div class="slider-item bg-img bg4">
                 <div class="container">
                     <div class="row align-items-center slider-height2">
                         <div class="col-12 col-xl-8 offset-xl-4">
@@ -294,7 +313,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- slider-item end -->
         </div>
         <!-- slick-progress -->

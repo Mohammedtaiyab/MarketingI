@@ -3,94 +3,142 @@ require('connection.inc.php');
 require('functions.inc.php');
 $msg='';
 if(isset($_POST['submit'])){
-	$username=get_safe_value($con,$_POST['username']);
-	$password=get_safe_value($con,$_POST['password']);
-	$sql="select * from admin_user where username='$username' and password='$password'";
-	$res=mysqli_query($con,$sql);
-	$count=mysqli_num_rows($res);
-	if($count>0){
-		$_SESSION['ADMIN_LOGIN']='yes';
-		$_SESSION['ADMIN_USERNAME']=$username;
-		header('location:categories.php');
-		die();
-	}else{
-		$msg="Please enter correct login details";	
-	}
-	
+    $username=get_safe_value($con,$_POST['username']);
+    $password=get_safe_value($con,$_POST['password']);
+    $sql="select * from admin_user where username='$username' and password='$password'";
+    $res=mysqli_query($con,$sql);
+    $count=mysqli_num_rows($res);
+    if($count>0){
+        $_SESSION['ADMIN_LOGIN']='yes';
+        $_SESSION['ADMIN_USERNAME']=$username;
+        header('location:categories.php');
+        die();
+    }else{
+        $msg="Please enter correct login details";  
+    }
+    
 }
 ?>
-<!-- <!doctype html>
-<html class="no-js" lang="">
-   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Login Page</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="assets/css/normalize.css">
-      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-      <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-      <link rel="stylesheet" href="assets/css/themify-icons.css">
-      <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
-      <link rel="stylesheet" href="assets/css/flag-icon.min.css">
-      <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-      <link rel="stylesheet" href="assets/css/style.css">
-      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-   </head>
-   <body class="bg-dark">
-      <div class="sufee-login d-flex align-content-center flex-wrap">
-         <div class="container">
-            <div class="login-content">
-               <div class="login-form mt-150">
-                  <form method="post">
-                     <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" name="username" class="form-control" placeholder="Username" required>
-                     </div>
-                     <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Password" required>
-                     </div>
-                     <button type="submit" name="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Sign in</button>
-					</form>
-					<div class="field_error"><?php // echo $msg?></div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <script src="assets/js/vendor/jquery-2.1.4.min.js" type="text/javascript"></script>
-      <script src="assets/js/popper.min.js" type="text/javascript"></script>
-      <script src="assets/js/plugins.js" type="text/javascript"></script>
-      <script src="assets/js/main.js" type="text/javascript"></script>
-   </body>
-</html> -->
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/loginStyle.css">
-<!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300">
-    <title>login</title>
-  
-<style type="text/css">
-    .login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
+<html class="no-js" lang="en">
+    <head>
+        <!-- Meta tag -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="keywords" content="Marketing,Branding,Developing,Building,Business" />
+        <meta name="description" content="From Ideation & Consultation To Growing Your Business, All The Services You Can Ask For.">
+        <meta name='copyright' content='MarketingOJO'>  
+        
+        <!-- Title Tag -->
+        <title>Marketing OJO</title>
+        
+        <!-- Favicon -->
+    
+        <link rel="icon" type="../image/png" href="images/favicon.png">    
+        
+        <!-- Web Font -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        
+        <!-- Tromas CSS -->
+        <link rel="stylesheet" href="../css/theme-plugins.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../css/responsive.css">   
+        
+        <!-- Tromas Color -->
+        <link rel="stylesheet" href="../css/skin/skin1.css">
+      
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173650006-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173650006-1');
+</script>   
+        <style type="text/css">
+                /*.logol{
+                background-image: url("images/1.png");
+                background-repeat: no-repeat;
+                height: 100%;
+                margin-left: 206px;*/
+    .pad{
+    padding-top: 120px;
 }
+            @media screen and (max-width: 600px) {
+                .logol img{
+                 width: 65%;
+                     margin-left: 64px;
+             
+                }
+                .logo img{
+                width: 60%;
+
+            }
+                .address img{
+                    width: 25%;
+                }
+                .f{
+                       width: 287px;
+                }
+                .word {
+  font: 600 normal 2.5em 'tahoma';
+  }
+.pad{
+    padding-top: 0px;
+}
+            }
+            .slicknav_nav a{
+                    text-transform: uppercase;
+            }
+            .logo img{
+                 width: 10rem;
+                    height: auto;
+            }
+            .address img{
+                    width: 15rem;
+                    height: auto;
+                }
+.
+            .call-to-action .btn {
+                background-color: transparent;color: white; margin-top: -1px;
+            }
+            .call-to-action .btn a:hover{
+                background-color: transparent;
+            }
+            .blog-head  img{
+                        width: 350px;
+                        height: 250px;
+            }
+            .blog-info p{
+                text-transform: capitalize;
+            }
+.blog-main .single-blog {
+    height: 350px;
+   }
+                .word {
+  margin: auto;
+  color: black;
+  font: 700 normal 2.5em 'tahoma';
+ font-family: 'Patua One', cursive;
+  }
+    .logol img{
+                 margin-top: 20px;
+            }
 .form {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      margin: 1px -4px 25px -26px;
+    position: relative;
+    z-index: 1;
+    background:#b1bbc5;
+    /* max-width: 360px; */
+    /* margin: 0 auto 100px; */
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form input {
   font-family: "Roboto", sans-serif;
@@ -165,35 +213,34 @@ if(isset($_POST['submit'])){
 .container .info span .fa {
   color: #EF3B3A;
 }
-body {
-  background: #76b852; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-  background: -moz-linear-gradient(right, #76b852, #8DC26F);
-  background: -o-linear-gradient(right, #76b852, #8DC26F);
-  background: linear-gradient(to left, #76b852, #8DC26F);
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
-}
-  
-</style>
-</head>
-<body>
-    <header class="container-fluid landing-wrapper">
-        <div class="row ">
-            <div class=" col offset-1 " id="in-header">
-                <a  href="" class=" " id="brand-link-id">
-   <span id="branad-logo-name" class="align-middle">        <a href="index.html"></a></span>
-                </a>
-            </div>
-        </div>
-    </header>
-    <div class="login-page">
 
+        </style>
+    </head>
+    <body id="bg" style="">
+        <div id="layout" class="">
+            
+                    <!-- Start Hero Area -->
+            <section class="hero-area style2 creative">
+                
+                    <!-- Single Slider --> 
+                    <div class="single-slider">
+                        <div class="background-layer">
+                            <div class="single-layer one"></div>
+                            <div class="single-layer two"></div>
+                            <div class="single-layer three"></div>
+                            <div class="single-layer four"></div>
+                            <div class="single-layer five"></div>
+                        </div>
+                        <div class="container">
+                       <!--      <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12"> -->
+                                    <h3 class="pad">Welcome To</h3>
+<img src="../images/logo2.png" alt="logo" >
+                                       
   <div class="form">
-    <img src="images/mainlogo.png" style="width: 12rem;">
-    <img src="images/adminlog.png" style="width: 12rem;">
-   
+   <!--  <img src="images/mainlogo.png" style="width: 12rem;"> -->
+   <!--  <img src="images/adminlog.png" style="width: 12rem;"> -->
+   <h2>Login</h2>
 <form method="post">
       <input type="text" name="username" placeholder="username"/>
       <input type="password"  name="password" placeholder="password"/>
@@ -203,16 +250,78 @@ body {
     </form>
       <div class="field_error"><?php echo $msg?></div>
   </div>
-</div>
-<script type="text/javascript">
-    $('.message a').click(function(){
-   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+                             <!--    </div>
+                            </div>
+                     -->
+                    </div>
+                 
+
+            </section>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var words = ['MARKETING OJO', 'Eyes That Your Business Needs'],
+    part,
+    i = 0,
+    offset = 0,
+    len = words.length,
+    forwards = true,
+    skip_count = 0,
+    skip_delay = 15,
+    speed = 70;
+var wordflick = function () {
+  setInterval(function () {
+    if (forwards) {
+      if (offset >= words[i].length) {
+        ++skip_count;
+        if (skip_count == skip_delay) {
+          forwards = false;
+          skip_count = 0;
+        }
+      }
+    }
+    else {
+      if (offset == 0) {
+        forwards = true;
+        i++;
+        offset = 0;
+        if (i >= len) {
+          i = 0;
+        }
+      }
+    }
+    part = words[i].substr(0, offset);
+    if (skip_count == 0) {
+      if (forwards) {
+        offset++;
+      }
+      else {
+        offset--;
+      }
+    }
+    $('.word').text(part);
+  },speed);
+};
+
+$(document).ready(function () {
+  wordflick();
 });
-</script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-</body>
+    </script>
+            
+            <!-- Jquery -->
+            <script src="../js/jquery.min.js" type="text/javascript"></script>
+            <!-- Bootstrap JS -->
+            <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+            <!-- Modernizer JS -->
+            <script src="../js/modernizr.min.js" type="text/javascript"></script>
+            <!-- Tromas JS -->
+            <script src="../js/tromas.js" type="text/javascript"></script>
+            <!-- Tromas Plugins -->
+            <script src="../js/theme-plugins.js" type="text/javascript"></script>
+            <!-- Google Map JS -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnhgNBg6jrSuqhTeKKEFDWI0_5fZLx0vM" type="text/javascript"></script>  
+            <script src="js/gmap.min.js"  type="text/javascript" ></script>
+            <!-- Main JS -->
+            <script src="../js/main.js" type="text/javascript"></script>
+        </div>
+    </body>
 </html>

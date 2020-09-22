@@ -341,7 +341,7 @@ $rowcount=mysqli_num_rows($res);
                 <p><?php echo $row['Location']?></p>
                 <div style="float: right;text-align: right;">
                 	<h2>Job Description</h2>
-                	 <p><?php echo $row['Job description']?></p>
+                	 <p><?php echo $row['Job_Description']?></p>
                 	 <h2>Job Requirements</h2>
                 	 <p><?php echo $row['Requirements']?></p>
                 </div>

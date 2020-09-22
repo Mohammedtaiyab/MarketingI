@@ -83,31 +83,7 @@ $res=mysqli_query($con,$sql);
             </div>
          </header>
 
-<?
-// if(isset($_GET['type']) && $_GET['type']!=''){
-//    $type=get_safe_value($con,$_GET['type']);
-//    if($type=='status'){
-//       $operation=get_safe_value($con,$_GET['operation']);
-//       $id=get_safe_value($con,$_GET['id']);
-//       if($operation=='active'){
-//          $status='1';
-//       }else{
-//          $status='0';
-//       }
-//       $update_status_sql="update Posts set status='$status' where id='$id'";
-//       mysqli_query($con,$update_status_sql);
-//    }
-   
-//    if($type=='delete'){
-//       $id=get_safe_value($con,$_GET['id']);
-//       $delete_sql="delete from Posts where id='$id'";
-//       mysqli_query($con,$delete_sql);
-//    }
-// }
 
-// $sql="select * from Posts";
-// $res=mysqli_query($con,$sql);
-?>
 <div class="content pb-0">
    <div class="orders">
       <div class="row">
