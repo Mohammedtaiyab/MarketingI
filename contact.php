@@ -1,4 +1,3 @@
-
 <?php
 require('admin/connection.inc.php');
 	// $email=$_POST['email'];
@@ -78,8 +77,10 @@ Website: - http://marketingojo.com/</p>';
 
     $error=smtpmailer($to,$from, $namee ,$subj, $msg);
 
- $msg ="Services: - ".implode('<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',$_POST['service'])."<br><br>"."Message: - ".$_POST['message'];
-mysqli_query($con,"insert into contact_us (Name, Email, Contact, Company, Comment)values('$name','$email', '$phone','$campany', '$msg')");
+ $msg ="Services: - ".implode('<br>',$_POST['service'])."<br><br>"."Message: - ".$_POST['message'];
+ 	$email=$_POST['email'];
+ 	$date=date("Y-m-d");
+mysqli_query($con,"insert into contact_us (Name,Email,Contact,Company,Comment,Added_on)values('$name','$email', '$phone','$campany', '$msg','$date')");
 }
 ?>
 <!DOCTYPE html>

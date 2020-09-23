@@ -6,6 +6,8 @@ $name='';
 $mrp='';
 $price='';
 $qty='';
+$min='';
+$max='';
 $image='';
 $short_desc	='';
 $description	='';
@@ -28,6 +30,8 @@ if(isset($_GET['id']) && $_GET['id']!=''){
 		$mrp=$row['mrp'];
 		$price=$row['Price'];
 		$qty=$row['qty'];
+		$min=$row['Min'];
+		$max=$row['Max'];
 		$short_desc=$row['Short_desc'];
 		$description=$row['Description'];
 		$meta_title=$row['Meta_title'];
@@ -46,6 +50,8 @@ if(isset($_POST['submit'])){
 	$mrp=get_safe_value($con,$_POST['mrp']);
 	$price=get_safe_value($con,$_POST['price']);
 	$qty=get_safe_value($con,$_POST['qty']);
+	$min=get_safe_value($con,$_POST['Min']);
+	$max=get_safe_value($con,$_POST['Max']);
 	$short_desc=get_safe_value($con,$_POST['short_desc']);
 	$description=get_safe_value($con,$_POST['description']);
 	$meta_title=get_safe_value($con,$_POST['meta_title']);
@@ -85,15 +91,15 @@ if(isset($_POST['submit'])){
 			if($_FILES['image']['name']!=''){
 				$image=rand(111111111,999999999).'_'.$_FILES['image']['name'];
 				move_uploaded_file($_FILES['image']['tmp_name'],"media/product/".$image);
-				$update_sql="update product set categories_id='$categories_id',name='$name',mrp='$mrp',price='$price',qty='$qty',short_desc='$short_desc',description='$description',meta_title='$meta_title',meta_desc='$meta_desc',meta_keyword='$meta_keyword',image='$image',Dealer='$dealer' where id='$id'";
+				$update_sql="update product set categories_id='$categories_id',name='$name',mrp='$mrp',price='$price',qty='$qty',Min='$min',Max='$max',short_desc='$short_desc',description='$description',meta_title='$meta_title',meta_desc='$meta_desc',meta_keyword='$meta_keyword',image='$image',Dealer='$dealer' where id='$id'";
 			}else{
-				$update_sql="update product set categories_id='$categories_id',name='$name',mrp='$mrp',price='$price',qty='$qty',short_desc='$short_desc',description='$description',meta_title='$meta_title',meta_desc='$meta_desc',meta_keyword='$meta_keyword',Dealer='$dealer' where id='$id'";
+				$update_sql="update product set categories_id='$categories_id',name='$name',mrp='$mrp',price='$price',qty='$qty',Min='$min',Max='$max',short_desc='$short_desc',description='$description',meta_title='$meta_title',meta_desc='$meta_desc',meta_keyword='$meta_keyword',Dealer='$dealer' where id='$id'";
 			}
 			mysqli_query($con,$update_sql);
 		}else{
 			$image=rand(111111111,999999999).'_'.$_FILES['image']['name'];
 			move_uploaded_file($_FILES['image']['tmp_name'],"media/product/".$image);
-			mysqli_query($con,"insert into product(categories_id,name,mrp,price,qty,short_desc,description,meta_title,meta_desc,meta_keyword,status,image,Dealer) values('$categories_id','$name','$mrp','$price','$qty','$short_desc','$description','$meta_title','$meta_desc','$meta_keyword',1,'$image','$dealer')");
+			mysqli_query($con,"insert into product(categories_id,name,mrp,price,qty,Min,Max,short_desc,description,meta_title,meta_desc,meta_keyword,status,image,Dealer) values('$categories_id','$name','$mrp','$price','$qty','$min','$max','$short_desc','$description','$meta_title','$meta_desc','$meta_keyword',1,'$image','$dealer')");
 		}
 		header('location:product.php');
 		die();
@@ -145,7 +151,12 @@ ob_end_flush();
 									<label for="categories" class=" form-control-label">Qty</label>
 									<input type="text" name="qty" placeholder="Enter qty" class="form-control" required value="<?php echo $qty?>">
 								</div>
-								
+									<div class="form-group">
+									<label for="categories" class=" form-control-label">Minimum</label>
+									<input type="text" name="Min" placeholder="Enter Min qty" class="form-control" required value="<?php echo $min?>">
+									<label for="categories" class=" form-control-label">Maximum</label>
+									<input type="text" name="Max" placeholder="Enter Max qty" class="form-control" required value="<?php echo $max?>">
+								</div>
 								<div class="form-group">
 									<label for="categories" class=" form-control-label">Image</label>
 									<input type="file" name="image" class="form-control" <?php echo  $image_required?>>

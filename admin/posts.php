@@ -126,7 +126,7 @@ $res=mysqli_query($con,$sql);
                         ?>
                         </td>
                      </tr>
-                     <?php } ?>
+                     <?php $i++;} ?>
                    </tbody>
                  </table>
                </div>

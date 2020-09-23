@@ -96,7 +96,7 @@ echo "<a class='dropdown-item'  style='font-size:16px;' href='gallery.php'>All</
 								?>
 							   </td>
 							</tr>
-							<?php } ?>
+							<?php $i++;} ?>
 						 </tbody>
 					  </table>
 				   </div>

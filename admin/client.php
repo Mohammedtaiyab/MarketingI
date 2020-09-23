@@ -75,7 +75,7 @@ if(isset($_GET['type']) && $_GET['type']!=''){
 								?>
 							   </td>
 							</tr>
-							<?php } ?>
+							<?php $i++;} ?>
 						 </tbody>
 					  </table>
 				   </div>
