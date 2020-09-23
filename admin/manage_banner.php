@@ -62,6 +62,7 @@ ob_end_flush();
 								<div class="form-group">
 									<label for="categories" class=" form-control-label">Image</label>
 									<input type="file" name="image" class="form-control" <?php echo  $image_required?>>
+									<span style="font-size: 15px;">Add 1349X615 size banner</span> 
 								</div>
 								
 							   <button id="payment-button" name="submit" type="submit" class="btn btn-lg btn-info btn-block">

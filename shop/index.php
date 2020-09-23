@@ -2,6 +2,7 @@
 require('../admin/connection.inc.php');
 $sql="select * from banner where Status='1'";
 $res=mysqli_query($con,$sql);
+$resi=mysqli_query($con,$sql);
 $rowcount=mysqli_num_rows($res);
 ?>
 <!DOCTYPE html>
@@ -38,7 +39,22 @@ $rowcount=mysqli_num_rows($res);
     <link rel="stylesheet" href="assets/css/plugins.min.css" />
     <!-- style min css -->
     <link rel="stylesheet" href="assets/css/style.min.css" />
+<style type="text/css">
+    <?php 
+    $i=1;
+         while($row=mysqli_fetch_assoc($resi)){
+                $url="../admin/media/banner/".$row['Image'];
+            echo ".b".$i."{ ";
+            echo "background-image:";
+            echo "url(".$url.");";
+            echo "background-repeat: no-repeat;
+        background-position: center;}";
+ $i++;
+        }
 
+    ?>
+  
+</style>
 </head>
 
 <body>
@@ -269,11 +285,11 @@ $rowcount=mysqli_num_rows($res);
         <div class="main-slider">
 
 <?php 
+$j=1;
          while($row=mysqli_fetch_assoc($res)){
-            $url="../admin/media/banner/".$row['Image'];
- // echo "<div class='slider-item' style='background-image: url('"$url;"');''>";
+
   ?>
-<div class="slider-item" style="background-image: url(../admin/media/banner/);"> 
+<?php echo "<div class='slider-item b".$j."'>";?>
     <div class="container">
                     <div class="row align-items-center slider-height2">
                         <div class="col-12 col-xl-8 offset-xl-4">
@@ -282,16 +298,14 @@ $rowcount=mysqli_num_rows($res);
                                 <h2 class="sub-title animate__animated">
                                     <span><?php echo $row['Header']; ?></span>
                                 </h2>
-
-                           <?php echo  $url; ?>
-                                <p class="animate__animated"><?php echo $url; ?></p>
+                                <p class="animate__animated"><?php echo $row['Paragraph']; ?></p>
                                 <a href="#" class="btn btn-warning animate__animated">Shop now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-<?php } ?>
+<?php $j++;} ?>
                
 
 

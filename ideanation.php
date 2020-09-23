@@ -455,7 +455,7 @@ $rowcount=mysqli_num_rows($res);
 												<li  ><a href="index.html">Home</a></li>
 												<li><a href="about-us.html">About Us</a></li>
 												<li><a href="service.html">Services</a></li>
-												<li><a href="shop/index.html">PRODUCTS</a></li>
+												<li><a href="shop/index.php">PRODUCTS</a></li>
 												<li class="active"><a href="ideanation.php">IdeaNation</a></li>
 												<li><a href="clients.php">Our Clients</a></li>		
 												<li><a href="career.php">Careers</a></li>	
