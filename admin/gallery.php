@@ -24,15 +24,16 @@ if(isset($_GET['type']) && $_GET['type']!=''){
 		$id=get_safe_value($con,$_GET['id']);
 		$sql="select gallery.*,product.Name,product.ID from gallery,product where gallery.Product_Id=product.ID And Product_Id='$id'";
 		mysqli_query($con,$sql);
+		$res=mysqli_query($con,$sql);
 	}
-	
+		$sql="select gallery.*,product.Name from gallery,product where gallery.Product_Id=product.Id order by gallery.Id desc";
+		$res=mysqli_query($con,$sql);
 }else{
 		$sql="select gallery.*,product.Name from gallery,product where gallery.Product_Id=product.Id order by gallery.Id desc";
 		$res=mysqli_query($con,$sql);
 	}
 
- // $sql="select gallery.*,product.Name from gallery,product where gallery.Product_Id=product.Id order by gallery.Id desc";
-$res=mysqli_query($con,$sql);
+
 ?>
 <div class="content pb-0">
 	<div class="orders">

@@ -50,8 +50,7 @@ $rowcount=mysqli_num_rows($res);
         <link rel="stylesheet" href="css/bootstrap.min.css">
         
 	<style type="text/css">
-
-		/* ------------- */
+        /* ------------- */
 /* Basic Setting */
 /* ------------- */
 
@@ -109,6 +108,7 @@ main {
     color: #303336;
     background-color: #d1e8ee;
     box-shadow: 0 40px 40px -20px #8fc7d577;
+     transition: 300ms;
 }
 
 .text-card::after {
@@ -190,8 +190,9 @@ main {
     transition: 300ms;
 }
 
-.text-card button:hover {
-    border: 1px solid #ebebebbb;
+.text-card:hover {
+/*    border: 1px solid #ebebebbb;*/
+    transform: scale(1.1);
 }
 
 
@@ -237,53 +238,59 @@ body:hover .designer {
 }
 .scrollbar
 {
-	    height: 295px;
-  width: 100%;
+        height: 295px;
+    width: 100%;
     background: transparent;
     overflow-y: scroll;
         margin-left: 0px;
 }
 #style-2::-webkit-scrollbar-track
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
 }
 
 #style-2::-webkit-scrollbar
 {
-	width: 12px;
-	background-color: #F5F5F5;
+    width: 12px;
+    background-color: #F5F5F5;
 }
 
 #style-2::-webkit-scrollbar-thumb
 {
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #D62929;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #D62929;
 }
 #style-7::-webkit-scrollbar-track
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: #F5F5F5;
-	border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
 }
 
 #style-7::-webkit-scrollbar
 {
-	width: 10px;
-	background-color: #F5F5F5;
+    width: 10px;
+    background-color: #F5F5F5;
 }
 
 #style-7::-webkit-scrollbar-thumb
 {
-	border-radius: 10px;
-	background-image: -webkit-gradient(linear,
-									   left bottom,
-									   left top,
-									   color-stop(0.44, rgb(122,153,217)),
-									   color-stop(0.72, rgb(73,125,189)),
-									   color-stop(0.86, rgb(28,58,148)));
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear,
+                                       left bottom,
+                                       left top,
+                                       color-stop(0.44, rgb(122,153,217)),
+                                       color-stop(0.72, rgb(73,125,189)),
+                                       color-stop(0.86, rgb(28,58,148)));
+}
+.text{
+    text-align: center;
+        }
+.btn:hover{
+    transform: scale(1.1);
 }
 	</style>
 </head>

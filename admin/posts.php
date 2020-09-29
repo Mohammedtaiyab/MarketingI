@@ -27,7 +27,6 @@ if(isset($_GET['type']) && $_GET['type']!=''){
       mysqli_query($con,$delete_sql);
    }
 }
-
 $sql="select * from Posts";
 $res=mysqli_query($con,$sql);
 ?>
@@ -58,6 +57,9 @@ $res=mysqli_query($con,$sql);
                     <li class="menu-item-has-children dropdown">
                      <a href="posts.php" >Posts</a>
                   </li>
+                  <li class="menu-item-has-children dropdown">
+                     <a href="folder.php">Folder</a>
+                  </li>
                </ul>
             </div>
          </nav>
@@ -74,7 +76,7 @@ $res=mysqli_query($con,$sql);
             <div class="top-right">
                <div class="header-menu">
                   <div class="user-area dropdown float-right">
-                     <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Admin</a>
+          <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome <?php echo $_SESSION['ADMIN_USERNAME']; ?></a>
                      <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="logout.php"><i class="fa fa-power-off"></i>Logout</a>
                      </div>

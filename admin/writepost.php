@@ -1,6 +1,5 @@
 <?php
-session_start();
-
+require('connection.inc.php');
 require('functions.inc.php');
 if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
 
@@ -11,53 +10,16 @@ if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
 $Topic='';
 $Post="";
 $msg='';
-// if(isset($_GET['id']) && $_GET['id']!=''){
-//    $id=get_safe_value($con,$_GET['id']);
-//    $res=mysqli_query($con,"select * from posts where Id='$id'");
-//    $check=mysqli_num_rows($res);
-//    if($check>0){
-//       $row=mysqli_fetch_assoc($res);
-//       $Topic=$row['Topic'];
-//       $Post=$row['Post'];
-//    }else{
-//       header('location:posts.php');
-//       die();
-//    }
-// }
-
+$folder='';
 if(isset($_POST['submit'])){
-   // $Topic=get_safe_value($con,$_POST['Topic']);
-   // $res=mysqli_query($con,"select * from posts where Topic='$Topic'");
-   // $check=mysqli_num_rows($res);
-   // if($check>0){
-   //    if(isset($_GET['id']) && $_GET['id']!=''){
-   //       $getData=mysqli_fetch_assoc($res);
-   //       if($id==$getData['id']){
-         
-   //       }else{
-   //          $msg="Post already exist";
-   //       }
-   //    }else{
-   //       $msg="Post already exist";
-   //    }
-   // }
+
     $topic=$_POST['topic'];
          $post=$_POST['post'];
+           $folder=$_POST['folder'];
          $con=mysqli_connect("localhost","marketi1_OJO","Marketing@52","marketi1_MarketingOJO");
-    mysqli_query($con,"insert into posts(Topic,Post) values('$topic','$post')");
+    mysqli_query($con,"insert into posts(Topic,Post,folder,Status) values('$topic','$post','$folder',1)");
      header('location:posts.php');
       die();
-   // if($msg==''){ 
-
-   //    if(isset($_GET['id']) && $_GET['id']!=''){
-        
-   //       mysqli_query($con,"update posts set Post='$Posts' where Id='$id'");
-   //    }else{
-   //       mysqli_query($con,"insert into posts(Topic,Post,status) values('$Topic',$Post','1')");
-   //    }
-   //    header('location:posts.php');
-   //    die();
-   // }
 }
 ?>
 <!doctype html>
@@ -87,6 +49,9 @@ if(isset($_POST['submit'])){
                     <li class="menu-item-has-children dropdown">
                      <a href="Posts.php" >Posts</a>
                   </li>
+                    <li class="menu-item-has-children dropdown">
+                     <a href="folder.php">Folder</a>
+                  </li>
                </ul>
             </div>
          </nav>
@@ -103,7 +68,7 @@ if(isset($_POST['submit'])){
             <div class="top-right">
                <div class="header-menu">
                   <div class="user-area dropdown float-right">
-                     <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Admin</a>
+                     <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome <?php echo $_SESSION['ADMIN_USERNAME']; ?></a>
                      <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="logout.php"><i class="fa fa-power-off"></i>Logout</a>
                      </div>
@@ -122,6 +87,23 @@ if(isset($_POST['submit'])){
                         <div class="card-header"><strong>Post</strong><small> Form</small></div>
                         <form action="writepost.php" method="post">
                      <div class="card-body card-block">
+                          <div class="form-group">
+                           <label for="categories" class=" form-control-label">Folder</label>
+                           <select class="form-control" name="folder">
+                              <option>Select Folder</option>
+                              <?php
+                              $resi=mysqli_query($con,"select id,Name from folder order by Name asc");
+                              while($row=mysqli_fetch_assoc($resi)){
+                                 if($row['Name']==$folder){
+                                    echo "<option selected value=".$row['Name'].">".$row['Name']."</option>";
+                                 }else{
+                                    echo "<option value=".$row['Name'].">".$row['Name']."</option>";
+                                 }
+                                 
+                              }
+                              ?>
+                           </select>
+                        </div>
                         <div class="form-group">
                            <label for="categories" class=" form-control-label">Topic</label>
                            <input type="text" name="topic" placeholder="Enter Topic name" class="form-control" required value="<?php echo $Topic?>">
