@@ -140,7 +140,7 @@ require('header.php');
                         <div class="form-group row mb-0 text-center">
                             <div class="col-12">
                                 <div class="border-top">
-                                    <a href="#" class="no-account">No account? Create one here</a>
+                                    <a href="signup.php" class="no-account">No account? Create one here</a>
                                 </div>
                             </div>
                         </div>

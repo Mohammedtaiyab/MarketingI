@@ -1,9 +1,10 @@
 <?php
 require('header.php');
 $sql="select * from banner where Status='1'";
-$product="select * from product";
-$result=mysqli_query($con,$product);
-$detail=mysqli_query($con,$product);
+$newarr="select * from product limit 5";
+$result=mysqli_query($con,$newarr);
+$detail=mysqli_query($con,"select * from product");
+$onsale=mysqli_query($con,"select * from product ORDER BY Id DESC");
 $res=mysqli_query($con,$sql);
 $resi=mysqli_query($con,$sql);
 $rowcount=mysqli_num_rows($res);
@@ -135,161 +136,32 @@ $j=1;
                                 <!-- slider-item end -->
   <?php }?>
 
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-5%</span>
-                                            <a href=""> <img src="assets/img/product/2.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="">MH02-Gray</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹28.72</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-12%</span>
-                                            <a href=""> <img src="assets/img/product/3.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">Silver - Recertified</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <span class="new-price">₹11.90</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-15%</span>
-                                            <a href=""> <img src="assets/img/product/4.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="">MH05-Black</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <span class="new-price">₹11.90</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-15%</span>
-                                            <a href=""> <img src="assets/img/product/4.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">MH05-Black</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <span class="new-price">₹11.90</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
                             </div>
                         </div>
                         <div class="tab-pane fade" id="product-pills2" role="tabpanel" aria-labelledby="product-tab2">
                             <div class="product-slider slick-arrow-style">
+                                  <?php 
+
+         while($row=mysqli_fetch_assoc($onsale)){ ?>
+
+
                                 <div class="product-item">
                                     <div class="hover-style">
                                         <div class="product-thumb">
                                             <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-20%</span>
-                                            <a href="product-details-simple.html"> <img src="assets/img/product/1.jpeg" alt="product-thumb-nail" /></a>
+                    <span class="offer discount-offer">
+                        <?php
+                            $o=$row['mrp'];
+                            $p=$row['Price'];
+                           $d=100-($p/$o)*100;
+                            echo intval($d)."%";
+                        ?>
+
+                    </span>
+                 <a href=""> 
+    <?php echo  "<img src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?>
+        </a>
+
                                             <div class="product-buttons d-flex">
                                                 <a href="#" class="product-btn">
                                                     <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
@@ -297,12 +169,13 @@ $j=1;
                                                 <a href="#" class="product-btn">
                                                     <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
                                                 </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
+                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" 
+                                              <?php  echo "data-target='#p".$row['ID']."'"; ?>>
                                                     <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
                                                 </a>
                                             </div>
                                         </div>
-                                        <div class="product-info">
+                                        <div class="product-info position-relative">
                                             <div class="raiting text-center pt-3 mb-3">
                                                 <span class="star"><i class="fas fa-star"></i></span>
                                                 <span class="star"><i class="fas fa-star"></i></span>
@@ -311,346 +184,19 @@ $j=1;
                                                 <span class="star"><i class="fas fa-star"></i></span>
                                             </div>
                                             <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">Strive Shoulder Pack</a>
+                                                <a href=""><?php echo $row['Name']; ?></a>
                                             </h5>
                                             <h3 class="product-price text-center">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
+                                                <del class="old-price"><?php echo "₹".$row['mrp']; ?></del>
+                                                <span class="new-price"><?php echo "₹".$row['Price']; ?></span>
                                             </h3>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- slider-item end -->
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-5%</span>
-                                            <a href="product-details-simple.html"> <img src="assets/img/product/2.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">MH02-Gray</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹28.72</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-12%</span>
-                                            <a href="product-details-simple.html"> <img src="assets/img/product/3.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">Silver - Recertified</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <span class="new-price">₹11.90</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-15%</span>
-                                            <a href="product-details-simple.html"> <img src="assets/img/product/4.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">MH05-Black</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <span class="new-price">₹11.90</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-15%</span>
-                                            <a href="product-details-simple.html"> <img src="assets/img/product/4.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">MH05-Black</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <span class="new-price">₹11.90</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="product-pills3" role="tabpanel" aria-labelledby="product-tab3">
-                            <div class="product-slider slick-arrow-style">
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-20%</span>
-                                            <a href="product-details-simple.html"> <img src="assets/img/product/1.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">Strive Shoulder Pack</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-5%</span>
-                                            <a href="product-details-simple.html"> <img src="assets/img/product/2.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">MH02-Gray</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹28.72</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-12%</span>
-                                            <a href="product-details-simple.html"> <img src="assets/img/product/3.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">Silver - Recertified</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <span class="new-price">₹11.90</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-15%</span>
-                                            <a href="product-details-simple.html"> <img src="assets/img/product/4.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">MH05-Black</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <span class="new-price">₹11.90</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- slider-item end -->
-                                <div class="product-item">
-                                    <div class="hover-style">
-                                        <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
-                                            <span class="offer discount-offer">-15%</span>
-                                            <a href="product-details-simple.html"> <img src="assets/img/product/4.jpeg" alt="product-thumb-nail" /></a>
-                                            <div class="product-buttons d-flex">
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                                </a>
-                                                <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                                </a>
-                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="product-info">
-                                            <div class="raiting text-center pt-3 mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title text-center mb-3">
-                                                <a href="product-details-simple.html">MH05-Black</a>
-                                            </h5>
-                                            <h3 class="product-price text-center">
-                                                <span class="new-price">₹11.90</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
+  <?php }?>
+
+                              
                                 <!-- slider-item end -->
                             </div>
                         </div>

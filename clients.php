@@ -241,7 +241,7 @@ body { background: aliceblue; }
 												<li ><a href="index.html">Home</a></li>
 												<li><a href="about-us.html">About Us</a></li>
 												<li><a href="service.html">Services</a></li>
-												<li><a href="shop/index.php">PRODUCTS</a></li>
+												<li><a href="product/index.php">PRODUCTS</a></li>
 												<li><a href="ideanation.php">IdeaNation</a></li>
 												<li class="active"><a href="clients.php">Our Clients</a>	
 												<li><a href="career.php">Careers</a></li>		
@@ -333,7 +333,7 @@ body { background: aliceblue; }
 									<ul class="list">
 										<li><a href="about-us.html"><i class="fa fa-angle-right"></i>ABOUT US</a></li>
 										<li><a href="service.html"><i class="fa fa-angle-right"></i>OUR SERVICES</a></li>
-										<li><a href="shop/index.php"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
+										<li><a href="product/index.php"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
 										<li><a href="ideanation.php"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
 										<li><a href="clients.php"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
 										<li><a href="career.php"><i class="fa fa-angle-right"></i>CAREERS</a></li>

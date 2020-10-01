@@ -455,7 +455,7 @@ $rowcount=mysqli_num_rows($res);
 												<li  ><a href="index.html">Home</a></li>
 												<li><a href="about-us.html">About Us</a></li>
 												<li><a href="service.html">Services</a></li>
-												<li><a href="shop/index.php">PRODUCTS</a></li>
+												<li><a href="product/index.php">PRODUCTS</a></li>
 												<li class="active"><a href="ideanation.php">IdeaNation</a></li>
 												<li><a href="clients.php">Our Clients</a></li>		
 												<li><a href="career.php">Careers</a></li>	
@@ -678,7 +678,7 @@ $rowcount=mysqli_num_rows($res);
                   <ul class="list">
                     <li><a href="about-us.html"><i class="fa fa-angle-right"></i>ABOUT US</a></li>
                     <li><a href="service.html"><i class="fa fa-angle-right"></i>OUR SERVICES</a></li>
-                    <li><a href="shop/index.php.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
+                    <li><a href="product/index.php.html"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
                     <li><a href="ideanation.php"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
                     <li><a href="clients.php"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
                     <li><a href="career.php"><i class="fa fa-angle-right"></i>CAREERS</a></li>
