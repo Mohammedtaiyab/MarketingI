@@ -5,9 +5,9 @@ $newarr="select * from product limit 5";
 $result=mysqli_query($con,$newarr);
 $detail=mysqli_query($con,"select * from product");
 $onsale=mysqli_query($con,"select * from product ORDER BY Id DESC");
-$feature=mysqli_query($con,"select * from product where Categories_id IN (SELECT DISTINCT Categories_id from product) GROUP BY Categories_id LIMIT 0,1");
-$bestsale=mysqli_query($con,"select * from product where Categories_id IN (SELECT DISTINCT Categories_id from product) GROUP BY Categories_id LIMIT 0,1");
-$showcase=mysqli_query($con,"select * from product where Categories_id IN (SELECT DISTINCT Categories_id from product) GROUP BY Categories_id LIMIT 4,3");
+$feature=mysqli_query($con,"select * from product where Categories_id IN (SELECT DISTINCT Categories_id from product) GROUP BY Categories_id LIMIT 0,5");
+$bestsale=mysqli_query($con,"select * from product where Categories_id IN (SELECT DISTINCT Categories_id from product) GROUP BY Categories_id LIMIT 0,5");
+$showcase=mysqli_query($con,"select * from product where Categories_id IN (SELECT DISTINCT Categories_id from product) GROUP BY Categories_id LIMIT 0,4");
 $res=mysqli_query($con,$sql);
 $resi=mysqli_query($con,$sql);
 $rowcount=mysqli_num_rows($res);
@@ -370,13 +370,19 @@ $j=1;
                     <div class="section-title mb-4">
                         <h2><?php echo  $categoryname; ?></h2>
                     </div>
+                    <?php 
+                    $products=mysqli_query($con,"select * from product where Categories_id='$cat' LIMIT 3");
+                     while($row2=mysqli_fetch_assoc($products)){
+                    ?>
+
                     <div class="category slick-arrow-style">
                         <div class="slider-item">
                             <ul class="media-list">
                                 <li class="mb-4">
                                     <div class="media">
                                         <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/1.jpeg" alt="category thumb" /></a>
+                                            <?php echo "<a href='product-detail.php?id=".$row2['ID']."'>"; ?>
+    <?php echo  "<img class='product-img' src='../admin/media/product/".$row2['Image']."' alt='product-thumb-nail' />" ?></a>
                                         </div>
                                         <div class="media-body">
                                             <div class="raiting mb-3">
@@ -387,135 +393,16 @@ $j=1;
                                                 <span class="star decent"><i class="fas fa-star"></i></span>
                                             </div>
                                             <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
+                                                <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?><?php echo $row['Name']; ?></a>
                                             </h5>
                                             <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
+                                                  <del class="old-price"><?php echo "₹".$row['mrp']; ?></del>
+                                                <span class="new-price"><?php echo "₹".$row['Price']; ?></span>
                                             </h3>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/2.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">MH02-Gray</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹28.72</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/3.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">MH03-Gray</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- slider-item end -->
-                        <div class="slider-item">
-                            <ul class="media-list">
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/1.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/2.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">MH02-Gray</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹28.72</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/3.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">MH03-Gray</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
+                                <?php } ?>
                             </ul>
                         </div>
                         <!-- slider-item end -->
