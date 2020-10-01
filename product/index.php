@@ -5,6 +5,9 @@ $newarr="select * from product limit 5";
 $result=mysqli_query($con,$newarr);
 $detail=mysqli_query($con,"select * from product");
 $onsale=mysqli_query($con,"select * from product ORDER BY Id DESC");
+$feature=mysqli_query($con,"select * from product where Categories_id IN (SELECT DISTINCT Categories_id from product) GROUP BY Categories_id LIMIT 0,1");
+$bestsale=mysqli_query($con,"select * from product where Categories_id IN (SELECT DISTINCT Categories_id from product) GROUP BY Categories_id LIMIT 0,1");
+$showcase=mysqli_query($con,"select * from product where Categories_id IN (SELECT DISTINCT Categories_id from product) GROUP BY Categories_id LIMIT 4,3");
 $res=mysqli_query($con,$sql);
 $resi=mysqli_query($con,$sql);
 $rowcount=mysqli_num_rows($res);
@@ -94,12 +97,12 @@ $j=1;
                             $o=$row['mrp'];
                             $p=$row['Price'];
                            $d=100-($p/$o)*100;
-                            echo intval($d)."%";
+                            echo intval($d)."% off";
                         ?>
 
                     </span>
-                 <a href=""> 
-    <?php echo  "<img src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?>
+             <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?>
+    <?php echo  "<img class='product-img' src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?>
         </a>
 
                                             <div class="product-buttons d-flex">
@@ -124,7 +127,7 @@ $j=1;
                                                 <span class="star"><i class="fas fa-star"></i></span>
                                             </div>
                                             <h5 class="title text-center mb-3">
-                                                <a href=""><?php echo $row['Name']; ?></a>
+                                                <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?><?php echo $row['Name']; ?></a>
                                             </h5>
                                             <h3 class="product-price text-center">
                                                 <del class="old-price"><?php echo "₹".$row['mrp']; ?></del>
@@ -148,18 +151,18 @@ $j=1;
                                 <div class="product-item">
                                     <div class="hover-style">
                                         <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
+                                      
                     <span class="offer discount-offer">
                         <?php
                             $o=$row['mrp'];
                             $p=$row['Price'];
                            $d=100-($p/$o)*100;
-                            echo intval($d)."%";
+                            echo intval($d)."%off";
                         ?>
 
                     </span>
-                 <a href=""> 
-    <?php echo  "<img src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?>
+                <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?>
+    <?php echo  "<img class='product-img' src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?>
         </a>
 
                                             <div class="product-buttons d-flex">
@@ -184,7 +187,7 @@ $j=1;
                                                 <span class="star"><i class="fas fa-star"></i></span>
                                             </div>
                                             <h5 class="title text-center mb-3">
-                                                <a href=""><?php echo $row['Name']; ?></a>
+                                                <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?><?php echo $row['Name']; ?></a>
                                             </h5>
                                             <h3 class="product-price text-center">
                                                 <del class="old-price"><?php echo "₹".$row['mrp']; ?></del>
@@ -196,7 +199,67 @@ $j=1;
                                 <!-- slider-item end -->
   <?php }?>
 
-                              
+                            
+                            </div>
+                        </div>
+
+                                          <div class="tab-pane fade" id="product-pills3" role="tabpanel" aria-labelledby="product-tab3">
+                            <div class="product-slider slick-arrow-style">
+                               <?php 
+
+         while($row=mysqli_fetch_assoc($feature)){ ?>
+
+
+                                <div class="product-item">
+                                    <div class="hover-style">
+                                        <div class="product-thumb">
+                                      
+                    <span class="offer discount-offer">
+                        <?php
+                            $o=$row['mrp'];
+                            $p=$row['Price'];
+                           $d=100-($p/$o)*100;
+                            echo intval($d)."% off";
+                        ?>
+
+                    </span>
+                <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?>
+    <?php echo  "<img class='product-img' src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?>
+        </a>
+
+                                            <div class="product-buttons d-flex">
+                                                <a href="#" class="product-btn">
+                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
+                                                </a>
+                                                <a href="#" class="product-btn">
+                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
+                                                </a>
+                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" 
+                                              <?php  echo "data-target='#p".$row['ID']."'"; ?>>
+                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-info position-relative">
+                                            <div class="raiting text-center pt-3 mb-3">
+                                                <span class="star"><i class="fas fa-star"></i></span>
+                                                <span class="star"><i class="fas fa-star"></i></span>
+                                                <span class="star"><i class="fas fa-star"></i></span>
+                                                <span class="star"><i class="fas fa-star"></i></span>
+                                                <span class="star"><i class="fas fa-star"></i></span>
+                                            </div>
+                                            <h5 class="title text-center mb-3">
+                                                <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?><?php echo $row['Name']; ?></a>
+                                            </h5>
+                                            <h3 class="product-price text-center">
+                                                <del class="old-price"><?php echo "₹".$row['mrp']; ?></del>
+                                                <span class="new-price"><?php echo "₹".$row['Price']; ?></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- slider-item end -->
+  <?php }?>
                                 <!-- slider-item end -->
                             </div>
                         </div>
@@ -206,47 +269,8 @@ $j=1;
         </div>
     </section>
     <!-- product tab end -->
-    <!-- advertisement section start-->
-    <div class="advertisement bg-white pb-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-lg-4 mb-4">
-                    <div class="advertise-thumb">
-                        <a href="">
-                            <img src="assets/img/advertisement/1.jpg" alt="advertisement-thumb " />
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-8 col-lg-8">
-                    <div class="row">
-                        <div class="col-12 mb-4">
-                            <div class="advertise-thumb">
-                                <a href="">
-                                    <img src="assets/img/advertisement/2.jpg" alt="advertisement-thumb " />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-12 mb-4">
-                            <div class="advertise-thumb">
-                                <a href="">
-                                    <img src="assets/img/advertisement/3.jpg" alt="advertisement-thumb " />
-                                </a>
-                            </div>
-                        </div>
-                         <div class="col-12 mb-4">
-                            <div class="advertise-thumb">
-                                <a href="">
-                                    <img src="assets/img/advertisement/2.jpg" alt="advertisement-thumb " />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- murtaza jhina-->
-    <!-- advertisement section end-->
+
+
     <!-- best sellers product start -->
     <section class="best-seller-product pb-60">
         <div class="container">
@@ -260,188 +284,63 @@ $j=1;
             <div class="row">
                 <div class="col-12">
                     <div class="product-slider slick-arrow-style">
-                        <div class="product-item">
-                            <div class="hover-style">
-                                <div class="product-thumb">
-                                    <span class="offer new-offer">new</span>
-                                    <span class="offer discount-offer">-20%</span>
-                                    <a href=""> <img src="assets/img/product/1.jpeg" alt="product-thumb-nail" /></a>
-                                    <div class="product-buttons d-flex">
-                                        <a href="#" class="product-btn">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                        </a>
-                                        <a href="#" class="product-btn">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                        </a>
-                                        <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                        </a>
+                     <?php 
+
+         while($row=mysqli_fetch_assoc($bestsale)){ ?>
+
+
+                                <div class="product-item">
+                                    <div class="hover-style">
+                                        <div class="product-thumb">
+                                      
+                    <span class="offer discount-offer">
+                        <?php
+                            $o=$row['mrp'];
+                            $p=$row['Price'];
+                           $d=100-($p/$o)*100;
+                            echo intval($d)."% off";
+                        ?>
+
+                    </span>
+              <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?>
+    <?php echo  "<img class='product-img' src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?>
+        </a>
+
+                                            <div class="product-buttons d-flex">
+                                                <a href="#" class="product-btn">
+                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
+                                                </a>
+                                                <a href="#" class="product-btn">
+                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
+                                                </a>
+                                                <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" 
+                                              <?php  echo "data-target='#p".$row['ID']."'"; ?>>
+                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="product-info position-relative">
+                                            <div class="raiting text-center pt-3 mb-3">
+                                                <span class="star"><i class="fas fa-star"></i></span>
+                                                <span class="star"><i class="fas fa-star"></i></span>
+                                                <span class="star"><i class="fas fa-star"></i></span>
+                                                <span class="star"><i class="fas fa-star"></i></span>
+                                                <span class="star"><i class="fas fa-star"></i></span>
+                                            </div>
+                                            <h5 class="title text-center mb-3">
+                                         <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?>
+                                                 <?php echo $row['Name']; ?></a>
+                                            </h5>
+                                            <h3 class="product-price text-center">
+                                                <del class="old-price"><?php echo "₹".$row['mrp']; ?></del>
+                                                <span class="new-price"><?php echo "₹".$row['Price']; ?></span>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="product-info">
-                                    <div class="raiting text-center pt-3 mb-3">
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                    </div>
-                                    <h5 class="title text-center mb-3">
-                                        <a href="product-details-simple.html">Strive Shoulder Pack</a>
-                                    </h5>
-                                    <h3 class="product-price text-center">
-                                        <del class="old-price">₹23.90</del>
-                                        <span class="new-price">₹19.12</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- slider-item end -->
-                        <div class="product-item">
-                            <div class="hover-style">
-                                <div class="product-thumb">
-                                    <span class="offer new-offer">new</span>
-                                    <span class="offer discount-offer">-5%</span>
-                                    <a href=""> <img src="assets/img/product/2.jpeg" alt="product-thumb-nail" /></a>
-                                    <div class="product-buttons d-flex">
-                                        <a href="#" class="product-btn">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                        </a>
-                                        <a href="#" class="product-btn">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                        </a>
-                                        <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <div class="raiting text-center pt-3 mb-3">
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                    </div>
-                                    <h5 class="title text-center mb-3">
-                                        <a href="product-details-simple.html">MH02-Gray</a>
-                                    </h5>
-                                    <h3 class="product-price text-center">
-                                        <del class="old-price">₹23.90</del>
-                                        <span class="new-price">₹28.72</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- slider-item end -->
-                        <div class="product-item">
-                            <div class="hover-style">
-                                <div class="product-thumb">
-                                    <span class="offer new-offer">new</span>
-                                    <span class="offer discount-offer">-12%</span>
-                                    <a href=""> <img src="assets/img/product/3.jpeg" alt="product-thumb-nail" /></a>
-                                    <div class="product-buttons d-flex">
-                                        <a href="#" class="product-btn">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                        </a>
-                                        <a href="#" class="product-btn">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                        </a>
-                                        <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <div class="raiting text-center pt-3 mb-3">
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                    </div>
-                                    <h5 class="title text-center mb-3">
-                                        <a href="">Silver - Recertified</a>
-                                    </h5>
-                                    <h3 class="product-price text-center">
-                                        <span class="new-price">₹11.90</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- slider-item end -->
-                        <div class="product-item">
-                            <div class="hover-style">
-                                <div class="product-thumb">
-                                    <span class="offer new-offer">new</span>
-                                    <span class="offer discount-offer">-15%</span>
-                                    <a href=""> <img src="assets/img/product/4.jpeg" alt="product-thumb-nail" /></a>
-                                    <div class="product-buttons d-flex">
-                                        <a href="#" class="product-btn">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                        </a>
-                                        <a href="#" class="product-btn">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                        </a>
-                                        <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <div class="raiting text-center pt-3 mb-3">
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                    </div>
-                                    <h5 class="title text-center mb-3">
-                                        <a href="">MH05-Black</a>
-                                    </h5>
-                                    <h3 class="product-price text-center">
-                                        <span class="new-price">₹11.90</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- slider-item end -->
-                        <div class="product-item">
-                            <div class="hover-style">
-                                <div class="product-thumb">
-                                    <span class="offer new-offer">new</span>
-                                    <span class="offer discount-offer">-15%</span>
-                                    <a href=""> <img src="assets/img/product/4.jpeg" alt="product-thumb-nail" /></a>
-                                    <div class="product-buttons d-flex">
-                                        <a href="#" class="product-btn">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
-                                        </a>
-                                        <a href="#" class="product-btn">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
-                                        </a>
-                                        <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" data-target="#shopdetails">
-                                            <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="quick-view"><i class="far fa-eye"></i></span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <div class="raiting text-center pt-3 mb-3">
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                        <span class="star"><i class="fas fa-star"></i></span>
-                                    </div>
-                                    <h5 class="title text-center mb-3">
-                                        <a href="">MH05-Black</a>
-                                    </h5>
-                                    <h3 class="product-price text-center">
-                                        <span class="new-price">₹11.90</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- slider-item end -->
+                                <!-- slider-item end -->
+  <?php }?>
+                       
                     </div>
                 </div>
             </div>
@@ -452,7 +351,7 @@ $j=1;
     <section class="bg-success py-60 text-center">
         <div class="instagram">
             <h3 class="title">
-                <a href="#"><i class="fab fa-instagram"></i>follow @ instagram</a>
+                <a href="https://www.instagram.com/marketingojo/"><i class="fab fa-instagram"></i>follow @ instagram</a>
             </h3>
         </div>
     </section>
@@ -461,9 +360,15 @@ $j=1;
     <section class="product-category bg-dark-gray py-60">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
+<?php 
+  while($row=mysqli_fetch_assoc($showcase)){ 
+    $cat=$row['Categories_id'];
+    $category=mysqli_query($con,"select categories from categories where id='$cat'");
+    $row1=mysqli_fetch_assoc($category);
+    $categoryname=$row1['categories'];?>
+    <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
                     <div class="section-title mb-4">
-                        <h2>Movbile Cover</h2>
+                        <h2><?php echo  $categoryname; ?></h2>
                     </div>
                     <div class="category slick-arrow-style">
                         <div class="slider-item">
@@ -616,470 +521,7 @@ $j=1;
                         <!-- slider-item end -->
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
-                    <div class="section-title mb-4">
-                        <h2>Passport Cover</h2>
-                    </div>
-                    <div class="category slick-arrow-style">
-                        <div class="slider-item">
-                            <ul class="media-list">
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/4.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/5.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/6.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- slider-item end -->
-                        <div class="slider-item">
-                            <ul class="media-list">
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/4.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/5.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/6.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- slider-item end -->
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
-                    <div class="section-title mb-4">
-                        <h2>clutch</h2>
-                    </div>
-                    <div class="category slick-arrow-style">
-                        <div class="slider-item">
-                            <ul class="media-list">
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <img src="assets/img/category/8.jpeg" alt="category thumb" />
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href="#"> <img src="assets/img/category/7.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/9.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- slider-item end -->
-                        <div class="slider-item">
-                            <ul class="media-list">
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <img src="assets/img/category/4.jpeg" alt="category thumb" />
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/7.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/9.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- slider-item end -->
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
-                    <div class="section-title mb-4">
-                        <h2>Photo clutch</h2>
-                    </div>
-                    <div class="category slick-arrow-style">
-                        <div class="slider-item">
-                            <ul class="media-list">
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/10.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/11.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""><img src="assets/img/category/12.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- slider-item end -->
-                        <div class="slider-item">
-                            <ul class="media-list">
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/9.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="mb-4">
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""> <img src="assets/img/category/3.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media">
-                                        <div class="cat-product-thumb mr-3">
-                                            <a href=""><img src="assets/img/category/4.jpeg" alt="category thumb" /></a>
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="raiting mb-3">
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star"><i class="fas fa-star"></i></span>
-                                                <span class="star decent"><i class="fas fa-star"></i></span>
-                                            </div>
-                                            <h5 class="title mb-2">
-                                                <a href="">Established fact</a>
-                                            </h5>
-                                            <h3 class="product-price">
-                                                <del class="old-price">₹23.90</del>
-                                                <span class="new-price">₹19.12</span>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- slider-item end -->
+           <?php } ?>
                     </div>
                 </div>
             </div>
@@ -1174,7 +616,7 @@ $j=1;
                               while($row=mysqli_fetch_assoc($imgs)){?>
                                      <div class="single-product">
                             <div class="product-thumb">
-                         <?php echo  "<img src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?>
+                         <?php echo  "<img class='product-img' src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?>
                             </div>
                         </div>
                             <?php } ?>

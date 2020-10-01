@@ -1,0 +1,21 @@
+.offer {
+    position: absolute;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    line-height: 65px;
+    height: 65px;
+    width: 65px;
+   font-size: 14px; 
+    font-weight: 700;
+    text-transform: capitalize;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.product-img{
+	height: 255px;
+	object-fit: cover;
+}

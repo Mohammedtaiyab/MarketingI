@@ -82,18 +82,18 @@ $result=mysqli_query($con,$product);
 
                <div class="product-list col-sm-6 col-lg-4 mb-60">
                                         <div class="product-thumb">
-                                            <span class="offer new-offer">new</span>
+                                           
                                             <span class="offer discount-offer">
                                             	 <?php
                             $o=$row['mrp'];
                             $p=$row['Price'];
                            $d=100-($p/$o)*100;
-                            echo intval($d)."%";
+                            echo intval($d)."%off";
                         ?>
 
                                             </span>
             <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?>
-              <?php echo  "<img src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?>
+              <?php echo  "<img class='product-img' src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?>
                 </a>
                                             <div class="product-buttons d-flex">
                                                 <a href="#" class="product-btn">

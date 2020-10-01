@@ -18,6 +18,7 @@ include('User.php');
     <link rel="stylesheet" href="assets/css/plugins.min.css" />
     <!-- style min css -->
     <link rel="stylesheet" href="assets/css/style.min.css" />
+       <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
