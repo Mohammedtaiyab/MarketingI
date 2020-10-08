@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
         
         <!-- Favicon -->
     
-        <link rel="icon" type="../image/png" href="images/favicon.png">    
+        <link rel="icon" type="../image/png" href="../images/favicon.png">    
         
         <!-- Web Font -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
