@@ -1,64 +1,33 @@
 <?php
 require('header.php');
-
-
-// $login_button = '';
-
-
-// if(isset($_GET["code"]))
-// {
-
-//  $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
-
-
-//  if(!isset($token['error']))
-//  {
+require_once '../vendor/autoload.php';
  
-//   $google_client->setAccessToken($token['access_token']);
-
+// init configuration
+$clientID = '61411318107-n48rdrq0ta9g0dgpr779ee1gvbt8j4ge.apps.googleusercontent.com';
+$clientSecret = 'ujPPhoz__scERj1nqi8194Ao>';
+$redirectUri = 'http://localhost:8080/MarketingOJO/product/index.php';
+  
+// create Client Request to access Google API
+$client = new Google_Client();
+$client->setClientId($clientID);
+$client->setClientSecret($clientSecret);
+$client->setRedirectUri($redirectUri);
+$client->addScope("email");
+$client->addScope("profile");
  
-//   $_SESSION['access_token'] = $token['access_token'];
+// authenticate code from Google OAuth Flow
+if (isset($_GET['code'])) {
+  $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+  $client->setAccessToken($token['access_token']);
+  
+  // get profile info
+  $google_oauth = new Google_Service_Oauth2($client);
+  $google_account_info = $google_oauth->userinfo->get();
+  $email =  $google_account_info->email;
+  $name =  $google_account_info->name;
+ $_SESSION['username'] = $name;
+  // now you can use this profile info to create account in your website and make user logged in.
 
-
-//   $google_service = new Google_Service_Oauth2($google_client);
-
- 
-//   $data = $google_service->userinfo->get();
-
- 
-//   if(!empty($data['given_name']))
-//   {
-//    $_SESSION['user_first_name'] = $data['given_name'];
-//   }
-
-//   if(!empty($data['family_name']))
-//   {
-//    $_SESSION['user_last_name'] = $data['family_name'];
-//   }
-
-//   if(!empty($data['email']))
-//   {
-//    $_SESSION['user_email_address'] = $data['email'];
-//   }
-
-//   if(!empty($data['gender']))
-//   {
-//    $_SESSION['user_gender'] = $data['gender'];
-//   }
-
-//   if(!empty($data['picture']))
-//   {
-//    $_SESSION['user_image'] = $data['picture'];
-//   }
-//  }
-// }
-
-
-// if(!isset($_SESSION['access_token']))
-// {
-
-//  $login_button = '<a href="'.$google_client->createAuthUrl().'">Login With Google</a>';
-// }
 ?>
 
   <!-- breadcrumb-section start -->
@@ -86,27 +55,16 @@ require('header.php');
                        <div class="social">
                                   <div class="panel panel-default">
                                     <?php include('error.php'); ?>
-   <?php
-   // if($login_button == '')
-   // {
-   //  echo '<div class="panel-heading">Welcome User</div><div class="panel-body">';
-   //  echo '<img src="'.$_SESSION["user_image"].'" class="img-responsive img-circle img-thumbnail" />';
-   //  echo '<h3><b>Name :</b> '.$_SESSION['user_first_name'].' '.$_SESSION['user_last_name'].'</h3>';
-   //  echo '<h3><b>Email :</b> '.$_SESSION['user_email_address'].'</h3>';
-   //  echo '<h3><a href="?logout">Logout</h3></div>';
-   // }
-   // else
-   // {
-   //  echo '<div align="center">'.$login_button . '</div>';
-   // }
-   ?>
+  
    </div>
-                                   <!--  <a id="google_login" class="circle google" href="#">
-                                        <i class="fa fa-google-plus fa-fw"></i>
-                                    </a>
-                                   -->
+                          
                                 </div>
                     <form class="log-in-form" method="post" action="login.php">
+                       <?php
+  }  else {
+  echo "<a href='".$client->createAuthUrl()."'>Google Login</a>";
+}
+   ?>
                         <div class="form-group row">
                             <label for="staticEmail" class="col-md-3 col-form-label">Email</label>
                             <div class="col-md-6">

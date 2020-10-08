@@ -11,14 +11,48 @@ include('User.php');
     <meta name="description" content="" />
     <title>Marketing OJO</title>
     <!-- Favicon -->
+
     <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png" />
     <!-- vendor min css -->
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css" />
     <!-- plugins min css -->
     <link rel="stylesheet" href="assets/css/plugins.min.css" />
     <!-- style min css -->
+    <link href="login/assets/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.min.css" />
        <link rel="stylesheet" href="assets/css/style.css" />
+
+    
+
+    <link href="login/assets/css/login-register.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <style type="text/css">
+            .social li {
+    display: inline-block;
+    margin-right: 5px;
+    color: #bbb;
+    font-weight: 500;
+}
+.social {
+    margin-top: 15px;
+
+}
+.sub1 {
+    padding: 2px;
+    display : flex;
+   flex-flow: row wrap;
+
+}
+.sub1 li{
+    margin:2px;
+    min-width:200px;
+    padding: 1px;
+    margin-left: 1px;
+    flex: 1;
+}
+        </style>
 </head>
 
 <body>
@@ -46,13 +80,13 @@ include('User.php');
                 </li>
                 <li>
                     <span class="menu-expand"></span><a href="#"><span class="menu-text">Products</span></a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu sub1">
                         <?php
-                        $sql="select * from categories order by categories asc";
+                        $sql="select DISTINCT Categories_id,categories  from product,categories where product.Categories_id=categories.id";
                         $res=mysqli_query($con,$sql); 
                            while($row=mysqli_fetch_assoc($res)){?>
                 <li>
-                    <?php echo "<a href='product.php?id=".$row['id']."'>"; ?>
+                    <?php echo "<a href='product.php?id=".$row['Categories_id']."'>"; ?>
                     <?php echo $row['categories']?></a></li>  
                        <?php }
                         ?>
@@ -85,7 +119,7 @@ include('User.php');
 
 
                    <?php  if (!isset($_SESSION['username'])) { ?>
-         <li> <a href="login.php">Log In</a> </li>
+         <li> <a  data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log In</a> </li>
                     <?php } ?>
 
 
@@ -102,12 +136,12 @@ include('User.php');
         <div class="container container-lg-fliud">
             <div class="row align-items-center">
                 <div class="col-xl-4 col-lg-5">
-                    <div class="shipping-box"><i class="fas fa-truck"></i>Free Shipping on First Order<span></span></div>
+                <a href="../index.html"> <img src="images/mainlogo.png" style="width: 15%"></a> 
                 </div>
                 <div class="col-xl-4 col-lg-3">
                     <div class="logo text-center">
                         <a href="index.php">
-                            <img src="assets/img/logo.png" alt="" />
+                            <img src="images/logoproduct.jpg" alt="" style="width: 50%" />
                         </a>
                     </div>
                 </div>
@@ -194,12 +228,14 @@ include('User.php');
                                     <!-- sub menu -->
                                     <ul class="sub-menu">
                                                     <?php
-                        $sql="select * from categories order by categories asc";
+                         $sql="select DISTINCT Categories_id,categories  from product,categories where product.Categories_id=categories.id";
                         $res=mysqli_query($con,$sql); 
                            while($row=mysqli_fetch_assoc($res)){?>
-                              <li>
-                               <?php echo "<a href='product.php?id=".$row['id']."'>"; ?>
-                    <?php echo $row['categories']?></a></li>  
+                <li><div class="sub-menu-li"> 
+                      <?php echo "<a href='product.php?id=".$row['Categories_id']."'>"; ?>
+                    <?php echo $row['categories']?></a> 
+                </div></li> 
+                  
 
                        <?php }
                         ?>
@@ -229,7 +265,7 @@ include('User.php');
                           
                                   <li><a href="">contact</a></li>
                                       <?php  if (!isset($_SESSION['username'])) { ?>
-         <li> <a href="login.php">Log In</a> </li>
+         <li> <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log In</a> </li>
                     <?php } ?>
 
                         

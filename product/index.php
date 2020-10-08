@@ -357,7 +357,7 @@ $j=1;
     </section>
     <!-- instagram-section end-->
     <!-- product category start -->
-    <section class="product-category bg-dark-gray py-60">
+  <section class="product-category bg-dark-gray py-60">
         <div class="container">
             <div class="row">
 <?php 
@@ -370,19 +370,19 @@ $j=1;
                     <div class="section-title mb-4">
                         <h2><?php echo  $categoryname; ?></h2>
                     </div>
-                    <?php 
-                    $products=mysqli_query($con,"select * from product where Categories_id='$cat' LIMIT 3");
-                     while($row2=mysqli_fetch_assoc($products)){
-                    ?>
-
                     <div class="category slick-arrow-style">
                         <div class="slider-item">
                             <ul class="media-list">
+                    <?php 
+                $products=mysqli_query($con,"select * from product where Categories_id='$cat' LIMIT 3");
+                     while($row2=mysqli_fetch_assoc($products)){
+                    ?>
+
                                 <li class="mb-4">
                                     <div class="media">
                                         <div class="cat-product-thumb mr-3">
-                                            <?php echo "<a href='product-detail.php?id=".$row2['ID']."'>"; ?>
-    <?php echo  "<img class='product-img' src='../admin/media/product/".$row2['Image']."' alt='product-thumb-nail' />" ?></a>
+                                            <?php echo "<a href='product-detail.php?id=".$row2['ID']."'>";?>
+    <?php echo  "<img  src='../admin/media/product/".$row2['Image']."' alt='product-thumb-nail' style=' height:70px;object-fit: cover;' />" ?>
                                         </div>
                                         <div class="media-body">
                                             <div class="raiting mb-3">
@@ -393,16 +393,18 @@ $j=1;
                                                 <span class="star decent"><i class="fas fa-star"></i></span>
                                             </div>
                                             <h5 class="title mb-2">
-                                                <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?><?php echo $row['Name']; ?></a>
+                                                <?php echo "<a href='product-detail.php?id=".$row2['ID']."'>"; ?><?php echo $row['Name']; 
+                                                ?></a>
                                             </h5>
                                             <h3 class="product-price">
-                                                  <del class="old-price"><?php echo "₹".$row['mrp']; ?></del>
-                                                <span class="new-price"><?php echo "₹".$row['Price']; ?></span>
+                                                  <del class="old-price"><?php echo "₹".$row2['mrp']; ?></del>
+                                                <span class="new-price"><?php echo "₹".$row2['Price']; ?></span>
                                             </h3>
                                         </div>
                                     </div>
                                 </li>
-                                <?php } ?>
+                                <?php } 
+                                ?>
                             </ul>
                         </div>
                         <!-- slider-item end -->
@@ -426,7 +428,7 @@ $j=1;
                         <div class="media-body">
                             <div class="banner-bottom-info">
                                 <h3 class="title">Return &amp; Exchange</h3>
-                                <p>Committed to return the money in 30 days</p>
+                                <p>Committed to return the money in 10 days</p>
                             </div>
                         </div>
                     </div>
@@ -437,7 +439,7 @@ $j=1;
                         <div class="media-body">
                             <div class="banner-bottom-info">
                                 <h3 class="title">Recieve Gift Card</h3>
-                                <p>Receive gift all over order ₹5000</p>
+                                <p>Receive special gift cards on all orders above ₹5000</p>
                             </div>
                         </div>
                     </div>
@@ -448,7 +450,7 @@ $j=1;
                         <div class="media-body">
                             <div class="banner-bottom-info">
                                 <h3 class="title">Online Support 24/7</h3>
-                                <p>24/7 online support is always ready</p>
+                                <p>All our customer support executives are 24/7 available at your service</p>
                             </div>
                         </div>
                     </div>

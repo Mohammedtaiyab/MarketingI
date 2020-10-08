@@ -89,7 +89,7 @@ if(isset($_POST['submit'])){
   font: 600 normal 2.5em 'tahoma';
   }
 .pad{
-    padding-top: 0px;
+    padding-top: 40px;
 }
             }
             .slicknav_nav a{
@@ -231,16 +231,17 @@ if(isset($_POST['submit'])){
                             <div class="single-layer four"></div>
                             <div class="single-layer five"></div>
                         </div>
-                        <div class="container">
+                        <div class="container pad">
                        <!--      <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12"> -->
-                                    <h3 class="pad">Welcome To</h3>
-<img src="../images/logo2.png" alt="logo" >
+                                    
                                        
   <div class="form">
    <!--  <img src="images/mainlogo.png" style="width: 12rem;"> -->
    <!--  <img src="images/adminlog.png" style="width: 12rem;"> -->
-   <h2>Login</h2>
+  <img src="images/logo.png" alt="logo" >
+  <h3 style="margin-top: 12px;">LOGIN
+</h3>
 <form method="post">
       <input type="text" name="username" placeholder="username"/>
       <input type="password"  name="password" placeholder="password"/>

@@ -19,3 +19,12 @@
 	height: 255px;
 	object-fit: cover;
 }
+.social li {
+    display: inline-block;
+    margin-right: 5px;
+    color: #bbb;
+    font-weight: 500;
+}
+.social {
+    margin-top: 15px;
+}

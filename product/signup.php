@@ -1,22 +1,7 @@
 <?php
 require('header.php');
 $msg='';
-// if(isset($_POST["submit"])){
-//   $name=$_POST['name'];
-//     $email=$_POST['email'];
-//     $phone=$_POST['contact'];
-//     $password=md5($_POST['password']);
-//   $sql="select * from user where Email='$email'";
-//     $res=mysqli_query($con,$sql);
-//     $count=mysqli_num_rows($res);
-//     if($count>0){
-//       $msg= "User Already Excists!!";
-//     }else{
-//         mysqli_query($con,"insert into user (Name,Email,Password,Mobile)values('$name','$email','$password', '$phone')");
-//            $_SESSION['userLogin']='yes';
-//         $_SESSION['user']=$name;
-//     }
-// }
+
 ?>
   <!-- breadcrumb-section start -->
     <div class="breadcrumb-section mb-30 d-none d-md-block">
@@ -40,6 +25,7 @@ $msg='';
             <div class="row">
                 <div class="col-12">
                     <h3 class="title">Fill Sign In Form</h3>
+<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
                        <div class="social">
                                   <div class="panel panel-default">
                                      <?php include('error.php'); ?>
@@ -95,6 +81,9 @@ $msg='';
         </div>
     </div>
 
-<?php
+
+                  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v8.0" nonce="nuiqLz2u"></script>
+<?ph
 require('footer.php');
 ?>

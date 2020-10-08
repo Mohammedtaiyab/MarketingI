@@ -1,3 +1,69 @@
+ <div class="modal fade login" id="loginModal">
+              <div class="modal-dialog login animated">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Login with</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="box">
+                             <div class="content">
+                                <div class="social">
+                                    <a id="google_login" class="circle google" href="#">
+                                        <i class="fa fa-google-plus fa-fw"></i>
+                                    </a>
+                                    <a id="facebook_login" class="circle facebook" href="#">
+                                        <i class="fa fa-facebook fa-fw"></i>
+                                    </a>
+                                </div>
+                                <div class="division">
+                                    <div class="line l"></div>
+                                      <span>or</span>
+                                    <div class="line r"></div>
+                                </div>
+                                <div class="error"></div>
+                                <div class="form loginBox">
+                                    <form method="post" action="" accept-charset="UTF-8">
+                                    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                <input class="btn btn-default btn-login" type="submit" value="Login"  name="login_user" onclick="loginAjax()">
+                    
+                                    </form>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="box">
+                            <div class="content registerBox" style="display:none;">
+                             <div class="form">
+                                <form method="post" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
+                                <input id="name" class="form-control" type="text" placeholder="Name" name="name" required="required">
+                                <input id="phone" class="form-control" type="text" placeholder="Phone Number" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required="required">
+
+                                <input id="email" class="form-control" type="text" placeholder="Email" name="email" required="required">
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" required="required">
+                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation" required="required">
+                                <input class="btn btn-default btn-register" type="submit" name="reg_user" value="Create account">
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="forgot login-footer">
+                            <span>Looking to
+                                 <a href="javascript: showRegisterForm();">create an account</a>
+                            ?</span>
+                        </div>
+                        <div class="forgot register-footer" style="display:none">
+                             <span>Already have an account?</span>
+                             <a href="javascript: showLoginForm();">Login</a>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+
   <!-- footer start -->
     <footer>
         <!-- footer-top start -->
@@ -9,12 +75,12 @@
                                   <img src="assets/img/logo.png" alt="" />
                                     <p>From Ideation & Consultation To Growing Your Business, All The Services You Can Ask For.</p>
                                     <ul class="list">
-                                        <li><i class="fa fa-phone"></i>Phone:- +91 9136773853</li>
-                                        <li><i class="fa fa-envelope"></i>Email:- <a href="">Info@MarketingOJO.com</a></li>
-                                        <li><i class="fa fa-map-o"></i>Address:- Pune, Maharastra</li>
+                                        <li><i class="fa fa-phone"></i> Phone:- <a href="">+91 9136773853 </a></li>
+                                        <li><i class="fa fa-envelope"></i> Email:- <a href="">Info@MarketingOJO.com</a></li>
+                                        <li><i class="fa fa-map-o"></i> Address:- <a href="">Pune, Maharastra</a></li>
                                     </ul>       
                                     <ul class="social">
-                                    <li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                         <li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
                                         <li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
                                     </ul>
@@ -119,6 +185,14 @@
     <!-- main js -->
     <script src="assets/js/main.js"></script>
 
+    <script src="login/assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="login/assets/js/bootstrap.js" type="text/javascript"></script>
+    <script src="login/assets/js/login-register.js" type="text/javascript"></script>
+<!-- <script type="text/javascript">
+    $(document).ready(function(){
+        openLoginModal();
+    });
+</script> -->
 </body>
 
 </html>

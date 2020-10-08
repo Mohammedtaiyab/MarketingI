@@ -263,21 +263,24 @@ $category=mysqli_query($con,"select * from product where Categories_id='$categor
                                     <div class="product-item">
                                         <div class="hover-style">
                                             <div class="product-thumb">
-                                                <span class="offer new-offer">new</span>
+                                              
                                                 <span class="offer discount-offer">
                                                  <?php
                             $o=$row['mrp'];
                             $p=$row['Price'];
                            $d=100-($p/$o)*100;
-                            echo intval($d)."%";
+                            echo intval($d)."% off";
                         ?></span>
-                                              <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?>
-              <?php echo  "<img src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?></a>
+                                             
+                                        <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?>
+              <?php echo  "<img class='product-img' src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?></a>
                                               
                                             </div>
                                             <div class="product-info">
                                                
-                                               <h5 class="title text-center mb-3"><a href=""><?php echo $row['Name']; ?></a></h5>
+                                               <h5 class="title text-center mb-3">
+                                            <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?>
+                                                    <?php echo $row['Name']; ?></a></h5>
                                             <h3 class="product-price text-center"><del class="old-price"><?php echo "₹".$row['mrp']; ?></del> <span class="new-price"><?php echo "₹".$row['Price']; ?></span> </h3>
                                             </div>
                                         </div>
