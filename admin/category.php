@@ -50,8 +50,8 @@
             <div class="box-header with-border">
               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
             </div>
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-responsive">
+            <div class="box-body table-responsive">
+              <table id="example1" class="table table-bordered">
                 <thead>
                   <th>Category Name</th>
                   <th>Tools</th>
