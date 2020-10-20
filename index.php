@@ -308,7 +308,7 @@ $res=mysqli_query($con,$sql);
 $rowcount=mysqli_num_rows($res);
    while($row=mysqli_fetch_assoc($res)){ ?>
    	<div class="single-clients" style="border: 0px;"><a href="clients.php">
-   	<?php echo "<img src='admin/media/client/".$row['Logo']."' alt=''>"; ?>
+   	<?php echo "<img src='images/client/".$row['Logo']."' alt=''>"; ?>
    	</a></div>
 							<?php } ?>
 							</div>

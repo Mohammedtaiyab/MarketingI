@@ -14,7 +14,7 @@
 			if(!empty($filename)){
 				$ext = pathinfo($filename, PATHINFO_EXTENSION);
 				$new_filename = rand(111111111,999999999).'_'.$topic.'.'.$ext;
-				move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$new_filename);	
+				move_uploaded_file($_FILES['photo']['tmp_name'], '../images/banner/'.$new_filename);	
 			}
 			else{
 				$new_filename = '';

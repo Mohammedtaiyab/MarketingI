@@ -71,7 +71,7 @@
                       $stmt = $conn->prepare("SELECT * FROM client");
                       $stmt->execute();
                       foreach($stmt as $row){
-                        $image = (!empty($row['Logo'])) ? '../images/'.$row['Logo'] : '../images/noimage.jpg';
+                        $image = (!empty($row['Logo'])) ? '../images/client/'.$row['Logo'] : '../images/noimage.jpg';
                         // $counter = ($row['date_view'] == $now) ? $row['counter'] : 0;
                         echo "
                           <tr>

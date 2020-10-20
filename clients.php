@@ -18,7 +18,7 @@ require('header.php');
  <?php 
               $i=1;
               while($row=mysqli_fetch_assoc($res)){
-  echo "<div class='card text-center'><img class='card-img-top' src='admin/media/client/".$row['Logo']."' alt=''>";
+  echo "<div class='card text-center'><img class='card-img-top' src='images/client/".$row['Logo']."' alt=''>";
   ?>
           <div class="card-body">
             <h5><?php echo $row['Company']; ?><br />
