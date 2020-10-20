@@ -273,7 +273,7 @@ $category=mysqli_query($con,"select * from product where Categories_id='$categor
                         ?></span>
                                              
                                         <?php echo "<a href='product-detail.php?id=".$row['ID']."'>"; ?>
-              <?php echo  "<img class='product-img' src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?></a>
+              <?php echo  "<img class='product-det' src='../admin/media/product/".$row['Image']."' alt='product-thumb-nail' />" ?></a>
                                               
                                             </div>
                                             <div class="product-info">

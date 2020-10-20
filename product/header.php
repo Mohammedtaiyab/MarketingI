@@ -11,47 +11,32 @@ include('User.php');
     <meta name="description" content="" />
     <title>Marketing OJO</title>
     <!-- Favicon -->
-
+   
     <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png" />
     <!-- vendor min css -->
+<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+
+    <link rel="stylesheet" href="../css/theme-plugins.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../css/responsive.css">   
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css" />
     <!-- plugins min css -->
     <link rel="stylesheet" href="assets/css/plugins.min.css" />
     <!-- style min css -->
-    <link href="login/assets/css/bootstrap.css" rel="stylesheet" />
+<!-- -->
     <link rel="stylesheet" href="assets/css/style.min.css" />
        <link rel="stylesheet" href="assets/css/style.css" />
-
-    
-
     <link href="login/assets/css/login-register.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="login/style.css">
+     <!--         <link href="login/assets/css/bootstrap.css" rel="stylesheet" /> -->
         <style type="text/css">
-            .social li {
-    display: inline-block;
-    margin-right: 5px;
-    color: #bbb;
-    font-weight: 500;
-}
-.social {
-    margin-top: 15px;
-
-}
-.sub1 {
-    padding: 2px;
-    display : flex;
-   flex-flow: row wrap;
-
-}
-.sub1 li{
-    margin:2px;
-    min-width:200px;
-    padding: 1px;
-    margin-left: 1px;
-    flex: 1;
-}
+          
         </style>
 </head>
 
@@ -265,7 +250,7 @@ include('User.php');
                           
                                   <li><a href="">contact</a></li>
                                       <?php  if (!isset($_SESSION['username'])) { ?>
-         <li> <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log In</a> </li>
+         <li>  <a  data-toggle="modal" href="javascript:void(0)" data-target="#loginModal">Log In</a> </li>
                     <?php } ?>
 
                         

@@ -1,52 +1,75 @@
+
+
  <div class="modal fade login" id="loginModal">
               <div class="modal-dialog login animated">
                   <div class="modal-content">
                      <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Login with</h4>
                     </div>
                     <div class="modal-body">
                         <div class="box">
                              <div class="content">
-                                <div class="social">
+                               
+                                <div class="error"></div>
+                                <div class="form loginBox login100-form validate-form">
+                                    <form method="post" action="" accept-charset="UTF-8">
+                                        <span class="login100-form-title p-b-49">
+                        Login
+                    </span>
+
+                
+                                            <span class="label-input100">Email</span>
+                       <input id="email" class="form-control effect-1 input100" type="text" placeholder="Enter Your Email" name="email">
+                      
+                                      <span class="label-input100">Password</span>
+                                    <input id="password" class="form-control effect-1 input100" type="password" placeholder="Enter Your Password" name="password">
+                <input class="btn btn-default btn-login btn-grad" type="submit" value="Login"  name="login_user" onclick="loginAjax()">
+                    
+                                    </form>
+                                </div>
+                             </div>
+                             
+                              
+                        </div>
+                        <div class="box">
+                            <div class="content registerBox" style="display:none;">
+                             <div class="form">
+                                <form method="post" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
+                                     <span class="login100-form-title p-b-49">
+                     Sign Up!
+                    </span>
+                         <span class="label-input100">Name</span>
+                                <input id="name" class="form-control effect-1" type="text" placeholder="Enter Your Name" name="name" required="required">
+                                 <span class="label-input100">Phone No.</span>
+                                <input id="phone" class="form-control effect-1" type="text" placeholder="Enter Phone Number" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required="required">
+                                 <span class="label-input100">Email</span>
+                                <input id="email" class="form-control " type="text" placeholder="Enter Your Email" name="email" required="required">
+                                 <span class="label-input100">Password</span>
+                                <input id="password" class="form-control" type="password" placeholder="Enter Password" name="password" required="required">
+                                 <span class="label-input100">Confirm Password</span>
+                                <input id="password_confirmation" class="form-control" type="password" placeholder="Confirm Password" name="password_confirmation" required="required">
+
+                                <input class="btn btn-default btn-register btn-grad" type="submit" name="reg_user" value="Create account">
+                                </form>
+                                </div>
+                            </div>
+                      
+                          <div class="division">
+                                    <div class="line l"></div>
+                                      <span>or</span>
+                                    <div class="line r"></div>
+                                </div>
+                             
+
+                         <div class="social">
                                     <a id="google_login" class="circle google" href="#">
                                         <i class="fa fa-google-plus fa-fw"></i>
                                     </a>
                                     <a id="facebook_login" class="circle facebook" href="#">
                                         <i class="fa fa-facebook fa-fw"></i>
                                     </a>
-                                </div>
-                                <div class="division">
-                                    <div class="line l"></div>
-                                      <span>or</span>
-                                    <div class="line r"></div>
-                                </div>
-                                <div class="error"></div>
-                                <div class="form loginBox">
-                                    <form method="post" action="" accept-charset="UTF-8">
-                                    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                <input class="btn btn-default btn-login" type="submit" value="Login"  name="login_user" onclick="loginAjax()">
-                    
-                                    </form>
-                                </div>
-                             </div>
-                        </div>
-                        <div class="box">
-                            <div class="content registerBox" style="display:none;">
-                             <div class="form">
-                                <form method="post" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
-                                <input id="name" class="form-control" type="text" placeholder="Name" name="name" required="required">
-                                <input id="phone" class="form-control" type="text" placeholder="Phone Number" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required="required">
-
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email" required="required">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" required="required">
-                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation" required="required">
-                                <input class="btn btn-default btn-register" type="submit" name="reg_user" value="Create account">
-                                </form>
-                                </div>
-                            </div>
-                        </div>
+                                </div>  
+                                  </div>
                     </div>
                     <div class="modal-footer">
                         <div class="forgot login-footer">
@@ -188,6 +211,7 @@
     <script src="login/assets/js/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="login/assets/js/bootstrap.js" type="text/javascript"></script>
     <script src="login/assets/js/login-register.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 <!-- <script type="text/javascript">
     $(document).ready(function(){
         openLoginModal();

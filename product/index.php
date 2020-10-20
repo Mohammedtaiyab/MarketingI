@@ -12,55 +12,63 @@ $res=mysqli_query($con,$sql);
 $resi=mysqli_query($con,$sql);
 $rowcount=mysqli_num_rows($res);
 ?>
-<style type="text/css">
-    <?php 
-    $i=1;
-         while($row=mysqli_fetch_assoc($resi)){
-                $url="../admin/media/banner/".$row['Image'];
-            echo ".b".$i."{ ";
-            echo "background-image:";
-            echo "url(".$url.");";
-            echo "background-repeat: no-repeat;
-        background-position: center;}";
- $i++;
-        }
 
-    ?>
-  
-</style>
-  <section class="main-slider-section position-relative">
-        <div class="main-slider">
 
-<?php 
-$j=1;
+
+
+
+
+    <section class="hero-area">
+                <div class="slider-one">
+                    <!-- Single Slider --> 
+                    <?php 
          while($row=mysqli_fetch_assoc($res)){
-
-  ?>
-<?php echo "<div class='slider-item b".$j."'>";?>
-    <div class="container">
-                    <div class="row align-items-center slider-height2">
-                        <div class="col-12 col-xl-8 offset-xl-4">
-                            <div class="slider-content">
-                                <h4 class="title animate__animated animate__bounce"><?php echo $row['Topic']; ?></h4>
-                                <h2 class="sub-title animate__animated">
-                                    <span><?php echo $row['Header']; ?></span>
-                                </h2>
+ $url="../admin/media/banner/".$row['Image'];?> 
+            ?>
+<div class="single-slider" style="background-image:url(
+      <?php   echo "'".$url."'";?> )">              
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7 col-sm-12 col-xs-12">
+                                    <!-- Slider Text -->
+                                    <div class="slide-text">
+                                        <h1><span class="short"><?php echo $row['Topic']; ?> </span><?php echo $row['Header']; ?> </h1>
                                 <p class="animate__animated"><?php echo $row['Paragraph']; ?></p>
-                                <a href="#" class="btn btn-warning animate__animated">Shop now</a>
+                                        <p></p>
+                                        <div class="slide-btn"> 
+                                      
+                                            <a href="" class="btn primary">Shop now</a>
+                                        </div>
+                                                <div class="waves-block">
+                                                    <div class="waves wave-1"></div>
+                                                    <div class="waves wave-2"></div>
+                                                    <div class="waves wave-3"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!--/ End SLider Text -->
+                                </div>
                             </div>
                         </div>
                     </div>
+                     <?php } ?>
+                    <!--/ End Single Slider -->
+     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ End Single Slider -->
                 </div>
-            </div>
-<?php $j++;} ?>
-               
-        </div>
-        <!-- slick-progress -->
-        <div class="slick-progress">
-            <span></span>
-        </div>
-        <!-- slick-progress  end-->
-    </section>
+            </section>
+
+
+
+
+
+
+
     <section class="product-tab-section py-60 bg-white">
         <div class="container">
             <div class="row">
@@ -169,8 +177,14 @@ $j=1;
                                                 <a href="#" class="product-btn">
                                                     <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="wishlist"><i class="far fa-heart"></i></span>
                                                 </a>
+                                                  <?php echo  "<form method='post' action='index.php?action=add&id=".$row["ID"]."'>" ?>  
+                      
+                               <input type="hidden" name="quantity" value="1" />  
+                          <?php echo    "<input type='hidden' name='hidden_name' value='".$row["Name"]."'>"; ?>
+                            <?php echo    "<input type='hidden' name='hidden_price' value='".$row["Price"]."'> </form>"; ?>
+
                                                 <a href="#" class="product-btn">
-                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to wishlist">Add to wishlist</span>
+                                                    <span class="p-0 border-0 bg-transparent quick-view" data-toggle="tooltip" data-placement="bottom" data-original-title="Add to Cart">Add to Cart</span>
                                                 </a>
                                                 <a href="javascript:void:(0)" class="product-btn" data-toggle="modal" 
                                               <?php  echo "data-target='#p".$row['ID']."'"; ?>>
@@ -348,12 +362,26 @@ $j=1;
     </section>
     <!-- best sellers product end -->
     <!-- instagram-section start-->
-    <section class="bg-success py-60 text-center">
+   <!--  <section class="bg-success py-60 text-center">
         <div class="instagram">
             <h3 class="title">
                 <a href="https://www.instagram.com/marketingojo/"><i class="fab fa-instagram"></i>follow @ instagram</a>
             </h3>
         </div>
+    </section> -->
+    <section class="text-center">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+         <img src="assets/img/banner/banner4.jpg">
+        </div>
+        <div class="col-md-6">
+               <img src="assets/img/banner/banner4.jpg">
+             <!--   <img src="assets/img/advertisement/3.jpg"> -->
+        </div>
+    </div>
+    
+</div>        
     </section>
     <!-- instagram-section end-->
     <!-- product category start -->
@@ -478,7 +506,7 @@ $j=1;
         $image=$row['Image'];
     ?>
 
-    <div class="modal fade" 
+    <div class="modal fade"
     <?php echo  "id='p".$row['ID']."'";?>
     tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog products-dialog modal-dialog-centered" role="document">

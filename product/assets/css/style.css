@@ -19,6 +19,10 @@
 	height: 255px;
 	object-fit: cover;
 }
+.product-det{
+    height: 315px;
+    object-fit: cover;
+}
 .social li {
     display: inline-block;
     margin-right: 5px;
