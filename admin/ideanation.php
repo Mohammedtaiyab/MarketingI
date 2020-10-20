@@ -68,7 +68,7 @@
               </div>
             </div>
             <div class="box-body">
-              <table id="example1" class="table table-bordered">
+              <table id="example1" class="table table-bordered table-responsive">
                 <thead>
                   <th>ID</th>
                   <th>Name</th>
