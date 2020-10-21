@@ -1,7 +1,4 @@
 <?php
-require('admin/connection.inc.php');
-$galy="select * from aboutgallery where Status='1'";
-$resglry=mysqli_query($con,$galy);
 require('header.php');
 ?>
 	<!-- About Us -->
@@ -92,11 +89,8 @@ After listening to the inner voice, screaming for success, and nourishment, the 
 												<div class="col-md-4 col-sm-6 col-xs-12 fix">
 													<div class="single-gallery">
 														<?php echo "<img src='images/".$row['Image']."' alt=''/>";?>
-														<img src="images/post21.jpg" alt=""/>
-														<a data-fancybox="gallery" href="images/post21.jpg"><i class="fa fa-search"></i></a>
 														<a data-fancybox="gallery" 
 														<?php echo "href='images/".$row['Image']."'"; ?> >
-
 														<i class="fa fa-search"></i></a>
 														<div class="caption">
 															<p><?php echo $row['Caption']; ?></p>

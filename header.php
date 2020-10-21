@@ -1,3 +1,10 @@
+<?php
+require('admin/connection.inc.php');
+$galy="select * from aboutgallery where Status='1'";
+$glly=$galy;
+$resglry=mysqli_query($con,$galy);
+$resglry2=mysqli_query($con,$galy);
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>

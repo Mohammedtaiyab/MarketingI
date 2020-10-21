@@ -46,16 +46,14 @@
 							<div class="col-md-4 col-sm-6 col-xs-12">
 								
 								<div class="single-widget photo-gallery">
-									<h2>Products</h2>
+									<h2>Gallery</h2>
 									<ul class="list">
-										<li><a href="images/post78.jpg" data-fancybox="photo"><img src="images/post78.jpg" alt="#"></a></li>
-										<li><a href="images/post36.jpg" data-fancybox="photo"><img src="images/post36.jpg" alt="#"></a></li>
-										<li><a href="images/post21.jpg" data-fancybox="photo"><img src="images/post21.jpg" alt="#"></a></li>
-										<li><a href="images/post47.jpg" data-fancybox="photo"><img src="images/post47.jpg" alt="#"></a></li>
-										<li><a href="images/post56.jpg" data-fancybox="photo"><img src="images/post56.jpg" alt="#"></a></li>
-										<li><a href="images/post68.jpg" data-fancybox="photo"><img src="images/post68.jpg" alt="#"></a></li>
-										<li><a href="images/post63.jpg" data-fancybox="photo"><img src="images/post63.jpg" alt="#"></a></li>
-										<li><a href="images/post36.jpg" data-fancybox="photo"><img src="images/post36.jpg" alt="#"></a></li>
+											<?php
+												 while($row2=mysqli_fetch_assoc($resglry2)){ ?>
+										<?php echo "<li><a href='images/".$row2['Image']."'data-fancybox='photo'>";?>
+										<?php echo "<img src='images/".$row2['Image']."' alt=''/>";?></a></li>
+									<?php } ?>
+										
 								
 									</ul>
 								</div>

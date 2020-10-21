@@ -4,7 +4,7 @@
   $catid ='';
   if(isset($_GET['categories'])){
     $catid = $_GET['categories'];
-    $where = 'WHERE categories ='.$catid;
+    $where = 'WHERE categories_Id ='.$catid;
   }
 ?>
 <?php include 'includes/header.php'; ?>
@@ -190,7 +190,7 @@ $(function(){
       window.location = 'products.php';
     }
     else{
-      window.location = 'products.php?category='+val;
+      window.location = 'products.php?categories='+val;
     }
   });
 

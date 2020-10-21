@@ -1,10 +1,3 @@
-<?php
-require('admin/connection.inc.php');
-$galy="select * from aboutgallery where Status='1'";
-$glly=$galy;
-$resglry=mysqli_query($con,$galy);
-$resglry2=mysqli_query($con,$galy);
-?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -63,50 +56,11 @@ $resglry2=mysqli_query($con,$galy);
 				width: 60%;
 
 			}
+		}
 				.address img{
 					width: 25%;
 				}
-				.f{
-					   width: 287px;
-				}
-				.word {
-  font: 600 normal 2.5em 'tahoma';
-  }
-			}
-			.slicknav_nav a{
-				    text-transform: uppercase;
-			}
-			.logo img{
-				 width: 12rem;
-  					height: auto;
-			}
 			
-			.call-to-action .btn {
-				background-color: transparent;color: white; margin-top: -1px;
-			}
-			.call-to-action .btn a:hover{
-				background-color: transparent;
-			}
-			.blog-head  img{
-					    width: 350px;
-                        height: 250px;
-			}
-			.blog-info p{
-				text-transform: capitalize;
-			}
-.blog-main .single-blog {
-    height: 350px;
-   }
-				.word {
-  margin: auto;
-  color: black;
-  font: 700 normal 2.5em 'tahoma';
- font-family: 'Patua One', cursive;
-  }
-  	.logol img{
-				 margin-top: 20px;
-			}
-
 		</style>
     </head>
     <body id="bg" style="">
@@ -132,9 +86,9 @@ $resglry2=mysqli_query($con,$galy);
 										<div class="col-md-4 col-sm-4 col-xs-12">
 											<!-- Social -->
 											<ul class="social">
-										<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
-										<li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
+										<li><a href="#"><i class="fa fa-heart"></i></a></li>
+								
+								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
 											</ul>
 											<!--/ End Social -->
 										</div>
@@ -163,17 +117,26 @@ $resglry2=mysqli_query($con,$galy);
 										<div class="collapse navbar-collapse">	
 											<ul class="nav navbar-nav">
 												<li  class="active"><a href="index.php">Home</a></li>
-												<li><a href="about-us.php">About Us</a></li>
-												<li><a href="service.php">Services</a></li>
+												<!-- <li><a href="about-us.php">About Us</a></li> -->
+											<!-- 	<li><a href="service.php">Services</a></li> -->
 												<li><a href="product/index.php">PRODUCTS</a></li>
-												<li><a href="ideanation.php">IdeaNation</a></li>
-												<li><a href="clients.php">Our Clients</a></li>		
-												<li><a href="career.php">Careers</a></li>	
+												<!-- <li><a href="ideanation.php">IdeaNation</a></li> -->
+												<!-- <li><a href="clients.php">Our Clients</a></li>		
+												<li><a href="career.php">Careers</a></li>	 -->
 												<li><a href="contact.php">Contact Us</a></li>												
 											</ul>
 										</div>
 									</nav>
 									<!--/ End Main Menu -->
+									<div class="shop-menu pull-right">
+							<ul class="list-inline shopingnav">
+								
+								<li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
+								
+								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								
+							</ul>
+						</div>
 								</div>
 							
 						
@@ -183,3 +146,18 @@ $resglry2=mysqli_query($con,$galy);
 				</div>
 			</header>
 			<!--/ End Header -->
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+require('footer.php');
+?>
