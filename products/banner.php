@@ -1,49 +1,36 @@
-
-
-    <section class="hero-area">
-                <div class="slider-one">
-                    <!-- Single Slider --> 
-                    <?php 
+<!-- Hero section -->
+<section class="hero-section">
+<div class="hero-slider owl-carousel">
+	  <?php 
                     $banneritems=$banner->getData("banner");
 
                     foreach ($banneritems as $item) { 
-$url="../admin/media/banner/".$item['Image'];?> 
-         <div class="single-slider" style="background-image:url(
-      <?php   echo "'".$url."'";?> )">      
+$url="../images/banner/".$item['Image'];?> 
 
- <div class="container">
-                            <div class="row">
-                                <div class="col-md-7 col-sm-12 col-xs-12">
-                                    <!-- Slider Text -->
-                                    <div class="slide-text">
-                                        <h1><span class="short"><?php echo $item['Topic']; ?> </span><?php echo $item['Header']; ?> </h1>
-                                <p class="animate__animated"><?php echo $item['Paragraph']; ?></p>
-                                        <p></p>
-                                        <div class="slide-btn"> 
-                                      
-                                            <a href="" class="btn primary">Shop now</a>
-                                        </div>
-                                                <div class="waves-block">
-                                                    <div class="waves wave-1"></div>
-                                                    <div class="waves wave-2"></div>
-                                                    <div class="waves wave-3"></div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!--/ End SLider Text -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="hs-item set-bg" data-setbg="<?php echo $url;?>">
+<div class="container">
+<div class="row">
+<div class="col-xl-6 col-lg-7">
+<span><?php echo $item['Topic']; ?></span>
+<h2><?php echo $item['Header']; ?> </h2>
+<p><?php echo $item['Paragraph']; ?></p>
+<a href="category.php" class="site-btn sb-white">DISCOVER</a>
+</div>
+</div>
+<div class="offer-card text-white">
+<span>OFF</span>
+<h2>25%</h2>
 
-                     <?php } ?>
-                    <!--/ End Single Slider -->
-     
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/ End Single Slider -->
-                </div>
-            </section>
+<p>SHOP NOW</p>
+</div>
+</div>
+</div>
+
+
+       <?php } ?>
+</div>
+<div class="container">
+<div class="slide-num-holder" id="snh-1"></div>
+</div>
+</section>
+<!-- Hero section end -->

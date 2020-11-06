@@ -9,11 +9,10 @@
 		$goto=$_POST['goto'];
 		$filename = $_FILES['photo']['name'];
 		$status='1';
-// 
 		$conn = $pdo->open();
 			if(!empty($filename)){
 				$ext = pathinfo($filename, PATHINFO_EXTENSION);
-				$new_filename = rand(111111111,999999999).'_'.$topic.'.'.$ext;
+				$new_filename = rand(111111111,999999999).'.'.$ext;
 				move_uploaded_file($_FILES['photo']['tmp_name'], '../images/banner/'.$new_filename);	
 			}
 			else{

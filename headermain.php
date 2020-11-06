@@ -165,7 +165,7 @@ $resglry2=mysqli_query($con,$galy);
 												<li  class="active"><a href="index.php">Home</a></li>
 												<li><a href="about-us.php">About Us</a></li>
 												<li><a href="service.php">Services</a></li>
-												<li><a href="product/index.php">PRODUCTS</a></li>
+												<li><a href="products/">PRODUCTS</a></li>
 												<li><a href="ideanation.php">IdeaNation</a></li>
 												<li><a href="clients.php">Our Clients</a></li>		
 												<li><a href="career.php">Careers</a></li>	

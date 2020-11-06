@@ -33,7 +33,7 @@
 									<ul class="list">
 										<li><a href="about-us.php"><i class="fa fa-angle-right"></i>ABOUT US</a></li>
 										<li><a href="service.php"><i class="fa fa-angle-right"></i>OUR SERVICES</a></li>
-										<li><a href="product/index.php"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
+										<li><a href="products/"><i class="fa fa-angle-right"></i>PRODUCTS</a></li>
 										<li><a href="ideanation.php"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
 										<li><a href="clients.php"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
 										<li><a href="career.php"><i class="fa fa-angle-right"></i>CAREERS</a></li>

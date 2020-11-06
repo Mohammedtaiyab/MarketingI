@@ -1,133 +1,147 @@
- <!-- footer start -->
-    <footer>
-        <!-- footer-top start -->
-        <div class="footer-top bg-light-gray py-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 col-xl-4 mb-4 mb-xl-2">
-                          <div class="single-widget address logo f">
-                                  <img src="assets/img/logo.png" alt="" />
-                                    <p>From Ideation & Consultation To Growing Your Business, All The Services You Can Ask For.</p>
-                                    <ul class="list">
-                                        <li><i class="fa fa-phone"></i> Phone:- <a href="">+91 9136773853 </a></li>
-                                        <li><i class="fa fa-envelope"></i> Email:- <a href="">Info@MarketingOJO.com</a></li>
-                                        <li><i class="fa fa-map-o"></i> Address:- <a href="">Pune, Maharastra</a></li>
-                                    </ul>       
-                                    <ul class="social">
-                                    <li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
-                                    </ul>
-                                </div>
-                    </div>
-                 
-                    <div class="col-sm-6 col-xl-3 mb-4 mb-xl-2">
-                        <div class="footer-widget">
-                            <h3 class="title">Our company</h3>
-                            <ul class="footer-menu">
-                                <li>
-                                    <a href="../index.html" class="d-flex align-items-end justify-content-between">
-                                         Main Home
-                                        </a>
-                                </li>
+<?php 
+require('loginmodel.php');
+?>
+	<!-- Start Footer -->
+			<footer id="footer" class="footer dark">
+				<div class="footer-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-sm-6 col-xs-12 ">
+								<!-- Address Widget -->
+								<div class="single-widget address logo f"><a href="../index.php">
+									<img src="../images/logo.png" style="width: 10rem;" alt="logo"></a>
+									<p>From Ideation & Consultation To Growing Your Business, All The Services You Can Ask For.</p>
+									<ul class="list">
+										<li><i class="fa fa-phone"></i>Phone:- +91 9136773853</li>
+										<li><i class="fa fa-envelope"></i>Email:- <a href="">Info@MarketingOJO.com</a></li>
+										<li><i class="fa fa-map-o"></i>Address:- Pune, Maharastra</li>
+									</ul>		
+									<ul class="social">
+									<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
+										<li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
+									</ul>
+								</div>
+							
+							</div>	
+							<div class="col-md-3 col-sm-6 col-xs-12">
 
-                                <li>
-                                    <a href="../Service.html" class="d-flex align-items-end justify-content-between">
-                                            Services
-                                           
-                                        </a>
-                                </li>
-                                <li>
-                                    <a href="../about-us.html" class="d-flex align-items-end justify-content-between">
-                                            About Us
-                                        </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex align-items-end justify-content-between">
-                                         Contact Us
-                                            
-                                        </a>
-                                </li>
-                              
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-8 col-xl-4">
-                        <div class="footer-widget">
-                            <h3 class="title">Product Tags</h3>
-                            <ul class="product-tag d-flex flex-wrap">
-                                <li><a href="#">Mobile Cover</a></li>
-                                <li><a href="#">Key Chain</a></li>
-                                <li><a href="#">Perfume</a></li>
-                                <li><a href="#">Frame</a></li>
-                                <li><a href="#">Bottles</a></li>
-                                <li><a href="#">Gifts</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- footer-top end -->
-        <!-- footer-bottom start -->
-        <div class="footer-bottom bg-dark-light py-30">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <div class="payment text-center text-md-left">
-                            <a href="#">
-                                <img src="assets/img/payment/payment.png" alt="payment method" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="copyright text-center text-md-right">
-                            <p>
-                                &copy; Copyright
-                                <a href="https://hasthemes.com/">MarketingOJO</a>. All Rights Reserved
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- footer-bottom end -->
-    </footer>
-    <!-- footer end -->
-    <!-- search-box and overlay- -->
-    <div class="overlay">
-        <div class="scale"></div>
-        <form class="search-box" action="#">
-            <input type="text" name="search" placeholder="Search Product" />
-            <button id="close" type="submit"><i class="fa fa-search"></i></button>
-        </form>
-        <button class="close"><i class="fas fa-times-circle"></i></button>
-    </div>
-    <!-- search-box and overlay end -->
-    <!-- scrollUp -->
-    <a id="scrollUp" href="#"><i class="fas fa-arrow-up"></i></a>
-    <!-- Button trigger modal -->
+							
+								<div class="single-widget links">
+									<h2>Quick Links</h2>
+									<ul class="list">
+										<li><a href="../about-us.php"><i class="fa fa-angle-right"></i>ABOUT US</a></li>
+										<li><a href="../service.php"><i class="fa fa-angle-right"></i>OUR SERVICES</a></li>
+										<li><a href="../ideanation.php"><i class="fa fa-angle-right"></i>IDEANATION</a></li>
+										<li><a href="../clients.php"><i class="fa fa-angle-right"></i>OUR CLIENTS</a></li>
+										<li><a href="../career.php"><i class="fa fa-angle-right"></i>CAREERS</a></li>
+										<li><a href="../contact.php"><i class="fa fa-angle-right"></i>CONTACT US</a></li>
+									</ul>
+								</div>
+				
+							</div>
+						<div class="col-md-2 col-sm-6 col-xs-12">
+								<div class="single-widget links">
+									<h2>Categories</h2>
+									<ul class="list">
+										<?php 
+$productlist=$product->Productcategory();
+   $i = 0; 
+    foreach($productlist as $item): 
+        if($i >=7) {break;}else{
+        	$categoryname=$category->getdatabyId($item['Categories_id']);
 
-   
+ foreach($categoryname as $name): ?>
 
-    <!-- vendor min js -->
-    <script src="assets/js/vendor/vendor.min.js"></script>
-    <!-- plugins min js -->
-    <script src="assets/js/plugins.min.js"></script>
-    <!-- main js -->
-    <script src="assets/js/main.js"></script>
+<?php echo "<li><a href='category.php?id=".$name['id']."'><i class='fa fa-angle-right'></i>".$name['categories']."</a></li>";?>
 
+
+
+  <?php endforeach; $i++; } endforeach;?>
+								
+									</ul>
+								</div>
+
+						</div>
+							<div class="col-md-3 col-sm-6 col-xs-12">
+									<div class="single-widget links">
+									<h2>Our Polices</h2>
+									<ul class="list">
+								<li><a href=""><i class="fa fa-angle-right"></i>Complain</a></li>
+								<li><a href=""><i class="fa fa-angle-right"></i>FAQs</a></li>
+								<li><a href=""><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
+								<li><a href=""><i class="fa fa-angle-right"></i>Refund Policy</a></li>
+								<li><a href=""><i class="fa fa-angle-right"></i>Terms of Service</a></li>
+									</ul>
+								</div>
+							
+							</div>
+						</div>
+					</div> 
+				</div> 
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12 text-white">
+								copyright
+								<div class="copyright">
+									<p>&copy; 2020 All Right Reserved.</p>
+								</div>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+ <script type='text/javascript' style='display:none;' async>
+__ez.queue.addFile('edmonton.html', '/detroitchicago/edmonton.webp?a=a&cb=0&shcb=32', true, [], true, false, false, false);
+__ez.queue.addFile('jellyfish.html', '/porpoiseant/jellyfish.webp?a=a&cb=0&shcb=32', false, [], true, false, false, false);
+</script>
+
+<script>var _audins_dom="azmind_com",_audins_did=104629;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "../../../../go.ezoic.net/detroitchicago/audins3317.js?cb=187-0");</script><noscript><div style="display:none;"><img src="../../../../pixel.quantserve.com/pixel/p-31iz6hfFutd166b69.gif?labels=Domain.azmind_com,DomainId.104629" border="0" height="1" width="1" alt="Quantcast"/></div></noscript><noscript><img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=20015427&amp;cv=2.0&amp;cj=1"/></noscript>
+
+			<!-- Jquery -->
+			<script src="../js/jquery.min.js" type="text/javascript"></script>
+			<!-- Bootstrap JS -->
+			<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+			<!-- Modernizer JS -->
+			<script src="../js/modernizr.min.js" type="text/javascript"></script>
+			<!-- Tromas JS -->
+			<script src="../js/tromas.js" type="text/javascript"></script>
+			<!-- Tromas Plugins -->
+			<script src="../js/theme-plugins.js" type="text/javascript"></script>
+			<!-- Google Map JS -->
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnhgNBg6jrSuqhTeKKEFDWI0_5fZLx0vM" type="text/javascript"></script>	
+			<script src="js/gmap.min.js"  type="text/javascript" ></script>
+			<!-- Main JS -->
+			<script src="../js/main.js" type="text/javascript"></script>
+		<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.slicknav.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/jquery.zoom.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/main.js"></script>
     <script src="login/assets/js/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="login/assets/js/bootstrap.js" type="text/javascript"></script>
     <script src="login/assets/js/login-register.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
-<!-- <script type="text/javascript">
-    $(document).ready(function(){
-        openLoginModal();
-    });
-</script> -->
-</body>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-23581568-13');</script>
+		</div>
+		<script type="text/javascript">
+  $(".toggle-password").click(function() {
 
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+</script>
+    </body>
 </html>

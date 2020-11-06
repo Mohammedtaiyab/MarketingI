@@ -28,8 +28,8 @@
 <script src="../dist/js/adminlte.min.js"></script>
 <!-- CK Editor -->
 <script src="../bower_components/ckeditor/ckeditor.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 <!-- Active Script -->
 <script>
 $(function(){

@@ -178,12 +178,17 @@
 					
 								<div class="shop-menu pull-right">
 							<ul class="list-inline shopingnav">
+										<li> <a class="btn btn-success btn-sm ml-3" href="">
+                    					<i class="fa fa-heart"></i> Wishlist
+                    <span class="badge badge-light">3</span>
+               					 </a></li>
 								
-								<li><a href="#"><i class="fa fa-heart"></i></a></li>
-								
-								<li> <a class="btn btn-success btn-sm ml-3" href="cart.html">
+								<li> <a class="btn btn-success btn-sm ml-3" href="">
                     <i class="fa fa-shopping-cart"></i> Cart
                     <span class="badge badge-light">3</span>
+                </a></li><li> <a class="btn btn-success btn-sm ml-3" href="">
+                    <i class="fa fa-user"></i>Login
+                    
                 </a></li>
 								
 							</ul>

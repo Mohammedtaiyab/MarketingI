@@ -1,84 +1,82 @@
 <?php
-  
-    $database_name = "Product_details";
-  $con=mysqli_connect("localhost","marketi1_OJO","Marketing@52","marketi1_MarketingOJO");
-    if (isset($_POST["add"])){
-        if (isset($_SESSION["cart"])){
-            $item_array_id = array_column($_SESSION["cart"],"product_id");
-            if (!in_array($_GET["id"],$item_array_id)){
-                $count = count($_SESSION["cart"]);
-                $item_array = array(
-                    'product_id' => $_GET["id"],
-                    'item_name' => $_POST["hidden_name"],
-                    'product_price' => $_POST["hidden_price"],
-                    'item_quantity' => $_POST["quantity"],
-                );
-                $_SESSION["cart"][$count] = $item_array;
-                echo '<script>window.location.reload</script>';
-            }else{
-             //  echo '<script>alert("Product is already Added to Cart")</script>';
-                echo '<script>window.location.reload</script>';
-            }
-        }else{
-            $item_array = array(
-                'product_id' => $_GET["id"],
-                'item_name' => $_POST["hidden_name"],
-                'product_price' => $_POST["hidden_price"],
-                'item_quantity' => $_POST["quantity"],
-            );
-            $_SESSION["cart"][0] = $item_array;
-        }
-    }
-
-    if (isset($_GET["action"])){
-        if ($_GET["action"] == "delete"){
-            foreach ($_SESSION["cart"] as $keys => $value){
-                if ($value["product_id"] == $_GET["id"]){
-                    unset($_SESSION["cart"][$keys]);
-                //   echo '<script>alert("Product has been Removed...!")</script>';
-                    echo '<script>window.location.reload"</script>';
-                }
-            }
-        }
-    }
+require('header.php');
 ?>
 
-           <!--  <?php
-                if(!empty($_SESSION["cart"])){
-                    $total = 0;
-                    foreach ($_SESSION["cart"] as $key => $value) {
-                        ?>
-                        <tr>
-                            <td><?php echo $value["item_name"]; ?></td>
-                            <td><?php echo $value["item_quantity"]; ?></td>
-                            <td>$ <?php echo $value["product_price"]; ?></td>
-                            <td>
-                                $ <?php echo number_format($value["item_quantity"] * $value["product_price"], 2); ?></td>
-                            <td><a href="Cart.php?action=delete&id=<?php echo $value["product_id"]; ?>"><span
-                                        class="text-danger">Remove Item</span></a></td>
 
-                        </tr>
-                        <?php
-                        $total = $total + ($value["item_quantity"] * $value["product_price"]);
-                    }
-                        ?>
-                        <tr>
-                            <td colspan="3" align="right">Total</td>
-                            <th align="right">$ <?php echo number_format($total, 2); ?></th>
-                            <td></td>
-                        </tr>
-                        <?php
-                    }
-                ?> -->
-                <span class="cart-badge"><?php echo count($_SESSION["cart"]); ?></span>
-         <!--    </table>
-        <h3 class="title2">Number of items <?php echo count($_SESSION["cart"]);  ?></h3>
+<!-- Page info -->
+<div class="page-top-info">
+<div class="container">
+<h4>Your cart</h4>
+<div class="site-pagination">
+<a href="index.php">Home</a> /
+<a href="#">Your cart</a>
+</div>
+</div>
+</div>
+<!-- Page info end -->
+<!-- cart section end -->
+<section class="cart-section spad">
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+<div class="cart-table">
+<h3>Your Cart</h3>
+<div class="cart-table-warp">
+<table>
+<thead>
+<tr>
+<th class="product-th">Product</th>
+<th class="quy-th">Quantity</th>
+<th class="size-th">SizeSize</th>
+<th class="total-th">Price</th>
+</tr>
+</thead>
+<tbody>
+<?php
+$total=0;
+if(isset($_SESSION["shopping_cart"])){
+foreach($_SESSION["shopping_cart"] as $cart): ?>
+<tr>
+<td class="product-col">
+<!-- <img src="img/cart/1.jpg" alt=""> -->
+<div class="pc-title">
+<h4><?php echo $cart['item_name']; ?></h4>
+<p>₹<?php echo $cart['item_price']; ?></p>
+</div>
+</td>
+<td class="quy-col">
+<div class="quantity">
+<div class="pro-qty">
+<input type="text" value='<?php echo $cart['item_quantity']; ?>'>
+</div>
+</div>
+</td>
+<td class="size-col"><h4>Size M</h4></td>
+<td class="total-col"><h4>₹<?php echo $cart['item_price']*$cart['item_quantity']; ?></h4></td>
+</tr>
 
-        </div>
 
-    </div>
-
-
-</body>
-</html>
- -->
+  <?php $total=$total + ($cart['item_price']*$cart['item_quantity']); endforeach; }?>
+</tbody>
+</table>
+</div>
+<div class="total-cost">
+<h6>Total <span>₹<?php echo $total;?></span></h6>
+</div>
+</div>
+</div>
+<div class="col-lg-4 card-right">
+<form class="promo-code-form">
+<input type="text" placeholder="Enter promo code">
+<button>Submit</button>
+</form>
+<a href="checkout.php" class="site-btn">Proceed to checkout</a>
+<a href="category.php" class="site-btn sb-dark">Continue shopping</a>
+</div>
+</div>
+</div>
+</section>
+<!-- cart section end -->
+<?php
+require('footer.php');
+?>

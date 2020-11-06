@@ -626,7 +626,7 @@ input[type=checkbox]{
 												<li><a href="index.php">HOME</a></li>
 												<li class="about-nav"><a href="about-us.php">ABOUT US</a></li>
 												<li class="service-nav"><a href="service.php">SERVICES</a></li>
-												<li><a href="product/index.php">PRODUCTS</a></li>
+												<li><a href="products/">PRODUCTS</a></li>
 												<li><a href="ideanation.php">IDEANATION</a></li>
 												<li><a href="clients.php">OUR CLIENTS</a></li>		
 												<li><a href="career.php">CAREERS</a></li>		

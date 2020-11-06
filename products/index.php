@@ -1,7 +1,15 @@
 <?php
 require('header.php');
 require('banner.php');
-require('showcase.php');
-require('view.php');
+require('latestproducts.php');
+require('filterproducts.php');
+
+?>
+
+
+
+
+<?php
+
 require('footer.php');
 ?>
