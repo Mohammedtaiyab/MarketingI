@@ -68,9 +68,9 @@ require ('functions.php');
 <div class="up-item">
 <div class="shopping-card">
 <i class="flaticon-bag"></i>
-<span>0</span>
+<span><?php echo count($_SESSION["shopping_cart"]); ?></span>
 </div>
-<a href="#">Shopping Cart</a>
+<a href="cart.php">Shopping Cart</a>
 </div>
 </div>
 </div>

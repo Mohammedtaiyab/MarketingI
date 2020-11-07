@@ -16,8 +16,8 @@ $banner->getData($table='banner');
  if(isset($_GET["action"]))  
  {  
  	if($_GET['action']=='add'){
- 		if(isset($_GET['id'])){
- 			$id=$_GET['id'];
+ 		if(isset($_GET['pid'])){
+ 			$id=$_GET['pid'];
  			    $productitem=$product->singleProduct($id);
  			  //  print_r($productitem);
  			    //echo $productitem[0]['ID'];
@@ -25,7 +25,7 @@ $banner->getData($table='banner');
 if(isset($_SESSION["shopping_cart"]))  
       {  
            $item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
-           if(!in_array($_GET["id"], $item_array_id))  
+           if(!in_array($_GET["pid"], $item_array_id))  
            {  
                 $count = count($_SESSION["shopping_cart"]);  
                 $item_array = array(  
@@ -39,7 +39,7 @@ if(isset($_SESSION["shopping_cart"]))
            else  
            {  
                 echo '<script>alert("Item Already Added")</script>';  
-                echo '<script>window.location="index.php"</script>';  
+                // echo '<script>window.location="index.php"</script>';  
            }  
       }  
       else  

@@ -16,13 +16,13 @@ $productitems=$product->getData();
 <div class="pi-pic">
     <?php echo  "<img class='product-img' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?>
 <div class="pi-links">
-<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+<a href='?action=add&pid=<?php echo $item['ID']; ?>' class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
 <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
 </div>
 </div>
 <div class="pi-text">
 <h6><?php echo "₹".$item['Price']; ?></h6>
- <?php echo "<a href='product.php?id=".$item['ID']."'>"; ?><p><?php echo $item['Name']; ?></p></a>
+ <?php echo "<a href='category.php?id=".$item['Categories_id']."'>"; ?><p><?php echo $item['Name']; ?></p></a>
 </div>
 </div>
 

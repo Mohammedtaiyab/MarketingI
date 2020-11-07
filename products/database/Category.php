@@ -18,7 +18,7 @@ class Category
 		return $resultArray;
 	}
 	public function getdatabyId($id){
-		$result =$this->db->con->query("SELECT * FROM Categories WHERE id=($id)");
+		$result =$this->db->con->query("SELECT * FROM categories WHERE id=($id)");
 		$resultArray=array();
 		while ($item=mysqli_fetch_array($result,MYSQLI_ASSOC)) {
 			$resultArray[]=$item;

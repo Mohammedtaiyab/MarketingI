@@ -11,7 +11,7 @@
 $productlist=$product->Productcategory();
    $i = 0; 
     foreach($productlist as $item): 
-        if($i >=4) {break;}else{
+        if($i >=5) {break;}else{
         	$categoryname=$category->getdatabyId($item['Categories_id']);
 
  foreach($categoryname as $name): ?>
@@ -36,13 +36,13 @@ $productlist=$product->Productcategory();
 <div class="pi-pic">
    <?php echo  "<img class='product-img' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?>
 <div class="pi-links">
-<a href='?action=add&id=<?php echo $item['ID']; ?>' class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+<a href='?action=add&pid=<?php echo $item['ID']; ?>' class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
 <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
 </div>
 </div>
 <div class="pi-text">
 <h6><?php echo "₹".$item['Price']; ?></h6>
- <?php echo "<a href='product.php?id=".$item['ID']."'>"; ?><p><?php echo $item['Name']; ?></p></a></div>
+ <?php echo "<a href='category.php?id=".$item['Categories_id']."'>"; ?><p><?php echo $item['Name']; ?></p></a></div>
 </div>
 </div>
 
@@ -52,9 +52,9 @@ $productlist=$product->Productcategory();
 
 
 </div>
-<div class="text-center pt-5">
+<!-- <div class="text-center pt-5">
 <button class="site-btn sb-line sb-dark">LOAD MORE</button>
-</div>
+</div> -->
 </div>
 </section>
 <!-- Product filter section end -->
