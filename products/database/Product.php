@@ -62,6 +62,15 @@ class Product
 		}
 		return $resultArray;
 	}
+	public function productapi($table = 'product'){
+		$result =$this->db->con->query("SELECT ID,Name,Price FROM ($table)");
+		$resultArray=array();
+		while ($item=mysqli_fetch_array($result,MYSQLI_ASSOC)) {
+			$resultArray[]=$item;
+			# code...
+		}
+		return json_encode($resultArray);
+	}
 }
 
 //SELECT * FROM `product` WHERE Name LIKE '%mobil%'

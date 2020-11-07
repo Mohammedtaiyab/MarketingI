@@ -5,7 +5,7 @@ require('header.php');
 <!-- Page info -->
 <div class="page-top-info">
 <div class="container">
-<h4>Category PAge</h4>
+<h4>Product Detail</h4>
 <div class="site-pagination">
 <a href="index.php">Home</a> /
 <a href="category.php">Products</a>

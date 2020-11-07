@@ -68,7 +68,16 @@ require ('functions.php');
 <div class="up-item">
 <div class="shopping-card">
 <i class="flaticon-bag"></i>
-<span><?php echo count($_SESSION["shopping_cart"]); ?></span>
+<span><?php 
+	$data= 0;
+	if(isset($_SESSION["shopping_cart"])){
+if ( is_array( $_SESSION["shopping_cart"]) ) {
+		$data = count( $_SESSION["shopping_cart"]);
+	} else { 	
+		$data= 0;
+	}
+}
+echo $data; ?></span>
 </div>
 <a href="cart.php">Shopping Cart</a>
 </div>

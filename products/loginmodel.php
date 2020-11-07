@@ -33,7 +33,7 @@
                         <div class="box">
                             <div class="content registerBox" style="display:none;">
                              <div class="form">
-                                <form method="post" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
+                                <form method="post" html="{:multipart=>true}" data-remote="true" action="login.php" accept-charset="UTF-8">
                                      <span class="login100-form-title p-b-49">
                      Sign Up!
                     </span>
