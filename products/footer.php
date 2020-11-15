@@ -93,14 +93,145 @@ $productlist=$product->Productcategory();
 					</div>
 				</div>
 			</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
- <script type='text/javascript' style='display:none;' async>
+
+
+
+
+
+<script type="text/javascript">
+	 function checkrideo(){
+     var radios = document.getElementsByName("addr");
+
+     for (var i = 0, len = radios.length; i < len; i++) {
+          if (radios[i].checked) {
+          		document.getElementById('paymentform').submit();
+              return true;
+          }
+     }
+window.alert("You need to choose an option!");
+     return false;
+ }
+	function functionclick(){
+	  var x =   document.getElementById('addressform');
+	   if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+};
+
+$(document).ready(function(){
+
+	
+	$('.dec').on('click', function(ev) {
+	
+     $currObj = $(ev.currentTarget);
+    var currQCount = getCurrQCount($currObj);
+   //alert($_SESSION["shopping_cart"][sec]['quantity']);    
+    if(currQCount<=1){
+    	currQCount++;
+    }
+
+  updateDataless($currObj, currQCount);
+   });
+
+	 $('.inc').on('click', function(ev) {
+	
+		 $currObj = $(ev.currentTarget);
+		var currQCount = getCurrQCount($currObj);
+
+	updateData($currObj, currQCount);
+	
+	 });
+
+
+	function getCurrQCount($currObj){
+		return $currObj.siblings(".quantity").val();
+	}
+	// function getsecid($currObj){
+	// 	var secid= $currObj.siblings(".sessioncartid").val();
+	// 	alert("here" + secid);
+	// 	return $currObj.siblings(".sessioncartid").val();
+	// }
+	function updateData($currObj, currQCount){
+   
+		$currObj.siblings(".quantity").val(currQCount);
+		var $parentObj = $currObj.closest(".item-row");
+		var itemPrice = $parentObj.find(".item_price").attr("data-price");
+		currQCount++;
+		var itemCost = Number(itemPrice) * currQCount;
+		$parentObj.find(".item-cost-val").text(itemCost);
+
+		var subTotal = getSubTotal();
+		var vatAmount = getVatAmount();
+		var totalCost = subTotal + vatAmount;
+		$("#subtotal").val(subTotal);
+		$("#total_vat").text(vatAmount);
+		$("#total_cost").text(subTotal);
+	 // $(".totalbill input").val=subTotal;
+	}
+  function updateDataless($currObj, currQCount){
+   
+    $currObj.siblings(".quantity").val(currQCount);
+    var $parentObj = $currObj.closest(".item-row");
+    var itemPrice = $parentObj.find(".item_price").attr("data-price");
+currQCount--;
+    var itemCost = Number(itemPrice) * currQCount;
+    $parentObj.find(".item-cost-val").text(itemCost);
+
+    var subTotal = getSubTotal();
+    var vatAmount = getVatAmount();
+    var totalCost = subTotal;
+    $("#subtotal").val(subTotal);
+    $("#total_vat").text(vatAmount);
+    $("#total_cost").text(subTotal);
+   // $(".totalbill input").val=subTotal;
+  }
+	function getSubTotal(){
+		var subTotal = 0;
+		$(".item-cost-val").each(function() {
+			subTotal+= Number($(this).text());
+		});
+		
+		return subTotal;
+	}
+
+	function getVatAmount(){
+		var vatPercentage = 0.2;
+		return vatPercentage * getSubTotal();
+	}
+if(!loggedin){
+// show modal
+    $('#loginModal').modal('show');
+}
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+ $(".quantity").change(function(){
+    alert("The text has been changed.");
+  });
+});
+</script>
+<script type='text/javascript' style='display:none;' async>
 __ez.queue.addFile('edmonton.html', '/detroitchicago/edmonton.webp?a=a&cb=0&shcb=32', true, [], true, false, false, false);
 __ez.queue.addFile('jellyfish.html', '/porpoiseant/jellyfish.webp?a=a&cb=0&shcb=32', false, [], true, false, false, false);
 </script>
 
 <script>var _audins_dom="azmind_com",_audins_did=104629;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "../../../../go.ezoic.net/detroitchicago/audins3317.js?cb=187-0");</script><noscript><div style="display:none;"><img src="../../../../pixel.quantserve.com/pixel/p-31iz6hfFutd166b69.gif?labels=Domain.azmind_com,DomainId.104629" border="0" height="1" width="1" alt="Quantcast"/></div></noscript><noscript><img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=20015427&amp;cv=2.0&amp;cj=1"/></noscript>
-
 			<!-- Jquery -->
 			<script src="../js/jquery.min.js" type="text/javascript"></script>
 			<!-- Bootstrap JS -->
@@ -142,6 +273,8 @@ __ez.queue.addFile('jellyfish.html', '/porpoiseant/jellyfish.webp?a=a&cb=0&shcb=
     input.attr("type", "password");
   }
 });
+
 </script>
-    </body>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+</body>
 </html>

@@ -1,7 +1,6 @@
 <?php
 require('header.php');
 ?>
-
 <!-- Page info -->
 <div class="page-top-info">
 <div class="container">

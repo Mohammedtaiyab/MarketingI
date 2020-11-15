@@ -78,31 +78,6 @@ $productlist=$product->getData();
 
 
   <?php  endforeach; ?>
-
-
-
-<!-- <div class="col-lg-4 col-sm-6">
-<div class="product-item">
-<div class="pi-pic">
-<div class="tag-sale">ON SALE</div>
-<img src="img/product/x6.jpg.pagespeed.ic.Nqbz4AFh6C.jpg" alt="">
-<div class="pi-links">
-<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-<a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
-</div>
-</div>
-<div class="pi-text">
-<h6>$35,00</h6>
-<p>Black and White Stripes Dress</p>
-</div>
-</div>
-</div>
- -->
-
-
-<!-- <div class="text-center w-100 pt-3">
-<button class="site-btn sb-line sb-dark">LOAD MORE</button>
-</div> -->
 </div>
 </div>
 </div>

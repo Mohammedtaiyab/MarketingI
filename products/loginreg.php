@@ -8,6 +8,8 @@
 		$variant_type=$_POST['password'];
 		$filename = $_FILES['photo']['name'];
 		$status='1';
+		$addon=date('M d, Y');
+
 // 
 		$conn = $pdo->open();
 			if(!empty($filename)){
@@ -20,8 +22,8 @@
 			}
 
 			try{
-				$stmt = $conn->prepare("INSERT INTO gallery(Product_Id,Variant_type,Variant,Price,Image,Status) VALUES (:product, :vrttype, :variant, :price,:photo,:status)");
-		$stmt->execute(['product'=>$product_id, 'vrttype'=>$variant_type, 'variant'=>$variant, 'price'=>$price,'photo'=>$new_filename,'status'=>$status]);
+				$stmt = $conn->prepare("INSERT INTO gallery(Product_Id,Variant_type,Variant,Price,Image,Status,Added_on) VALUES (:product, :vrttype, :variant, :price,:photo,:status,:addon)");
+		$stmt->execute(['product'=>$product_id, 'vrttype'=>$variant_type, 'variant'=>$variant, 'price'=>$price,'photo'=>$new_filename,'status'=>$status,'addon'=>$addon]);
 				$_SESSION['success'] = 'Product gallery added successfully';
 
 			}

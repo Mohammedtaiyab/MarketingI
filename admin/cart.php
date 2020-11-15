@@ -7,7 +7,7 @@
   else{
     $conn = $pdo->open();
 
-    $stmt = $conn->prepare("SELECT * FROM users WHERE id=:id");
+    $stmt = $conn->prepare("SELECT * FROM user WHERE ID=:id");
     $stmt->execute(['id'=>$_GET['user']]);
     $user = $stmt->fetch();
 
@@ -27,7 +27,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <?php echo $user['firstname'].' '.$user['lastname'].'`s Cart' ?>
+        <?php echo $user['Name'].'`s Cart' ?>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>

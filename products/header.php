@@ -11,7 +11,8 @@ require ('functions.php');
 		<meta name="keywords" content="Marketing,Branding,Developing,Building,Business" />
 		<meta name="description" content="From Ideation & Consultation To Growing Your Business, All The Services You Can Ask For.">
 		<meta name='copyright' content='MarketingOJO'>	
-		
+		<meta name="google-signin-client_id" content="61411318107-n48rdrq0ta9g0dgpr779ee1gvbt8j4ge.apps.googleusercontent.com">
+
 <!-- Favicon -->
 	<link rel="icon" type="image/png" href="../images/favicon.png">	<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -34,11 +35,22 @@ require ('functions.php');
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<style type="text/css">
+		#addressform{
+			display: none;
+		}
 		.product-img{
 			    width: 263px;
     height: 263px;
     object-fit: cover;
 		}
+		.success-msg {
+  color: #270;
+  background-color: #DFF2BF;
+}
+.warning-msg {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
 	</style>
 </head>
 <body>
@@ -62,15 +74,51 @@ require ('functions.php');
 <div class="col-xl-4 col-lg-5">
 <div class="user-panel">
 <div class="up-item">
-<i class="flaticon-profile"></i>
-<a   data-toggle="modal" class="headbut btn-sm" href="#loginModal">SignIn or Create Account</a>
+<?php
+if(isset($_SESSION['login'])){?>
+
+<!-- <div class="success-msg">
+  <i class="fa fa-check"></i>
+  This is a success message.
+</div> -->
+<ul class="main-menu">
+<li><i class="flaticon-profile"></i>  <a href=""class="headbut btn-sm">Account</a>
+	<ul class="sub-menu">
+<li><a href="#"><?php echo $_SESSION['customer']; ?></a></li>
+<li><a href="#">Address</a></li>
+<li><a href="cart.php">Cart</a></li>
+<li><a href="checkout.php">Checkout</a></li>
+<li><a href="#">Track Order</a></li>
+<li><a href="login.php?logout=true">Logout</a></li>
+</ul>
+</li>
+</ul>
+<?php 
+}else{
+	if(isset($_SESSION['error'])){?>
+<div class="warning-msg">
+  <i class="fa fa-warning"></i>
+  <?php echo $_SESSION['error'];
+  unset($_SESSION['error']); ?>
+</div>
+<?php }?>
+<i class="flaticon-profile"></i> 
+<a data-toggle="modal" class="headbut btn-sm" href="#loginModal">SignIn or Create Account</a>
+<?php } ?>
 </div>
 <div class="up-item">
 <div class="shopping-card">
 <i class="flaticon-bag"></i>
 <span><?php 
 	$data= 0;
-	if(isset($_SESSION["shopping_cart"])){
+	if(isset($_SESSION["login"])){
+	$cartnum=$product->fatchcart($_SESSION['userId']);
+	if ( is_array( $cartnum) ) {
+		$data = count( $cartnum);
+	} else { 	
+		$data= 0;
+	}
+}else if(isset($_SESSION["shopping_cart"])){
 if ( is_array( $_SESSION["shopping_cart"]) ) {
 		$data = count( $_SESSION["shopping_cart"]);
 	} else { 	

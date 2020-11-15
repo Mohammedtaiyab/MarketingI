@@ -27,51 +27,112 @@ require('header.php');
 <tr>
 <th class="product-th">Product</th>
 <th class="quy-th">Quantity</th>
-<th class="size-th">SizeSize</th>
+<!-- <th class="size-th">SizeSize</th> -->
 <th class="total-th">Price</th>
+<th class="delete-th">Remove</th>
 </tr>
 </thead>
 <tbody>
+<form action="login.php" id="cartform" method="POST">
 <?php
 $total=0;
-if(isset($_SESSION["shopping_cart"])){
-foreach($_SESSION["shopping_cart"] as $cart): ?>
-<tr>
+if(isset($_SESSION["login"])){
+	$usercart=$product->fatchcart($_SESSION['userId']);
+foreach($usercart as $cart){ ?>
+   <tr class="item-row">
 <td class="product-col">
-<!-- <img src="img/cart/1.jpg" alt=""> -->
+ <img src='../images/product/<?php echo $cart['Image'];?>' alt="">
 <div class="pc-title">
-<h4><?php echo $cart['item_name']; ?></h4>
-<p>₹<?php echo $cart['item_price']; ?></p>
+<h4><?php echo $cart['Name']."  -".$cart['product_id']; ?></h4>
+<p>	<span class="item_price" data-price='<?php echo $cart['Price']; ?>'>₹<?php echo $cart['Price']; ?></span></p>
 </div>
 </td>
 <td class="quy-col">
 <div class="quantity">
 <div class="pro-qty">
-<input type="text" value='<?php echo $cart['item_quantity']; ?>'>
+<input class="quantityTxt quantity" id="quantity" name="quantity[]" type="text" value='<?php echo $cart['quantity'];?>' min="1">
+
 </div>
 </div>
 </td>
-<td class="size-col"><h4>Size M</h4></td>
-<td class="total-col"><h4>₹<?php echo $cart['item_price']*$cart['item_quantity']; ?></h4></td>
+<!-- <td class="size-col"><h4>Size M</h4></td> -->
+<td class="total-col item_cost"><h4>₹  <span class="item-cost-val"><?php echo $cart['Price']; ?></span></h4></td>
+<td class="size-col"><a href='<?php echo "?action=delete&pid=".$cart['product_id'];?>'><i class="fa fa-trash"></i></a></td>
 </tr>
+<input type="hidden" class="sessioncartid" id="sessioncartid" name="productid[]" value='<?php echo  $cart['product_id']; ?>'>
+  <?php $total=$total + ($cart['Price']*$cart['quantity']); } 
 
 
-  <?php $total=$total + ($cart['item_price']*$cart['item_quantity']); endforeach; }?>
+
+
+}
+else if(isset($_SESSION["shopping_cart"])){
+$usercart=$_SESSION["shopping_cart"];
+foreach($usercart as $cart){ ?>
+   <tr class="item-row">
+<td class="product-col">
+ <img src='../images/product/<?php echo $cart['item_image'];?>' alt="">
+<div class="pc-title">
+<h4><?php echo $cart['item_name']."  -".$cart['item_id']; ?></h4>
+<p>	<span class="item_price" data-price='<?php echo $cart['item_price']; ?>'>₹<?php echo $cart['item_price']; ?></span></p>
+</div>
+</td>
+<td class="quy-col">
+<div class="quantity">
+<div class="pro-qty">
+<input class="quantityTxt quantity" id="quantity" name="quantity[]" type="text" value="1" min="1">
+
+</div>
+</div>
+</td>
+<!-- <td class="size-col"><h4>Size M</h4></td> -->
+<td class="total-col item_cost"><h4>₹  <span class="item-cost-val"><?php echo $cart['item_price']; ?></span></h4></td>
+<td class="size-col"><a href='<?php echo "?action=delete&pid=".$cart['item_id'];?>'><i class="fa fa-trash"></i></a></td>
+</tr>
+<input type="hidden" class="sessioncartid" id="sessioncartid" name="productid[]" value='<?php echo  $cart['item_id']; ?>'>
+  <?php $total=$total + ($cart['item_price']*$cart['item_quantity']); } 
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </tbody>
 </table>
 </div>
 <div class="total-cost">
-<h6>Total <span>₹<?php echo $total;?></span></h6>
+<h6>Total      ₹<span name="subtotal" id="total_cost" style="margin-left: 0px;"><?php echo $total; ?></span>/-</h6>
+<input type="hidden" class="totalbill" name="totalbill" id="subtotal" value='<?php echo $total; ?>'>
+
 </div>
 </div>
 </div>
 <div class="col-lg-4 card-right">
-<form class="promo-code-form">
+<!-- <form class="promo-code-form">
 <input type="text" placeholder="Enter promo code">
 <button>Submit</button>
-</form>
-<a href="checkout.php" class="site-btn">Proceed to checkout</a>
-<a href="category.php" class="site-btn sb-dark">Continue shopping</a>
+</form> -->
+<?php
+if(!isset($_SESSION['login'])){?>
+<a  data-toggle="modal" href="#loginModal" class="site-btn sb-dark">Login to Continue</a>
+<?php } else {?>
+
+
+<button class="site-btn sb-dark" id="addtocart" name="cart" type="submit">Proceed to checkout</button>
+<!-- <a href="">Proceed to checkout</a> -->
+<?php } ?>
+<a href="category.php" class="btn site-btn sb-dark">Continue shopping</a>
 </div>
 </div>
 </div>

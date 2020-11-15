@@ -11,7 +11,7 @@
                                
                                 <div class="error"></div>
                                 <div class="form loginBox login100-form validate-form">
-                                    <form method="post" action="" accept-charset="UTF-8">
+                                    <form method="post" id="loginform" action="login.php" accept-charset="UTF-8">
                                         <span class="login100-form-title p-b-49">
                         Login
                     </span>
@@ -22,9 +22,10 @@
                       
                                    
                                     <input id="password" class="form-control effect-1 input100" type="password" placeholder="Enter Password" name="password">
-                <input class="btn btn-default btn-login btn-grad" type="submit" value="Login"  name="login_user" onclick="loginAjax()" style="margin-left: 25%;">
+                <input class="btn btn-default btn-login btn-grad" type="submit" id="login" name="login" value="Login"  name="login" style="margin-left: 25%;">
                     
                                     </form>
+                                    <div id="ack"></div>
                                 </div>
                              </div>
                              
@@ -54,7 +55,7 @@
                                 </div>
                             </div>
                       
-                       <!--    <div class="division">
+                          <div class="division">
                                     <div class="line l"></div>
                                       <span>or</span>
                                     <div class="line r"></div>
@@ -62,13 +63,11 @@
                              
 
                          <div class="social">
-                                    <a id="google_login" class="circle google" href="#">
-                                        <i class="fa fa-google-plus fa-fw"></i>
-                                    </a>
+                                   <div class="g-signin2" data-onsuccess="onSignIn"></div>
                                     <a id="facebook_login" class="circle facebook" href="#">
                                         <i class="fa fa-facebook fa-fw"></i>
                                     </a>
-                                </div>   -->
+                                </div>  
                                   </div>
                     </div>
                     <div class="modal-footer">
