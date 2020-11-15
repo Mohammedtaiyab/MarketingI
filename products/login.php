@@ -32,7 +32,7 @@ if(isset($_POST['reg_user']))
 	                }
  	}
 
-		header("Location:index.php");
+		header('Location:index.php');
 }	
 if(isset($_POST['login'])){
 
@@ -64,7 +64,7 @@ if(isset($_POST['login'])){
 
 	                }
  	}
-	header("Location:index.php");
+	header('Location:index.php');
 }
 if(isset($_GET['logout'])){
 	 $_SESSION['login'] = FALSE;
@@ -95,7 +95,7 @@ for ($i=0; $i <count($productId); $i++) {
 	             // 	
 	             // }
 	   }
-header("Location:checkout.php");
+header('Location:checkout.php');
 
 }
 
