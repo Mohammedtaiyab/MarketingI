@@ -9,8 +9,8 @@ if(isset($_POST['address']))
 	 	 $city=$_POST['city'];
 	$state=$_POST['state'];
 	 $pin=$_POST['pin'];
-	 $usermail=$_POST['userid'];
-$address=$user->address($address,$address2,$phone,$country,$city,$state,$pin,$usermail);
+	 $userId=$_POST['userid'];
+$address=$user->address($address,$address2,$phone,$country,$city,$state,$pin,$userId);
  // 	if($register==false){
 	// $error="Could Not Register";
  // 	}

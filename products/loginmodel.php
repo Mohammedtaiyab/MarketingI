@@ -39,12 +39,16 @@
                      Sign Up!
                     </span>
          
-                                <input id="name" class="form-control effect-1" type="text" placeholder="Enter Name" name="name" required="required">
+                                <input id="name" class="form-control effect-1" type="text" placeholder="Enter Full Name" name="name" required="required">
              
                                 <input id="phone" class="form-control effect-1" type="text" placeholder="Enter Phone No" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required="required">
                           
                                 <input id="email" class="form-control " type="text" placeholder="Enter Email" name="email" required="required">
-                             
+                              <select id="gender"  class="form-control selectform" name="gender">
+                                <option value="Male">Male</option>
+                                         <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                    </select>
                                  <div style="display: flex; align-items: center;">
                                             <input id="password-field" type="password" class="form-control" name="password" value="" placeholder="Enter Password">
               <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" style="position: absolute;"></span>
@@ -63,10 +67,10 @@
                              
 
                          <div class="social">
-                                   <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                                 <!--   <div class="g-signin2" data-onsuccess="onSignIn"></div>
                                     <a id="facebook_login" class="circle facebook" href="#">
                                         <i class="fa fa-facebook fa-fw"></i>
-                                    </a>
+                                    </a> -->
                                 </div>  
                                   </div>
                     </div>

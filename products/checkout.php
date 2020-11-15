@@ -63,7 +63,7 @@ require('header.php');
 </form>
 </div>
 <?php
-$useraddress=$user->getaddress($_SESSION['customermail']);
+$useraddress=$user->getaddress($_SESSION['userId']);
 	$avalbleadd=false;
 if(count($useraddress)>0){
 	$avalbleadd=true;
@@ -131,10 +131,7 @@ foreach($_SESSION["shopping_cart"] as $cart): ?>
 <li class="total">Total<span>₹<?php echo $total;?></span></li>
 </ul>
 </div>
-<input type="hidden" id="ORDER_ID" tabindex="1" maxlength="20" size="20"
-            name="ORDER_ID" autocomplete="off"
-            value="<?php echo  "ORDS" . rand(10000,99999999)?>">
-
+<input type="hidden" id="ORDER_ID" tabindex="1" maxlength="20" size="20"name="ORDER_ID" autocomplete="off"value="<?php echo  "ORDS" . rand(10000,99999999)?>">
 <input type="hidden" id="CUST_ID" tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value='<?php echo $_SESSION['userId']?>'>
 <input type="hidden" id="INDUSTRY_TYPE_ID" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
 <input type="hidden" id="CHANNEL_ID" tabindex="4" maxlength="12"

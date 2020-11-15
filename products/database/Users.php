@@ -102,16 +102,15 @@ public function getuseridbyorder($orid){
 }
 
 
-public function address($address,$address2,$phone,$country,$city,$state,$pin,$usermail){
+public function address($address,$address2,$phone,$country,$city,$state,$pin,$userID){
 			
 	$fulladdress=$address."".$address2;
-				$userID=$this->getuserid($usermail);
+				
 		$sql1="INSERT INTO address(UserId,Address,Phone,Country,State,City,Pin) VALUES ('$userID','$fulladdress',$phone,'$country','$city','$state','$pin')";
 				$result = mysqli_query($this->db->con,$sql1) or die(mysqli_connect_errno()."Data cannot inserted");
 		
 		}
-	public function getaddress($usermail){
-		$userID=$this->getuserid($usermail);
+	public function getaddress($userID){
 		$result =$this->db->con->query("SELECT * FROM address WHERE UserId=($userID)");
 		$resultArray=array();
 		while ($item=mysqli_fetch_array($result,MYSQLI_ASSOC)) {

@@ -51,7 +51,55 @@ require ('functions.php');
   color: #9F6000;
   background-color: #FEEFB3;
 }
+.dropbtn {
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;z-index: 10000;}
+.selectform{
+	    text-align: center;
+    font-family: Poppins-Medium;
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.2;
+    display: block;
+    width: 46%;
+    height: 55px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid;
+    opacity: 1;
+    margin-left: 25%;
+}
 	</style>
+}
 </head>
 <body>
 <!-- Header section -->
@@ -76,14 +124,9 @@ require ('functions.php');
 <div class="up-item">
 <?php
 if(isset($_SESSION['login'])){?>
-
-<!-- <div class="success-msg">
-  <i class="fa fa-check"></i>
-  This is a success message.
-</div> -->
-<ul class="main-menu">
-<li><i class="flaticon-profile"></i>  <a href=""class="headbut btn-sm">Account</a>
-<ul class="sub-menu">
+<ul class="dropdown">
+<li><i class="flaticon-profile"></i>  <a href=""class="dropbtn headbut btn-sm">Account</a>
+<ul class=" dropdown-content sub-menu">
 <li><a href="#"><?php echo $_SESSION['customer']; ?></a></li>
 <li><a href="#">Address</a></li>
 <li><a href="cart.php">Cart</a></li>
