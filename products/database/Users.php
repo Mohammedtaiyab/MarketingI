@@ -1,7 +1,6 @@
 <?php
 class Users
 {
-	
 	public $db=null;
 	function __construct(DBcontroller $db)
 	{
@@ -34,11 +33,6 @@ class Users
 				 $_SESSION['error']="Registeration Error";
 				return false;}
 		}
-
-
-
-
-
 		public function login($email, $password){
 			$password = md5($password);
 			$sql2="SELECT * from user WHERE Email='$email'and Password='$password'";
@@ -62,11 +56,9 @@ class Users
 			    return false;
 			}
     	}
-
-
-		public function loginbyid($userId){
+		public function loginbyid($orid){
+			$userId=$this->getuseridbyorder($orid);
 			$sql="SELECT * from user WHERE ID=($userId)";
- 
 			//checking if the username is available in the table
         	$result = mysqli_query($this->db->con,$sql);
         	$user_data = mysqli_fetch_array($result);
@@ -86,8 +78,6 @@ class Users
 			    return false;
 			}
     	}
-
-
 public function getuserid($usermail){
 	$sql="SELECT * FROM user WHERE Email='$usermail'";
  			//checking if the username or email is available in db
@@ -99,7 +89,17 @@ public function getuserid($usermail){
 	}
 	return $resultArray[0]['ID'];
 }
-
+public function getuseridbyorder($orid){
+	$sql="SELECT * FROM sales WHERE pay_id='$orid'";
+ 			//checking if the username or email is available in db
+			$check =  $this->db->con->query($sql) ;
+		$resultArray=array();
+		while ($item=mysqli_fetch_array($check,MYSQLI_ASSOC)) {
+			$resultArray[]=$item;
+			# code...
+	}
+	return $resultArray[0]['user_id'];
+}
 
 
 public function address($address,$address2,$phone,$country,$city,$state,$pin,$usermail){
@@ -121,7 +121,7 @@ public function address($address,$address2,$phone,$country,$city,$state,$pin,$us
 		return $resultArray;
 	}
 		public function usercart($userId){
-		$result =$this->db->con->query("SELECT * FROM cart WHERE UserId=($userID)");
+		$result =$this->db->con->query("SELECT * FROM cart WHERE user_id=($userId)");
 		$resultArray=array();
 		while ($item=mysqli_fetch_array($result,MYSQLI_ASSOC)) {
 			$resultArray[]=$item;
@@ -131,5 +131,4 @@ public function address($address,$address2,$phone,$country,$city,$state,$pin,$us
 	}
 
 }
-
 ?>

@@ -69,7 +69,7 @@ if(isset($_POST['login'])){
 if(isset($_GET['logout'])){
 	 $_SESSION['login'] = FALSE;
 	 session_destroy();
-	 header("Location:index.php");
+	 header('Location:index.php');
 
 }
 if(isset($_POST['cart'])){

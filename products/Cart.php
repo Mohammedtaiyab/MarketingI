@@ -61,10 +61,6 @@ foreach($usercart as $cart){ ?>
 </tr>
 <input type="hidden" class="sessioncartid" id="sessioncartid" name="productid[]" value='<?php echo  $cart['product_id']; ?>'>
   <?php $total=$total + ($cart['Price']*$cart['quantity']); } 
-
-
-
-
 }
 else if(isset($_SESSION["shopping_cart"])){
 $usercart=$_SESSION["shopping_cart"];
@@ -93,21 +89,6 @@ foreach($usercart as $cart){ ?>
   <?php $total=$total + ($cart['item_price']*$cart['item_quantity']); } 
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </tbody>
 </table>
 </div>

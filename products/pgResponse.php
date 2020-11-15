@@ -18,27 +18,10 @@ $isValidChecksum = verifychecksum_e($paramList, PAYTM_MERCHANT_KEY, $paytmChecks
 $payment=$payment->paymentmade($paramList);
 if($isValidChecksum == "TRUE") {
 if ($_POST["STATUS"] == "TXN_SUCCESS") {
-// 	  session_start();
-// $_SESSION["login"] = true;
-// $_SESSION["customer"] = $_COOKIE["customer"];
-// $_SESSION["customermail"]=$_COOKIE['customermail'];
-// $_SESSION["userId"]=$_COOKIE['userIssd'];
-// $userId=$_SESSION["userId"];
-// $productdetail=$user->usercart($userId);
-// $orderid= $paramList['ORDERID'];
-// $placeorder=$order->placeorder($userId,$productdetail,$orderid);
-//echo $_COOKIE['userId'];
- if(!isset($_SESSION['login'])){
-	$login=$user->loginbyid($_COOKIE['userId']);
-	 unset($_COOKIE['userId']); 
- }
-header("Location:index.php");
-// $productdetail=$_POST['cart'];
-// $usermail=$_POST["customermail"];
-//
-//
-	}
-	else {
+	$orid=$paramList['ORDERID'];
+	$setuser=$user->loginbyid($orid);
+	header('Location:order.php');
+	} else {
 		echo "<b>Transaction status is failure</b>" . "<br/>";
 	}
 

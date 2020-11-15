@@ -91,7 +91,7 @@ $client->addScope("email");
 $client->addScope("profile");
 
 
-if(isset($_GET['code'])):
+if(isset($_GET['code'])){
 
     $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
     $client->setAccessToken($token['access_token']);
@@ -103,12 +103,5 @@ if(isset($_GET['code'])):
     // showing profile info
     echo "<pre>";
     var_dump($google_account_info);
-
-else: 
-    // Google Login Url = $client->createAuthUrl(); 
-?>
-
-  <!--   <a class="login-btn" href="<?php //echo $client->createAuthUrl(); ?>">Login</a> -->
-
-<?php endif; 
+}
 ?>

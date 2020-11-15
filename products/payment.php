@@ -25,7 +25,11 @@ $paramList["CHANNEL_ID"] = $CHANNEL_ID;
 $paramList["TXN_AMOUNT"] = $TXN_AMOUNT;
 $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
 $paramList["CALLBACK_URL"] = "http://localhost:8080/marketingojo/products/pgResponse.php";
-setcookie("userId",$CUST_ID,time() + (86400 * 30), "/"); // 86400 = 1 day
+$userId=$_SESSION["userId"];
+$productdetail=$user->usercart($CUST_ID);
+$orderid= $ORDER_ID;
+$addon=date('Y ,D M');
+$placeorder=$order->placeorder($userId,$productdetail,$orderid,$addon);
 /*
 $paramList["CALLBACK_URL"] = "http://localhost/PaytmKit/pgResponse.php";
 $paramList["MSISDN"] = $MSISDN; //Mobile number of customer

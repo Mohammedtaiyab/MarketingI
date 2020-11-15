@@ -27,6 +27,4 @@ protected function closeConnection(){
 	}
 }
 }
-
 ?>
-

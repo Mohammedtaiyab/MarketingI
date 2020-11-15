@@ -83,12 +83,12 @@ if(isset($_SESSION['login'])){?>
 </div> -->
 <ul class="main-menu">
 <li><i class="flaticon-profile"></i>  <a href=""class="headbut btn-sm">Account</a>
-	<ul class="sub-menu">
+<ul class="sub-menu">
 <li><a href="#"><?php echo $_SESSION['customer']; ?></a></li>
 <li><a href="#">Address</a></li>
 <li><a href="cart.php">Cart</a></li>
 <li><a href="checkout.php">Checkout</a></li>
-<li><a href="#">Track Order</a></li>
+<li><a href="order.php">Track Order</a></li>
 <li><a href="login.php?logout=true">Logout</a></li>
 </ul>
 </li>
@@ -152,10 +152,7 @@ $productlist=$product->Productcategory();
  foreach($categoryname as $name): ?>
 
 <?php echo "<li><a href='category.php?id=".$name['id']."'>".$name['categories']."</a></li>";?>
-
-
-
-  <?php endforeach; $i++; } endforeach;?>
+<?php endforeach; $i++; } endforeach;?>
 </ul>
 </div>
 </nav>
