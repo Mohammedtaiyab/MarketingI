@@ -99,7 +99,6 @@ require ('functions.php');
     margin-left: 25%;
 }
 	</style>
-}
 </head>
 <body>
 <!-- Header section -->
