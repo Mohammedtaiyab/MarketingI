@@ -57,10 +57,10 @@
               <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2">  
                 <div class="coming-text">
                   <h2>We are coming soon</h2>
-                  <p>Ideas On Its Way</p>
+                  <p>Ideas On Its Way!</p>
                 </div>  
                 <div class="coming-time">
-                  <div class="clearfix" data-countdown="2020/12/3"></div>
+                  <div class="clearfix" data-countdown="2021/1/3"></div>
                 </div>
               <!--   <div class="button">
                   <a class="btn primary">Subscribe Now</a>
