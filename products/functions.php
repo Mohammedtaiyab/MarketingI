@@ -38,7 +38,8 @@ if(isset($_GET["action"])){
                      'item_id'               =>    $productitem[0]['ID'],  
                      'item_name'               =>    $productitem[0]['Name'],  
                      'item_price'          =>    $productitem[0]['Price'],  
-                      'item_image'              =>$productitem[0]['Image'],  
+                      'item_image'              =>$productitem[0]['Image'],
+                      'item_custom'              =>$productitem[0]['Custom_Type'],  
                      'item_quantity'          =>     1  
                 );  
                 $_SESSION["shopping_cart"][$count] = $item_array;  
@@ -49,7 +50,8 @@ if(isset($_GET["action"])){
                 'item_id'               =>      $productitem[0]['ID'],  
                 'item_name'               =>    $productitem[0]['Name'], 
                 'item_price'          =>     $productitem[0]['Price'],  
-                'item_image'              =>$productitem[0]['Image'],  
+                'item_image'              =>$productitem[0]['Image'],
+                 'item_custom'              =>$productitem[0]['Custom_Type'],  
                 'item_quantity'          =>   1  
            );  
            $_SESSION["shopping_cart"][0] = $item_array;  

@@ -63,6 +63,23 @@
                     <input type="text" class="form-control" id="edit_mrp" name="mrp">
                   </div>
                 </div>
+                       <div class="form-group">
+                   <label for="photo" class="col-sm-1 control-label">Dealer</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="edit_dealer" name="dealer">
+                  </div>
+                   <label for="category" class="col-sm-1 control-label">Custom Type</label>
+                     <div class="col-sm-5">
+                    <select class="form-control" id="edit_cust" name="custmtype" required>
+                      <option value="" selected>- Select -</option>
+
+                      <option value="101" >Mobile Model</option>
+                      <option value="102" >Custom Image</option>
+                      <option value="103" >Custom Text</option>
+                          <option value="100" >None</option>
+                    </select>
+                  </div>
+                </div>
                 <p><b>Description</b></p>
                 <div class="form-group">
                   <div class="col-sm-12">

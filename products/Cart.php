@@ -27,7 +27,7 @@ require('header.php');
 <tr>
 <th class="product-th">Product</th>
 <th class="quy-th">Quantity</th>
-<!-- <th class="size-th">SizeSize</th> -->
+<th class="size-th">Custom File</th>
 <th class="total-th">Price</th>
 <th class="delete-th">Remove</th>
 </tr>
@@ -43,7 +43,7 @@ foreach($usercart as $cart){ ?>
 <td class="product-col">
  <img src='../images/product/<?php echo $cart['Image'];?>' alt="">
 <div class="pc-title">
-<h4><?php echo $cart['Name']."  -".$cart['product_id']; ?></h4>
+<h4><?php echo $cart['Name']; ?></h4>
 <p>	<span class="item_price" data-price='<?php echo $cart['Price']; ?>'>₹<?php echo $cart['Price']; ?></span></p>
 </div>
 </td>
@@ -51,12 +51,12 @@ foreach($usercart as $cart){ ?>
 <div class="quantity">
 <div class="pro-qty">
 <input class="quantityTxt quantity" id="quantity" name="quantity[]" type="text" value='<?php echo $cart['quantity'];?>' min="1">
-
 </div>
 </div>
 </td>
-<!-- <td class="size-col"><h4>Size M</h4></td> -->
-<td class="total-col item_cost"><h4>₹  <span class="item-cost-val"><?php echo $cart['Price']; ?></span></h4></td>
+<td class="size-col"> <span class=''><a href='#photo' class='photo' data-toggle='modal' data-id=''><i class='fa fa-edit'></i></a></span>
+</td>
+<td class="total-col item_cost"><h4>₹  <span class="item-cost-val"><?php echo $cart['Price']*$cart['quantity']; ?></span></h4></td>
 <td class="size-col"><a href='<?php echo "?action=delete&pid=".$cart['product_id'];?>'><i class="fa fa-trash"></i></a></td>
 </tr>
 <input type="hidden" class="sessioncartid" id="sessioncartid" name="productid[]" value='<?php echo  $cart['product_id']; ?>'>
@@ -69,20 +69,20 @@ foreach($usercart as $cart){ ?>
 <td class="product-col">
  <img src='../images/product/<?php echo $cart['item_image'];?>' alt="">
 <div class="pc-title">
-<h4><?php echo $cart['item_name']."  -".$cart['item_id']; ?></h4>
+<h4><?php echo $cart['item_name']; ?></h4>
 <p>	<span class="item_price" data-price='<?php echo $cart['item_price']; ?>'>₹<?php echo $cart['item_price']; ?></span></p>
 </div>
 </td>
 <td class="quy-col">
 <div class="quantity">
 <div class="pro-qty">
-<input class="quantityTxt quantity" id="quantity" name="quantity[]" type="text" value="1" min="1">
-
+<input class="quantityTxt quantity" id="quantity" name="quantity[]" type="text"  value='<?php echo $cart['item_quantity'];?>' min="1">
 </div>
 </div>
 </td>
-<!-- <td class="size-col"><h4>Size M</h4></td> -->
-<td class="total-col item_cost"><h4>₹  <span class="item-cost-val"><?php echo $cart['item_price']; ?></span></h4></td>
+<td class="size-col"> <span class='pull-right'><a href='#edit_photo' class='photo' data-toggle='modal' data-id=''><i class='fa fa-edit'></i></a></span>
+</td>
+<td class="total-col item_cost"><h4>₹  <span class="item-cost-val"><?php echo $cart['item_price']*$cart['item_quantity']; ?></span></h4></td>
 <td class="size-col"><a href='<?php echo "?action=delete&pid=".$cart['item_id'];?>'><i class="fa fa-trash"></i></a></td>
 </tr>
 <input type="hidden" class="sessioncartid" id="sessioncartid" name="productid[]" value='<?php echo  $cart['item_id']; ?>'>

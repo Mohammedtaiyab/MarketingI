@@ -223,6 +223,8 @@ function getRow(id){
       $('#catselected').val(response.category_id).html(response.catname);
       $('#edit_price').val(response.Price);
       $('#edit_mrp').val(response.mrp);
+      $('#edit_dealer').val(response.Dealer);
+      $('#edit_cust').val(response.Custom_Type);
       CKEDITOR.instances["editor2"].setData(response.Description);
       getCategory();
     }

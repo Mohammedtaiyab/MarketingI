@@ -60,13 +60,15 @@
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="dealer" name="dealer">
                   </div>
-                   <label for="category" class="col-sm-1 control-label">Quantity Type</label>
+                   <label for="category" class="col-sm-1 control-label">Custom Type</label>
                      <div class="col-sm-5">
-                    <select class="form-control" id="qtytype" name="qtytype" required>
+                    <select class="form-control" id="qtytype" name="custmtype" required>
                       <option value="" selected>- Select -</option>
-                      <option value="1" >Once</option>
-                      <option value="10" >Tens</option>
-                      <option value="100" >Hundreds</option>
+
+                      <option value="101" >Mobile Model</option>
+                      <option value="102" >Custom Image</option>
+                      <option value="103" >Custom Text</option>
+                          <option value="100" >None</option>
                     </select>
                   </div>
                 </div>

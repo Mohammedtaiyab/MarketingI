@@ -83,21 +83,45 @@ require ('functions.php');
 
 .dropdown:hover .dropdown-content {display: block;z-index: 10000;}
 .selectform{
-	    text-align: center;
+	    text-align-last:center;
     font-family: Poppins-Medium;
     font-size: 16px;
     color: #333333;
     line-height: 1.2;
     display: block;
-    width: 46%;
+    width: 100%;
     height: 55px;
     background: transparent;
     outline: none;
     border: none;
-    border-bottom: 1px solid;
+       margin: 9px 0px;
     opacity: 1;
-    margin-left: 25%;
+
 }
+.login .box .form input[type="text"], .login .box .form input[type="password"] {
+  text-align:center;
+       font-family: Poppins-Medium;
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: 55px;
+    background: transparent;
+        outline: none;
+    border: none;
+    opacity: 1;
+        margin: 9px 0px;
+}
+.form-control {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 18px -1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+select .lt { text-align: center; }
 	</style>
 </head>
 <body>

@@ -25,75 +25,72 @@ require('header.php');
 <div class="row">
 <div class="col-lg-8 order-2 order-lg-1">
 
-<div class="cf-title">Billing Address</div>
+<div class="cf-title"><h4>*Billing Information<h4></div>
 <div class="row">
 <div class="col-md-7">
-<p>*Billing Information</p>
 </div>
-<div class="col-md-5">
-<div class="cf-radio-btns address-rb">
-	<div class="cfr-item">
-<button class="btn" onclick="functionclick()">Use a different address</button> 
-</div>
-</div>
-</div>
-<form class="checkout-form" id="addressform" action="address.php" method="POST">
+<?php $useraddress=$user->getaddress($_SESSION['userId']);
+if(count($useraddress)==0){?>
+	<form class="checkout-form" id="" action="address.php" method="POST">
 <div class="row address-inputs">
+	<div class="col-md-6">
+<input type="text" name="name" placeholder="Full Name" required>
+</div>
+	<div class="col-md-6">
+<input type="text" name="phone"  placeholder="Phone no." required>
+</div>
 <div class="col-md-12">
 <input type="hidden" name="userid" value='<?php echo $_SESSION['userId']?>'>
-<input type="text" name="addressl1" placeholder="Address"  required>
-<input type="text"  name="addressl2" placeholder="Address line 2"required>
+<input type="text" name="addressl1"  placeholder="Address"  required>
+<input type="text"  name="addressl2"  placeholder="Address line 2"required>
 </div>
 <div class="col-md-6">
-<input type="text" name="country" placeholder="Country"required>
+<input type="text" name="country"  placeholder="Country"required>
 </div>
 <div class="col-md-6">
-<input type="text" name="state" placeholder="State"required>
+<input type="text" name="state"  placeholder="State"required>
 </div>
 <div class="col-md-6">
-<input type="text" name="city" placeholder="City"required>
+<input type="text" name="city"   placeholder="City"required>
 </div>
 <div class="col-md-6">
 <input id="zip" name="pin"  placeholder="Pin Code" type="text" inputmode="numeric" pattern="[0-9]*" required>
 </div>
+<button class="site-btn submit-order-btn sb-dark" name="address" type="submit">Save</button>
+</form><?php
+}else{
+foreach ($useraddress as $address) {?>
+<form class="checkout-form" id="" action="address.php" method="POST">
+<div class="row address-inputs">
+	<div class="col-md-6">
+<input type="text" name="name" value='<?php echo $address['Name']; ?>' placeholder="Full Name" required>
+</div>
+	<div class="col-md-6">
+<input type="text" name="phone" value='<?php echo $address['Phone']; ?>' placeholder="Phone no." required>
+</div>
 <div class="col-md-12">
-<input type="text" name="phone" placeholder="Phone no." required>
+<input type="hidden" name="userid" value='<?php echo $_SESSION['userId']?>'>
+<input type="text" name="addressl1" value='<?php echo $address['Address']; ?>' placeholder="Address"  required>
+<input type="text"  name="addressl2" value='<?php echo $address['Address2']; ?>' placeholder="Address line 2"required>
 </div>
-<button class="site-btn submit-order-btn sb-dark" name="address" type="submit">Save Address</button>
+<div class="col-md-6">
+<input type="text" name="country" value='<?php echo  $address['Country'];?>' placeholder="Country"required>
+</div>
+<div class="col-md-6">
+<input type="text" name="state" value='<?php echo $address['State']; ?>' placeholder="State"required>
+</div>
+<div class="col-md-6">
+<input type="text" name="city" value='<?php echo $address['City']; ?>'  placeholder="City"required>
+</div>
+<div class="col-md-6">
+<input id="zip" name="pin"  value='<?php echo $address['Pin']; ?>' placeholder="Pin Code" type="text" inputmode="numeric" pattern="[0-9]*" required>
+</div>
+<button class="site-btn submit-order-btn sb-dark" name="updateadd" type="submit">Save</button>
 </form>
-</div>
-<?php
-$useraddress=$user->getaddress($_SESSION['userId']);
-	$avalbleadd=false;
-if(count($useraddress)>0){
-	$avalbleadd=true;
+<?php }
 }
-if($avalbleadd==true){?>
-	<table class="table table-response">
-		<tr>
-	<th></th>
-		<th>ADDRESS:-</th>
-		<th>Country/city</th>
-		<th>Phone No:</th>
-	</tr>
-		<tbody>
-      <form method="post" id="paymentform" action="payment.php">
-			<?php foreach ($useraddress as $address) {?>
-			<tr>
-				<td><input type="radio" name="addr" id="one" value='<?php echo $address['Id']; ?>'></td>
-				<td class="ml-3"><?php echo $address['Address']; ?></td>
-		<td><?php echo  $address['Country'].",".$address['State'].",".$address['City'].",".$address['Pin'];?></td>
-		<td><?php echo $address['Phone']; ?></td>
-		</tr>
-	<?php } ?>
-		</tbody>
-	</table>
-
-
-<?php }else{ ?>
-<button class="btn mb-3" onclick="functionclick()">ADD New ADDRESS</button> 
- <?php }
 ?>
+</div>
 </div>
 </div>
 
@@ -131,6 +128,7 @@ foreach($_SESSION["shopping_cart"] as $cart): ?>
 <li class="total">Total<span>₹<?php echo $total;?></span></li>
 </ul>
 </div>
+<form method="post" id="paymentform" action="payment.php">
 <input type="hidden" id="ORDER_ID" tabindex="1" maxlength="20" size="20"name="ORDER_ID" autocomplete="off"value="<?php echo  "ORDS" . rand(10000,99999999)?>">
 <input type="hidden" id="CUST_ID" tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value='<?php echo $_SESSION['userId']?>'>
 <input type="hidden" id="INDUSTRY_TYPE_ID" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
@@ -139,7 +137,7 @@ foreach($_SESSION["shopping_cart"] as $cart): ?>
 <input type="hidden" title="TXN_AMOUNT" tabindex="10"type="text" name="TXN_AMOUNT" value='<?php echo $total;?>'>
 <input type="hidden" title="" tabindex="10"type="text" name="cart" value='<?php echo $_SESSION["shopping_cart"];?>'>
 <input type="hidden" title="" tabindex="10"type="text" name="customermail" value='<?php echo $_SESSION['customermail'];?>'>
-<a href="" id="" onclick="return checkrideo()">
+<a href="" id="">
 <button class="mt-3 btn site-btn submit-order-btn sb-dark" name="address">Place Order</button></a>
 </div>
 </div>

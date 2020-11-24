@@ -122,9 +122,16 @@ window.alert("You need to choose an option!");
   }
 };
 
+
 $(document).ready(function(){
 
-	
+	 $(".quantity").change(function(ev){
+   $currObj = $(ev.currentTarget);
+		var currQCount = getCurrQCount($currObj);
+
+	updateData($currObj, currQCount);
+  });
+
 	$('.dec').on('click', function(ev) {
 	
      $currObj = $(ev.currentTarget);
@@ -218,13 +225,7 @@ if(!loggedin){
 
 
 
-<script type="text/javascript">
-	$(document).ready(function(){
 
- $(".quantity").change(function(){
-    alert("The text has been changed.");
-  });
-});
 </script>
 <script type='text/javascript' style='display:none;' async>
 __ez.queue.addFile('edmonton.html', '/detroitchicago/edmonton.webp?a=a&cb=0&shcb=32', true, [], true, false, false, false);

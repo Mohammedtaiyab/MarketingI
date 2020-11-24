@@ -6,8 +6,10 @@ if(isset($_POST['reg_user']))
 	$phone=$_POST['phone'];
 	$email=$_POST['email'];
 	$password=$_POST['password'];
+	$gender=$_POST['gender'];
 	$addon=date('Y ,D M');
-	$register=$user->register($name,$phone,$email,$password,$addon);
+
+	$register=$user->register($name,$phone,$email,$password,$addon,$gender);
  	if($register==false){
 	$error="Could Not Register";
  	}else{
@@ -32,7 +34,7 @@ if(isset($_POST['reg_user']))
 	                }
  	}
 
-		header('Location:index.php');
+header('Location:index.php');
 }	
 if(isset($_POST['login'])){
 

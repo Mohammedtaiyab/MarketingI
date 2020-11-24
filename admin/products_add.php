@@ -8,7 +8,7 @@
 		$category = $_POST['category'];
 		$price = $_POST['price'];
 		$description = $_POST['description'];
-		$qtytype=$_POST['qtytype'];
+		$custmtype=$_POST['custmtype'];
 		$mrp = $_POST['mrp'];
 		$dealer = $_POST['dealer'];
 		$filename = $_FILES['photo']['name'];
@@ -34,8 +34,8 @@
 			}
 
 			try{
-				$stmt = $conn->prepare("INSERT INTO product(Categories_id,Name,Description,Short_desc,Price,mrp,Image,Qty_type,Dealer,Status) VALUES (:category, :name, :description, :slug, :price,:mrp, :photo, :qtytype,:dealer,:status)");
-				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'mrp'=>$mrp,'photo'=>$new_filename,'qtytype'=> $qtytype,'dealer'=>$dealer,'status'=>$status]);
+				$stmt = $conn->prepare("INSERT INTO product(Categories_id,Name,Description,Short_desc,Price,mrp,Image,Custom_Type,Dealer,Status) VALUES (:category, :name, :description, :slug, :price,:mrp, :photo, :custmtype,:dealer,:status)");
+				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'mrp'=>$mrp,'photo'=>$new_filename,'custmtype'=> $custmtype,'dealer'=>$dealer,'status'=>$status]);
 				$_SESSION['success'] = 'User added successfully';
 
 			}

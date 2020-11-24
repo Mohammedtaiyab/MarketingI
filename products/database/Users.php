@@ -10,27 +10,30 @@ class Users
 
 
 
-	public function register($name,$phone,$email,$password,$addon){
+	public function register($name,$phone,$email,$password,$addon,$gender){
  
 			$sql="SELECT * FROM user WHERE Email='$email'";
  
 			//checking if the username or email is available in db
 			$check =  $this->db->con->query($sql) ;
 			$count_row = $check->num_rows;
- 
+ 			
 			//if the username is not in db then insert to the table
 			if ($count_row == 0){
 				$password = md5($password);
-				$sql1="INSERT INTO user(Name,Password,Email,Mobile,Added_on) VALUES ('$name','$password','$email',$phone,'$addon')";
+		
+				$sql1="INSERT INTO user(Name,Password,Email,Gender,Mobile,Added_on) VALUES ('$name','$password','$email','$gender',$phone,'$addon')";
 				$result = mysqli_query($this->db->con,$sql1) or die(mysqli_connect_errno()."Data cannot inserted");
 				 $_SESSION['login'] = true;
 	            $_SESSION['customer'] = $name;
 	             $_SESSION['customermail'] = $email;
 	               $_SESSION['userId']=$this->getuserid($email);
+	                echo $result;
         		return $result;
 			}
 			else { 
 				 $_SESSION['error']="Registeration Error";
+				 //echo $result;
 				return false;}
 		}
 		public function login($email, $password){
@@ -102,12 +105,18 @@ public function getuseridbyorder($orid){
 }
 
 
-public function address($address,$address2,$phone,$country,$city,$state,$pin,$userID){
-			
-	$fulladdress=$address."".$address2;
+public function address($name,$address,$address2,$phone,$country,$city,$state,$pin,$userID){
+	
 				
-		$sql1="INSERT INTO address(UserId,Address,Phone,Country,State,City,Pin) VALUES ('$userID','$fulladdress',$phone,'$country','$city','$state','$pin')";
+		$sql1="INSERT INTO address(UserId,Address,Address2,Name,Phone,Country,State,City,Pin) VALUES ('$userID','$address','$address2','$name',$phone,'$country','$city','$state','$pin')";
 				$result = mysqli_query($this->db->con,$sql1) or die(mysqli_connect_errno()."Data cannot inserted");
+		
+		}
+		public function updateadd($name,$address,$address2,$phone,$country,$city,$state,$pin,$userID){
+	
+				
+		$sql1="UPDATE `address` SET `Name`='".$name."',`Address`='".$address."',`Address2`='".$address2."',`Phone`='".$phone."',`Country`='".$country."',`State`='".$state."',`City`='".$city."',`Pin`='".$pin."' WHERE UserId='".$userID."'";
+				$result = mysqli_query($this->db->con,$sql1) or die(mysqli_connect_errno()."Data cannot updated");
 		
 		}
 	public function getaddress($userID){

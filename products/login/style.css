@@ -43,8 +43,8 @@
     background: transparent;
         outline: none;
     border: none;
-    border-bottom: 1px solid;
     opacity: 1;
+    margin: 9px 0px;
 }
 :focus{outline: none;}
 
@@ -377,3 +377,11 @@ input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width
     padding-right: 15px;
   }
 } 
+.login .division {
+    float: none;
+    margin: 0 auto 0px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}

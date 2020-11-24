@@ -226,7 +226,6 @@
   left: 0;
 }
 
-
 /*------------------------------------------------------------------
 [ Alert validate ]*/
 
@@ -446,6 +445,7 @@
     display: inline-block;
     margin: 0 17px;
     padding: 15px;
+    width: 100px;
 }
 .login .social .circle .fa{
     font-size: 16px;
@@ -551,4 +551,8 @@
 .big-register:hover{
     border-color: #00A4E4;
     color:  #00A4E4;
+}
+.modal-body {
+    position: relative;
+    padding: 0px 15px;
 }
