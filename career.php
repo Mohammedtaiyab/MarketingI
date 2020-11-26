@@ -36,7 +36,7 @@ if(isset($_POST["submit"])){
     $to   =  'career@marketingojo.com';
     $file="download/".$new_filename;
     $msg="Name :".$name."<br>Email :".$email."<br>Phone: ".$phone."<br>DOB:".$BOD."<br>BIO: ".$bio;
-    $error=smtpmailerr($to,$from,$name,$profile,$msg,$file);
+    $error=smtpmailer($to,$from,$name,$profile,$msg,$file);
 }
  
 function smtpmailerr($to, $from, $from_name, $subject, $body)
@@ -69,7 +69,7 @@ function smtpmailerr($to, $from, $from_name, $subject, $body)
       return $error;
         }
     }
-    function smtpmailerr($to, $from, $from_name, $subject, $body,$file)
+    function smtpmailer($to, $from, $from_name, $subject, $body,$file)
     {
       
         $mail = new PHPMailer();

@@ -32,6 +32,7 @@
               <table class="table table-bordered">
                 <thead>
                   <th>Product</th>
+                  <th>CustomFile</th>
                   <th>Price</th>
                   <th>Quantity</th>
                   <th>Subtotal</th>
