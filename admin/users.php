@@ -74,11 +74,11 @@
                             <td>".$row['Email']."</td>
                          <td>".$row['Mobile']."</td>
                             <td>".date('M d, Y', strtotime($row['Added_on']))."</td>
-                            <td>
+                            <!--td>
                               <a href='cart.php?user=".$row['ID']."' class='btn btn-info btn-sm btn-flat'><i class='fa fa-search'></i> Cart</a>
                               <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['ID']."'><i class='fa fa-edit'></i> Edit</button>
                               <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['ID']."'><i class='fa fa-trash'></i> Delete</button>
-                            </td>
+                            </td-->
                           </tr>
                         ";
                       }

@@ -22,6 +22,9 @@ require('header.php');
 	 <?php 
 	 $gid='';
   $id = ( isset( $_GET['id'] ) && is_numeric( $_GET['id'] ) ) ? intval( $_GET['id'] ) : 0;
+   if(isset( $_GET['pid'])){
+ $id = ( isset( $_GET['pid'] ) && is_numeric( $_GET['pid'] ) ) ? intval( $_GET['pid'] ) : 0;
+  }
 if ( $id != 0 ){
 
 $productitem=$product->singleProduct($id);
@@ -59,7 +62,7 @@ $productgallery=$product->productgallery($id);
 </div>
 <!-- <div class="p-review">
 <a href="#">3 reviews</a>|<a href="#">Add your review</a>
-</div> -->
+</div> 
 <div class="fw-size-choose">
 <p>Size</p>
 <div class="sc-item">
@@ -86,12 +89,17 @@ $productgallery=$product->productgallery($id);
 <input type="radio" name="sc" id="xxl-size">
 <label for="xxl-size">42</label>
 </div>
-</div>
+</div>-->
+<form method="POST" action='?action=add&pid=<?php echo $item['ID'];?>'>
+  
+
+<input type="hidden" name="pid" value='<?php echo $item['ID'];?>'>
 <div class="quantity">
 <p>Quantity</p>
-<div class="pro-qty"><input type="text" value="1"></div>
+<div class="pro-qty"><input class="quantityTxt quantity" id="quantity" value="1" name="quantity" type="text"  min="1"></div>
 </div>
-<a href="#" class="site-btn">SHOP NOW</a>
+<button type="submit" name="action" class="site-btn">SHOP NOW </button>
+</form>
 <div id="accordion" class="accordion-area">
 <div class="panel">
 <div class="panel-header" id="headingOne">
@@ -162,9 +170,9 @@ $productitems=$product->Productcategory();
 
 <div class="product-item">
 <div class="pi-pic">
-    <?php echo  "<img class='product-img' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?>
+    <?php echo  "<a href='product.php?id=".$item['ID']."'><img class='product-img' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?>
 <div class="pi-links">
-<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+<a href='?action=add&pid=<?php echo $item['ID']; ?>' class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
 <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
 </div>
 </div>
@@ -181,9 +189,9 @@ $productitems=$product->Productcategory();
     	  if($i >=5) {break;}else{ ?>
 <div class="product-item">
 <div class="pi-pic">
-   <?php echo  "<img class='product-img' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?>
+   <?php echo  "<a href='product.php?id=".$item['ID']."'><img class='product-img' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?></a>
 <div class="pi-links">
-<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+<a href='?action=add&pid=<?php echo $item['ID']; ?>' class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
 <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
 </div>
 </div>

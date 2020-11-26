@@ -2,7 +2,6 @@
 require('header.php');
 ?>
 
-
 <!-- Page info -->
 <div class="page-top-info">
 <div class="container">
@@ -10,6 +9,15 @@ require('header.php');
 <div class="site-pagination">
 <a href="index.php">Home</a> /
 <a href="#">Your cart</a>
+<?php
+	if(isset($_SESSION['orderstatus'])){?>
+<div class="warning-msg">
+  <i class="fa fa-warning"></i>
+  <?php echo $_SESSION['orderstatus'];
+  unset($_SESSION['orderstatus']);?>
+  </div>
+ <?php } ?>
+
 </div>
 </div>
 </div>
@@ -22,6 +30,7 @@ require('header.php');
 <div class="cart-table">
 <h3>Your Cart</h3>
 <div class="cart-table-warp">
+
 <table>
 <thead>
 <tr>
@@ -36,6 +45,7 @@ require('header.php');
 <form action="login.php" id="cartform" method="POST">
 <?php
 $total=0;
+$file=0;
 if(isset($_SESSION["login"])){
 	$usercart=$product->fatchcart($_SESSION['userId']);
 foreach($usercart as $cart){ ?>
@@ -54,7 +64,26 @@ foreach($usercart as $cart){ ?>
 </div>
 </div>
 </td>
-<td class="size-col"> <span class=''><a href='#photo' class='photo' data-toggle='modal' data-id=''><i class='fa fa-edit'></i></a></span>
+<td class="size-col"> 
+<?php 
+if($cart['Custom_Type']==101){
+if(!empty($cart['Custom_File'])){?>
+<i class="fa fa-check" aria-hidden="true"></i>
+<?php }else{$file++;}?>
+<span class=''><a href='#model' class='model' data-toggle='modal' data-id='<?php echo $cart['product_id'];?>'><i class='fa fa-edit'></i></a></span>
+<?php }else if($cart['Custom_Type']==102){
+if(!empty($cart['Custom_File'])){?>
+<i class="fa fa-check" aria-hidden="true"></i>
+<?php }else{$file++;}?>
+<span class=''><a href='#photo' class='photo' data-toggle='modal' data-id='<?php echo $cart['product_id'];?>'><i class='fa fa-edit'></i></a></span>
+<?php }else if($cart['Custom_Type']==103){
+if(!empty($cart['Custom_File'])){?>
+<i class="fa fa-check" aria-hidden="true"></i>
+<?php }else{$file++;}?>
+<span class=''><a href='#custmtext' class='custmtext' data-toggle='modal' data-id='<?php echo $cart['product_id'];?>'><i class='fa fa-edit'></i></a></span>
+<?php }else{
+	echo "--";
+}?>
 </td>
 <td class="total-col item_cost"><h4>₹  <span class="item-cost-val"><?php echo $cart['Price']*$cart['quantity']; ?></span></h4></td>
 <td class="size-col"><a href='<?php echo "?action=delete&pid=".$cart['product_id'];?>'><i class="fa fa-trash"></i></a></td>
@@ -80,7 +109,9 @@ foreach($usercart as $cart){ ?>
 </div>
 </div>
 </td>
-<td class="size-col"> <span class='pull-right'><a href='#edit_photo' class='photo' data-toggle='modal' data-id=''><i class='fa fa-edit'></i></a></span>
+<td class="size-col"> 
+<span class=''><a href='#loginModal' class='loginModal' data-toggle='modal' data-id=''><i class='fa fa-edit'></i></a></span>
+
 </td>
 <td class="total-col item_cost"><h4>₹  <span class="item-cost-val"><?php echo $cart['item_price']*$cart['item_quantity']; ?></span></h4></td>
 <td class="size-col"><a href='<?php echo "?action=delete&pid=".$cart['item_id'];?>'><i class="fa fa-trash"></i></a></td>
@@ -98,7 +129,9 @@ foreach($usercart as $cart){ ?>
 
 </div>
 </div>
+<span>Add the Details Of Customisation in Custome File Section*</span>
 </div>
+
 <div class="col-lg-4 card-right">
 <!-- <form class="promo-code-form">
 <input type="text" placeholder="Enter promo code">
@@ -107,12 +140,13 @@ foreach($usercart as $cart){ ?>
 <?php
 if(!isset($_SESSION['login'])){?>
 <a  data-toggle="modal" href="#loginModal" class="site-btn sb-dark">Login to Continue</a>
-<?php } else {?>
-
-
+<?php } else {
+if($file>0){?>
+<button class="site-btn sb-dark" id="addtocart" href="#addfile" data-toggle="modal" name="cart" type="submit">Proceed to checkout</button>
+<?php }else{?>
 <button class="site-btn sb-dark" id="addtocart" name="cart" type="submit">Proceed to checkout</button>
 <!-- <a href="">Proceed to checkout</a> -->
-<?php } ?>
+<?php } } ?>
 <a href="category.php" class="btn site-btn sb-dark">Continue shopping</a>
 </div>
 </div>

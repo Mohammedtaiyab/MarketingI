@@ -102,6 +102,7 @@
                     try{
                       $now = date('Y-m-d');
                       $stmt = $conn->prepare("SELECT * FROM product $where");
+                        //$stmt = $conn->prepare("SELECT * FROM product WHERE categories_Id=0");
                       $stmt->execute();
                       foreach($stmt as $row){
                         $image = (!empty($row['Image'])) ? '../images/product/'.$row['Image'] : '../images/noimage.jpg';

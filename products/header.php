@@ -122,7 +122,15 @@ require ('functions.php');
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 select .lt { text-align: center; }
+.zoom {
+  transition: transform .2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 	</style>
+  
 </head>
 <body>
 <!-- Header section -->
@@ -133,7 +141,7 @@ select .lt { text-align: center; }
 <div class="col-lg-2 text-center text-lg-left">
 <!-- logo -->
 <a href="index.php" class="site-logo">
-<img src="../images/logoproduct.jpg" style="width: 10rem;" alt="logo">
+<img src="../images/logoproduct.jpg" style="width: 16rem;" alt="logo">
 </a>
 </div>
 <div class="col-xl-6 col-lg-5">

@@ -73,6 +73,20 @@ $(function(){
     CKEDITOR.replace('editor1')
     CKEDITOR.replace('editor2')
   });
+
 </script>
 
+      <script>
+    function printDiv(divName){
+      var printContents = document.getElementById(divName).innerHTML;
+      var originalContents = document.body.innerHTML;
 
+      document.body.innerHTML = printContents;
+
+      window.print();
+
+      document.body.innerHTML = originalContents;
+      document.body.style.margin = "25mm 25mm 25mm 25mm";
+
+    }
+  </script>

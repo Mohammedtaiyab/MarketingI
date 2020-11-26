@@ -6,9 +6,11 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                        <img src="../images/logoproduct.jpg" style="width: 50%;margin-left: 90px;">
-                           <div class="social" style="padding: 24px;margin-left: 89px;">
-                                   <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                                 
+                           <div class="social " style="padding: 24px;margin-left: 36%;">
+                                <!--    <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+                                  <a class="login " href='<?php echo $authUrl; ?>'>
+                                    <img class="login zoom" src="img/google.png" style="width: 3rem;" />
+                                  </a>
                                 </div>
                       <div class="division">
                                     <div class="line l"></div>
@@ -70,11 +72,11 @@
                                     <div class="line r"></div>
                                 </div>
                       <div class="social" style="">
-                                  <a id="facebook_login" class="circle facebook" href="https://www.facebook.com/marketingojo">
-                                        <i class="fa fa-facebook fa-fw"></i>
+                                  <a id="facebook_login" class="zoom" style="display: inline-block;" href="https://www.facebook.com/marketingojo">
+                                         <img class='login' src="img/facebook.png" style="width: 4rem;" />
                                     </a>
-                                   <a id="facebook_login" class="circle facebook" href="https://www.instagram.com/marketingojo/">
-                                        <i class="fa fa-instagram"></i>
+                                   <a id="facebook_login"  class="zoom" style="display: inline-block;" href="https://www.instagram.com/marketingojo/">
+                                        <img class='login' src="img/instagram.png" style="width: 4rem;" />
                                     </a>
                                 </div>
                    
@@ -99,13 +101,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                 <h6 class="modal-title"><b><span class="name">Add and Photo of your Choose in a Pdf Formate.</span></b></h6>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h6 class="modal-title"><b><span class="name">Add and Photo of your Choose in a Pdf Formate.</span></b></h6>
+           
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="products_photo.php" enctype="multipart/form-data">
-                <input type="hidden" class="prodid" name="id">
+              <form class="form-horizontal" method="POST" action="address.php" enctype="multipart/form-data">
+                <input type="hidden" class="proid" name="id">
                 <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Photo</label>
 
@@ -117,7 +120,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Update</button>
+              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Save</button>
               </form>
             </div>
         </div>
@@ -127,35 +130,42 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h6 class="modal-title"><b><span class="name">Select Company and Model of Your Phone.</span></b></h6>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-               <h6 class="modal-title"><b><span class="name">Select Company and Model of Your Phone.</span></b></h6>
+             
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="products_photo.php" enctype="multipart/form-data">
-                <input type="hidden" class="prodid" name="id">
-            <div class="form-group">
+              <form class="form-horizontal" method="POST" action="address.php" enctype="multipart/form-data">
+                <input type="hidden"  class="proid" name="id">
+            <div class="form-group row">
                
                    <label for="category" class="col-sm-2 control-label">Company</label>
                      <div class="col-sm-4">
-                    <select class="form-control" id="qtytype" name="custmtype" required>
+                    <select class="form-control" id="mobile" name="mobile" required>
                       <option value="" selected>- Select -</option>
 
-                      <option value="101" >Mobile Model</option>
-                      <option value="102" >Custom Image</option>
-                      <option value="103" >Custom Text</option>
-                          <option value="100" >None</option>
+                      <option value="Apple" >Apple</option>
+                      <option value="Samsung" >Samsung</option>
+                      <option value="Google" >Google</option>
+                          <option value="Huawei" >Huawei</option>
+                           <option value="OnePlus" >OnePlus</option>
+                      <option value="Xiaomi" >Xiaomi</option>
+                      <option value="LG" >LG</option>
+                          <option value="Oppo" >Oppo</option>
+                          <option value="Vivo" >Vivo</option>
+                          <option value="Nokia" >Nokia</option>
                     </select>
                   </div>
                       <label for="photo" class="col-sm-1 control-label">Model</label>
                   <div class="col-sm-5">
-                    <input type="text" class="form-control" id="dealer" name="dealer">
+                    <input type="text" class="form-control" id="model" name="model">
                   </div>
                 </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Update</button>
+              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Save</button>
               </form>
             </div>
         </div>
@@ -166,14 +176,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-
+   <h6 class="modal-title"><b><span class="name">Add Text You want to Design.</span></b></h6>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h6 class="modal-title"><b><span class="name">Add Text You want to Design.</span></b></h6>
+           
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="products_photo.php" enctype="multipart/form-data">
-                <input type="hidden" class="prodid" name="id">
+              <form class="form-horizontal" method="POST" action="address.php" enctype="multipart/form-data">
+                <input type="hidden"  class="proid" name="id">
             <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Text</label>
 
@@ -188,8 +198,27 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Update</button>
+              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Save</button>
               </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="addfile">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+   <h6 class="modal-title"><b><span class="name">Warning!</span></b></h6>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+           
+            </div>
+            <div class="modal-body" style="padding: 22px 15px;">
+              <h5><span>Add Custome File for All the Products.</span></h5>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Okay</button>
+             
             </div>
         </div>
     </div>

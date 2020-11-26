@@ -93,6 +93,10 @@ class Product
 
 }
 }
+public function customefile($userId,$productId,$customfile){
+$sql="UPDATE cart SET Custom_File='".$customfile."' WHERE user_id=".$userId." AND product_id=".$productId;
+	$result = mysqli_query($this->db->con,$sql) or die(mysqli_connect_errno()."Data cannot inserted");
+}
 public function singlecart($userId,$productId,$quanlity){
 $check=$this->db->con->query("SELECT * FROM cart WHERE user_id=($userId) AND product_id=".$productId);
 	$resultArray=array();
@@ -123,13 +127,9 @@ $check=$this->db->con->query("SELECT * FROM cart WHERE user_id=($userId) AND pro
 	}
 public function removeitem($userID,$pID){
 		$check=$this->db->con->query("DELETE FROM cart WHERE user_id=($userID) AND product_id=($pID) ");
-		// $resultArray=array();
-		// while ($item=mysqli_fetch_array($check,MYSQLI_ASSOC)) {
-		// 	$resultArray[]=$item;
-		// 	# code...
-		// }
 		return $check;
 	}
+
 
 }
 

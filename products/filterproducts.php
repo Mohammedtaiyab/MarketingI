@@ -34,7 +34,7 @@ $productlist=$product->Productcategory();
 <div class="col-lg-3 col-sm-6">
 <div class="product-item">
 <div class="pi-pic">
-   <?php echo  "<img class='product-img' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?>
+   <?php echo  "<a href='category.php?id=".$item['Categories_id']."'><img class='product-img' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?></a>
 <div class="pi-links">
 <a href='?action=add&pid=<?php echo $item['ID']; ?>' class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
 <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>

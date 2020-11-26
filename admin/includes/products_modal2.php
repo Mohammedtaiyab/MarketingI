@@ -47,7 +47,7 @@
 
                   <div class="col-sm-5">
                     <select class="form-control" id="edit_category" name="category">
-                      <option selected id="catselected"></option>
+                      <option selected id="catselected" value="catselected">category</option>
                     </select>
                   </div>
                 </div>

@@ -1,5 +1,10 @@
 <?php
- require('admin/connection.inc.php');
+require('admin/connection.inc.php');
+require "PHPMailer/PHPMailerAutoload.php";
+$sql="select * from company where Status='1'";
+$res=mysqli_query($con,$sql);
+$resi=mysqli_query($con,$sql);
+$rowcount=mysqli_num_rows($res);
 if(isset($_POST["submit"])){
 		$name=$_POST['name'];
 		$email=$_POST['email'];
@@ -7,73 +12,36 @@ if(isset($_POST["submit"])){
 		$profile=$_POST['profile'];
 		$bio=$_POST['bio'];
 		$BOD=$_POST['bod'];
+    $date=date("Y-m-d");
 		$resume=$_FILES["resume"]["name"];
-require "PHPMailer/PHPMailerAutoload.php";
-// function smtpmailer($to, $from, $from_name, $subject, $body)
-//     {
-//     	$num=0;
-//     	$name=$_POST['name'];
-// 		$email=$_POST['email'];
-// 		$phone=$_POST['contact'];
-// 		$profile=$_POST['profile'];
-// 		$bio=$_POST['bio'];
-//         $mail = new PHPMailer();
-//         $mail->IsSMTP();
-//         $mail->SMTPAuth = true; 
+    $ext = pathinfo($resume, PATHINFO_EXTENSION);
+    $new_filename = rand(11,99).'_'.$name.'.'.$ext;
+    move_uploaded_file($_FILES['resume']['tmp_name'], 'download/'.$new_filename); 
+    mysqli_query($con,"insert into careers(Name,Email,Contact,Profile,BirthDate,Resume,Bio,Added_on)values('$name','$email', '$phone','$profile','$BOD','$new_filename','$bio','$date')");
+    $to   = $_POST['email'];
+    $from = 'career@marketingojo.com';
+    $companyname ='MarketingOJO';
+    $subj = 'Job application';
+    $msg = "<p>Thank you  ".$_POST['name']."  for applying for a position of  ".$_POST['profile']."  at MarketingOJO.<br>
+    Your application will be reviewed by our team and we will be getting in touch with you if your qualifications meet our requirements.<br>
+    Thanks Again for Applying and All the Best.<br><br>
+    <span>Best Regards</span><br>
+    <span>MarketingOJO Team</span><br><br>
+    To know more about our services and products please visit: - <br><br>
+    Instagram: - https://www.instagram.com/marketingojo/<br><br>
+    Facebook: - https://www.facebook.com/marketingojo/<br><br>
+    Website: - http://marketingojo.com/</p>";
+    $error=smtpmailerr($to,$from, $companyname ,$subj, $msg);
+    $from=$_POST['email'];
+    $to   =  'career@marketingojo.com';
+    $file="download/".$new_filename;
+    $msg="Name :".$name."<br>Email :".$email."<br>Phone: ".$phone."<br>DOB:".$BOD."<br>BIO: ".$bio;
+    $error=smtpmailerr($to,$from,$name,$profile,$msg,$file);
+}
  
-//         $mail->SMTPSecure = 'ssl'; 
-//         $mail->Host = 'mail.marketingojo.com';
-//         $mail->Port = 465;  
-//         $mail->Username = 'career@marketingojo.com';
-//         $mail->Password = 'Marketing@52';   
-   
-// $file =$_FILES["resume"]["tmp_name"];
-//  //move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
-// move_uploaded_file($_FILES["resume"]["tmp_name"],"download/" . $_FILES["resume"]["name"]) ;	
-//  $path ="download/" . $_FILES["resume"]["name"];
-//         $mail->IsHTML(true);
-//         $mail->From='career@marketingojo.com';
-//      	 $mail->FromName=$from_name;
-//         $mail->Sender=$from;
-//         $mail->Subject = $subject;
-//         $mail->Body = $body;
-   
-//    //  
-//     $mail->AddAttachment($path);
-//         $mail->AddAddress($to);
-//         if(!$mail->Send())
-//         {
-       
-//     $error ="Please try Later, Error Occured while Processing...";
-//       return $error; 
-//         }
-//         else 
-//         {
-           
-//        $error = "Thanks You !! Your email is sent.";  
-//       return $error;
-//         }
-//     }
-    
-
-//  	$to   = 'career@marketingojo.com';
-//     $from = $_POST['email'];
-//     $name = $_POST['name'];
-//     $subj = 'Job application';
-//     $msg = "Full Name: - ".$name."<br><br>"."Email: - ".$_POST['email']."<br><br>"."Contact Number: - ".$_POST['contact']."<br><br>"."Profile: - ".$_POST['profile']."<br><br>"."DOB: - ".$_POST['bod']."<br><br>"."Bio: - ".$_POST['bio'];
-  
-
-//     $error=smtpmailer($to,$from, $name ,$subj, $msg);
-
-
 function smtpmailerr($to, $from, $from_name, $subject, $body)
     {
     	
-    	$name=$_POST['name'];
-		$email=$_POST['email'];
-		$phone=$_POST['contact'];
-		$profile=$_POST['profile'];
-		$bio=$_POST['bio'];
         $mail = new PHPMailer();
         $mail->IsSMTP();
         $mail->SMTPAuth = true; 
@@ -83,8 +51,9 @@ function smtpmailerr($to, $from, $from_name, $subject, $body)
         $mail->Username = 'career@marketingojo.com';
         $mail->Password = 'Marketing@52';   
         $mail->IsHTML(true);
+
         $mail->From='career@marketingojo.com';
-     	 $mail->FromName=$from_name;
+     	  $mail->FromName=$from_name;
         $mail->Sender=$from;
         $mail->Subject = $subject;
         $mail->Body = $body;
@@ -100,33 +69,36 @@ function smtpmailerr($to, $from, $from_name, $subject, $body)
       return $error;
         }
     }
-    $to   = $_POST['email'];
-    $from = 'career@marketingojo.com';
-    $companyname ='MarketingOJO';
-    $subj = 'Job application';
-    $msg = "<p>Thank you  ".$_POST['name']."  for applying for a position of  ".$_POST['profile']."  at MarketingOJO.<br>
-Your application will be reviewed by our team and we will be getting in touch with you if your qualifications meet our requirements.<br>
-Thanks Again for Applying and All the Best.<br><br>
-
-<span>Best Regards</span><br>
-<span>MarketingOJO Team</span><br><br>
-To know more about our services and products please visit: - <br><br>
-Instagram: - https://www.instagram.com/marketingojo/<br><br>
-Facebook: - https://www.facebook.com/marketingojo/<br><br>
-Website: - http://marketingojo.com/</p>";
-    $error=smtpmailerr($to,$from, $companyname ,$subj, $msg);
-      $ext = pathinfo($resume, PATHINFO_EXTENSION);
-        $new_filename = rand(11,99).'_'.$name.'.'.$ext;
-        move_uploaded_file($_FILES['resume']['tmp_name'], 'download/'.$new_filename); 
-$name=$_POST['name'];
-  $date=date("Y-m-d");
-mysqli_query($con,"insert into careers(Name,Email,Contact,Profile,BirthDate,Resume,Bio,Added_on)values('$name','$email', '$phone','$profile','$BOD','$new_filename','$bio','$date')");
-}
-$sql="select * from company where Status='1'";
-$res=mysqli_query($con,$sql);
-$resi=mysqli_query($con,$sql);
-
-$rowcount=mysqli_num_rows($res);
+    function smtpmailerr($to, $from, $from_name, $subject, $body,$file)
+    {
+      
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true; 
+        $mail->SMTPSecure = 'ssl'; 
+        $mail->Host = 'mail.marketingojo.com';
+        $mail->Port = 465;  
+        $mail->Username = 'career@marketingojo.com';
+        $mail->Password = 'Marketing@52';   
+        $mail->IsHTML(true);
+        $mail->AddAttachment($file);
+        $mail->From='career@marketingojo.com';
+        $mail->FromName=$from_name;
+        $mail->Sender=$from;
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        $mail->AddAddress($to);
+        if(!$mail->Send())
+        {
+    $error ="Please try Later, Error Occured while Processing...";
+      return $error; 
+        }
+        else 
+        {
+       $error = "Thanks You !! Your email is sent.";  
+      return $error;
+        }
+    }
 require('header.php');
 ?>
 

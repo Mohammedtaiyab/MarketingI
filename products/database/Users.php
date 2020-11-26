@@ -28,7 +28,7 @@ class Users
 	            $_SESSION['customer'] = $name;
 	             $_SESSION['customermail'] = $email;
 	               $_SESSION['userId']=$this->getuserid($email);
-	                echo $result;
+	               
         		return $result;
 			}
 			else { 
@@ -137,6 +137,76 @@ public function address($name,$address,$address2,$phone,$country,$city,$state,$p
 		}
 		return $resultArray;
 	}
+public function usercartdelete($userId){
+		$result =$this->db->con->query("DELETE FROM cart WHERE user_id=".$userId);
+		return true;
+	}
+
+
+
+
+
+	public function googlelogin($name,$email,$googleid,$addon,$gender){
+ 
+			$sql="SELECT * FROM user WHERE Email='$email'";
+			//checking if the username or email is available in db
+			$check =  $this->db->con->query($sql) ;
+			$count_row = $check->num_rows;
+			//if the username is not in db then insert to the table
+			if ($count_row == 0){
+		
+				$sql1="INSERT INTO user(Name,oauth_user_id,Email,Gender,Added_on) VALUES ('$name','$googleid','$email','$gender','$addon')";
+				$result = mysqli_query($this->db->con,$sql1) or die(mysqli_connect_errno()."Data cannot inserted");
+				 $_SESSION['login'] = true;
+	            $_SESSION['customer'] = $name;
+	             $_SESSION['customermail'] = $email;
+	               $_SESSION['userId']=$this->getuserid($email);
+	               
+        		return $result;
+			}
+			else { 
+
+
+			$sql2="SELECT * from user WHERE Email='$email'and oauth_user_id='$googleid'";
+ 
+			//checking if the username is available in the table
+        	$result = mysqli_query($this->db->con,$sql2);
+        	$user_data = mysqli_fetch_array($result);
+        	$count_row = $result->num_rows;
+ 
+	        if ($count_row == 1) {
+	            // this login var will use for the session thing
+	            $_SESSION['login'] = true;
+	            $_SESSION['customer'] = $user_data['Name'];
+	             $_SESSION['customermail']=$user_data['Email'];
+	                $_SESSION['userId']=$user_data['ID'];
+
+	           	            return true;
+	        }
+	        else{
+	        	 $_SESSION['error']="Login Error";
+			    return false;
+			}
+
+			}
+		}
+
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>

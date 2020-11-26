@@ -69,8 +69,12 @@ if(isset($_POST['login'])){
 	header('Location:index.php');
 }
 if(isset($_GET['logout'])){
+$usercart=$product->fatchcart($_SESSION['userId']);
 	 $_SESSION['login'] = FALSE;
 	 session_destroy();
+	 foreach($usercart as $cart){
+header('Location:?action=add&pid='.$cart['product_id']);
+		}
 	 header('Location:index.php');
 
 }

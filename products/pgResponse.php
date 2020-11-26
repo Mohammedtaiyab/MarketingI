@@ -20,9 +20,14 @@ if($isValidChecksum == "TRUE") {
 if ($_POST["STATUS"] == "TXN_SUCCESS") {
 	$orid=$paramList['ORDERID'];
 	$setuser=$user->loginbyid($orid);
+	$productdetail=$user->usercartdelete($_SESSION['userId']);
 	header('Location:order.php');
 	} else {
-		echo "<b>Transaction status is failure</b>" . "<br/>";
+		$orid=$paramList['ORDERID'];
+	$setuser=$user->loginbyid($orid);
+	$record=$order->deleteall($orid);
+	$_SESSION['orderstatus']='Order Could Not Be Made!';
+	header('Location:cart.php');
 	}
 
 	if (isset($_POST) && count($_POST)>0 )
