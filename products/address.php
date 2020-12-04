@@ -1,7 +1,9 @@
 <?php 
 require('functions.php');
+
 if(isset($_POST['address']))
 {
+	
 	$name=$_POST['name'];
 	 $address=$_POST['addressl1'];
 	  $address2=$_POST['addressl2'];
@@ -16,7 +18,7 @@ $address=$user->address($name,$address,$address2,$phone,$country,$city,$state,$p
  // 	if($register==false){
 	// $error="Could Not Register";
  // 	}
-	header("Location:checkout.php");
+	header("Location:addressdetails.php");
 }	
 if(isset($_POST['updateadd']))
 {
@@ -34,7 +36,7 @@ $address=$user->updateadd($name,$address,$address2,$phone,$country,$city,$state,
  // 	if($register==false){
 	// $error="Could Not Register";
  // 	}
-	header("Location:checkout.php");
+	header("Location:addressdetails.php");
 }	
 
 if(isset($_POST['upload']))
@@ -55,4 +57,31 @@ if(!empty($_FILES['photo']['name'])){
 $custmupdate=$product->customefile($_SESSION['userId'],$productId,$customfile);
 	header("Location:cart.php");
 }
+if(isset($_POST['deleteadd']))
+{
+	
+	 $id=$_POST['id'];
+	 
+$address=$user->addressdelete($id);
+	header("Location:addressdetails.php");
+}
+if(isset($_POST['id']))
+{
+	echo "<script>alert('inhere');</script>";
+	$id=$_POST['id'];
+	$address=$user->getaddressbyid($id);
+	echo $address;
+}	
+
+if(isset($_GET['aid']))
+{
+	$setaddress=$user->setstatus($_GET['aid'],$_SESSION['userId']);
+	header("Location:addressdetails.php");
+}
+if(isset($_POST['addressid']))
+{
+
+	$setaddress=$user->setstatus($_POST['addressid'],$_SESSION['userId']);
+	header("Location:checkout.php");
+}				
 ?>

@@ -29,67 +29,55 @@ require('header.php');
 <div class="row">
 <div class="col-md-7">
 </div>
+<div class="cart-table">
+	<div class="d-inline-flex">
+		<h3>Your Address's </h3>
+<h6 style="padding-left: 15px; padding-top: 3px;">
+	<a href='addressdetails.php'><span><i class="fa fa-edit" aria-hidden="true"></i>Edit</span></a>
+</h6>	</div>
+
+<div class="cart-table-warp">
+<table>
+<thead>
+<tr>
+<th  style="text-align: left;">Name</th>
+<th  style="text-align: left;">Phone No: </th>
+<th  style="text-align: left;">Address</th>
+<th  style="text-align: left;">Select</th>
+
+</tr>
+</thead>
+<tbody>
 <?php $useraddress=$user->getaddress($_SESSION['userId']);
-if(count($useraddress)==0){?>
-	<form class="checkout-form" id="" action="address.php" method="POST">
-<div class="row address-inputs">
-	<div class="col-md-6">
-<input type="text" name="name" placeholder="Full Name" required>
+foreach ($useraddress as $address) {	?>
+<tr>
+<td ><?php echo $address['Name']; ?></td>
+<td ><?php echo $address['Phone']; ?></td>
+<td style="width: 40%">
+<?php echo $address['Address']; ?>
+<div>
+<?php echo $address['Address2']; ?>
+<p><?php echo $address['City']." ".$address['State']." ".$address['Pin']; ?></p>
 </div>
-	<div class="col-md-6">
-<input type="text" name="phone"  placeholder="Phone no." required>
-</div>
-<div class="col-md-12">
-<input type="hidden" name="userid" value='<?php echo $_SESSION['userId']?>'>
-<input type="text" name="addressl1"  placeholder="Address"  required>
-<input type="text"  name="addressl2"  placeholder="Address line 2"required>
-</div>
-<div class="col-md-6">
-<input type="text" name="country"  placeholder="Country"required>
-</div>
-<div class="col-md-6">
-<input type="text" name="state"  placeholder="State"required>
-</div>
-<div class="col-md-6">
-<input type="text" name="city"   placeholder="City"required>
-</div>
-<div class="col-md-6">
-<input id="zip" name="pin"  placeholder="Pin Code" type="text" inputmode="numeric" pattern="[0-9]*" required>
-</div>
-<button class="site-btn submit-order-btn sb-dark" name="address" type="submit">Save</button>
-</form><?php
-}else{
-foreach ($useraddress as $address) {?>
-<form class="checkout-form" id="" action="address.php" method="POST">
-<div class="row address-inputs">
-	<div class="col-md-6">
-<input type="text" name="name" value='<?php echo $address['Name']; ?>' placeholder="Full Name" required>
-</div>
-	<div class="col-md-6">
-<input type="text" name="phone" value='<?php echo $address['Phone']; ?>' placeholder="Phone no." required>
-</div>
-<div class="col-md-12">
-<input type="hidden" name="userid" value='<?php echo $_SESSION['userId']?>'>
-<input type="text" name="addressl1" value='<?php echo $address['Address']; ?>' placeholder="Address"  required>
-<input type="text"  name="addressl2" value='<?php echo $address['Address2']; ?>' placeholder="Address line 2"required>
-</div>
-<div class="col-md-6">
-<input type="text" name="country" value='<?php echo  $address['Country'];?>' placeholder="Country"required>
-</div>
-<div class="col-md-6">
-<input type="text" name="state" value='<?php echo $address['State']; ?>' placeholder="State"required>
-</div>
-<div class="col-md-6">
-<input type="text" name="city" value='<?php echo $address['City']; ?>'  placeholder="City"required>
-</div>
-<div class="col-md-6">
-<input id="zip" name="pin"  value='<?php echo $address['Pin']; ?>' placeholder="Pin Code" type="text" inputmode="numeric" pattern="[0-9]*" required>
-</div>
-<button class="site-btn submit-order-btn sb-dark" name="updateadd" type="submit">Save</button>
+</td>
+<td>
+	<?php if($address['Status']==1){?>
+		<input type="checkbox" name="addressid" onclick="onlyOne(this)" checked>
+	<?php }else{?>
+		<form action="address.php" method="POST">
+<input type="checkbox" name="addressid" value='<?php echo $address['Id'];?>' onChange="this.form.submit()" onclick="onlyOne(this)">
 </form>
-<?php }
-}
-?>
+<?php } ?>
+	
+
+</td>
+</tr>
+<?php } ?>
+</tbody>
+</table>
+</div>
+<div class="total-cost">
+</div>
 </div>
 </div>
 </div>

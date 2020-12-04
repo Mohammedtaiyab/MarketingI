@@ -17,10 +17,10 @@ require('loginmodel.php');
 										<li><i class="fa fa-map-o"></i>Address:- Pune, Maharastra</li>
 									</ul>		
 									<ul class="social">
-									<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
 										<li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
 										<li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
-									</ul>
+											</ul>
 								</div>
 							
 							</div>	
@@ -245,7 +245,25 @@ $(function(){
 </script>
 
 
+<script type="text/javascript">
+	$(function(){
+		$(document).on('click', '.deleteAdd', function(e){
+    e.preventDefault();
+     $('#deleteAdd').modal('show');
+    var id = $(this).data('id');
+    $('.addressid').val(id);
+  });
 
+	$(document).on('click', '.editaddress', function(e){
+    e.preventDefault();
+     $('#editaddress').modal('show');
+    var id = $(this).data('id');
+    $('.addressid').val(id);
+  });
+		
+});
+
+</script>
 
 
 
@@ -300,8 +318,14 @@ __ez.queue.addFile('jellyfish.html', '/porpoiseant/jellyfish.webp?a=a&cb=0&shcb=
     input.attr("type", "password");
   }
 });
-
+function onlyOne(checkbox) {
+    var checkboxes = document.getElementsByName('check')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    })
+}
 </script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 </html>
+

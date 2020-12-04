@@ -108,7 +108,7 @@ public function getuseridbyorder($orid){
 public function address($name,$address,$address2,$phone,$country,$city,$state,$pin,$userID){
 	
 				
-		$sql1="INSERT INTO address(UserId,Address,Address2,Name,Phone,Country,State,City,Pin) VALUES ('$userID','$address','$address2','$name',$phone,'$country','$city','$state','$pin')";
+		$sql1="INSERT INTO address(UserId,Address,Address2,Name,Phone,Country,State,City,Pin) VALUES ('$userID','$address','$address2','$name',$phone,'$country','$state','$city','$pin')";
 				$result = mysqli_query($this->db->con,$sql1) or die(mysqli_connect_errno()."Data cannot inserted");
 		
 		}
@@ -121,6 +121,15 @@ public function address($name,$address,$address2,$phone,$country,$city,$state,$p
 		}
 	public function getaddress($userID){
 		$result =$this->db->con->query("SELECT * FROM address WHERE UserId=($userID)");
+		$resultArray=array();
+		while ($item=mysqli_fetch_array($result,MYSQLI_ASSOC)) {
+			$resultArray[]=$item;
+			# code...
+		}
+		return $resultArray;
+	}
+		public function getaddressbyid($ID){
+		$result =$this->db->con->query("SELECT * FROM address WHERE Id=($ID)");
 		$resultArray=array();
 		while ($item=mysqli_fetch_array($result,MYSQLI_ASSOC)) {
 			$resultArray[]=$item;
@@ -142,8 +151,17 @@ public function usercartdelete($userId){
 		return true;
 	}
 
+public function addressdelete($id){
+		$result =$this->db->con->query("DELETE FROM address WHERE Id=".$id);
+		return true;
+	}
+public function setstatus($id,$userId){
 
-
+		$result =$this->db->con->query("UPDATE address SET Status=0  WHERE UserId=".$userId);
+		$result =$this->db->con->query("UPDATE address SET Status=1  WHERE Id=".$id);
+	
+		return true;
+	}
 
 
 	public function googlelogin($name,$email,$googleid,$addon,$gender){

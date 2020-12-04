@@ -46,11 +46,11 @@
                              <div class="form">
                                 <form method="post" html="{:multipart=>true}" data-remote="true" action="login.php" accept-charset="UTF-8">
          
-                                <input id="name" class="form-control effect-1" type="text" placeholder="Enter Full Name" name="name" required="required">
+                                <input id="name" class="form-control effect-1" type="text" placeholder="Full Name" name="name" required="required">
              
-                                <input id="phone" class="form-control effect-1" type="text" placeholder="Enter Phone No" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required="required">
+                                <input id="phone" class="form-control effect-1" type="text" placeholder="Phone No" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required="required">
                           
-                                <input id="email" class="form-control " type="text" placeholder="Enter Email" name="email" required="required">
+                                <input id="email" class="form-control " type="text" placeholder="Email" name="email" required="required">
                               <select id="gender"  class="form-control selectform" name="gender">
                                   <option class="lt" value="" >Gender</option>
                                 <option class="lt"value="Male">Male</option>
@@ -58,7 +58,7 @@
                                     <option value="Other">Other</option>
                                     </select>
                                  <div style="display: flex; align-items: center;">
-                                            <input id="password-field" type="password" class="form-control" name="password" value="" placeholder="Enter Password">
+                                            <input id="password-field" type="password" class="form-control" name="password" value="" placeholder="Password">
               <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" style="position: absolute;"></span>
                                    </div>
                                 <input class="btn btn-default btn-register btn-grad" type="submit" name="reg_user" value="Create account" style="margin-left: 15%;">
@@ -72,10 +72,10 @@
                                     <div class="line r"></div>
                                 </div>
                       <div class="social" style="">
-                                  <a id="facebook_login" class="zoom" style="display: inline-block;" href="https://www.facebook.com/marketingojo">
+                                  <a id="facebook_login" class="zoom" style="display: inline-block;" href="https://www.facebook.com/marketingojo.products" target="_blank">
                                          <img class='login' src="img/facebook.png" style="width: 4rem;" />
                                     </a>
-                                   <a id="facebook_login"  class="zoom" style="display: inline-block;" href="https://www.instagram.com/marketingojo/">
+                                   <a id="facebook_login"  class="zoom" style="display: inline-block;" href="https://www.instagram.com/marketingojo.products/" target="_blank">
                                         <img class='login' src="img/instagram.png" style="width: 4rem;" />
                                     </a>
                                 </div>
@@ -219,6 +219,222 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Okay</button>
              
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="address">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                 <h6 class="modal-title"><b><span class="name">Add New Address</span></b></h6>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+           
+            </div>
+            <div class="modal-body">
+           <form class="form-horizontal" method="POST" action="address.php">
+            <fieldset>
+                <!-- Address form -->
+                <!-- full-name input-->
+                <input type="hidden" name="userid" value='<?php echo $_SESSION['userId'];?>'>
+                <div class=".form-control">
+                    <label class="control-label">Full Name</label>
+                    <div class="controls">
+                        <input id="full-name" name="name" type="text" placeholder="full name"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                 <div class=".form-control">
+                    <label class="control-label">Phone No:</label>
+                    <div class="controls">
+                        <input id="full-name" name="phone" type="text" placeholder="Phone No:"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- address-line1 input-->
+                <div class="control-group">
+                    <label class="control-label">Address Line 1</label>
+                    <div class="controls">
+                        <input id="address-line1" name="addressl1" type="text" placeholder="address line 1"
+                        class="input-xlarge">
+                        <p class="help-block">Street address, P.O. box, company name, c/o</p>
+                    </div>
+                </div>
+                <!-- address-line2 input-->
+                <div class="control-group">
+                    <label class="control-label">Address Line 2</label>
+                    <div class="controls">
+                        <input id="address-line2" name="addressl2" type="text" placeholder="address line 2"
+                        class="input-xlarge">
+                        <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                    </div>
+                </div>
+                <!-- city input-->
+                <div class="control-group">
+                    <label class="control-label">City / Town</label>
+                    <div class="controls">
+                        <input id="city" name="city" type="text" placeholder="city" class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- region input-->
+                <div class="control-group">
+                    <label class="control-label">State / Province / Region</label>
+                    <div class="controls">
+                        <input id="region" name="state" type="text" placeholder="state / province / region"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- postal-code input-->
+                <div class="control-group">
+                    <label class="control-label">Zip / Postal Code</label>
+                    <div class="controls">
+                        <input id="postal-code" name="pin" type="text" placeholder="zip or postal code"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- country select -->
+                <div class="control-group">
+                    <label class="control-label">Country</label>
+                    <div class="controls">
+                   <input id="country" name="country"  type="text" placeholder="Country"
+                        class="input-xlarge">
+                      
+                    </div>
+                </div>
+            </fieldset>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+              <button type="submit" class="btn btn-success btn-flat" name="address"><i class="fa fa-check-square-o"></i> Save</button>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteAdd">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+   <h6 class="modal-title"><b><span class="name">Warning!</span></b></h6>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+           
+            </div>
+            <div class="modal-body" style="padding: 22px 15px;">
+              <h5><span>Are You Sure You Wanna Delete??</span></h5>
+              <form method="POST" action="address.php">
+                 <input type="hidden" class="addressid" name="id">
+          
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+              <button type="submit" class="btn btn-success btn-flat" name="deleteadd"><i class="fa fa-check-square-o"></i>Yes</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editaddress">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                 <h6 class="modal-title"><b><span class="name">Edit Address</span></b></h6>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+           
+            </div>
+            <div class="modal-body">
+
+           <form class="form-horizontal" method="POST" action="address.php">
+            
+            <fieldset>
+                <!-- Address form -->
+                <!-- full-name input-->
+                <input type="hidden" name="userid" value='<?php echo $_SESSION['userId'];?>'>
+                <div class=".form-control">
+                    <label class="control-label">Full Name</label>
+                    <div class="controls">
+                        <input id="full-name"name="name" type="text" placeholder="full name"
+                        class="input-xlarge name">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                 <div class=".form-control">
+                    <label class="control-label">Phone No:</label>
+                    <div class="controls">
+                        <input id="phone" name="phone" type="text" placeholder="Phone No:"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- address-line1 input-->
+                <div class="control-group">
+                    <label class="control-label">Address Line 1</label>
+                    <div class="controls">
+                        <input id="address-line1" name="addressl1" type="text" placeholder="address line 1"
+                        class="input-xlarge">
+                        <p class="help-block">Street address, P.O. box, company name, c/o</p>
+                    </div>
+                </div>
+                <!-- address-line2 input-->
+                <div class="control-group">
+                    <label class="control-label">Address Line 2</label>
+                    <div class="controls">
+                        <input id="address-line2" name="addressl2" type="text" placeholder="address line 2"
+                        class="input-xlarge">
+                        <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                    </div>
+                </div>
+                <!-- city input-->
+                <div class="control-group">
+                    <label class="control-label">City / Town</label>
+                    <div class="controls">
+                        <input id="city" name="city" type="text" placeholder="city" class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- region input-->
+                <div class="control-group">
+                    <label class="control-label">State / Province / Region</label>
+                    <div class="controls">
+                        <input id="region" name="state" type="text" placeholder="state / province / region"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- postal-code input-->
+                <div class="control-group">
+                    <label class="control-label">Zip / Postal Code</label>
+                    <div class="controls">
+                        <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- country select -->
+                <div class="control-group">
+                    <label class="control-label">Country</label>
+                    <div class="controls">
+                   <input id="country" name="country"  type="text" placeholder="Country"
+                        class="input-xlarge">
+                      
+                    </div>
+                </div>
+            </fieldset>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+              <button type="submit" class="btn btn-success btn-flat" name="address"><i class="fa fa-check-square-o"></i> Save</button>
+              </form>
             </div>
         </div>
     </div>

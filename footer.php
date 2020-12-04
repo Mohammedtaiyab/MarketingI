@@ -65,8 +65,8 @@
 				<div class="footer-bottom">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-12 col-sm-12 col-xs-12">
-								copyright
+							<div class="col-md-12 col-sm-12 col-xs-12" style="color:white">
+								MarketingOJO
 								<div class="copyright">
 									<p>&copy; 2020 All Right Reserved.</p>
 								</div>

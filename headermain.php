@@ -70,7 +70,7 @@ $resglry2=mysqli_query($con,$galy);
 					   width: 287px;
 				}
 				.word {
-  font: 600 normal 2.5em 'tahoma';
+  font: 600 normal 2.0em 'tahoma';
   }
 			}
 			.slicknav_nav a{
@@ -100,13 +100,15 @@ $resglry2=mysqli_query($con,$galy);
 				.word {
   margin: auto;
   color: black;
-  font: 700 normal 2.5em 'tahoma';
+  font: 700 normal 2.0em 'tahoma';
  font-family: 'Patua One', cursive;
   }
   	.logol img{
 				 margin-top: 20px;
 			}
-
+.footer .footer-top .social a {
+    background: none;
+}
 		</style>
     </head>
     <body id="bg" style="">

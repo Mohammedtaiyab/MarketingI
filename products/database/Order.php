@@ -20,7 +20,9 @@ public function getuserid($usermail){
 }
 	public function placeorder($userId,$productdetail,$orderid,$addon){
 		$Status="Not Confirmed";
-			$sql="INSERT INTO sales(user_id,pay_id,sales_date,Status) VALUES ('$userId','$orderid','$addon','$Status')";
+			$address=$this->getaddr($userId);
+		
+			$sql="INSERT INTO sales(user_id,setaddrid,pay_id,sales_date,Status) VALUES ('$userId',$address,'$orderid','$addon','$Status')";
 			$result = mysqli_query($this->db->con,$sql) or die(mysqli_connect_errno()."Data cannot inserted 1");
 			$saleid=$this->getsaleid($orderid);
 			foreach ($productdetail as $item) {
@@ -29,6 +31,23 @@ public function getuserid($usermail){
 			$result = mysqli_query($this->db->con,$sql) or die(mysqli_connect_errno()."Data cannot inserted 2");
 			}
 }
+
+public function getaddr($userId){
+
+$res="SELECT Id FROM address WHERE UserId=($userId) AND Status=1";
+			$check =  $this->db->con->query($res) ;
+		$resultArray=array();
+		while ($item=mysqli_fetch_array($check,MYSQLI_ASSOC)) {
+			$resultArray[]=$item;
+			# code...
+			}
+
+			return $resultArray[0]['Id'];
+}
+	
+
+
+
 public function getsaleid($orderid){
 	$sql="SELECT * FROM sales WHERE pay_id='$orderid'";
  			//checking if the username or email is available in db
@@ -52,7 +71,7 @@ $check=$this->db->con->query("SELECT *, sales.id AS salesid FROM sales,user,paym
 		return $resultArray;
 	}
 public function fatchordersingle($orderId){	
-$check=$this->db->con->query("SELECT  *,ar.Name As username,s.Status As orderstatus, p.Name AS ProName FROM sales s ,product p,details d,user u,payment py,address ar WHERE s.user_id=u.ID AND s.id=d.sales_id AND d.product_id=p.ID And s.pay_id=py.ORDERID AND ar.UserId=u.ID AND py.ORDERID='".$orderId."'");
+$check=$this->db->con->query("SELECT  *,ar.Name As username,s.Status As orderstatus, p.Name AS ProName FROM sales s ,product p,details d,user u,payment py,address ar WHERE s.user_id=u.ID AND s.id=d.sales_id AND d.product_id=p.ID And s.pay_id=py.ORDERID AND ar.ID=s.setaddrid AND py.ORDERID='".$orderId."'");
 
 		$resultArray=array();
 		while ($item=mysqli_fetch_array($check,MYSQLI_ASSOC)) {

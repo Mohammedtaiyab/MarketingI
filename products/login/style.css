@@ -385,3 +385,7 @@ input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width
     text-align: center;
     width: 100%;
 }
+.btn-grad {
+    /* background-image: linear-gradient(to right, #f32cbf 0%, #a2e1ff 51%, #314755 100%); */
+    background: black;
+}

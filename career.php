@@ -130,12 +130,14 @@ require('header.php');
 			<div class="single-services">
                 <h2><?php echo $row['Vacancy']?></h2>
                 <h5><?php echo $row['Company_name']?></h5>
-                <p><?php echo $row['Location']?></p>
-                <div style="float: right;text-align: right;">
+                <p><?php echo $row['Location']?></p><br>
+                <div style="">
                 	<h2>Job Description</h2>
                 	 <p><?php echo $row['Job_Description']?></p>
+<br>
                 	 <h2>Job Requirements</h2>
                 	 <p><?php echo $row['Requirements']?></p>
+
                 </div>
                 <div style="float: right;">
                 	<button class="btn"><a href="#contact-us">Apply</a></button>

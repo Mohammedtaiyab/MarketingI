@@ -565,7 +565,9 @@ input[type=checkbox]{
 			width: 50%;
 			}
 	}*/
-
+.footer .footer-top .social a {
+    background: none;
+}
 		</style>	
     </head>
     <body id="bg" style="">

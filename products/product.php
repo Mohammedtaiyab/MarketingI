@@ -4,10 +4,10 @@ require('header.php');
 <!-- Page info -->
 <div class="page-top-info">
 <div class="container">
-<h4>Product Detail</h4>
+<h4>Product Details</h4>
 <div class="site-pagination">
-<a href="index.php">Home</a> /
-<a href="category.php">Products</a>
+<a href="index.php">Home</a> /<a href="category.php">Category</a>/
+<a href="">Product</a>
 </div>
 </div>
 </div>
@@ -16,7 +16,7 @@ require('header.php');
 <section class="product-section">
 <div class="container">
 <div class="back-link">
-<a href="category.php"> &lt;&lt; Back to Category</a>
+
 </div>
 <div class="row">
 	 <?php 
@@ -32,8 +32,8 @@ $productitem=$product->singleProduct($id);
     foreach($productitem as $item): $gid=$item['Categories_id'];?>
 
 <div class="col-lg-6">
-<div class="product-pic-zoom">
-<?php echo  "<img class='product-big-img' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?>
+<div class="product-pic-zoom ">
+<?php echo  "<img class='product-big-img imgdetail' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?>
 </div>
 <div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
 <div class="product-thumbs-track">
@@ -170,7 +170,7 @@ $productitems=$product->Productcategory();
 
 <div class="product-item">
 <div class="pi-pic">
-    <?php echo  "<a href='product.php?id=".$item['ID']."'><img class='product-img' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?>
+   <?php echo  "<a href='product.php?id=".$item['ID']."'><img class='product-img' src='../images/product/".$item['Image']."' alt='product-thumb-nail' />" ?></a>
 <div class="pi-links">
 <a href='?action=add&pid=<?php echo $item['ID']; ?>' class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
 <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>

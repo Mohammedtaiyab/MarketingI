@@ -23,7 +23,7 @@ require('header.php');
           <div class="card-body">
             <h5><?php echo $row['Company']; ?><br />
               <span> <?php echo $row['ReviewBy']; ?> </span></h5>
-            <p class="card-text">“ <?php echo $row['Review']; ?> ” </p>
+            <p class="card-text"><?php echo $row['Review']; ?></p>
           </div>
         </div>
       </div>

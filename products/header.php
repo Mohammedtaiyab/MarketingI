@@ -17,6 +17,7 @@ require ('functions.php');
 	<link rel="icon" type="image/png" href="../images/favicon.png">	<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
 <!-- Stylesheets -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<link rel="stylesheet" href="../css/theme-plugins.css">
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../css/responsive.css">	
@@ -116,7 +117,6 @@ require ('functions.php');
 .form-control {
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 18px -1px 1px rgba(0,0,0,.075);
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
@@ -129,6 +129,49 @@ select .lt { text-align: center; }
 .zoom:hover {
   transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
+.input-xlarge{
+    font: 15px/24px "Lato", Arial, sans-serif;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+#scrollUp {
+ 
+  background: #3d6ace;
+}
+.imgdetail{
+      width: 370px;
+    margin-left: 80px;
+        object-fit: cover;
+}
+.entry-content strong {
+    font-weight: 700;
+    font-size: large;
+}
+.btn-grad {
+    /* background-image: linear-gradient(to right, #f32cbf 0%, #a2e1ff 51%, #314755 100%); */
+    background: black;
+}
+.product-item .pi-text h6 {
+    margin-right: 42px;
+    }
 	</style>
   
 </head>
@@ -156,10 +199,9 @@ select .lt { text-align: center; }
 <?php
 if(isset($_SESSION['login'])){?>
 <ul class="dropdown">
-<li><i class="flaticon-profile"></i>  <a href=""class="dropbtn headbut btn-sm">Account</a>
+<li><i class="flaticon-profile"></i>  <a href=""class="dropbtn headbut btn-sm"><?php echo $_SESSION['customer']; ?></a>
 <ul class=" dropdown-content sub-menu">
-<li><a href="#"><?php echo $_SESSION['customer']; ?></a></li>
-<li><a href="#">Address</a></li>
+<li><a href="addressdetails.php">Address</a></li>
 <li><a href="cart.php">Cart</a></li>
 <li><a href="checkout.php">Checkout</a></li>
 <li><a href="order.php">Track Order</a></li>
@@ -180,7 +222,8 @@ if(isset($_SESSION['login'])){?>
 <a data-toggle="modal" class="headbut btn-sm" href="#loginModal">SignIn or Create Account</a>
 <?php } ?>
 </div>
-<div class="up-item">
+
+<div class="up-item"><a href="cart.php" style="color: black;">
 <div class="shopping-card">
 <i class="flaticon-bag"></i>
 <span><?php 
@@ -201,7 +244,7 @@ if ( is_array( $_SESSION["shopping_cart"]) ) {
 }
 echo $data; ?></span>
 </div>
-<a href="cart.php">Shopping Cart</a>
+Shopping Cart</a>
 </div>
 </div>
 </div>
@@ -210,7 +253,10 @@ echo $data; ?></span>
 </div>
 <nav class="main-navbar">
 <div class="container">
+  <div class="row">
+ <div class="col-md-12 col-sm-12 col-xs-12">
 <!-- menu -->
+<div class="nav-area">
 <ul class="main-menu">
 <li><a href="index.php">Home</a></li>
 <li><a href="category.php">Products
@@ -227,7 +273,25 @@ $productlist=$product->Productcategory();
 
 <?php echo "<li><a href='category.php?id=".$name['id']."'>".$name['categories']."</a></li>";?>
 <?php endforeach; $i++; } endforeach;?>
+<li style="float: right;">
+  <ul class="social" style="display: flex;">
+                    
+                    <li><a href="https://www.facebook.com/marketingojo.products" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/marketingojo.products/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://wa.me/919136773853" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
+                  </ul>
+</li>
 </ul>
 </div>
+
+
+  
+
+  
+             
+</div>
+</div>
+</div>
+  
 </nav>
 </header>
