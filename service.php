@@ -566,6 +566,47 @@ input[type=checkbox]{
 			}
 	}*/
 
+.footer .footer-top .social a {
+    background: none;
+}
+.about-us .tabs-main .about-inner .social ul li:hover a{
+	background:transparent;
+	color:#353535;
+}
+.header .social li.active a,
+.header .social li:hover a{
+	background: transparent;
+}
+.social li:hover a{
+	  color: #36BFC4;
+}
+.footer .footer-top .social li:hover a i {
+    color: #36BFC4;
+}
+ .footer li:hover a, .footer li i, .footer .single-tweet i, .footer .footer-top .single-tweet p a:hover, .success .mail h2 span {
+    color: #36BFC4;
+}
+.footer .footer-top .social li:hover a i {
+    color: #f51167;
+}
+.facebook:hover a i {
+ color: #3228c3;
+}
+.instagram:hover a i {
+ color: #fccc63;
+}
+.whatsapp:hover a i {
+ color: #4FCE5D;
+}
+.footer .footer-top .social .facebook:hover a i {
+ color: #3228c3;
+}
+.footer .footer-top .social .instagram:hover a i {
+ color: #fccc63;
+}
+.footer .footer-top .social.whatsapp:hover a i {
+ color: #4FCE5D;
+}
 		</style>	
     </head>
     <body id="bg" style="">
@@ -579,7 +620,7 @@ input[type=checkbox]{
 						<div class="col-md-3 col-sm-3 col-xs-12">
 							<!-- Logo -->
 							<div class="logo">
-								<a href="index.html"><img src="images/mojoservices.png"></a>
+								<a href="index.php"><img src="images/mojoservices.png"></a>
 							</div>
 							<!--/ End Logo -->
 							<div class="mobile-nav"></div>
@@ -638,9 +679,9 @@ input[type=checkbox]{
 									<!-- Social -->
 									<ul class="social">
 										
-										<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
-										<li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
+										<li class="facebook"><a href="https://www.facebook.com/marketingojo.services" target="_blank"><i class="fa fa-facebook"></i></a></li>
+									<li class="instagram"><a href="https://www.instagram.com/marketingojo.services" target="_blank"><i class="fa fa-instagram"></i></a></li>
+										<li class="whatsapp"><a href="https://wa.me/919136773853" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
 									</ul>
 									<!--/ End Social -->
 								</div>

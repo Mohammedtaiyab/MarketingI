@@ -911,7 +911,7 @@ input:-webkit-autofill:focus {
 }
 .header .social li.active a,
 .header .social li:hover a{
-	background:#fff;
+	/*background:#fff;*/
 }
 
 /* Header Style 2 */
@@ -3939,8 +3939,8 @@ input:-webkit-autofill:focus {
 	color: #fff;
 }
 .about-us .tabs-main .about-inner .social ul li:hover a{
-	background:#353535;
-	color:#fff;
+/*	background:#353535;*/
+	color:#353535;
 }
 .about-us .tabs-main .about-inner .about-text .content p {
 	margin-bottom: 20px;

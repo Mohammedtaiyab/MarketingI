@@ -6,21 +6,22 @@ require('loginmodel.php');
 				<div class="footer-top">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-4 col-sm-6 col-xs-12 ">
+							<div class="col-md-3 col-sm-6 col-xs-12 ">
 								<!-- Address Widget -->
 								<div class="single-widget address logo f"><a href="../index.php">
 									<img src="../images/logo.png" style="width: 10rem;" alt="logo"></a>
 									<p>From Ideation & Consultation To Growing Your Business, All The Services You Can Ask For.</p>
 									<ul class="list">
 										<li><i class="fa fa-phone"></i>Phone:- +91 9136773853</li>
-										<li><i class="fa fa-envelope"></i>Email:- <a href="">Info@MarketingOJO.com</a></li>
+										<li><a href="mailto:Info@MarketingOJO.com"><i class="fa fa-envelope"></i>Email:- Info@MarketingOJO.com</a></li>
 										<li><i class="fa fa-map-o"></i>Address:- Pune, Maharastra</li>
 									</ul>		
-									<ul class="social">
-										<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
-										<li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
-											</ul>
+									<  <ul class="social" style="display: flex;">
+                    
+                   		   <li class="facebook"><a href="https://www.facebook.com/marketingojo.products" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/marketingojo.products/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li class="whatsapp"><a href="https://wa.me/919136773853" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
+                  </ul>
 								</div>
 							
 							</div>	
@@ -40,7 +41,7 @@ require('loginmodel.php');
 								</div>
 				
 							</div>
-						<div class="col-md-2 col-sm-6 col-xs-12">
+						<div class="col-md-3 col-sm-6 col-xs-12">
 								<div class="single-widget links">
 									<h2>Categories</h2>
 									<ul class="list">
@@ -83,9 +84,9 @@ $productlist=$product->Productcategory();
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 col-sm-12 col-xs-12 text-white">
-								copyright
+								
 								<div class="copyright">
-									<p>&copy; 2020 All Right Reserved.</p>
+									<p>MarketingOJO &copy; 2020 All Right Reserved.</p>
 								</div>
 							
 							</div>

@@ -92,7 +92,8 @@ $client = new Google_Client();
 // Fill CLIENT ID, CLIENT SECRET ID, REDIRECT URI from Google Developer Console
  $client_id = '61411318107-n48rdrq0ta9g0dgpr779ee1gvbt8j4ge.apps.googleusercontent.com';
  $client_secret = 'ujPPhoz__scERj1nqi8194Ao';
- $redirect_uri = 'http://localhost:8080/marketingojo/products';
+ $redirect_uri = 'https://marketingojo.com/products';
+  //$redirect_uri = 'http://localhost:8080/marketingojo/products';
  $simple_api_key = '<Your-API-Key>';
  
 //Create Client Request to access Google API

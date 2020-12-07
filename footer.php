@@ -19,10 +19,12 @@
 										<li><i class="fa fa-map-o"></i>Address:- Pune, Maharastra</li>
 									</ul>		
 									<ul class="social">
-									<li><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
-										<li><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
-									</ul>
+							
+<li class="facebook"><a href="https://www.facebook.com/marketingojo"><i class="fa fa-facebook"></i></a></li>
+										<li class="instagram"><a href="https://www.instagram.com/marketingojo/"><i class="fa fa-instagram"></i></a></li>
+										<li class="whatsapp"><a href="https://wa.me/919136773853"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
+
+                </ul>
 								</div>
 							
 							</div>	
@@ -66,9 +68,9 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 col-sm-12 col-xs-12" style="color:white">
-								MarketingOJO
+							
 								<div class="copyright">
-									<p>&copy; 2020 All Right Reserved.</p>
+									<p>	MarketingOJO &copy; 2020 All Right Reserved.</p>
 								</div>
 							
 							</div>

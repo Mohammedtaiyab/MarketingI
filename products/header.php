@@ -154,7 +154,7 @@ select .lt { text-align: center; }
 }
 #scrollUp {
  
-  background: #3d6ace;
+  background: #f51167;
 }
 .imgdetail{
       width: 370px;
@@ -167,12 +167,50 @@ select .lt { text-align: center; }
 }
 .btn-grad {
     /* background-image: linear-gradient(to right, #f32cbf 0%, #a2e1ff 51%, #314755 100%); */
-    background: black;
+    background: #f51167;
 }
 .product-item .pi-text h6 {
     margin-right: 42px;
     }
+    #footer{
+      font-size: 14px;
+    }
+/*.list li:hover, a:hover{
+  color: #f51167;
+ } 
+ .footer.dark li:hover {
+    color: #f51167;
+}
+.footer li:hover a, .footer li i, .footer .single-tweet i, .footer .footer-top .single-tweet p a:hover, .success .mail h2 span {
+    color: #f51167;
+}
+.social  a:hover a , li{
+   color: #f51167;
+}*/
+.footer .footer-top .social li:hover a i {
+    color: #f51167;
+}
+.facebook:hover a i {
+ color: #3228c3;
+}
+.instagram:hover a i {
+ color: #fccc63;
+}
+.whatsapp:hover a i {
+ color: #4FCE5D;
+}
+.footer .footer-top .social .facebook:hover a i {
+ color: #3228c3;
+}
+.footer .footer-top .social .instagram:hover a i {
+ color: #fccc63;
+}
+.footer .footer-top .social.whatsapp:hover a i {
+ color: #4FCE5D;
+}
 	</style>
+
+
   
 </head>
 <body>
@@ -276,9 +314,9 @@ $productlist=$product->Productcategory();
 <li style="float: right;">
   <ul class="social" style="display: flex;">
                     
-                    <li><a href="https://www.facebook.com/marketingojo.products" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/marketingojo.products/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="https://wa.me/919136773853" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
+                    <li class="facebook"><a href="https://www.facebook.com/marketingojo.products" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/marketingojo.products/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li class="whatsapp"><a href="https://wa.me/919136773853" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
                   </ul>
 </li>
 </ul>

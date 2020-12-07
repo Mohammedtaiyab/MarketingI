@@ -23,9 +23,10 @@ $paramList["INDUSTRY_TYPE_ID"] = $INDUSTRY_TYPE_ID;
 $paramList["CHANNEL_ID"] = $CHANNEL_ID;
 $paramList["TXN_AMOUNT"] = $TXN_AMOUNT;
 $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
-$paramList["CALLBACK_URL"] = "http://localhost:8080/marketingojo/products/pgResponse.php";
+$paramList["CALLBACK_URL"] = "https://marketingojo.com/products/pgResponse.php";
 /*
-$paramList["CALLBACK_URL"] = "http://localhost/PaytmKit/pgResponse.php";
+
+$paramList["CALLBACK_URL"] = "http://localhost:8080/marketingojo/products/pgResponse.php";
 $paramList["MSISDN"] = $MSISDN; //Mobile number of customer
 $paramList["EMAIL"] = $EMAIL; //Email ID of customer
 $paramList["VERIFIED_BY"] = "EMAIL"; //

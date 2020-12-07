@@ -1006,6 +1006,7 @@ ol {
 .footer-section {
 	background: #282828;
 	padding-top: 60px;
+	font-size: 14px;
 }
 
 .footer-logo {
@@ -1018,7 +1019,7 @@ ol {
 }
 
 .footer-widget h2 {
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
 	color: #fff;

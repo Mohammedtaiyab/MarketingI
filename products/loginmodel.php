@@ -138,7 +138,7 @@
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="address.php" enctype="multipart/form-data">
                 <input type="hidden"  class="proid" name="id">
-            <div class="form-group row">
+            <div class="form-group row" style="margin-top:5px;">
                
                    <label for="category" class="col-sm-2 control-label">Company</label>
                      <div class="col-sm-4">
@@ -157,7 +157,7 @@
                           <option value="Nokia" >Nokia</option>
                     </select>
                   </div>
-                      <label for="photo" class="col-sm-1 control-label">Model</label>
+                    <label for="photo" class="col-sm-1 control-label" style="margin-top:2px;margin-left: -15px;margin-right: 10px;">Model</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="model" name="model">
                   </div>
@@ -243,7 +243,7 @@
                     <label class="control-label">Full Name</label>
                     <div class="controls">
                         <input id="full-name" name="name" type="text" placeholder="full name"
-                        class="input-xlarge">
+                        class="input-xlarge" required="required">
                         <p class="help-block"></p>
                     </div>
                 </div>
@@ -251,7 +251,7 @@
                     <label class="control-label">Phone No:</label>
                     <div class="controls">
                         <input id="full-name" name="phone" type="text" placeholder="Phone No:"
-                        class="input-xlarge">
+                        class="input-xlarge" required="required">
                         <p class="help-block"></p>
                     </div>
                 </div>
@@ -260,7 +260,7 @@
                     <label class="control-label">Address Line 1</label>
                     <div class="controls">
                         <input id="address-line1" name="addressl1" type="text" placeholder="address line 1"
-                        class="input-xlarge">
+                        class="input-xlarge" required="required">
                         <p class="help-block">Street address, P.O. box, company name, c/o</p>
                     </div>
                 </div>
@@ -269,7 +269,7 @@
                     <label class="control-label">Address Line 2</label>
                     <div class="controls">
                         <input id="address-line2" name="addressl2" type="text" placeholder="address line 2"
-                        class="input-xlarge">
+                        class="input-xlarge" required="required">
                         <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
                     </div>
                 </div>
@@ -277,7 +277,7 @@
                 <div class="control-group">
                     <label class="control-label">City / Town</label>
                     <div class="controls">
-                        <input id="city" name="city" type="text" placeholder="city" class="input-xlarge">
+                        <input id="city" name="city" type="text" placeholder="city" class="input-xlarge" required="required">
                         <p class="help-block"></p>
                     </div>
                 </div>
@@ -286,7 +286,7 @@
                     <label class="control-label">State / Province / Region</label>
                     <div class="controls">
                         <input id="region" name="state" type="text" placeholder="state / province / region"
-                        class="input-xlarge">
+                        class="input-xlarge" required="required">
                         <p class="help-block"></p>
                     </div>
                 </div>
@@ -295,7 +295,7 @@
                     <label class="control-label">Zip / Postal Code</label>
                     <div class="controls">
                         <input id="postal-code" name="pin" type="text" placeholder="zip or postal code"
-                        class="input-xlarge">
+                        class="input-xlarge" required="required">
                         <p class="help-block"></p>
                     </div>
                 </div>
@@ -304,7 +304,7 @@
                     <label class="control-label">Country</label>
                     <div class="controls">
                    <input id="country" name="country"  type="text" placeholder="Country"
-                        class="input-xlarge">
+                        class="input-xlarge" required="required">
                       
                     </div>
                 </div>
